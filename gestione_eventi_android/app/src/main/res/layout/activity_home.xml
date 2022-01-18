@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="137dp"
@@ -18,12 +18,13 @@
         android:text="Il Mio Calendario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/toCategorie"
         android:layout_width="176dp"
         android:layout_height="64dp"
         android:layout_marginStart="137dp"
@@ -31,14 +32,14 @@
         android:layout_marginEnd="137dp"
         android:layout_marginBottom="50dp"
         android:text="Categorie"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/creaEvento"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
 
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/creaEvento"
         android:layout_width="179dp"
         android:layout_height="81dp"
         android:layout_marginStart="136dp"
@@ -46,8 +47,9 @@
         android:layout_marginEnd="137dp"
         android:text="CREA EVENTO"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/toCategorie" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -60,7 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/creaEvento"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
