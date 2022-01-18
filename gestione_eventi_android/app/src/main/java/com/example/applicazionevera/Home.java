@@ -18,7 +18,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Bundle datiLogin = getIntent().getExtras();
+       Bundle datiLogin = getIntent().getExtras();
         if(datiLogin != null) {
             username = datiLogin.getString("user");
             password = datiLogin.getString("pwd");

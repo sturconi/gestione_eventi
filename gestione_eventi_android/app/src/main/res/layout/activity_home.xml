@@ -11,26 +11,22 @@
         android:id="@+id/toNotifications"
         android:layout_width="49dp"
         android:layout_height="57dp"
-        android:layout_marginTop="682dp"
-        android:layout_marginBottom="7dp"
         android:text="N"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/toSettings"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toEndOf="@+id/cerca"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/toHome"
         android:layout_width="49dp"
         android:layout_height="57dp"
-        android:layout_marginTop="682dp"
-        android:layout_marginEnd="36dp"
         android:text="h"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintEnd_toStartOf="@+id/cerca"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -97,31 +93,27 @@
         android:id="@+id/toSettings"
         android:layout_width="49dp"
         android:layout_height="57dp"
-        android:layout_marginStart="333dp"
-        android:layout_marginTop="682dp"
         android:layout_marginEnd="36dp"
-        android:layout_marginBottom="7dp"
         android:text="S"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toEndOf="@+id/cerca"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <SearchView
         android:id="@+id/cerca"
-        android:layout_width="50dp"
-        android:layout_height="45dp"
+        android:layout_width="49dp"
+        android:layout_height="47dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="47dp"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintStart_toEndOf="@+id/toHome"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.984" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
