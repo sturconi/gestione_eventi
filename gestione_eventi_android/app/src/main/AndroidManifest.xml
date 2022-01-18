@@ -25,7 +25,7 @@
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".Settings"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -68,7 +68,7 @@
             android:name=".Calendario"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Settings"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
