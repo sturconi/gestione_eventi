@@ -18,7 +18,7 @@ public class Login extends AppCompatActivity {
         EditText user = findViewById(R.id.username);
 
 
-        button =(Button) findViewById(R.id.button);
+        button =(Button) findViewById(R.id.buttonAccedi);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +29,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        button =(Button) findViewById(R.id.button2);
+        button =(Button) findViewById(R.id.buttonReg);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
