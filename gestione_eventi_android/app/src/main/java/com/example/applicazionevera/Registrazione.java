@@ -26,9 +26,11 @@ public class Registrazione extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             String emailString = email.getText().toString();
+            String passwordString = password.getText().toString();
+            String passConfString = passConf.getText().toString();
             if (emailString.contains("@")) {
-                if (password.length()>5) {
-                    if (password.equals(passConf)) {
+                if (passwordString.length()>=5) {
+                    if (passwordString.equals(passConfString)) {
                         openLogin();
                     }
                     else

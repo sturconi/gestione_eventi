@@ -56,7 +56,7 @@ public class Settings<button> extends AppCompatActivity {
             }
         });
 
-        button = (Button) findViewById(R.id.button5);
+        button = (Button) findViewById(R.id.Privacy);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,11 +67,11 @@ public class Settings<button> extends AppCompatActivity {
         ToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (ToggleButton.isChecked() == true) {
-                    Toast.makeText(Settings.this, "Notifchie Attivate!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Settings.this, "Notifiche Attivate!", Toast.LENGTH_LONG).show();
                     ToggleButton.setTextColor(Color.GREEN);
                 } else {
                     ToggleButton.setTextColor(Color.RED);
-                    Toast.makeText(Settings.this, "Notifchie Disattivate!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Settings.this, "Notifiche Disattivate!", Toast.LENGTH_LONG).show();
                 }
             }
         });
