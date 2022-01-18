@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
@@ -16,6 +17,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Button button;
         EditText user = findViewById(R.id.username);
+        EditText password = findViewById(R.id.username);
 
 
         button =(Button) findViewById(R.id.buttonAccedi);
@@ -26,6 +28,10 @@ public class Login extends AppCompatActivity {
                 if (userString.contains("@")) {
                 openHome();
                 }
+                else
+                    Toast.makeText(Login.this, "@ mancante", Toast.LENGTH_SHORT).show();
+
+
             }
         });
 
