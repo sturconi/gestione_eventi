@@ -42,6 +42,28 @@ public class Home extends AppCompatActivity {
                 openCalendario();
             }
         });
+        button=(Button) findViewById(R.id.toHome);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHome();
+            }
+        });
+        button=(Button) findViewById(R.id.toSettings);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSettings();
+            }
+        });
+        button=(Button) findViewById(R.id.toNotifications);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNotifications();
+            }
+        });
+
     }
     public void openCategorie() {
         Intent intent = new Intent(this, Categorie.class);
@@ -49,6 +71,18 @@ public class Home extends AppCompatActivity {
     }
     public void openCalendario() {
         Intent intent = new Intent(this, Calendario.class);
+        startActivity(intent);
+    }
+    public void openHome() {
+        Intent HomeIntent = new Intent(this, Home.class);
+        startActivity(HomeIntent);
+    }
+    public void openSettings() {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+    public void openNotifications() {
+        Intent intent = new Intent(this, Notifiche.class);
         startActivity(intent);
     }
 }

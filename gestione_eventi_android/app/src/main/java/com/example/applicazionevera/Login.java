@@ -12,11 +12,11 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
-    EditText userET = findViewById(R.id.username);
-    EditText passwordET = findViewById(R.id.username);
+    EditText userET = null;
+    EditText passwordET = null;
 
-    String username = userET.getText().toString();
-    String password = passwordET.getText().toString();
+    String username =  null; //userET.getText().toString();
+    String password = null ; //passwordET.getText().toString();
 
 
     @Override
@@ -25,14 +25,15 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Button button;
         userET = findViewById(R.id.username);
-        passwordET = findViewById(R.id.username);
+        passwordET = findViewById(R.id.password);
 
 
         button =(Button) findViewById(R.id.buttonAccedi);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String username =  userET.getText().toString();
+                String password = passwordET.getText().toString();
                 if (username.contains("@")) {
                 openHome();
 
