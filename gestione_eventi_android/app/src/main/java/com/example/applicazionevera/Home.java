@@ -21,9 +21,20 @@ public class Home extends AppCompatActivity {
                 openCategorie();
             }
         });
+        button =(Button) findViewById(R.id.toCalendario);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCalendario();
+            }
+        });
     }
     public void openCategorie() {
         Intent intent = new Intent(this, Categorie.class);
+        startActivity(intent);
+    }
+    public void openCalendario() {
+        Intent intent = new Intent(this, Calendario.class);
         startActivity(intent);
     }
 }
