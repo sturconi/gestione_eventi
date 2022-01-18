@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
                  password = passwordET.getText().toString();
                 if (username.contains("@")) {
                 openHome();
-
+                Account();
                 }
                 else
                     Toast.makeText(Login.this, "@ mancante", Toast.LENGTH_SHORT).show();
@@ -54,14 +54,18 @@ public class Login extends AppCompatActivity {
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
-
         HomeIntent.putExtra("user", username);
-        HomeIntent.putExtra("pwd",  password);
+        HomeIntent.putExtra("pwd", password);
         startActivity(HomeIntent);
     }
 
     public void openRegistrazione() {
         Intent intent = new Intent(this, Registrazione.class);
         startActivity(intent);
+    }
+    public void Account(){
+        Intent AccountIntent = new Intent(this, Account.class);
+        AccountIntent.putExtra("user", username);
+        AccountIntent.putExtra("pwd", password);
     }
 }
