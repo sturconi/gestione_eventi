@@ -7,7 +7,7 @@
     tools:context=".Settings">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Preferenze"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Preferenze"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.200" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Notifiche"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Notifiche"
@@ -30,23 +30,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.300" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="#4CAF50"
-        android:checked="false"
-        android:text="Attiva"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.381"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.400"
-        tools:text="Attiva" />
-
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/Account"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Account"
@@ -58,7 +43,7 @@
         app:layout_constraintVertical_bias="0.500" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/Assistenza"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Assistenza"
@@ -70,7 +55,7 @@
         app:layout_constraintVertical_bias="0.600" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/Privacy"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Privacy"
@@ -81,17 +66,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.700" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
+    <ToggleButton
+        android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:buttonTint="#F44336"
-        android:text="Disattiva"
+        android:text="ToggleButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.400" />
+        app:layout_constraintVertical_bias="0.401" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
