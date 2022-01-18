@@ -92,7 +92,7 @@
         app:layout_constraintVertical_bias="0.602" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchSport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +103,7 @@
         app:layout_constraintVertical_bias="0.302" />
 
     <Switch
-        android:id="@+id/switch3"
+        android:id="@+id/switchIntr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,7 +114,7 @@
         app:layout_constraintVertical_bias="0.399" />
 
     <Switch
-        android:id="@+id/switch4"
+        android:id="@+id/switchCultura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch5"
+        android:id="@+id/switchServizi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
