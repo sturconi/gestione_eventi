@@ -22,7 +22,7 @@
             android:name=".Categorie"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".Settings"
@@ -68,7 +68,7 @@
             android:name=".Calendario"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
