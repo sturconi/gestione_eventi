@@ -15,8 +15,8 @@ public class Login extends AppCompatActivity {
     EditText userET = null;
     EditText passwordET = null;
 
-    String username =  null; //userET.getText().toString();
-    String password = null ; //passwordET.getText().toString();
+    String username =  null;
+    String password = null ;
 
 
     @Override
@@ -32,8 +32,8 @@ public class Login extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username =  userET.getText().toString();
-                String password = passwordET.getText().toString();
+                 username =  userET.getText().toString();
+                 password = passwordET.getText().toString();
                 if (username.contains("@")) {
                 openHome();
 
