@@ -64,6 +64,14 @@ public class Home extends AppCompatActivity {
             }
         });
 
+
+        button=(Button) findViewById(R.id.toSearch);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSearch();
+            }
+        });
     }
     public void openCategorie() {
         Intent intent = new Intent(this, Categorie.class);
@@ -83,6 +91,11 @@ public class Home extends AppCompatActivity {
     }
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
+        startActivity(intent);
+    }
+
+    public void openSearch() {
+        Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
 }
