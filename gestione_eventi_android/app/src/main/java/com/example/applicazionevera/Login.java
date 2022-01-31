@@ -35,6 +35,7 @@ public class Login extends AppCompatActivity {
         updatePreferencesData();
         if(username.length()>0 && password.length()>0) {
             openHome();
+            Account();
             finish();
         }
 
