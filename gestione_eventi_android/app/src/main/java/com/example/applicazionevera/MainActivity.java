@@ -13,6 +13,4 @@ public class MainActivity extends AppCompatActivity {
     }
     /* class main */
 
-    /*prova ciao   */
-    /*prova ciao   */
 }
