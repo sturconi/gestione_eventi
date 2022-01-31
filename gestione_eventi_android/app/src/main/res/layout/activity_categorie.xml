@@ -4,4 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Categorie"/>
+    tools:context=".Categorie">
+
+    <Button
+        android:id="@+id/toNotifications2"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="124dp"
+        android:text="N"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/toSearch"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="136dp"
+        android:text="C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Sport"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/toHome2"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="56dp"
+        android:text="h"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/toSettings2"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="44dp"
+        android:text="S"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/Sport"
+        android:layout_width="320dp"
+        android:layout_height="111dp"
+        android:text="Sport"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="470dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Cultura"
+        android:layout_width="320dp"
+        android:layout_height="111dp"
+        android:text="Cultura"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="332dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Servizi"
+        android:layout_width="320dp"
+        android:layout_height="111dp"
+        android:text="Servizi"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="196dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Intrattenimento"
+        android:layout_width="320dp"
+        android:layout_height="111dp"
+        android:text="Intrattenimento"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="49dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
