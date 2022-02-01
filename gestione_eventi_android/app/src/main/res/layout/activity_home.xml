@@ -7,10 +7,10 @@
     tools:context=".Home">
 
 
-    <Button
+    <ImageButton
         android:id="@+id/toNotifications"
-        app:icon="@drawable/ic_action_notification"
-        android:textStyle="bold"
+        app:srcCompat="@drawable/ic_action_notification"
+        android:background="@color/black"
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:layout_marginEnd="12dp"
@@ -19,10 +19,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/toSearch"
-        app:icon="@drawable/ic_action_search"
-        android:textStyle="bold"
+        app:srcCompat="@drawable/ic_action_search"
+        android:background="@color/black"
         android:layout_width="70dp"
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,8 +32,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/toHome"
+        android:background="@color/black"
+        app:srcCompat="@drawable/ic_action_home"
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
@@ -110,10 +112,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/toSettings"
-        android:textStyle="bold"
-        app:icon="@drawable/ic_action_settings"
+        app:srcCompat="@drawable/ic_action_settings"
+        android:background="@color/black"
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:layout_marginEnd="36dp"

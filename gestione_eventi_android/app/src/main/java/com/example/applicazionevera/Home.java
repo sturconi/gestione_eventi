@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
@@ -27,36 +28,37 @@ public class Home extends AppCompatActivity {
                 Toast.makeText(this, "Benvenuto " + username, Toast.LENGTH_SHORT).show();
         }
 
-        Button button;
-        button =(Button) findViewById(R.id.toCategorie);
-        button.setOnClickListener(new View.OnClickListener() {
+        ImageButton button;
+        Button bottone;
+        bottone =(Button) findViewById(R.id.toCategorie);
+        bottone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openCategorie();
             }
         });
-        button =(Button) findViewById(R.id.toCalendario);
-        button.setOnClickListener(new View.OnClickListener() {
+        bottone =(Button) findViewById(R.id.toCalendario);
+        bottone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openCalendario();
             }
         });
-        button=(Button) findViewById(R.id.toHome);
+        button=(ImageButton) findViewById(R.id.toHome);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openHome();
             }
         });
-        button=(Button) findViewById(R.id.toSettings);
+        button=(ImageButton) findViewById(R.id.toSettings);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openSettings();
             }
         });
-        button=(Button) findViewById(R.id.toNotifications);
+        button=(ImageButton) findViewById(R.id.toNotifications);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,8 +66,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-
-        button=(Button) findViewById(R.id.toSearch);
+        button=(ImageButton) findViewById(R.id.toSearch);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

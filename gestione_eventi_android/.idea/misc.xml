@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/drawable-anydpi/ic_action_home.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_account.xml" value="0.24682971014492755" />
+        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_search.xml" value="0.8" />
+        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_settings.xml" value="0.4" />
         <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_account.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_assistenza.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_calendario.xml" value="0.25416666666666665" />
