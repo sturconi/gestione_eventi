@@ -7,7 +7,7 @@
     tools:context=".Assistenza">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textTitolo"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.259" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextTicket"
         android:layout_width="250dp"
         android:layout_height="128dp"
         android:layout_marginTop="252dp"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/buttonInvia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="388dp"

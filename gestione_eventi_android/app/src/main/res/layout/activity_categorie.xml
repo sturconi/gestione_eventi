@@ -10,37 +10,49 @@
         android:id="@+id/Sport"
         android:layout_width="320dp"
         android:layout_height="111dp"
+        android:layout_marginTop="33dp"
         android:text="Sport"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="470dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Cultura"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/Cultura"
         android:layout_width="320dp"
         android:layout_height="111dp"
+        android:layout_marginTop="24dp"
         android:text="Cultura"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="332dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Servizi"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/Servizi"
         android:layout_width="320dp"
         android:layout_height="111dp"
+        android:layout_marginTop="24dp"
         android:text="Servizi"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="196dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Intrattenimento"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/Intrattenimento"
         android:layout_width="320dp"
         android:layout_height="111dp"
+        android:layout_marginTop="56dp"
         android:text="Intrattenimento"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="49dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
     <ImageButton
         android:id="@+id/toNotifications"
         android:layout_width="70dp"
