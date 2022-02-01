@@ -3,28 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/drawable-anydpi/ic_action_home.xml" value="0.14635416666666667" />
-        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_account.xml" value="0.24682971014492755" />
-        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_home.xml" value="0.264" />
-        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_search.xml" value="0.8" />
-        <entry key="..\:/Users/FrancoCeruti/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_settings.xml" value="0.4" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_account.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_assistenza.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_calendario.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_cambiopasswo.xml" value="0.15693430656934307" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_caricamento.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_categorie.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_evento.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_registrazione.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_account.xml" value="0.264" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_assistenza.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_calendario.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_cambiopasswo.xml" value="0.264" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_caricamento.xml" value="0.4" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_categorie.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_evento.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_evento_dettagliato.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_home.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_login.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_mappa.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_modificaimmagine.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_notifiche.xml" value="0.264" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_preferenze.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_privacy.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_registrazione.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_search.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_settings.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_sezione_commenti.xml" value="0.25052083333333336" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
