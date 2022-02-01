@@ -31,6 +31,7 @@
 
     <TextView
         android:id="@+id/userTextView"
+        android:hint="Scrivi la tua password attuale"
         android:layout_width="209dp"
         android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,6 +42,7 @@
 
     <TextView
         android:id="@+id/passTextView"
+        android:hint="Scrivi la nuova password"
         android:layout_width="209dp"
         android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
