@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -63,6 +64,36 @@ public class Settings<button> extends AppCompatActivity {
                 openPrivacy();
             }
         });
+        ImageButton button2;
+        button2=(ImageButton) findViewById(R.id.toHome);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHome();
+            }
+        });
+        button2=(ImageButton) findViewById(R.id.toSettings);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSettings();
+            }
+        });
+        button2=(ImageButton) findViewById(R.id.toNotifications);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNotifications();
+            }
+        });
+
+        button2=(ImageButton) findViewById(R.id.toSearch);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSearch();
+            }
+        });
 
         ToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -76,6 +107,7 @@ public class Settings<button> extends AppCompatActivity {
             }
         });
     }
+
 
     public void openPreferenza() {
         Intent intent = new Intent(this, Preferenze.class);
@@ -97,5 +129,24 @@ public class Settings<button> extends AppCompatActivity {
         Intent intent = new Intent(this, Privacy.class);
         startActivity(intent);
     }
+    public void openHome() {
+        Intent HomeIntent = new Intent(this, Home.class);
+        startActivity(HomeIntent);
+    }
+    public void openSettings() {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+    public void openNotifications() {
+        Intent intent = new Intent(this, Notifiche.class);
+        startActivity(intent);
+    }
+
+    public void openSearch() {
+        Intent intent = new Intent(this, Search.class);
+        startActivity(intent);
+    }
 
 }
+
+
