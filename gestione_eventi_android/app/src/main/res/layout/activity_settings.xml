@@ -22,6 +22,7 @@
         android:id="@+id/Notifiche"
         android:layout_width="250dp"
         android:layout_height="60dp"
+        android:gravity="center"
         android:text="Notifiche"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

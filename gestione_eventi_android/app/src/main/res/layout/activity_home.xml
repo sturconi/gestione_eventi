@@ -9,10 +9,11 @@
 
     <Button
         android:id="@+id/toNotifications"
+        app:icon="@drawable/ic_action_notification"
+        android:textStyle="bold"
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:layout_marginEnd="12dp"
-        android:text="N"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/toSettings"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,9 +21,10 @@
 
     <Button
         android:id="@+id/toSearch"
+        app:icon="@drawable/ic_action_search"
+        android:textStyle="bold"
         android:layout_width="70dp"
         android:layout_height="80dp"
-        android:text="C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/toSettings"
         app:layout_constraintHorizontal_bias="0.591"
@@ -34,9 +36,12 @@
         android:id="@+id/toHome"
         android:layout_width="70dp"
         android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:text="h"
+        android:layout_gravity="center"
+        android:gravity="start|center_horizontal|top"
+        app:icon="@drawable/ic_action_home"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -50,6 +55,8 @@
         android:layout_marginEnd="137dp"
         android:layout_marginBottom="84dp"
         android:text="Categorie"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_action_categorie"
         app:layout_constraintBottom_toTopOf="@+id/creaEvento"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
@@ -64,6 +71,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="137dp"
         android:text="CREA EVENTO"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_action_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,6 +101,8 @@
         android:layout_marginEnd="140dp"
         android:layout_marginBottom="69dp"
         android:text="Calendario"
+        app:icon="@drawable/ic_action_calendario"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/toCategorie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
@@ -101,14 +112,15 @@
 
     <Button
         android:id="@+id/toSettings"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_action_settings"
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:layout_marginEnd="36dp"
-        android:text="S"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintVertical_bias="1.0"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

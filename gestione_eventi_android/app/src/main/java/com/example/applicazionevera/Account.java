@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class Account extends AppCompatActivity {
 
     TextView user=null;
     TextView pass=null;
+    ImageView img=null;
 
 
     @Override
@@ -25,8 +27,10 @@ public class Account extends AppCompatActivity {
         setContentView(R.layout.activity_account);
         Toast.makeText(this, "account", Toast.LENGTH_SHORT).show();
 
+
         user=findViewById(R.id.userTextView);
         pass=findViewById(R.id.passTextView);
+        img=findViewById(R.id.imgView);
 
 
         Bundle datiLogin = getIntent().getExtras();
@@ -37,6 +41,7 @@ public class Account extends AppCompatActivity {
              pass.setText(password);
             Toast.makeText(this, "Benvenuto " + username, Toast.LENGTH_SHORT).show();
         }
+
         Button button = (Button) findViewById(R.id.Cambiopass);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +52,7 @@ public class Account extends AppCompatActivity {
 
 
     }
+
     public void openCambioPass() {
         Intent intent = new Intent(this, Cambiopassword.class);
         startActivity(intent);
