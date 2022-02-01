@@ -9,7 +9,7 @@
     <Button
         android:id="@+id/Cambiopass"
         android:layout_width="215dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:text="Cambia password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
