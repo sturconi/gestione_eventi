@@ -74,6 +74,7 @@ public class Home extends AppCompatActivity {
             }
         });
     }
+
     public void openCategorie() {
         Intent intent = new Intent(this, Categorie.class);
         startActivity(intent);
@@ -92,6 +93,11 @@ public class Home extends AppCompatActivity {
     }
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
+        startActivity(intent);
+    }
+
+    public void openEventoDett(){
+        Intent intent = new Intent(this, EventoDettagliato.class);
         startActivity(intent);
     }
 

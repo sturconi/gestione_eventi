@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class EventoDettagliato extends AppCompatActivity {
@@ -13,7 +14,10 @@ public class EventoDettagliato extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evento_dettagliato);
+
+        Button butt;
         ImageButton button;
+
         button=(ImageButton) findViewById(R.id.toHome);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +47,17 @@ public class EventoDettagliato extends AppCompatActivity {
                 openSearch();
             }
         });
+
+        butt = (Button) findViewById(R.id.addCalendario);
+        butt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSettings();
+            }
+        });
     }
+
+
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);

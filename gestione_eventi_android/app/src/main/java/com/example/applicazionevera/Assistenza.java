@@ -17,7 +17,7 @@ public class Assistenza extends AppCompatActivity {
         setContentView(R.layout.activity_assistenza);
 
         Button button;
-        button =(Button) findViewById(R.id.button6);
+        button =(Button) findViewById(R.id.buttonInvia);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

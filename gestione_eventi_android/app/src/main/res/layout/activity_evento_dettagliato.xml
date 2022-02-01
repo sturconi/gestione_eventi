@@ -8,74 +8,74 @@
 
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/infoEvento"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="312dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="informazioni dell'evento e sua descrizione"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
+        android:id="@+id/sezioneCommenti"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="17dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="sezione commenti"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/addCalendario" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine5"
+        android:id="@+id/mappa"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="17dp"
         android:layout_marginEnd="45dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="MAPPA"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/addCalendario" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/fotoOrganizzatore"
         android:layout_width="69dp"
         android:layout_height="57dp"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="72dp"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/infoEvento"
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine6"
+        android:id="@+id/infoOrganizzatore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="Info Organizzatore"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
-        app:layout_constraintStart_toEndOf="@+id/imageView10" />
+        app:layout_constraintBottom_toTopOf="@+id/infoEvento"
+        app:layout_constraintStart_toEndOf="@+id/fotoOrganizzatore" />
 
     <RatingBar
         android:id="@+id/ratingBar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="156dp"
         android:layout_marginEnd="85dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/titoloEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
@@ -149,5 +149,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         />
+
+    <Button
+        android:id="@+id/addCalendario"
+        android:layout_width="151dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="135dp"
+        android:text="Aggiungi al calendario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoEvento" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
