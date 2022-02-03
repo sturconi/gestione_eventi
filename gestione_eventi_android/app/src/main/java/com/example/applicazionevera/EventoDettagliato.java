@@ -48,13 +48,7 @@ public class EventoDettagliato extends AppCompatActivity {
             }
         });
 
-        butt = (Button) findViewById(R.id.addCalendario);
-        butt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSettings();
-            }
-        });
+
     }
 
 
