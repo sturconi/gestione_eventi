@@ -73,6 +73,14 @@ public class Home extends AppCompatActivity {
                 openSearch();
             }
         });
+        bottone =(Button) findViewById(R.id.creaEvento);
+        bottone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCreaevento();
+            }
+        });
+
     }
 
     public void openCategorie() {
@@ -96,13 +104,13 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openEventoDett(){
-        Intent intent = new Intent(this, EventoDettagliato.class);
-        startActivity(intent);
-    }
 
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
+        startActivity(intent);
+    }
+    public void openCreaevento() {
+        Intent intent = new Intent(this, CreaEvento.class);
         startActivity(intent);
     }
 }
