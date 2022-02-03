@@ -14,7 +14,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/eventapp" />
+        app:srcCompat="@drawable/immagine" />
 
     <ImageButton
         android:id="@+id/toNotifications"
@@ -74,11 +74,11 @@
     <SearchView
         android:layout_width="342dp"
         android:layout_height="71dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="36dp"
         android:hint="Cerca..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.155" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

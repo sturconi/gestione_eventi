@@ -6,15 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/EventappLogo"
-        android:layout_width="254dp"
-        android:layout_height="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/eventapp" />
+
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -39,13 +31,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="249dp"
-        android:layout_height="238dp"
-        android:layout_marginTop="121dp"
+        android:id="@+id/imageView"
+        android:layout_width="354dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="228dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/screenshot_20211220_171752_gallery" />
+        app:srcCompat="@drawable/immagine" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
