@@ -11,13 +11,13 @@
         android:id="@+id/infoEvento"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="468dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="informazioni dell'evento e sua descrizione"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

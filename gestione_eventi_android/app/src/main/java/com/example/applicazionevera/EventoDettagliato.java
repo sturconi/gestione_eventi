@@ -29,7 +29,7 @@ public class EventoDettagliato extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openSettings();
+
             }
         });
         button=(ImageButton) findViewById(R.id.toNotifications);
@@ -50,8 +50,6 @@ public class EventoDettagliato extends AppCompatActivity {
 
 
     }
-
-
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
