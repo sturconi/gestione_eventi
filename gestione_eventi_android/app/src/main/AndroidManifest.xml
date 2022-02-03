@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Applicazionevera">
         <activity
+            android:name=".CreaEvento"
+            android:exported="false" />
+        <activity
             android:name=".SezioneCommenti"
             android:exported="false" />
         <activity
@@ -30,7 +33,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".Caricamento"
             android:exported="false" />
