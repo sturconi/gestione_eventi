@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".CreaEvento">
 
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="118dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="65dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="118dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="65dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="136dp" />
+
     <ImageView
         android:id="@+id/EventappLogo"
         android:layout_width="254dp"
@@ -20,9 +41,13 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="87dp"
         android:text="Nome Evento"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="138dp" />
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EventappLogo" />
 
     <TextView
         android:id="@+id/textView12"
@@ -66,61 +91,61 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="118dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="64dp"
         android:inputType="textPersonName"
-        android:text="Nome Evento"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="123dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="118dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="65dp"
         android:inputType="textPersonName"
-        android:text="Nome Evento"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="177dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Nome Evento"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="231dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Nome Evento"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="287dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="238dp"
-        tools:layout_editor_absoluteY="407dp" />
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="79dp"
+        android:text="Carica "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/Listcategorie" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="238dp"
-        tools:layout_editor_absoluteY="464dp" />
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="75dp"
+        android:text="Pubblica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <ListView
         android:id="@+id/Listcategorie"
         android:layout_width="114dp"
         android:layout_height="34dp"
-        tools:layout_editor_absoluteX="228dp"
-        tools:layout_editor_absoluteY="348dp" />
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="69dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
