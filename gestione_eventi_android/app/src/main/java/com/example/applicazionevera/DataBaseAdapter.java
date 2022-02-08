@@ -1,6 +1,8 @@
 package com.example.applicazionevera;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -66,6 +68,35 @@ public class DataBaseAdapter {
     private static final String KEY_email = "email";
     private static final String KEY_password = "password";
     private static final String KEY_foto_profilo = "foto_profilo";
+
+    private ContentValues createUtenteValues(String nome, String cognome, Integer eta, String username, String password, String email, String foto_profilo) {
+        ContentValues values = new ContentValues();
+        values.put( KEY_nome, nome );
+        values.put( KEY_cognome , cognome );
+        values.put( KEY_eta , eta );
+        values.put( KEY_username, username);
+        values.put( KEY_email , email );
+        values.put( KEY_password, password);
+        values.put( KEY_foto_profilo, foto_profilo);
+        return values;
+    }
+    public long createContact (String nome, String cognome, Integer eta, String username, String password, String email, String foto_profilo) {
+        ContentValues initialValues = createUtenteValues(nome, cognome, eta, username, password, email, foto_profilo);
+        return database.insertOrThrow(DATABASE_TABLE8, null, initialValues);
+    }
+    public boolean updateContact( int _ID_utente_utente, String nome, String cognome, Integer eta, String username, String password, String email, String foto_profilo){
+        ContentValues updateValues = createUtenteValues(nome, cognome, eta, username, password, email, foto_profilo);
+        return database.update(DATABASE_TABLE8, updateValues, KEY_ID_utente_utente + "=" + _ID_utente_utente,
+                null) > 0;
+    }
+
+    public boolean deleteContact(int _ID_utente_utente) {
+        return database.delete(DATABASE_TABLE8, KEY_ID_utente_utente + "=" + _ID_utente_utente, null) > 0;
+    }
+    public Cursor fetchAllContacts() {
+        return database.query(DATABASE_TABLE8, new String[] { KEY_ID_utente_utente, KEY_nome, KEY_cognome,
+                KEY_username, KEY_eta, KEY_email, KEY_password, KEY_foto_profilo}, null, null, null, null, null);
+    }
 
 
     public DataBaseAdapter(Context context) {
