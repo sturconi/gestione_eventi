@@ -4,7 +4,7 @@ public class Utente {
 	int id;
 	String username;
 	String password;
-	public Utente() {}
+	
 	public Utente(int id, String username, String password) {
 		this.id= id;
 		this.username= username;
