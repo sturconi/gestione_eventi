@@ -51,8 +51,8 @@ public class Login extends AppCompatActivity {
                 //Account();
                 //updatePreferencesData()
                 }
-                else
-                    Toast.makeText(Login.this, "@ mancante", Toast.LENGTH_SHORT).show();
+
+
             }
 
 
@@ -113,6 +113,6 @@ public class Login extends AppCompatActivity {
 
       //  TextView outputView  =  (TextView)  findViewById(R.id.outputData);
        // outputView.setText(textData);
-        Toast.makeText(Login.this, username, Toast.LENGTH_SHORT).show();
+
     }
 }

@@ -26,7 +26,7 @@ public class Assistenza extends AppCompatActivity {
         });
     }
     public void messaggio() {
-        Toast.makeText(this, "Messaggio Inviato!", Toast.LENGTH_SHORT).show();
+
 
     ImageButton button;
         button=(ImageButton) findViewById(R.id.toHome);
