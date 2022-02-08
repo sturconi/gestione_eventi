@@ -11,7 +11,7 @@ public class CreaEvento2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crea_evento_2);
-
+    }
         public void openHome() {
             Intent HomeIntent = new Intent(this, Home.class);
             startActivity(HomeIntent);
@@ -31,5 +31,3 @@ public class CreaEvento2 extends AppCompatActivity {
         }
     }
 
-    }
-}

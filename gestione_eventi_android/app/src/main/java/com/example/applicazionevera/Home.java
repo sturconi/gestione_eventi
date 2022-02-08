@@ -24,8 +24,7 @@ public class Home extends AppCompatActivity {
             username = datiLogin.getString("user");
             password = datiLogin.getString("pwd");
 
-            //if(username.length()>0 && password.length() >0)
-                Toast.makeText(this, "Benvenuto " + username, Toast.LENGTH_SHORT).show();
+
         }
 
         ImageButton button;
