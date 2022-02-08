@@ -1,6 +1,6 @@
 var curUtente;
 function requestInfo(UtenteId){
-    var uri= "http://localhost:8080/cani/" +UtenteId;
+    var uri= "http://localhost:8080/utente/" +UtenteId;
     var xmlUtente = new XMLHttpRequest();
     xmlUtente.onreadystatechange=function(){
         if(xmlUtente.readyState == 4 && xmlUtente.status == 200)
@@ -18,10 +18,10 @@ function requestInfo(UtenteId){
 function onPageLoaded(){
     var params = new URLSearchParams(location.search);
     var nomeVal = params.get("username");
-    /*
+    
     if (nomeVal!=null) {
-        document.title="Modifica Cane";
-        document.getElementById("descr").innerHTML="Modifica Cane "+nomeVal+"info";
+        document.title="Modifica Utente";
+        document.getElementById("nome").innerHTML="Modifica Utente "+nomeVal+"info";
         requestCaneInfo(parseInt(nomeVal));
     }
     else
@@ -64,5 +64,5 @@ function doSubmit()
     
     xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send(jsonData);
-    return false;*/
+    return false;
 }
