@@ -25,7 +25,7 @@ public class Account extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-        Toast.makeText(this, "account", Toast.LENGTH_SHORT).show();
+
 
 
         user=findViewById(R.id.userTextView);
@@ -39,7 +39,7 @@ public class Account extends AppCompatActivity {
              password = datiLogin.getString("pwd");
              user.setText(username);
              pass.setText(password);
-            Toast.makeText(this, "Benvenuto " + username, Toast.LENGTH_SHORT).show();
+
         }
 
         Button button = (Button) findViewById(R.id.Cambiopass);

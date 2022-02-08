@@ -14,7 +14,7 @@ public class Notifiche extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifiche);
-        Toast.makeText(this, "notifiche", Toast.LENGTH_SHORT).show();
+
 
         ImageButton button;
         button=(ImageButton) findViewById(R.id.toHome);

@@ -59,6 +59,30 @@ public class DataBaseAdapter {
     private static final String KEY_testo_ticket = "testo_ticket";
     private static final String KEY_ID_utente_ticket = "_ID_utente_ticket";
 
+    private ContentValues createticketValues(String oggetto_ticket, String testo_ticket, int _ID_utente_ticket) {
+        ContentValues values = new ContentValues();
+        values.put( KEY_oggetto_ticket, oggetto_ticket);
+        values.put( KEY_testo_ticket , testo_ticket );
+        values.put( KEY_ID_utente_ticket , _ID_utente_ticket );
+        return values;
+    }
+    public long createContact (String oggetto_ticket, String testo_ticket, int _ID_utente_ticket) {
+        ContentValues initialValues = createticketValues(oggetto_ticket , testo_ticket , _ID_utente_ticket);
+        return database.insertOrThrow(DATABASE_TABLE7, null, initialValues);
+    }
+    public boolean updateContact (String oggetto_ticket, String testo_ticket, int _ID_utente_ticket) {
+        ContentValues updateValues = createticketValues(oggetto_ticket , testo_ticket , _ID_utente_ticket);
+        return database.update(DATABASE_TABLE7, updateValues, KEY_codice_ticket + "=" + _ID_utente_ticket,
+                null) > 0;
+    }
+    public boolean deleteContact(String _codice_ticket) {
+        return database.delete(DATABASE_TABLE7, KEY_codice_ticket + "=" + _codice_ticket, null) > 0;
+    }
+    public Cursor fetchAllContacts() {
+        return database.query(DATABASE_TABLE7, new String[] { KEY_codice_ticket , KEY_oggetto_ticket , KEY_testo_ticket , KEY_ID_utente_ticket}
+                , null, null, null, null, null);
+    }
+
     String DATABASE_TABLE8 = "utente";
     private static final String KEY_ID_utente_utente = "_ID_utente_utente";
     private static final String KEY_nome = "nome";
@@ -89,7 +113,6 @@ public class DataBaseAdapter {
         return database.update(DATABASE_TABLE8, updateValues, KEY_ID_utente_utente + "=" + _ID_utente_utente,
                 null) > 0;
     }
-
     public boolean deleteContact(int _ID_utente_utente) {
         return database.delete(DATABASE_TABLE8, KEY_ID_utente_utente + "=" + _ID_utente_utente, null) > 0;
     }
