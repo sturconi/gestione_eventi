@@ -37,4 +37,21 @@ public class CreaEvento extends AppCompatActivity {
         Intent intent = new Intent(this, CreaEvento2.class);
         startActivity(intent);
     }
+    public void openHome() {
+        Intent HomeIntent = new Intent(this, Home.class);
+        startActivity(HomeIntent);
+    }
+    public void openSettings() {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+    public void openNotifications() {
+        Intent intent = new Intent(this, Notifiche.class);
+        startActivity(intent);
+    }
+
+    public void openSearch() {
+        Intent intent = new Intent(this, Search.class);
+        startActivity(intent);
+    }
 }
