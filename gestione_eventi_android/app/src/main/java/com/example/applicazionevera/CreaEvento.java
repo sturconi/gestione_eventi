@@ -27,16 +27,15 @@ public class CreaEvento extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openPagSucc();
-                Toast.makeText(CreaEvento.this, "hai premuto pagina successiva", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CreaEvento.this, CreaEvento2.class);
+                startActivity(intent);
             }
         });
-    }
 
-    public void openPagSucc() {
-        Intent intent = new Intent(this, CreaEvento2.class);
-        startActivity(intent);
-    }
+        }
+
+
+
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
         startActivity(HomeIntent);
