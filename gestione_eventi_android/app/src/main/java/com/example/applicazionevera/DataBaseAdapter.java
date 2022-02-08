@@ -1,4 +1,4 @@
-package com.example.applicazionevera;
+/*package com.example.applicazionevera;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -114,3 +114,4 @@ public class DataBaseAdapter {
     }
 }
 
+*/
