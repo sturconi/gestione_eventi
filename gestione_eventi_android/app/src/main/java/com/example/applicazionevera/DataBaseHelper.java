@@ -1,4 +1,4 @@
-package com.example.applicazionevera;
+/*package com.example.applicazionevera;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -93,3 +93,4 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(database);
     }
 }
+*/
