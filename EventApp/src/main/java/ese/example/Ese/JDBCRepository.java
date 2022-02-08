@@ -71,8 +71,7 @@ public class JDBCRepository implements utenteInterface {
 		}
 		
 	}
-	gehdsthresrhzsndgx
-	htzdngxf 
+
 
 	@Override
 	public boolean deleteAll() {
