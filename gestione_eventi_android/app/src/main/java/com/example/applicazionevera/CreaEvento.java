@@ -28,8 +28,7 @@ public class CreaEvento extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openPagSucc();
-
-
+                Toast.makeText(CreaEvento.this, "hai premuto pagina successiva", Toast.LENGTH_SHORT).show();
             }
         });
     }
