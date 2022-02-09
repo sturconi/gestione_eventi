@@ -45,7 +45,6 @@ public class Registrazione extends AppCompatActivity {
             else
                 Toast.makeText(Registrazione.this, "email non valida", Toast.LENGTH_SHORT).show();
 
-
         }
     });
 
