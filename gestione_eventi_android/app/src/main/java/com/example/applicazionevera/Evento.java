@@ -13,6 +13,8 @@ public class Evento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evento);
+
+
         ImageButton button;
         button=(ImageButton) findViewById(R.id.toHome);
         button.setOnClickListener(new View.OnClickListener() {
