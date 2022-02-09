@@ -4,20 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"><![CDATA[
 
 
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="109dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="190dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/textMessaggio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    ]]>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toTopOf="@+id/textMessaggio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
