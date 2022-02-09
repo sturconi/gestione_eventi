@@ -52,10 +52,12 @@ public class CreaEvento2 extends AppCompatActivity {
         Intent HomeIntent = new Intent(this, Home.class);
         startActivity(HomeIntent);
     }
+
     public void openSettings() {
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
+
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
         startActivity(intent);

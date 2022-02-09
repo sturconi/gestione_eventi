@@ -103,7 +103,6 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
