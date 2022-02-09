@@ -40,16 +40,18 @@ public class Account extends AppCompatActivity {
 
         }
 
-        Button button = (Button) findViewById(R.id.CambioPass);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button bottone;
+
+        bottone  = (Button) findViewById(R.id.CambioPass);
+        bottone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openCambioPass();
             }
         });
 
-        Button button2 = (Button) findViewById(R.id.ModImm);
-        button.setOnClickListener(new View.OnClickListener() {
+        bottone  = (Button) findViewById(R.id.ModImm);
+        bottone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openModImm();
