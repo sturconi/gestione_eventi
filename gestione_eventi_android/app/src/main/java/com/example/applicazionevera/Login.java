@@ -66,6 +66,14 @@ public class Login extends AppCompatActivity {
                 openRegistrazione();
             }
         });
+
+        button = (Button) findViewById(R.id.buttonLogin);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLogin();
+            }
+        });
     }
 
     public void openHome() {
@@ -84,6 +92,10 @@ public class Login extends AppCompatActivity {
         Intent AccountIntent = new Intent(this, Account.class);
         AccountIntent.putExtra("user", username);
         AccountIntent.putExtra("pwd", password);
+    }
+    public void openLogin() {
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
     }
     public  void  savePreferencesData()  {
 
