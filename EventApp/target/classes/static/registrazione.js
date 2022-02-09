@@ -56,15 +56,3 @@ function doSubmit()
     xmlHttp.send(jsonData);
     return false;
 }
-
-function Conferma(){
-    var passconf=document.getElementById("passwordConf");
-    var pass=document.getElementsById("password");
-    if(pass==passconf){
-        doSubmit();
-    }
-
-    else{
-        alert("Passowrd diverse!")
-    }
-}
