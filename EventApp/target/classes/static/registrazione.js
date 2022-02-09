@@ -23,8 +23,6 @@ request.send(null);
 function onPageLoaded(){
     var params= new URLSearchParams(location.search);
     var idval=params.get("id");
-    
-
     if(idval!=null ){
      requestUtenteinfo(parseInt(idval))
     }
@@ -62,10 +60,11 @@ function doSubmit()
 function Conferma(){
     var passconf=document.getElementById("passwordConf");
     var pass=document.getElementsById("password");
-    if(passconf==pass){
+    if(pass==passconf){
+        doSubmit();
     }
+
     else{
         alert("Passowrd diverse!")
-        break;
     }
 }
