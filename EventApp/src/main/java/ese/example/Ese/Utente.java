@@ -1,6 +1,6 @@
 package ese.example.Ese;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Utente {
 	int id;
