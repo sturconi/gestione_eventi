@@ -114,7 +114,6 @@
         app:srcCompat="@drawable/ic_action_settings" />
 
 
-
     <EditText
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="248dp"
