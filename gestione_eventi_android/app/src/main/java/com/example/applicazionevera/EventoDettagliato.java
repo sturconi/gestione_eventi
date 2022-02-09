@@ -15,7 +15,7 @@ public class EventoDettagliato extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evento_dettagliato);
 
-        Button butt;
+        Button bottone;
         ImageButton button;
 
         button=(ImageButton) findViewById(R.id.toHome);
@@ -47,6 +47,14 @@ public class EventoDettagliato extends AppCompatActivity {
                 openSearch();
             }
         });
+        bottone=(Button)findViewById(R.id.addCalendario);
+        bottone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCalendario();
+            }
+
+        });
 
 
     }
@@ -66,6 +74,10 @@ public class EventoDettagliato extends AppCompatActivity {
 
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
+        startActivity(intent);
+    }
+    public void openCalendario() {
+        Intent intent = new Intent(this, Calendario.class);
         startActivity(intent);
     }
 }
