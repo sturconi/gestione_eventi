@@ -57,6 +57,13 @@ public class Account extends AppCompatActivity {
                 openModImm();
             }
         });
+        bottone  = (Button) findViewById(R.id.buttonLogout);
+        bottone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRegistrazione();
+            }
+        });
 
 
     }
@@ -67,6 +74,10 @@ public class Account extends AppCompatActivity {
     }
     public void openModImm() {
         Intent intent = new Intent(this,Modificaimmagine.class);
+        startActivity(intent);
+    }
+    public void openRegistrazione() {
+        Intent intent = new Intent(this,Registrazione.class);
         startActivity(intent);
     }
 
