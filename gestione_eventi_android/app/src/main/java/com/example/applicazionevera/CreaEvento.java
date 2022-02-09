@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,16 +23,47 @@ public class CreaEvento extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(CreaEvento.this, android.R.layout.simple_list_item_1, Categorie);
         cat.setAdapter(adapter);
 
+        ImageButton ib;
         Button button;
         button = (Button) findViewById(R.id.pagSucc);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openPagSucc();
-                Toast.makeText(CreaEvento.this, "hai premuto pagina successiva", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+
+
+        ib = (ImageButton) findViewById(R.id.toHome);
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHome();
+            }
+        });
+        ib = (ImageButton) findViewById(R.id.toSettings);
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSettings();
+            }
+        });
+        ib = (ImageButton) findViewById(R.id.toNotifications);
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNotifications();
+            }
+        });
+
+        ib = (ImageButton) findViewById(R.id.toSearch);
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSearch();
+            }
+        });
+}
 
     public void openPagSucc() {
         Intent intent = new Intent(this, CreaEvento2.class);
