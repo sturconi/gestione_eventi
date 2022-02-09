@@ -1,15 +1,20 @@
 package com.example.applicazionevera;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Privacy extends AppCompatActivity {
 
@@ -17,6 +22,31 @@ public class Privacy extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy);
+
+
+
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.toHome:
+                        openHome();
+                        break;
+                    case R.id.toSearch:
+                        openSearch();
+                        break;
+                    case R.id.toNotifications:
+                        openNotifications();
+                        break;
+                    case R.id.toSettings:
+                        openSettings();
+                        break;
+                }
+                return false;
+            }
+        });
 
 
         ToggleButton ToggleGps = (ToggleButton) findViewById(R.id.ToggleGps);
@@ -45,36 +75,7 @@ public class Privacy extends AppCompatActivity {
                 }
             }
         });
-        ImageButton button;
-        button=(ImageButton) findViewById(R.id.toHome);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHome();
-            }
-        });
-        button=(ImageButton) findViewById(R.id.toSettings);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSettings();
-            }
-        });
-        button=(ImageButton) findViewById(R.id.toNotifications);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openNotifications();
-            }
-        });
 
-        button=(ImageButton) findViewById(R.id.toSearch);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSearch();
-            }
-        });
     }
 
     public void openHome() {

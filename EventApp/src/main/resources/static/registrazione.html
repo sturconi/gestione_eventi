@@ -1,42 +1,42 @@
 
 <html>
 <head>
-    <script src="registrazione.js" type="text/javascript"></script>
-    
-    <title>EventApp</title>
+    <script src="registrazione.js" type="text/javascript">
+</script>
 </head>
-<body onload="onPageLoaded();">
+<body>
     <div id="container"> 
         <div id="main">
         <h2 id="descr" > Registrazione</h2>
-        <form id="formLogin" onsubmit="return submit();">
+        <form id="formRegister" onsubmit="return doSubmit()">
+            <input id="id" type="text" name="id" readonly hidden>
             <label> Username</label>
             <br>
-            <input id="username" type="text" name="username">
+            <input id="username" type="text" name="username" required autofocus>
             <br>
             <label> Nome</label>
             <br>
-            <input id="nome" type="text" name="nome">
+            <input id="nome" type="text" name="nome" required autofocus>
             <br>
             <label> Cognome</label>
             <br>
-            <input id="cognome" type="text" name="cognome">
+            <input id="cognome" type="text" name="cognome" required autofocus>
             <br>
             <label> Password</label>
             <br>
-            <input id="password" type="password" name="password">
+            <input id="password" type="password" name="password" required autofocus>
             <br>
             <label> Conferma Password</label>
             <br>
-            <input id="passwordConf" type="password" name="passwordConf">
+            <input id="passwordConf" type="password" name="passwordConf" required autofocus onkeyup="Conferma()">
             <br>
             <label> Email</label>
             <br>
-            <input id="emailField" type="email" name="email">
+            <input id="email" type="email" name="email" required autofocus>
             <br>
             <label> Data di nascita</label>
             <br>
-            <input id="data" type="date" name="data">
+            <input id="data" type="date" name="data" required autofocus>
             
             <br>
             <input type="submit">

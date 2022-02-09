@@ -23,8 +23,6 @@ request.send(null);
 function onPageLoaded(){
     var params= new URLSearchParams(location.search);
     var idval=params.get("id");
-    
-
     if(idval!=null ){
      requestUtenteinfo(parseInt(idval))
     }
@@ -57,15 +55,4 @@ function doSubmit()
     xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send(jsonData);
     return false;
-}
-
-function Conferma(){
-    var passconf=document.getElementById("passwordConf");
-    var pass=document.getElementsById("password");
-    if(pass==passconf){
-    }
-    else{
-        alert("Passowrd diverse!")
-        break;
-    }
 }
