@@ -18,28 +18,24 @@
 
 
     <EditText
-        android:id="@+id/editTextTextMultiLine3"
-        android:layout_width="322dp"
-        android:layout_height="184dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="550dp"
+        android:id="@+id/scriviCommento"
+        android:layout_width="309dp"
+        android:layout_height="138dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Scrivi il commento"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.406" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine4"
-        android:layout_width="319dp"
-        android:layout_height="329dp"
+        android:id="@+id/sezioneCommenti"
+        android:layout_width="312dp"
+        android:layout_height="246dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
@@ -51,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <ImageButton
         android:id="@+id/toNotifications"
@@ -107,4 +103,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         />
+
+    <EditText
+        android:id="@+id/oggettoCommento"
+        android:layout_width="308dp"
+        android:layout_height="69dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Inserisci titolo oggetto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
 </androidx.constraintlayout.widget.ConstraintLayout>
