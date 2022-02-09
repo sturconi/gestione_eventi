@@ -13,21 +13,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/immagine" /><![CDATA[
-
-
-    app:layout_constraintVertical_bias="0.21" />
-
-
-
-
-
-
-
-
-
-    ]]>
-
+        app:srcCompat="@drawable/immagine" />
     <TextView
         android:id="@+id/textTitolo"
         android:layout_width="250dp"
@@ -73,59 +59,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771" />
 
-    <ImageButton
-        android:id="@+id/toNotifications"
-        android:layout_width="70dp"
-        android:layout_height="80dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_action_notification" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/toSearch"
-        android:layout_width="70dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="132dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.591"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_action_search" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:textSize="30sp"
+            android:id="@+id/AssistenzaTitle1"
+            android:textAlignment="center"/>
 
-    <ImageButton
-        android:id="@+id/toHome"
-        android:layout_width="70dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:background="@color/black"
-        android:gravity="start|center_horizontal|top"
-        app:icon="@drawable/ic_action_home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_action_home" />
+    </RelativeLayout>
 
-    <ImageButton
-        android:id="@+id/toSettings"
-        android:layout_width="70dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="40dp"
-        android:background="@color/black"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_action_settings" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
 
 
     <EditText

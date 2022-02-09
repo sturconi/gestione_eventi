@@ -13,8 +13,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Settings<button> extends AppCompatActivity {
 
@@ -23,6 +26,32 @@ public class Settings<button> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         ToggleButton ToggleButton = (ToggleButton) findViewById(R.id.toggleButton);
+
+
+
+
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.toHome:
+                        openHome();
+                        break;
+                    case R.id.toSearch:
+                        openSearch();
+                        break;
+                    case R.id.toNotifications:
+                        openNotifications();
+                        break;
+                    case R.id.toSettings:
+                        openSettings();
+                        break;
+                }
+                return false;
+            }
+        });
 
         Button button;
         button = (Button) findViewById(R.id.Preferenze);
@@ -64,36 +93,7 @@ public class Settings<button> extends AppCompatActivity {
                 openPrivacy();
             }
         });
-        ImageButton button2;
-        button2=(ImageButton) findViewById(R.id.toHome);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHome();
-            }
-        });
-        button2=(ImageButton) findViewById(R.id.toSettings);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSettings();
-            }
-        });
-        button2=(ImageButton) findViewById(R.id.toNotifications);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openNotifications();
-            }
-        });
 
-        button2=(ImageButton) findViewById(R.id.toSearch);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSearch();
-            }
-        });
 
         ToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
