@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Account extends AppCompatActivity {
 
@@ -42,11 +40,19 @@ public class Account extends AppCompatActivity {
 
         }
 
-        Button button = (Button) findViewById(R.id.Cambiopass);
+        Button button = (Button) findViewById(R.id.CambioPass);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openCambioPass();
+            }
+        });
+
+        Button button2 = (Button) findViewById(R.id.ModImm);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openModImm();
             }
         });
 
@@ -55,6 +61,10 @@ public class Account extends AppCompatActivity {
 
     public void openCambioPass() {
         Intent intent = new Intent(this, Cambiopassword.class);
+        startActivity(intent);
+    }
+    public void openModImm() {
+        Intent intent = new Intent(this,Modificaimmagine.class);
         startActivity(intent);
     }
 
