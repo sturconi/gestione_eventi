@@ -21,7 +21,7 @@ function onPageLoaded(){
     
     if (nomeVal!=null) {
         document.title="Modifica Utente";
-        document.getElementById("nome").innerHTML="Modifica Utente "+nomeVal+"info";
+        document.getElementById("nome").irnnerHTML="Modifica Utente "+nomeVal+"info";
         requestCaneInfo(parseInt(nomeVal));
     }
     else
