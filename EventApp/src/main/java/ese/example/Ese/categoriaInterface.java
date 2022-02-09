@@ -5,7 +5,7 @@ import java.util.List;
 public interface categoriaInterface {
 boolean save(Categoria ca);
 	
-	Categoria findById(int id);
+	Categoria findById1(String categoria);
 	
 	List<Categoria> findAll();
 	
@@ -14,4 +14,6 @@ boolean save(Categoria ca);
 	boolean deleteAll();
 	
 	boolean update(Categoria ca);
+
+	Categoria findById(String categoria);
 }
