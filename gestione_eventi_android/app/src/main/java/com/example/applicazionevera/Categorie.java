@@ -16,36 +16,7 @@ public class Categorie extends AppCompatActivity {
         setContentView(R.layout.activity_categorie);
         Button bottone;
         ImageButton button;
-        button=(ImageButton) findViewById(R.id.toHome);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHome();
-            }
-        });
-        button=(ImageButton) findViewById(R.id.toSettings);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSettings();
-            }
-        });
-        button=(ImageButton) findViewById(R.id.toNotifications);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openNotifications();
-            }
-        });
 
-        button=(ImageButton) findViewById(R.id.toSearch);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSearch();
-            }
-
-        });
         bottone=(Button)findViewById(R.id.toSport);
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override
