@@ -30,7 +30,7 @@
             android:name=".Settings"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".Caricamento"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -72,7 +72,7 @@
             android:name=".Calendario"
             android:exported="false" />
         <activity
-            android:name=".Caricamento"
+            android:name=".Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

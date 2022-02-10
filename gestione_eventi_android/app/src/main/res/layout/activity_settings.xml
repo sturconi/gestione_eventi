@@ -23,6 +23,7 @@
         android:text="Preferenze"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:icon="@drawable/outline_star_black_18"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,6 +35,7 @@
         android:layout_height="60dp"
         android:gravity="center"
         android:text="Notifiche"
+        app:icon="@drawable/outline_notifications_black_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -46,6 +48,7 @@
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Account"
+        app:icon="@drawable/outline_person_outline_black_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -58,6 +61,7 @@
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Assistenza"
+        app:icon="@drawable/outline_accessible_forward_black_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -70,6 +74,7 @@
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Privacy"
+        app:icon="@drawable/outline_https_black_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -78,16 +83,20 @@
         app:layout_constraintVertical_bias="0.631" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-16dp">
 
         <TextView
+            android:id="@+id/searchTitle1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:textSize="30sp"
-            android:id="@+id/searchTitle1"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
 
     </RelativeLayout>
 
