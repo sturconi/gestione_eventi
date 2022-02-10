@@ -9,16 +9,17 @@
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/homeTitle1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:textSize="30sp"
-            android:id="@+id/homeTitle1"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
     </RelativeLayout>
 
@@ -36,8 +37,8 @@
 
     <Button
         android:id="@+id/toCategorie"
-        android:layout_width="195dp"
-        android:layout_height="70dp"
+        android:layout_width="198dp"
+        android:layout_height="79dp"
         android:layout_marginStart="137dp"
         android:layout_marginTop="236dp"
         android:layout_marginEnd="137dp"
@@ -50,8 +51,8 @@
 
     <Button
         android:id="@+id/creaEvento"
-        android:layout_width="202dp"
-        android:layout_height="82dp"
+        android:layout_width="204dp"
+        android:layout_height="80dp"
         android:layout_marginStart="136dp"
         android:layout_marginTop="41dp"
         android:layout_marginEnd="137dp"
@@ -66,12 +67,12 @@
 
     <Button
         android:id="@+id/toCalendario"
-        android:layout_width="189dp"
-        android:layout_height="61dp"
+        android:layout_width="199dp"
+        android:layout_height="83dp"
         android:layout_marginStart="140dp"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="140dp"
-        android:text="Calendario"
+        android:text="Aggiungi evento al calendario"
         android:textStyle="bold"
         app:icon="@drawable/ic_action_calendario"
         app:layout_constraintEnd_toEndOf="parent"

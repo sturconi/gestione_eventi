@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Calendar;
+
 public class Home extends AppCompatActivity {
 
     String username = null;
@@ -31,6 +33,24 @@ public class Home extends AppCompatActivity {
 
 
         }
+        Button b;
+        b =(Button) findViewById(R.id.toCalendario);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Calendar cal = Calendar.getInstance();
+                Intent intent = new Intent(Intent.ACTION_EDIT);
+                intent.setType("vnd.android.cursor.item/event");
+                intent.putExtra("beginTime", cal.getTimeInMillis());
+                intent.putExtra("allDay", true);
+                intent.putExtra("rrule", "FREQ=YEARLY");
+                intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
+                intent.putExtra("title", "Sei stato eventato ;__)" );
+                startActivity(intent);
+
+            }
+        });
 
 
 
@@ -67,13 +87,7 @@ public class Home extends AppCompatActivity {
                 openCategorie();
             }
         });
-        bottone =(Button) findViewById(R.id.toCalendario);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCalendario();
-            }
-        });
+
 
         bottone =(Button) findViewById(R.id.creaEvento);
         bottone.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +96,7 @@ public class Home extends AppCompatActivity {
                 openCreaevento();
             }
         });
+
 
     }
 

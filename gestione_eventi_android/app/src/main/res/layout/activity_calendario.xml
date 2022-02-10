@@ -16,18 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/immagine" />
 
-    <DatePicker
-        android:id="@+id/calendario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -48,8 +36,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="134dp"
             android:layout_marginTop="479dp"
-            android:layout_marginEnd="127dp"
-            android:layout_marginBottom="75dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="124dp"
             android:text="Aggiungi evento"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
