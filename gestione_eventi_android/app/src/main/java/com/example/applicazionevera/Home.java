@@ -1,10 +1,14 @@
 package com.example.applicazionevera;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.Calendar;
+import java.util.zip.Inflater;
 
 public class Home extends AppCompatActivity {
 
@@ -26,6 +30,21 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+        /* CUSTOM LOGO PERSONALIZZATO
+    androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+
+
+    actionBar.setDisplayShowCustomEnabled(true);
+        LayoutInflater inflater= (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view= inflater.inflate(R.layout.custom_image, null);
+        actionBar.setCustomView(view);
+
+
+*/
+
+
+
        Bundle datiLogin = getIntent().getExtras();
         if(datiLogin != null) {
             username = datiLogin.getString("user");
@@ -33,24 +52,6 @@ public class Home extends AppCompatActivity {
 
 
         }
-        Button b;
-        b =(Button) findViewById(R.id.toCalendario);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Calendar cal = Calendar.getInstance();
-                Intent intent = new Intent(Intent.ACTION_EDIT);
-                intent.setType("vnd.android.cursor.item/event");
-                intent.putExtra("beginTime", cal.getTimeInMillis());
-                intent.putExtra("allDay", true);
-                intent.putExtra("rrule", "FREQ=YEARLY");
-                intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
-                intent.putExtra("title", "Sei stato eventato ;__)" );
-                startActivity(intent);
-
-            }
-        });
 
 
 
@@ -87,7 +88,13 @@ public class Home extends AppCompatActivity {
                 openCategorie();
             }
         });
-
+        bottone =(Button) findViewById(R.id.toCalendario);
+        bottone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCalendario();
+            }
+        });
 
         bottone =(Button) findViewById(R.id.creaEvento);
         bottone.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +103,6 @@ public class Home extends AppCompatActivity {
                 openCreaevento();
             }
         });
-
 
     }
 

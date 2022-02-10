@@ -10,28 +10,28 @@
         android:id="@+id/EventappLogo"
         android:layout_width="254dp"
         android:layout_height="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/immagine" />
-
 
     <EditText
         android:id="@+id/scriviCommento"
         android:layout_width="309dp"
         android:layout_height="138dp"
         android:ems="10"
-        android:gravity="start|top"
+        android:gravity="center"
         android:hint="Scrivi il commento"
 
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.406" />
+        app:layout_constraintTop_toBottomOf="@+id/oggettoCommento"
+        app:layout_constraintVertical_bias="0.152" />
 
     <EditText
         android:id="@+id/sezioneCommenti"
@@ -40,7 +40,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
-        android:gravity="start|top"
+        android:gravity="center"
         android:hint="sezione commenti"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,43 +50,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:textSize="30sp"
-            android:id="@+id/sezioneCommentiTitle1"
-            android:textAlignment="center"/>
-
-    </RelativeLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
-
     <EditText
         android:id="@+id/oggettoCommento"
         android:layout_width="308dp"
         android:layout_height="69dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:gravity="center"
         android:hint="Inserisci titolo oggetto"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EventappLogo"
+        app:layout_constraintVertical_bias="0.127" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/navigation" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
