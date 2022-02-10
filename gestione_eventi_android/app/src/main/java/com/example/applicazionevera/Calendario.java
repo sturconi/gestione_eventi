@@ -16,6 +16,8 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
+import java.util.Calendar;
+
 public class Calendario extends AppCompatActivity {
 
     @Override
@@ -25,6 +27,25 @@ public class Calendario extends AppCompatActivity {
 
         ImageButton ib;
         Button b;
+
+        b =(Button) findViewById(R.id.addCalendario);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Calendar cal = Calendar.getInstance();
+                Intent intent = new Intent(Intent.ACTION_EDIT);
+                intent.setType("vnd.android.cursor.item/event");
+                intent.putExtra("beginTime", cal.getTimeInMillis());
+                intent.putExtra("allDay", true);
+                intent.putExtra("rrule", "FREQ=YEARLY");
+                intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
+                intent.putExtra("title", "Sei stato eventato ;__)" );
+                startActivity(intent);
+
+            }
+        });
+
 
 
 
@@ -71,6 +92,7 @@ public class Calendario extends AppCompatActivity {
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
+
 
 
 }
