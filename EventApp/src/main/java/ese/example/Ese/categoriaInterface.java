@@ -9,7 +9,7 @@ boolean save(Categoria ca);
 	
 	List<Categoria> findAll();
 	
-	boolean deleteById(int id);
+	boolean deleteById(String categoria);
 	
 	boolean deleteAll();
 	

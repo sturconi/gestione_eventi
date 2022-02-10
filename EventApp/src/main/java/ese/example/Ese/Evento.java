@@ -3,7 +3,7 @@ package ese.example.Ese;
 import java.util.Date;
 
 public class Evento {
-	int id;
+	int id_evento;
 	String Categoria;
 	String nome_evento;
 	String Descrizione;
@@ -15,8 +15,8 @@ public class Evento {
 	String immagine;
 	int ID_Posto;
 	
-	public Evento(int id, String Categoria, String nome_evento, String Descrizione, int Valutazione, String indirizzo, Date data, Date oraInizio, Date oraFine, String immagine, int ID_Posto) {
-		this.id= id;
+	public Evento(int id_evento, String Categoria, String nome_evento, String Descrizione, int Valutazione, String indirizzo, Date data, Date oraInizio, Date oraFine, String immagine, int ID_Posto) {
+		this.id_evento= id_evento;
 		this.Categoria= Categoria;
 		this.nome_evento= nome_evento;
 		this.Descrizione=Descrizione;
@@ -28,8 +28,8 @@ public class Evento {
 		this.immagine=immagine;
 		this.ID_Posto=ID_Posto;
 	}
-	public int getId() {
-		return this.id;
+	public int getId_evento() {
+		return this.id_evento;
 	}
 	public String getCategoria() {
 		return this.Categoria;
@@ -62,8 +62,8 @@ public class Evento {
 	public void setCategoria(String Categoria) {
 		this.Categoria= Categoria;
 	}
-	public void setId(int id) {
-		this.id=id;
+	public void setId_Evento(int id_evento) {
+		this.id_evento=id_evento;
 	}
 	public void setNome_evento(String nome_evento) {
 		this.nome_evento= nome_evento;
