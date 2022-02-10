@@ -3,15 +3,19 @@ package ese.example.Ese;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.security.auth.login.AccountNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 public class UtenteRestController {
@@ -22,8 +26,15 @@ public class UtenteRestController {
 	@RequestMapping(value="/utenti",method=RequestMethod.GET)
 	public List<Utente> getUtente(){
 		return this.utenteRepositery.findAll();
-		
-		
+	}
+	
+	@RequestMapping(value="/conferma/{username}",method=RequestMethod.GET)
+	public Utente getUtenteByUser(@PathVariable String username)throws AccountNotFoundException{
+		Utente u = utenteRepositery.findByUser(username);
+		if (u == null) {
+			throw new AccountNotFoundException("User not found");
+		}
+		return u;
 	}
 	
 	@RequestMapping(value="/utenti/{id}", method=RequestMethod.GET)

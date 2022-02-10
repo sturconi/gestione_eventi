@@ -24,6 +24,7 @@ public class JDBCRepository implements utenteInterface {
 	public Utente findById(int id) {
 		return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE id=?", BeanPropertyRowMapper.newInstance(Utente.class));
 	}
+	
 
 	@Override
 	public List<Utente> findAll() {
@@ -46,4 +47,8 @@ public class JDBCRepository implements utenteInterface {
 	    return jdbcTemplate.update("DELETE FROM utente");
 	}
 
+	@Override
+	public Utente findByUser(String username) {
+		 return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE username=?", BeanPropertyRowMapper.newInstance(Utente.class));
+	}
 }
