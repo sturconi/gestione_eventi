@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Notifiche">
 
+
+
     <ImageView
         android:id="@+id/EventappLogo"
         android:layout_width="254dp"
@@ -143,17 +145,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:textSize="30sp"
-            android:id="@+id/notificheTitle1"
-            android:textAlignment="center"/>
-
-    </RelativeLayout>
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="-350dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"

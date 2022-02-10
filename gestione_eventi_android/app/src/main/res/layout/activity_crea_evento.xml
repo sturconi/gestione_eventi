@@ -1,135 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreaEvento">
-
-    <RelativeLayout
+    app:layout_editor_absoluteX="1dp"
+    app:layout_editor_absoluteY="1dp"
+    android:fillViewport="true"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        tools:context=".CreaEvento">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/navigation">
+
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        <ImageView
+            android:id="@+id/EventappLogo"
+            android:layout_width="254dp"
+            android:layout_height="88dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/immagine" />
+
+
+        <ListView
+            android:id="@+id/Listcategorie"
+            android:layout_width="173dp"
+            android:layout_height="60dp"
+
+
+            android:layout_marginTop="64dp"
+            app:layout_constraintEnd_toEndOf="@+id/EventappLogo"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/EventappLogo"
+            app:layout_constraintTop_toBottomOf="@+id/EventappLogo" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/categoriaTV"
+            android:layout_width="76dp"
+            android:layout_height="22dp"
+
+            android:layout_marginTop="176dp"
+            android:text="Categoria"
+            app:layout_constraintEnd_toStartOf="@+id/Listcategorie"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nomeEventotv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Nome Evento"
+            app:layout_constraintEnd_toEndOf="@+id/categoriaTV"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/categoriaTV"
+            app:layout_constraintTop_toBottomOf="@+id/categoriaTV" />
+
+        <TextView
+            android:id="@+id/descrizioneTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:text="Descrizione"
+            app:layout_constraintEnd_toEndOf="@+id/nomeEventotv"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/nomeEventotv"
+            app:layout_constraintTop_toBottomOf="@+id/nomeEventotv" />
+
+        <EditText
+            android:id="@+id/nomeEventoET"
+            android:layout_width="170dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="68dp"
+            android:hint="Nome evento"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/Listcategorie"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/Listcategorie"
+            app:layout_constraintTop_toBottomOf="@+id/Listcategorie" />
+
+        <EditText
+            android:id="@+id/descrizioneET"
+            android:layout_width="204dp"
+            android:layout_height="124dp"
+            android:layout_marginTop="48dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Inserisci descrizione"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/nomeEventoET"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/nomeEventoET"
+            app:layout_constraintTop_toBottomOf="@+id/nomeEventoET" />
+
+        <TextView
+            android:id="@+id/indirizzoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            android:text="Indirizzo"
+            app:layout_constraintEnd_toEndOf="@+id/descrizioneTV"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/descrizioneTV"
+            app:layout_constraintTop_toBottomOf="@+id/descrizioneTV" />
+
+        <EditText
+            android:id="@+id/indirizzoET"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="52dp"
+            android:hint="Indirizzo"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/descrizioneET"
+            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintStart_toStartOf="@+id/descrizioneET"
+            app:layout_constraintTop_toBottomOf="@+id/descrizioneET" />
+
+        <TextView
+            android:id="@+id/dataTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:text="Data evento"
+            app:layout_constraintEnd_toEndOf="@+id/indirizzoTV"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="@+id/indirizzoTV"
+            app:layout_constraintTop_toBottomOf="@+id/indirizzoTV" />
+
+        <EditText
+            android:id="@+id/dataET"
+            android:layout_width="222dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:hint="Inserisci data evento"
+            android:inputType="date"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/indirizzoET"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="@+id/indirizzoET"
+            app:layout_constraintTop_toBottomOf="@+id/indirizzoET" />
+
+        <TextView
+            android:id="@+id/oraInizioTV"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:textSize="30sp"
-            android:id="@+id/creaEventoTitle1"
-            android:textAlignment="center"/>
+            android:text="Ora inizio"
+            app:layout_constraintEnd_toEndOf="@+id/dataTV"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/dataTV"
+            app:layout_constraintTop_toBottomOf="@+id/dataTV" />
 
-    </RelativeLayout>
+        <EditText
+            android:id="@+id/oraInizioET"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:ems="10"
+            android:hint="Ora inizio"
+            android:inputType="time"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/dataET"
+            app:layout_constraintHorizontal_bias="0.445"
+            app:layout_constraintStart_toStartOf="@+id/dataET"
+            app:layout_constraintTop_toBottomOf="@+id/dataET" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        <TextView
+            android:id="@+id/oraFineTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:text="Ora fine"
+            app:layout_constraintEnd_toEndOf="@+id/oraInizioTV"
+            app:layout_constraintStart_toStartOf="@+id/oraInizioTV"
+            app:layout_constraintTop_toBottomOf="@+id/oraInizioTV" />
 
-    <ImageView
-        android:id="@+id/EventappLogo"
-        android:layout_width="254dp"
-        android:layout_height="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/immagine" />
+        <EditText
+            android:id="@+id/oraFineET"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:ems="10"
+            android:hint="Ora fine"
+            android:inputType="time"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/oraInizioET"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/oraInizioET"
+            app:layout_constraintTop_toBottomOf="@+id/oraInizioET" />
 
-
-    <ListView
-        android:id="@+id/Listcategorie"
-        android:layout_width="173dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216" />
-
-    <TextView
-        android:id="@+id/categoriaTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Categoria"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244" />
-
-    <TextView
-        android:id="@+id/nomeEventotv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nome Evento"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.458" />
-
-    <TextView
-        android:id="@+id/descrizioneTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descrizione"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.632" />
-
-    <EditText
-        android:id="@+id/nomeEventoET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Nome evento"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.621"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464" />
-
-    <EditText
-        android:id="@+id/descrizioneET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Inserisci descrizione"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
-
-    <Button
-        android:id="@+id/pagSucc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pagina Successiva"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -36,23 +36,23 @@ function doSubmit()
     var formData = new FormData(document.forms.formRegister);
     var jsonData = JSON.stringify(Object.fromEntries(formData));
 
-    var uriAddr = "http://localhost:8080/utenti";
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function(){
-        if(xmlHttp.readyState == 4)
+    var uriAddr = "./utenti";
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+        if(request.readyState == 4)
         {  
-            if(xmlHttp.status == 200)
+            if(request.status == 201)
             {
-                window.location.replace("http://localhost:8080/login.html");
+                window.location.replace("./login.html");
 
             }          
         }
     }
     if(curUtente == null)
     {
-        xmlHttp.open("POST", uriAddr);
+        request.open("POST", uriAddr);
     }
-    xmlHttp.setRequestHeader("Content-Type", "application/json");
-    xmlHttp.send(jsonData);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(jsonData);
     return false;
 }

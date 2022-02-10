@@ -53,22 +53,9 @@ public class CreaEvento extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(CreaEvento.this, android.R.layout.simple_list_item_1, Categorie);
         cat.setAdapter(adapter);
 
-        ImageButton ib;
-        Button button;
-        button = (Button) findViewById(R.id.pagSucc);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openPagSucc();
-            }
-        });
-
 }
 
-    public void openPagSucc() {
-        Intent intent = new Intent(this, CreaEvento2.class);
-        startActivity(intent);
-    }
+
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
         startActivity(HomeIntent);
