@@ -40,7 +40,7 @@ public class Calendario extends AppCompatActivity {
                 intent.putExtra("allDay", true);
                 intent.putExtra("rrule", "FREQ=YEARLY");
                 intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
-                intent.putExtra("title", "Sei stato eventato ;__)" );
+                intent.putExtra("title", "Sei stato eventato ;-)" );
                 startActivity(intent);
 
             }

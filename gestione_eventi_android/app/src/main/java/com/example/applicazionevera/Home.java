@@ -1,10 +1,14 @@
 package com.example.applicazionevera;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.zip.Inflater;
 
 public class Home extends AppCompatActivity {
 
@@ -23,6 +29,21 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+        /* CUSTOM LOGO PERSONALIZZATO
+    androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+
+
+    actionBar.setDisplayShowCustomEnabled(true);
+        LayoutInflater inflater= (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view= inflater.inflate(R.layout.custom_image, null);
+        actionBar.setCustomView(view);
+
+
+*/
+
+
 
        Bundle datiLogin = getIntent().getExtras();
         if(datiLogin != null) {
