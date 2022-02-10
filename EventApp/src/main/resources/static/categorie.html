@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<link rel="stylesheet" href="categorie.css">
     <title>Eventapp</title>
 </head>
 <body onload="onPageLoaded();">
     <div id="container">
       
        
-        <div id="main" style="text-align: center;">
-        <h1 id="descr" style="text-align: center;" > Categorie</h1>
-        
-        <form id="formLogin" onsubmit="return submit();">
+        <div id="main"   >
+       
+        <div class="topnav">
+          <h2>EventApp</h2>
+          <a class="active" href="#home">Categorie</a>
+          <a href="#news">Search</a>
+          <a href="#contact">Notifiche</a>
+          <a href="#about">Settings</a>
+          <a href="home.html">Home</a>
+        </div>
+        <br> <br>
+        <form id="formCategorie" style="text-align: center;" onsubmit="return submit();">
             <button style="height: 300px;width: 485.41px;">Sport</button> 
             <button style="height: 300px;width: 485.41px;">Intrattenimento</button> 
             <br>
