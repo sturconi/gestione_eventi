@@ -26,9 +26,9 @@ public class EventoRestController {
 		
 	}
 	
-	@RequestMapping(value="/eventi/{id}", method=RequestMethod.GET)
-	public ResponseEntity<Evento> getEventoByid(@PathVariable int id) {
-		Evento e =this.eventoRepositery.findById(id);
+	@RequestMapping(value="/eventi/{id_evento}", method=RequestMethod.GET)
+	public ResponseEntity<Evento> getEventoByid(@PathVariable int id_evento) {
+		Evento e =this.eventoRepositery.findById(id_evento);
 		if(e!=null) {
 		return new ResponseEntity(e,HttpStatus.OK);
 		}
@@ -37,7 +37,7 @@ public class EventoRestController {
 		}
 	}
 	
-	@RequestMapping(value="/utenti/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/eventi/{id_evento}", method=RequestMethod.DELETE)
 	public void deleteAllEventi() {
 		this.eventoRepositery.deleteAll();
 	 }
@@ -56,15 +56,15 @@ public class EventoRestController {
 	}
 	
 
-	@RequestMapping(value="/evento/{id}", method=RequestMethod.DELETE)
-	public void deleteEventoByid(@PathVariable int id) {
-		this.eventoRepositery.deleteById(id);
+	@RequestMapping(value="/evento/{id_evento}", method=RequestMethod.DELETE)
+	public void deleteEventoByid(@PathVariable int id_evento) {
+		this.eventoRepositery.deleteById(id_evento);
 	}
 	
 	
-	@RequestMapping(value="/evento/{id}", method=RequestMethod.PUT)
-	public Evento updateUtente(@PathVariable int id,@RequestBody Evento newEvento) {
-	Evento e=this.eventoRepositery.findById(id);
+	@RequestMapping(value="/evento/{id_evento}", method=RequestMethod.PUT)
+	public Evento updateEvento(@PathVariable int id_evento,@RequestBody Evento newEvento) {
+	Evento e=this.eventoRepositery.findById(id_evento);
 	if((!newEvento.getNome_evento().isBlank())&& newEvento.getNome_evento() !=null) {
 		e.setNome_evento(newEvento.getNome_evento());
 	}

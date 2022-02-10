@@ -1,12 +1,16 @@
 package com.example.applicazionevera;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class EventoDettagliato extends AppCompatActivity {
 
@@ -15,38 +19,33 @@ public class EventoDettagliato extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evento_dettagliato);
 
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.toHome:
+                        openHome();
+                        break;
+                    case R.id.toSearch:
+                        openSearch();
+                        break;
+                    case R.id.toNotifications:
+                        openNotifications();
+                        break;
+                    case R.id.toSettings:
+                        openSettings();
+                        break;
+                }
+                return false;
+            }
+        });
+
         Button bottone;
         ImageButton button;
 
-        button=(ImageButton) findViewById(R.id.toHome);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHome();
-            }
-        });
-        button=(ImageButton) findViewById(R.id.toSettings);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
-        button=(ImageButton) findViewById(R.id.toNotifications);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openNotifications();
-            }
-        });
-
-        button=(ImageButton) findViewById(R.id.toSearch);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSearch();
-            }
-        });
         bottone=(Button)findViewById(R.id.addCalendario);
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override

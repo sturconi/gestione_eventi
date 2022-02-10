@@ -25,7 +25,7 @@ public class Settings<button> extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        ToggleButton ToggleButton = (ToggleButton) findViewById(R.id.toggleButton);
+
 
 
 
@@ -95,17 +95,7 @@ public class Settings<button> extends AppCompatActivity {
         });
 
 
-        ToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (ToggleButton.isChecked() == true) {
 
-                    ToggleButton.setTextColor(Color.GREEN);
-                } else {
-                    ToggleButton.setTextColor(Color.RED);
-
-                }
-            }
-        });
     }
 
 
