@@ -26,7 +26,7 @@ public class UtenteRestController {
 		
 	}
 	
-	@RequestMapping(value="/utente/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/utenti/{id}", method=RequestMethod.GET)
 	public ResponseEntity<Utente> getUtenteByid(@PathVariable int id) {
 		Utente u =this.utenteRepositery.findById(id);
 		if(u!=null) {
@@ -43,10 +43,10 @@ public class UtenteRestController {
 	 }
 	
 	
-	@RequestMapping(value="/utente", method=RequestMethod.POST)
+	@RequestMapping(value="/utenti", method=RequestMethod.POST)
 	public ResponseEntity<String> addUtente(@RequestBody Utente newUtente) {
 		String res="";
-		if(this.utenteRepositery.save(newUtente)) {
+		if(this.utenteRepositery.save(newUtente)>0) {
 			return new ResponseEntity<String>("Ok", HttpStatus.CREATED);
 		}
 		else {
@@ -62,7 +62,7 @@ public class UtenteRestController {
 	}
 	
 	
-	@RequestMapping(value="/utente/{id}", method=RequestMethod.PUT)
+	@RequestMapping(value="/utenti/{id}", method=RequestMethod.PUT)
 	public Utente updateUtente(@PathVariable int id,@RequestBody Utente newUtente) {
 	Utente u=this.utenteRepositery.findById(id);
 	if((!newUtente.getNome().isBlank())&& newUtente.getNome() !=null) {

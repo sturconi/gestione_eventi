@@ -4,16 +4,16 @@ import java.util.List;
 
 public interface utenteInterface {
 
-	boolean save(Utente ut);
+	int save(Utente u);
 	
 	Utente findById(int id);
 	
 	List<Utente> findAll();
 	
-	boolean deleteById(int id);
+	int deleteById(int id);
 	
-	boolean deleteAll();
+	int deleteAll();
 	
-	boolean update(Utente ut);
+	int update(Utente u);
 	
 }
