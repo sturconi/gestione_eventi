@@ -15,9 +15,6 @@
             android:name=".CreaEvento"
             android:exported="false" />
         <activity
-            android:name=".CreaEvento2"
-            android:exported="false" />
-        <activity
             android:name=".SezioneCommenti"
             android:exported="false" />
         <activity
