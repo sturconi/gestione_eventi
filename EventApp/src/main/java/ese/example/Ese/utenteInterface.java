@@ -15,5 +15,7 @@ public interface utenteInterface {
 	int deleteAll();
 	
 	int update(Utente u);
+
+	Utente findByUser(String username);
 	
 }

@@ -2,6 +2,9 @@ package ese.example.Ese;
 
 import java.sql.Date;
 
+
+
+
 public class Utente {
 	int id;
 	String username;
@@ -12,6 +15,8 @@ public class Utente {
 	String cognome;
 	String fotoprofilo;
 	
+	public Utente() {
+	}
 	
 	public Utente(int id, String username, String password, String nome, String email, Date datanascita, String cognome, String fotoprofilo) {
 		this.id= id;
@@ -30,7 +35,7 @@ public class Utente {
 		return this.username;
 	}
 	public String getPassword() {
-		return this.cognome;
+		return this.password;
 	}
 	public String getCognome() {
 		return this.cognome;
