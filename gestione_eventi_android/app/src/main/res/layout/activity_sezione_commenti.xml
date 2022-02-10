@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".SezioneCommenti">
 
     <ImageView
@@ -25,6 +24,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="Scrivi il commento"
+
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
