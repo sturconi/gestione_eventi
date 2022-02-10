@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<link rel="stylesheet" href="categorie.css">
     <title>Eventapp</title>
 </head>
 <body onload="onPageLoaded();">
     <div id="container">
       
        
-        <div id="main" style="text-align: center;">
-        <h1 id="descr" style="text-align: center;" > Categorie</h1>
+        <div id="main"   >
+       
+        <div class="topnav">
+          <h2>EventApp</h2>
+          <a class="active" href="#home">Categorie</a>
+          <a href="#news">Search</a>
+          <a href="#contact">Notifiche</a>
+          <a href="#about">Settings</a>
+          <a href="home.html">Home</a>
+        </div>
         <br> <br>
-        <form id="formLogin" onsubmit="return submit();">
-            <label> <img src="https://m.media-amazon.com/images/I/71KwPy8BPiL._AC_SL1256_.jpg" alt="" srcset="" height="300" width="300"></label>
-            <label> <img src="https://www.teatrostabileveneto.it/tsv/wp-content/uploads/2019/09/teatro-del-monaco-treviso.jpg" alt="" srcset="" height="300" width="300"></label>
+        <form id="formCategorie" style="text-align: center;" onsubmit="return submit();">
+            <button style="height: 300px;width: 485.41px;">Sport</button> 
+            <button style="height: 300px;width: 485.41px;">Intrattenimento</button> 
             <br>
-            <input id="passwordLogin" type="password" name="password">
+            <button style="height: 300px;width: 485.41px;">Servizi</button> 
+            <button style="height: 300px;width: 485.41px;">Cultura</button> 
+            
             <br>
-            <input type="submit">
-            <input type="reset">
         </form>
         </div>
         <div id="footer">
