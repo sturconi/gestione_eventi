@@ -31,7 +31,7 @@ public class Account extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
-        navigation.setSelectedItemId(R.id.toHome);
+        navigation.setSelectedItemId(R.id.toSettings);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
