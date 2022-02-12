@@ -76,22 +76,30 @@ public class Home extends AppCompatActivity {
 
 
 
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
+        navigation.setSelectedItemId(R.id.toHome);
+
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.toHome:
                         openHome();
+                        overridePendingTransition(0,0);
                         break;
                     case R.id.toSearch:
                         openSearch();
+                        overridePendingTransition(0,0);
                         break;
                     case R.id.toNotifications:
                         openNotifications();
+                        overridePendingTransition(0,0);
                         break;
                     case R.id.toSettings:
                         openSettings();
+                        overridePendingTransition(0,0);
                         break;
                 }
                 return false;
