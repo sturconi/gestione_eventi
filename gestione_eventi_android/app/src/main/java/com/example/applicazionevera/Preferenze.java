@@ -3,7 +3,9 @@ package com.example.applicazionevera;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -22,6 +24,12 @@ public class Preferenze extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferenze);
+        SharedPreferences prefs;
+        boolean value = false;
+        String key= "key";
+        String sharedPrefName ="isSwitchChecked";
+        prefs= getSharedPreferences(sharedPrefName, Context.MODE_PRIVATE);
+        value = prefs.getBoolean(key, value);
 
 
 
