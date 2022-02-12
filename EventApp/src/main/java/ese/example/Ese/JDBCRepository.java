@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 
 
-@Repository
+@Repository(value="MYSQL")
 public class JDBCRepository implements utenteInterface {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
@@ -21,8 +21,8 @@ public class JDBCRepository implements utenteInterface {
 	}
 
 	@Override
-	public Utente findById(int id) {
-		return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE id=?", BeanPropertyRowMapper.newInstance(Utente.class));
+	public Utente findById(int ID_utente) {
+		return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE ID_utente=?", BeanPropertyRowMapper.newInstance(Utente.class),ID_utente);
 	}
 	
 
@@ -48,7 +48,7 @@ public class JDBCRepository implements utenteInterface {
 	}
 
 	@Override
-	public Utente findByUser(String username) {
-		 return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE username=?", BeanPropertyRowMapper.newInstance(Utente.class));
+	public Utente findByUsername(String username) {
+		 return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE username=?", BeanPropertyRowMapper.newInstance(Utente.class),username);
 	}
 }
