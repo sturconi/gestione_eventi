@@ -9,15 +9,15 @@
     <item
         android:id="@+id/toSearch"
         android:icon="@drawable/ic_action_search"
-        android:title="Search" />
+        android:title="Esplora" />
 
     <item
         android:id="@+id/toNotifications"
         android:icon="@drawable/ic_action_notification"
-        android:title="Notifications" />
+        android:title="Notifiche" />
     <item
         android:id="@+id/toSettings"
         android:icon="@drawable/ic_action_settings"
-        android:title="Settings" />
+        android:title="Impostazioni" />
 
 </menu>
