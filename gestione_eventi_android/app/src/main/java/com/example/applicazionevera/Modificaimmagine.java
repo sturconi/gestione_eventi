@@ -28,15 +28,19 @@ public class Modificaimmagine extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.toHome:
                         openHome();
+                        overridePendingTransition(0,0);
                         break;
                     case R.id.toSearch:
                         openSearch();
+                        overridePendingTransition(0,0);
                         break;
                     case R.id.toNotifications:
                         openNotifications();
+                        overridePendingTransition(0,0);
                         break;
                     case R.id.toSettings:
                         openSettings();
+                        overridePendingTransition(0,0);
                         break;
                 }
                 return false;
