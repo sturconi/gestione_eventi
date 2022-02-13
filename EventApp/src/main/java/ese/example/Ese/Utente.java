@@ -6,7 +6,7 @@ import java.sql.Date;
 
 
 public class Utente {
-	int id;
+	int ID_utente;
 	String username;
 	String password;
 	String nome;
@@ -18,8 +18,8 @@ public class Utente {
 	public Utente() {
 	}
 	
-	public Utente(int id, String username, String password, String nome, String email, Date datanascita, String cognome, String fotoprofilo) {
-		this.id= id;
+	public Utente(int ID_utente, String username, String password, String nome, String email, Date datanascita, String cognome, String fotoprofilo) {
+		this.ID_utente= ID_utente;
 		this.username= username;
 		this.password= password;
 		this.cognome=cognome;
@@ -29,7 +29,7 @@ public class Utente {
 		this.nome=nome;
 	}
 	public int getId() {
-		return this.id;
+		return this.ID_utente;
 	}
 	public String getUsername() {
 		return this.username;
@@ -56,8 +56,8 @@ public class Utente {
 	public void setUsername(String username) {
 		this.username=username;
 	}
-	public void setId(int id) {
-		this.id=id;
+	public void setId(int ID_utente) {
+		this.ID_utente=ID_utente;
 	}
 	public void setPassword(String password) {
 		this.password=password;
