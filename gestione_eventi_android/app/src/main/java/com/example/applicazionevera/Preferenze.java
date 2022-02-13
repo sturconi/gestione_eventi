@@ -21,11 +21,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Preferenze extends AppCompatActivity {
 
     boolean switchButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferenze);
         SharedPreferences prefs;
+        
         boolean value = false;
         Switch SwitchSpo = (Switch) findViewById(R.id.switchSport);
         Switch SwitchInt = (Switch) findViewById(R.id.switchIntr);
@@ -42,13 +44,7 @@ public class Preferenze extends AppCompatActivity {
             SwitchSpo.setChecked(false);
         }*/
         SharedPreferences luca =getSharedPreferences("salva", MODE_PRIVATE);
-
-
-
         SwitchSpo.setChecked(luca.getBoolean("value", true));
-
-
-
 
         SwitchSpo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +84,7 @@ public class Preferenze extends AppCompatActivity {
         });
         SharedPreferences luigi =getSharedPreferences("salva3", MODE_PRIVATE);
         SwitchInt.setChecked(luigi.getBoolean("value", true));
-        SwitchSpo.setOnClickListener(new View.OnClickListener() {
+        SwitchInt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (SwitchInt.isChecked())  {
@@ -107,7 +103,7 @@ public class Preferenze extends AppCompatActivity {
         });
         SharedPreferences caio =getSharedPreferences("salva4", MODE_PRIVATE);
         SwitchServ.setChecked(caio.getBoolean("value", true));
-        SwitchSpo.setOnClickListener(new View.OnClickListener() {
+        SwitchServ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (SwitchServ.isChecked())  {
