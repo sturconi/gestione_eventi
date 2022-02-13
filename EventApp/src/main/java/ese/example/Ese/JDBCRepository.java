@@ -48,7 +48,7 @@ public class JDBCRepository implements utenteInterface {
 	}
 
 	@Override
-	public Utente findByUsername(String username) {
-		 return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE username=?", BeanPropertyRowMapper.newInstance(Utente.class),username);
+	public Utente findByUsername(String username, String password) {
+		 return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE username=? AND password=?", BeanPropertyRowMapper.newInstance(Utente.class),username,password);
 	}
 }
