@@ -6,16 +6,16 @@ public interface utenteInterface {
 
 	int save(Utente u);
 	
-	Utente findById(int id);
+	Utente findById(int ID_utente);
 	
 	List<Utente> findAll();
 	
-	int deleteById(int id);
+	int deleteById(int ID_utente);
 	
 	int deleteAll();
 	
 	int update(Utente u);
 
-	Utente findByUser(String username);
+	Utente findByUsername(String username);
 	
 }
