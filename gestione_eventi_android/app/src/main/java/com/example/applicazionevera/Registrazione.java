@@ -17,40 +17,73 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.applicazionevera.retrofit.PreferenceHelper;
+import com.example.applicazionevera.retrofit.RegistrazioneInterface;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Calendar;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class Registrazione extends AppCompatActivity {
 
     private Button dateButton;
     private DatePickerDialog datePickerDialog;
 
+    private PreferenceHelper preferenceHelper;
+
+
+        private EditText nome, cognome, uname,  email , password;
+
+    Button data_nascita ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrazione);
-        EditText nickname = findViewById(R.id.usernameReg);
-        EditText email = findViewById(R.id.emailReg);
-        EditText password = findViewById(R.id.passwordReg);
+        nome = (EditText) findViewById(R.id.nome);
+        cognome = (EditText) findViewById(R.id.cognome);
+        uname = (EditText) findViewById(R.id.usernameReg);
+        data_nascita = (Button) findViewById(R.id.dataNascita);
+        email = (EditText) findViewById(R.id.emailReg);
+        password = (EditText) findViewById(R.id.passwordReg);
         EditText passConf = findViewById(R.id.passwordConf);
         Button button;
 
         initDatePicker();
+        preferenceHelper = new PreferenceHelper(this);
+
+
+
+        if(preferenceHelper.getIsLogin()){
+            openLogin();
+            this.finish();
+        }
 
 
         button = (Button) findViewById(R.id.buttonReg);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String emailString = email.getText().toString();
+
+
+
+               String emailString = email.getText().toString();
                 String passwordString = password.getText().toString();
                 String passConfString = passConf.getText().toString();
                 if (emailString.contains("@")) {
                     if (passwordString.length() >= 5) {
                         if (passwordString.equals(passConfString)) {
-                            openLogin();
+                            registerMe();
                         } else
                             Toast.makeText(Registrazione.this, "la conferma password deve essere uguale alla password", Toast.LENGTH_SHORT).show();
                     } else
@@ -59,6 +92,11 @@ public class Registrazione extends AppCompatActivity {
                     Toast.makeText(Registrazione.this, "email non valida", Toast.LENGTH_SHORT).show();
 
             }
+
+
+
+
+
         });
 
 
@@ -134,6 +172,93 @@ public class Registrazione extends AppCompatActivity {
     public void openDatePicker(View v){
         datePickerDialog.show();
     }
+
+
+
+
+
+    private void registerMe() {
+
+        final String Fnome = nome.getText().toString();
+        final String Fcognome = cognome.getText().toString();
+        final String Funame = uname.getText().toString();
+        final String Fdata_nascita = data_nascita.getText().toString();
+        final String Femail = email.getText().toString();
+        final String Fpassword = password.getText().toString();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RegistrazioneInterface.REGIURL)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .build();
+
+        RegistrazioneInterface api = retrofit.create(RegistrazioneInterface.class);
+
+        Call<String> call = api.getUserRegi(Fnome, Fcognome, Funame, Fdata_nascita, Femail ,Fpassword);
+
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                Log.i("Responsestring", response.body().toString());
+                //Toast.makeText()
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        Log.i("onSuccess", response.body().toString());
+
+                        String jsonresponse = response.body().toString();
+                        try {
+                            parseRegData(jsonresponse);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    } else {
+                        Log.i("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void parseRegData(String response) throws JSONException {
+
+        JSONObject jsonObject = new JSONObject(response);
+        if (jsonObject.optString("status").equals("true")){
+
+            saveInfo(response);
+
+            Toast.makeText(Registrazione.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
+            openLogin();
+            this.finish();
+        }else {
+
+            Toast.makeText(Registrazione.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void saveInfo(String response){
+
+        preferenceHelper.putIsLogin(true);
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            if (jsonObject.getString("status").equals("true")) {
+                JSONArray dataArray = jsonObject.getJSONArray("data");
+                for (int i = 0; i < dataArray.length(); i++) {
+
+                    JSONObject dataobj = dataArray.getJSONObject(i);
+                    preferenceHelper.putNome(dataobj.getString("nome"));
+                    preferenceHelper.putCognome(dataobj.getString("cognome"));
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 

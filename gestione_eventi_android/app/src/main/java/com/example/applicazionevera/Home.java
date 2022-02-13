@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.applicazionevera.retrofit.PreferenceHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
@@ -26,10 +27,19 @@ public class Home extends AppCompatActivity {
     String username = null;
     String password = null;
 
+    private PreferenceHelper preferenceHelper;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+        preferenceHelper = new PreferenceHelper(this);
+
+
+
 
 
         /* CUSTOM LOGO PERSONALIZZATO
