@@ -1,4 +1,4 @@
-package com.example.applicazionevera;
+/*package com.example.applicazionevera;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -59,4 +59,4 @@ public class LocationManager extends AppCompatActivity {
             new AddressSolver().execute(location);
         }
     };
-}
+}*/
