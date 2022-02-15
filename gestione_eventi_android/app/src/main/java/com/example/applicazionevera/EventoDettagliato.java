@@ -49,6 +49,15 @@ public class EventoDettagliato extends AppCompatActivity {
         ImageButton button;
 
 
+        bottone = (Button) findViewById(R.id.goMap);
+        bottone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMappa();
+            }
+        });
+
+
         bottone=(Button)findViewById(R.id.addCalendario);
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +89,11 @@ public class EventoDettagliato extends AppCompatActivity {
     }
     public void openCalendario() {
         Intent intent = new Intent(this, Calendario.class);
+        startActivity(intent);
+    }
+
+    public void openMappa(){
+        Intent intent = new Intent(this, Mappa.class);
         startActivity(intent);
     }
 }

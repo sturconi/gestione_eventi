@@ -15,9 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Applicazionevera"
-        android:usesCleartextTraffic="true"
-        android:name=".GloblalElite">
-
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".LocationManager"
+            android:exported="false" />
         <activity
             android:name=".CreaEvento"
             android:exported="false" />
