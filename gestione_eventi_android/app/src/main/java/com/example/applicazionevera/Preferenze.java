@@ -20,7 +20,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Preferenze extends AppCompatActivity {
 
-    boolean switchButton;
+    boolean switchButtonSport;
+    boolean switchButtonCul;
+    boolean switchButtonInt;
+    boolean switchButtonServ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +36,42 @@ public class Preferenze extends AppCompatActivity {
         Switch SwitchInt = (Switch) findViewById(R.id.switchIntr);
         Switch SwitchCul = (Switch) findViewById(R.id.switchCultura);
         Switch SwitchServ = (Switch) findViewById(R.id.switchServizi);
-        /*GloblalElite csgo = ((GloblalElite) getApplicationContext());
-        switchButton=csgo.getSwitchButton();
+        GloblalElite elite = ((GloblalElite) getApplicationContext());
 
-        if (switchButton==true){
+        switchButtonSport=elite.getSwitchButtonSport();
+        switchButtonCul=elite.getSwitchButtonCul();
+        switchButtonInt=elite.getSwitchButtonInt();
+        switchButtonServ=elite.getSwitchButtonServ();
+
+        if (switchButtonSport==true){
             SwitchSpo.setChecked(true);
 
         }
         else{
             SwitchSpo.setChecked(false);
-        }*/
+        }
+        if (switchButtonCul==true){
+            SwitchCul.setChecked(true);
+
+        }
+        else{
+            SwitchCul.setChecked(false);
+        }
+        if (switchButtonInt==true){
+            SwitchInt.setChecked(true);
+
+        }
+        else{
+            SwitchInt.setChecked(false);
+        }
+        if (switchButtonServ==true){
+            SwitchServ.setChecked(true);
+
+        }
+        else{
+            SwitchServ.setChecked(false);
+        }
+        /*
         SharedPreferences luca =getSharedPreferences("salva", MODE_PRIVATE);
         SwitchSpo.setChecked(luca.getBoolean("value", true));
 
@@ -120,7 +149,7 @@ public class Preferenze extends AppCompatActivity {
                 }
             }
         });
-
+*/
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setSelectedItemId(R.id.toSettings);
@@ -157,10 +186,10 @@ public class Preferenze extends AppCompatActivity {
                 if (SwitchSpo.isChecked() == true) {
 
                     SwitchSpo.setTextColor(Color.GREEN);
-                    //csgo.setSwitchButton();
+                    elite.setSwitchButtonSport();
                 } else {
                     SwitchSpo.setTextColor(Color.RED);
-                  //  csgo.setSwitchButton();
+                    elite.setSwitchButtonSport();
 
                 }
             }
@@ -171,8 +200,10 @@ public class Preferenze extends AppCompatActivity {
                 if (SwitchInt.isChecked() == true) {
 
                     SwitchInt.setTextColor(Color.GREEN);
+                    elite.setSwitchButtonInt();
                 } else {
                     SwitchInt.setTextColor(Color.RED);
+                    elite.setSwitchButtonInt();
 
                 }
             }
@@ -183,8 +214,10 @@ public class Preferenze extends AppCompatActivity {
                 if (SwitchCul.isChecked() == true) {
 
                     SwitchCul.setTextColor(Color.GREEN);
+                    elite.setSwitchButtonCul();
                 } else {
                     SwitchCul.setTextColor(Color.RED);
+                    elite.setSwitchButtonCul();
 
                 }
             }
@@ -195,8 +228,10 @@ public class Preferenze extends AppCompatActivity {
                 if (SwitchServ.isChecked() == true) {
 
                     SwitchServ.setTextColor(Color.GREEN);
+                    elite.setSwitchButtonServ();
                 } else {
                     SwitchServ.setTextColor(Color.RED);
+                    elite.setSwitchButtonServ();
 
                 }
             }
