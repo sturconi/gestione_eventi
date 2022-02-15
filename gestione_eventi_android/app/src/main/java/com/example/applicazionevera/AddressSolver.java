@@ -1,4 +1,4 @@
-package com.example.applicazionevera;
+/*package com.example.applicazionevera;
 
 import static org.chromium.base.ContextUtils.getApplicationContext;
 
@@ -45,4 +45,4 @@ private class AddressSolver extends AsyncTask<Location, Void, String> {
         else
             updateText(R.id.where, "N.A.");
     }
-}
+} */
