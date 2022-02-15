@@ -10,10 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.applicazionevera.retrofit.LoginInterface;
 import com.example.applicazionevera.retrofit.PreferenceHelper;
 
 import org.json.JSONArray;
@@ -72,7 +70,7 @@ public class Login extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUser();
+
 
                 /*
                  username =  userET.getText().toString();
@@ -108,45 +106,11 @@ public class Login extends AppCompatActivity {
     }
 
 
-    private void loginUser() {
 
-        final String username = userET.getText().toString().trim();
-        final String password = passwordET.getText().toString().trim();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(LoginInterface.LOGINURL)
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .build();
 
-        LoginInterface api = retrofit.create(LoginInterface.class);
 
-        Call<String> call = api.getUserLogin(username,password);
 
-        call.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.i("Responsestring", response.body().toString());
-                //Toast.makeText()
-                if (response.isSuccessful()) {
-                    if (response.body() != null) {
-                        Log.i("onSuccess", response.body().toString());
-
-                        String jsonresponse = response.body().toString();
-                        parseLoginData(jsonresponse);
-
-                    } else {
-                        Log.i("onEmptyResponse", "Returned empty response");
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
-            }
-        });
-
-    }
 
     private void parseLoginData(String response){
         try {

@@ -13,12 +13,10 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface MyApiEndpointInterface {
-    //GET http://api.myservice.com/users/francesca
-    @GET("/users/{username}")
+    @GET("/utente/{username}")
     Call<Utente> getUser(@Path("username") String username);
-    //GET http://www.sito.it/group/103/users?sort=asc
-    @GET("/group/{id}/users")
-    Call<List<Utente>> groupList(@Path("id") int groupId, @Query("sort") String sort);
-    @POST("/users/new")
+    @GET("/utenti")
+    Call<List<Utente>> groupList(@Query("sort") String sort);
+    @POST("/utenti")
     Call<Utente> createUser(@Body Utente user);
 }

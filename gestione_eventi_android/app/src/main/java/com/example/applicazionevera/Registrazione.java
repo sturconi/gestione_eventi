@@ -1,29 +1,18 @@
 package com.example.applicazionevera;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.applicazionevera.retrofit.PreferenceHelper;
-import com.example.applicazionevera.retrofit.RegistrazioneInterface;
-import com.google.android.material.datepicker.MaterialDatePicker;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 
 import java.util.Calendar;
 
@@ -31,59 +20,51 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Registrazione extends AppCompatActivity {
 
     private Button dateButton;
     private DatePickerDialog datePickerDialog;
-
-    private PreferenceHelper preferenceHelper;
-
-
-        private EditText nome, cognome, uname,  email , password;
-
+    private EditText nome, cognome, username,  email , password;
     Button data_nascita ;
-
-
+    private Utente user;
+    private int ID_utente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_registrazione);
         nome = (EditText) findViewById(R.id.nome);
         cognome = (EditText) findViewById(R.id.cognome);
-        uname = (EditText) findViewById(R.id.usernameReg);
+        username = (EditText) findViewById(R.id.usernameReg);
         data_nascita = (Button) findViewById(R.id.dataNascita);
         email = (EditText) findViewById(R.id.emailReg);
         password = (EditText) findViewById(R.id.passwordReg);
         EditText passConf = findViewById(R.id.passwordConf);
         Button button;
-
         initDatePicker();
-        preferenceHelper = new PreferenceHelper(this);
 
 
-
-        if(preferenceHelper.getIsLogin()){
-            openLogin();
-            this.finish();
-        }
 
 
         button = (Button) findViewById(R.id.buttonReg);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-               String emailString = email.getText().toString();
+                String Fnome = nome.getText().toString();
+                String Fcognome = cognome.getText().toString();
+                String Funame = username.getText().toString();
+                String Fdata_nascita = data_nascita.getText().toString();
+                String emailString = email.getText().toString();
                 String passwordString = password.getText().toString();
                 String passConfString = passConf.getText().toString();
                 if (emailString.contains("@")) {
                     if (passwordString.length() >= 5) {
                         if (passwordString.equals(passConfString)) {
+                            user=new Utente(Funame,passwordString,Fnome,emailString,Fcognome,ID_utente);
                             registerMe();
+                            openLogin();
                         } else
                             Toast.makeText(Registrazione.this, "la conferma password deve essere uguale alla password", Toast.LENGTH_SHORT).show();
                     } else
@@ -173,97 +154,35 @@ public class Registrazione extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    public void registerMe() {
 
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<Utente> call = apiService.createUser(user);
 
-
-
-    private void registerMe() {
-
-        final String Fnome = nome.getText().toString();
-        final String Fcognome = cognome.getText().toString();
-        final String Funame = uname.getText().toString();
-        final String Fdata_nascita = data_nascita.getText().toString();
-        final String Femail = email.getText().toString();
-        final String Fpassword = password.getText().toString();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(RegistrazioneInterface.REGIURL)
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .build();
-
-        RegistrazioneInterface api = retrofit.create(RegistrazioneInterface.class);
-
-        Call<String> call = api.getUserRegi(Fnome, Fcognome, Funame, Fdata_nascita, Femail ,Fpassword);
-
-        call.enqueue(new Callback<String>() {
+        call.enqueue(new Callback<Utente>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.i("Responsestring", response.body().toString());
-                //Toast.makeText()
-                if (response.isSuccessful()) {
-                    if (response.body() != null) {
-                        Log.i("onSuccess", response.body().toString());
-
-                        String jsonresponse = response.body().toString();
-                        try {
-                            parseRegData(jsonresponse);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    } else {
-                        Log.i("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
-                    }
-                }
+            public void onResponse(Call<Utente> call, Response<Utente> response) {
+                int statusCode = response.code();
+                user = response.body();
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
+            public void onFailure(Call<Utente> call, Throwable t) {
+                Toast.makeText(Registrazione.this, "Errore", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
-
-    private void parseRegData(String response) throws JSONException {
-
-        JSONObject jsonObject = new JSONObject(response);
-        if (jsonObject.optString("status").equals("true")){
-
-            saveInfo(response);
-
-            Toast.makeText(Registrazione.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
-            openLogin();
-            this.finish();
-        }else {
-
-            Toast.makeText(Registrazione.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void saveInfo(String response){
-
-        preferenceHelper.putIsLogin(true);
-        try {
-            JSONObject jsonObject = new JSONObject(response);
-            if (jsonObject.getString("status").equals("true")) {
-                JSONArray dataArray = jsonObject.getJSONArray("data");
-                for (int i = 0; i < dataArray.length(); i++) {
-
-                    JSONObject dataobj = dataArray.getJSONObject(i);
-                    preferenceHelper.putNome(dataobj.getString("nome"));
-                    preferenceHelper.putCognome(dataobj.getString("cognome"));
-                }
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-
 
 
     public void openLogin() {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
+
+    public static final String BASE_URL = "http://10.0.2.2:8080/";
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 }

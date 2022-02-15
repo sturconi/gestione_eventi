@@ -18,7 +18,7 @@ function doSubmit(){
                 console.log( utentListObj[idx].username);
                 if(user==utentListObj[idx].username && pass==utentListObj[idx].password){
                     alert("Login Effettuato!")
-                    window.location.replace("./utente/"+utentListObj[idx].username+"/"+utentListObj[idx].password);
+                    window.location.replace("./home.html")
                     code=true;
                 }
             }
