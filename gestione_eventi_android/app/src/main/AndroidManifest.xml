@@ -25,6 +25,9 @@
             android:exported="false" />
         <activity
             android:name=".SezioneCommenti"
+            android:label="              Sezione Commenti"
+
+
             android:exported="false" />
         <activity
             android:name=".EventoDettagliato"
