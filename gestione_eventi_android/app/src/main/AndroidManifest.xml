@@ -25,12 +25,11 @@
             android:exported="false" />
         <activity
             android:name=".SezioneCommenti"
-            android:label="              Sezione Commenti"
-
-
+            android:label="Sezione Commenti"
             android:exported="false" />
         <activity
             android:name=".EventoDettagliato"
+            android:label="Evento Dettagliato"
             android:exported="false" />
         <activity
             android:name=".Evento"
@@ -40,6 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".Settings"
+            android:label="Impostazioni"
             android:exported="false" />
         <activity
             android:name=".Login"
@@ -55,9 +55,11 @@
             android:exported="false" />
         <activity
             android:name=".Search"
+            android:label="Ricerca"
             android:exported="false" />
         <activity
             android:name=".Privacy"
+            android:label="Privacy"
             android:exported="false" />
         <activity
             android:name=".Preferenze"
@@ -67,9 +69,11 @@
             android:exported="false" />
         <activity
             android:name=".Assistenza"
+            android:label="Assistenza"
             android:exported="false" />
         <activity
             android:name=".Account"
+            android:label="Il tuo profilo"
             android:exported="false" />
         <activity
             android:name=".Cambiopassword"
@@ -79,12 +83,14 @@
             android:exported="false" />
         <activity
             android:name=".Mappa"
+            android:label="Mappa"
             android:exported="false" />
         <activity
             android:name=".Calendario"
             android:exported="false" />
         <activity
             android:name=".Home"
+            android:label="EventApp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
