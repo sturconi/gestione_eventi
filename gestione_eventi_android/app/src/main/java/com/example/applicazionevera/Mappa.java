@@ -1,71 +1,51 @@
 package com.example.applicazionevera;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.example.applicazionevera.databinding.ActivityMappaBinding;
 
-public class Mappa extends AppCompatActivity {
+public class Mappa extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+    private ActivityMappaBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mappa);
 
+        binding = ActivityMappaBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.toHome:
-                        openHome();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toSearch:
-                        openSearch();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toNotifications:
-                        openNotifications();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toSettings:
-                        openSettings();
-                        overridePendingTransition(0,0);
-                        break;
-                }
-                return false;
-            }
-        });
-
-
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
-    public void openHome() {
-        Intent HomeIntent = new Intent(this, Home.class);
-        startActivity(HomeIntent);
-    }
-    public void openSettings() {
-        Intent intent = new Intent(this, Settings.class);
-        startActivity(intent);
-    }
-    public void openNotifications() {
-        Intent intent = new Intent(this, Notifiche.class);
-        startActivity(intent);
-    }
+    /**
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
+     */
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
 
-    public void openSearch() {
-        Intent intent = new Intent(this, Search.class);
-        startActivity(intent);
+        // Add a marker in Sydney and move the camera
+        LatLng milano = new LatLng(45.4654219, 9.1859243);
+        mMap.addMarker(new MarkerOptions().position(milano).title("Marker in Milano"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(milano));
     }
 }
