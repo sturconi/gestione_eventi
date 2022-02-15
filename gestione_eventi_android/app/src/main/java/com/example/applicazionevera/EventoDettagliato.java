@@ -48,6 +48,13 @@ public class EventoDettagliato extends AppCompatActivity {
         Button bottone;
         ImageButton button;
 
+        bottone = (Button) findViewById(R.id.sezioneCommenti);
+        bottone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSezioneComm();
+            }
+        });
 
         bottone = (Button) findViewById(R.id.goMap);
         bottone.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +75,11 @@ public class EventoDettagliato extends AppCompatActivity {
         });
 
 
+    }
+
+    private void openSezioneComm() {
+        Intent intent = new Intent(this, SezioneCommenti.class);
+        startActivity(intent);
     }
 
     public void openHome() {
