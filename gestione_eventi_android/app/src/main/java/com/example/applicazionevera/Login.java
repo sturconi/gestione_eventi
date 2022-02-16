@@ -29,7 +29,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class Login extends AppCompatActivity {
-
     EditText userET = null;
     EditText passwordET = null;
 
@@ -54,6 +53,7 @@ public class Login extends AppCompatActivity {
                  Lusername = userET.getText().toString();
                  Lpassword = passwordET.getText().toString();
                  loginMe();
+                 Account();
             }
         });
 
@@ -77,12 +77,8 @@ public class Login extends AppCompatActivity {
     }
     public void Account(){
         Intent AccountIntent = new Intent(this, Account.class);
-        AccountIntent.putExtra("user", username);
-        AccountIntent.putExtra("pwd", password);
-    }
-    public void openLogin() {
-        Intent intent = new Intent(this, Login.class);
-        startActivity(intent);
+        AccountIntent.putExtra("utente", Lusername);
+        AccountIntent.putExtra("password", Lpassword);
     }
     public void loginMe() {
         MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);

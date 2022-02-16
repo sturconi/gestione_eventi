@@ -59,7 +59,7 @@ public class Registrazione extends AppCompatActivity {
                 if (emailString.contains("@")) {
                     if (passwordString.length() >= 5) {
                         if (passwordString.equals(passConfString)) {
-                            user=new Utente(Funame,passwordString,Fnome,emailString,Fcognome,ID_utente);
+                            user=new Utente(Funame,Fcognome,Fnome,emailString,passwordString,ID_utente);
                             registerMe();
                             openLogin();
                         } else
@@ -71,6 +71,7 @@ public class Registrazione extends AppCompatActivity {
 
             }
         });
+
         dateButton = (Button) findViewById(R.id.dataNascita);
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +145,6 @@ public class Registrazione extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<Utente> call, Throwable t) {
-                Toast.makeText(Registrazione.this, "Errore", Toast.LENGTH_SHORT).show();
             }
         });
     }

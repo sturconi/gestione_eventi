@@ -27,12 +27,8 @@ public class Account extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-
         navigation.setSelectedItemId(R.id.toSettings);
-
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -58,20 +54,14 @@ public class Account extends AppCompatActivity {
             }
         });
 
-
         user=findViewById(R.id.userTextView);
         pass=findViewById(R.id.passTextView);
         img=findViewById(R.id.imgView);
+        /*username = getIntent().getExtras().getString("utente");
+        password = getIntent().getExtras().getString("password");
+        user.setText(username);
+        pass.setText(password);*/
 
-
-        Bundle datiLogin = getIntent().getExtras();
-        if(datiLogin != null) {
-             username = datiLogin.getString("user");
-             password = datiLogin.getString("pwd");
-             user.setText(username);
-             pass.setText(password);
-
-        }
 
         Button bottone;
 
@@ -94,7 +84,7 @@ public class Account extends AppCompatActivity {
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openRegistrazione();
+                openLogin();
             }
         });
 
@@ -123,6 +113,11 @@ public class Account extends AppCompatActivity {
     }
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
+        startActivity(intent);
+    }
+
+    public void openLogin() {
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 
