@@ -19,21 +19,27 @@
 
         <activity
             android:name=".Login"
+            android:label="LOGIN"
             android:exported="false" />
         <activity
             android:name=".SezioneCommenti"
+            android:label="COMMENTI"
             android:exported="false" />
         <activity
             android:name=".EventoDettagliato"
+            android:label="COMMENTI"
             android:exported="false" />
         <activity
             android:name=".Evento"
+            android:label="EVENTI"
             android:exported="false" />
         <activity
             android:name=".Categorie"
+            android:label="CATEGORIE"
             android:exported="false" />
         <activity
             android:name=".Settings"
+            android:label="SETTINGS"
             android:exported="false" />
         <activity
             android:name=".Home"
@@ -43,36 +49,46 @@
             android:exported="false" />
         <activity
             android:name=".CreaEvento"
+            android:label="CREA EVENTO"
             android:exported="false" />
         <activity
             android:name=".Registrazione"
+            android:label="REGISTRAZIONE"
             android:exported="false" />
         <activity
             android:name=".Search"
             android:exported="false" />
         <activity
             android:name=".Privacy"
+            android:label="PRIVACY"
             android:exported="false" />
         <activity
             android:name=".Preferenze"
+            android:label="PREFERENZE"
             android:exported="false" />
         <activity
             android:name=".Notifiche"
+            android:label="NOTIFICHE"
             android:exported="false" />
         <activity
             android:name=".Assistenza"
+            android:label="ASSISTENZA"
             android:exported="false" />
         <activity
             android:name=".Account"
+            android:label="ACCOUNT"
             android:exported="false" />
         <activity
             android:name=".Cambiopassword"
+            android:label="CAMBIOPASSWORD"
             android:exported="false" />
         <activity
             android:name=".Modificaimmagine"
+            android:label="MODIFICAIMMAGINE"
             android:exported="false" />
         <activity
             android:name=".Mappa"
+            android:label="MAPPA"
             android:exported="false" />
         <activity
             android:name=".Calendario"
