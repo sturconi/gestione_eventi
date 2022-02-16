@@ -16,6 +16,6 @@ public interface utenteInterface {
 	
 	int update(Utente u);
 
-	Utente findByUsername(String username, String password);
+	Utente findByUsername(String username);
 	
 }

@@ -45,9 +45,6 @@ public class Registrazione extends AppCompatActivity {
         Button button;
         initDatePicker();
 
-
-
-
         button = (Button) findViewById(R.id.buttonReg);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,23 +70,14 @@ public class Registrazione extends AppCompatActivity {
                     Toast.makeText(Registrazione.this, "email non valida", Toast.LENGTH_SHORT).show();
 
             }
-
-
-
-
-
         });
-
-
         dateButton = (Button) findViewById(R.id.dataNascita);
-
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDatePicker(v);
             }
         });
-
     }
 
     private void initDatePicker() {
@@ -111,15 +99,11 @@ public class Registrazione extends AppCompatActivity {
 
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener,year, month, day);
         datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
-
     }
 
-            private String makeDateString(int day, int month, int year) {
-
+    private String makeDateString(int day, int month, int year) {
                 return day + " " +  getMonthFormat(month) + " " + year;
-            }
-
-            private String getMonthFormat(int month) {
+            }private String getMonthFormat(int month) {
                 if(month==1)
                     return "GEN";
                 if(month==2)
@@ -144,42 +128,30 @@ public class Registrazione extends AppCompatActivity {
                     return "NOV";
                 if(month==12)
                     return "DIC";
-
-
                 return "GEN";
             }
-
-
     public void openDatePicker(View v){
         datePickerDialog.show();
     }
-
     public void registerMe() {
-
         MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
         Call<Utente> call = apiService.createUser(user);
-
         call.enqueue(new Callback<Utente>() {
             @Override
             public void onResponse(Call<Utente> call, Response<Utente> response) {
                 int statusCode = response.code();
                 user = response.body();
             }
-
             @Override
             public void onFailure(Call<Utente> call, Throwable t) {
                 Toast.makeText(Registrazione.this, "Errore", Toast.LENGTH_SHORT).show();
             }
-
         });
     }
-
-
     public void openLogin() {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
-
     public static final String BASE_URL = "http://10.0.2.2:8080/";
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)

@@ -41,8 +41,8 @@ public class UtenteRestController {
 	}
 	
 	@RequestMapping(value="/utente/{username}",method=RequestMethod.GET)
-	public ResponseEntity<Utente> getUtenteByUserAndPass(@PathVariable String username, String password){
-		Utente u = utenteRepositery.findByUsername(username,password);
+	public ResponseEntity<Utente> getUtenteByUserAndPass(@PathVariable String username){
+		Utente u = utenteRepositery.findByUsername(username);
 		if(u!=null) {
 			return new ResponseEntity(u,HttpStatus.OK);
 			}

@@ -12,7 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.example.applicazionevera.retrofit.PreferenceHelper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,6 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class Login extends AppCompatActivity {
@@ -31,58 +35,25 @@ public class Login extends AppCompatActivity {
 
     String username =  null;
     String password = null ;
-    private  final  static  String  MY_PREFERENCES  =  "MyPref";
-
-    private  final  static  String  TEXT_LOGIN_KEY  =  "textLogin";
-    private  final  static  String  TEXT_PASSWORD_KEY  =  "textPassword";
-
-
-
-
-
-
-    private PreferenceHelper preferenceHelper;
-
-
-
+    String Lusername = null;
+    String Lpassword= null;
+    Utente u= null;
+    String usernameControl=null;
+    String passwordControl=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        preferenceHelper = new PreferenceHelper(this);
-
         Button button;
         userET = findViewById(R.id.username);
         passwordET = findViewById(R.id.password);
-
-        /*
-        updatePreferencesData();
-        if(username.length()>0 && password.length()>0) {
-            openHome();
-            Account();
-            finish();
-        }
-        */
-
-
         button =(Button) findViewById(R.id.buttonAccedi);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                /*
-                 username =  userET.getText().toString();
-                 password = passwordET.getText().toString();
-                if (username.contains("@")) {
-
-                savePreferencesData();
-                openHome();
-                //Account();
-                //updatePreferencesData()
-                }
-                */
+                 Lusername = userET.getText().toString();
+                 Lpassword = passwordET.getText().toString();
+                 loginMe();
             }
         });
 
@@ -93,65 +64,13 @@ public class Login extends AppCompatActivity {
                 openRegistrazione();
             }
         });
-
-
     }
-
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
-        HomeIntent.putExtra("user", username);
-        HomeIntent.putExtra("pwd", password);
+        HomeIntent.putExtra("user", Lusername);
+        HomeIntent.putExtra("pwd", Lpassword);
         startActivity(HomeIntent);
-       // savePreferencesData();
     }
-
-
-
-
-
-
-
-
-    private void parseLoginData(String response){
-        try {
-            JSONObject jsonObject = new JSONObject(response);
-            if (jsonObject.getString("status").equals("true")) {
-
-                saveInfo(response);
-
-                Toast.makeText(Login.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-                openHome();
-                this.finish();
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    private void saveInfo(String response){
-
-        preferenceHelper.putIsLogin(true);
-        try {
-            JSONObject jsonObject = new JSONObject(response);
-            if (jsonObject.getString("status").equals("true")) {
-                JSONArray dataArray = jsonObject.getJSONArray("data");
-                for (int i = 0; i < dataArray.length(); i++) {
-
-                    JSONObject dataobj = dataArray.getJSONObject(i);
-                    preferenceHelper.putNome(dataobj.getString("nome"));
-                    preferenceHelper.putCognome(dataobj.getString("cognome"));
-                }
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
-
     public void openRegistrazione() {
         Intent intent = new Intent(this, Registrazione.class);
         startActivity(intent);
@@ -165,34 +84,39 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
-    public  void  savePreferencesData()  {
-
-        SharedPreferences prefs  =  getSharedPreferences(MY_PREFERENCES,  Context.MODE_PRIVATE);
-
-        SharedPreferences.Editor  editor  =  prefs.edit();
-
-        EditText outputUser  =  (EditText)  findViewById(R.id.username);
-        EditText outputPass  =  (EditText)  findViewById(R.id.password);
-        CharSequence  textUser  =  outputUser.getText();
-        CharSequence  textPass  =  outputPass.getText();
-        if  (textUser  !=  null && textPass != null)  {
-
-            editor.putString(TEXT_LOGIN_KEY,  textUser.toString());
-            editor.putString(TEXT_PASSWORD_KEY,  textPass.toString());
-            editor.commit();
-            //openHome();
+    public void loginMe() {
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<Utente> call = apiService.getUser(Lusername);
+        call.enqueue(new Callback<Utente>() {
+            @Override
+            public void onResponse(Call<Utente> call, Response<Utente> response) {
+                int statusCode = response.code();
+                u=response.body();
+                 usernameControl=u.getUsername();
+                 passwordControl=u.getPassword();
+                 Controllo();
+            }
+            @Override
+            public void onFailure(Call<Utente> call, Throwable t) {
+                Toast.makeText(Login.this, "Errore", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    public void Controllo(){
+        if(Lusername.equals(usernameControl) && Lpassword.equals(passwordControl)){
+            Toast.makeText(Login.this, "Benvenuto "+Lusername+"!", Toast.LENGTH_SHORT).show();
+            openHome();
         }
-        updatePreferencesData();
+        else{
+            Toast.makeText(Login.this, "Username o Password non validi!", Toast.LENGTH_SHORT).show();
+        }
     }
-    private  void  updatePreferencesData(){
-
-        SharedPreferences  prefs  =  getSharedPreferences(MY_PREFERENCES,  Context.MODE_PRIVATE);
-
-        username  =  prefs.getString(TEXT_LOGIN_KEY,  "");
-        password  =  prefs.getString(TEXT_PASSWORD_KEY,  "");
-
-      //  TextView outputView  =  (TextView)  findViewById(R.id.outputData);
-       // outputView.setText(textData);
-
-    }
+    public static final String BASE_URL = "http://10.0.2.2:8080/";
+    Gson gson = new GsonBuilder()
+            .setLenient()
+            .create();
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build();
 }
