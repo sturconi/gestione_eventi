@@ -44,6 +44,7 @@
       display: inline-block;
       font-size: 16px;
       
+      
   }
  .round {
     border-radius: 100px;
@@ -52,5 +53,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    
     
  }
