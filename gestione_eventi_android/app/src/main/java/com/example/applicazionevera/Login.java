@@ -32,13 +32,12 @@ public class Login extends AppCompatActivity {
     EditText userET = null;
     EditText passwordET = null;
 
-    String username =  null;
-    String password = null ;
     String Lusername = null;
     String Lpassword= null;
     Utente u= null;
     String usernameControl=null;
     String passwordControl=null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,10 +86,16 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(Call<Utente> call, Response<Utente> response) {
                 int statusCode = response.code();
-                u=response.body();
-                 usernameControl=u.getUsername();
-                 passwordControl=u.getPassword();
-                 Controllo();
+                if(statusCode==500){
+                    Toast.makeText(Login.this, "Utente inesistente!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    u=response.body();
+                    usernameControl=u.getUsername();
+                    passwordControl=u.getPassword();
+                    Controllo();
+                }
+
             }
             @Override
             public void onFailure(Call<Utente> call, Throwable t) {
@@ -99,6 +104,7 @@ public class Login extends AppCompatActivity {
         });
     }
     public void Controllo(){
+
         if(Lusername.equals(usernameControl) && Lpassword.equals(passwordControl)){
             Toast.makeText(Login.this, "Benvenuto "+Lusername+"!", Toast.LENGTH_SHORT).show();
             openHome();
