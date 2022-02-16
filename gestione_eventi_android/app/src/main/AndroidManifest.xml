@@ -42,7 +42,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Caricamento"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".Registrazione"
@@ -78,7 +78,7 @@
             android:name=".Calendario"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Caricamento"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
