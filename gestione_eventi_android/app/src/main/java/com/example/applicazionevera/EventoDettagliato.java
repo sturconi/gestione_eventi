@@ -64,7 +64,6 @@ public class EventoDettagliato extends AppCompatActivity {
             }
         });
 
-
         bottone=(Button)findViewById(R.id.addCalendario);
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,8 +72,6 @@ public class EventoDettagliato extends AppCompatActivity {
             }
 
         });
-
-
     }
 
     private void openSezioneComm() {

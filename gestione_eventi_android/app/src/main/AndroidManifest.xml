@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Applicazionevera">
 
         <activity
-            android:name=".CreaEvento"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".SezioneCommenti"
@@ -42,7 +42,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".CreaEvento"
             android:exported="false" />
         <activity
             android:name=".Registrazione"

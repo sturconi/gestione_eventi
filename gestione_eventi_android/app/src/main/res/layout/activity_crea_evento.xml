@@ -5,13 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".CreaEvento"
-
-
-    app:layout_editor_absoluteX="1dp"
-    app:layout_editor_absoluteY="1dp"
-    android:fillViewport="true"
     >
 
 
@@ -30,200 +25,109 @@
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+    <ListView
+        android:id="@+id/Listcategorie"
+        android:layout_width="210dp"
+        android:layout_height="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
 
+    <EditText
+        android:id="@+id/nomeEvento"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Nome Evento"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/indirizzo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Indirizzo"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.318" />
 
+    <Button
+        android:id="@+id/dataEvento"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:hint="Data Evento"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423" />
 
-        <ListView
-            android:id="@+id/Listcategorie"
-            android:layout_width="173dp"
-            android:layout_height="60dp"
+    <EditText
+        android:id="@+id/descrizioneEvento"
+        android:layout_width="wrap_content"
+        android:layout_height="148dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Descrizione Evento"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.741" />
 
+    <Button
+        android:id="@+id/buttonReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginEnd="145dp"
+        android:text="Crea evento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.876" />
 
-            android:layout_marginTop="196dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.735"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/timerPicker"
+        android:layout_width="210dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Orario evento"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
-        <TextView
-            android:id="@+id/categoriaTV"
-            android:layout_width="76dp"
-            android:layout_height="22dp"
-
-            android:layout_marginTop="216dp"
-            android:text="Categoria"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.149"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/nomeEventotv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="Nome Evento"
-            app:layout_constraintEnd_toEndOf="@+id/categoriaTV"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/categoriaTV"
-            app:layout_constraintTop_toBottomOf="@+id/categoriaTV" />
-
-        <TextView
-            android:id="@+id/descrizioneTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="112dp"
-            android:text="Descrizione"
-            app:layout_constraintEnd_toEndOf="@+id/nomeEventotv"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/nomeEventotv"
-            app:layout_constraintTop_toBottomOf="@+id/nomeEventotv" />
-
-        <EditText
-            android:id="@+id/nomeEventoET"
-            android:layout_width="170dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="68dp"
-            android:hint="Nome evento"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/Listcategorie"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/Listcategorie"
-            app:layout_constraintTop_toBottomOf="@+id/Listcategorie" />
-
-        <EditText
-            android:id="@+id/descrizioneET"
-            android:layout_width="204dp"
-            android:layout_height="124dp"
-            android:layout_marginTop="48dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="Inserisci descrizione"
-            android:inputType="textMultiLine"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/nomeEventoET"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/nomeEventoET"
-            app:layout_constraintTop_toBottomOf="@+id/nomeEventoET" />
-
-        <TextView
-            android:id="@+id/indirizzoTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="116dp"
-            android:text="Indirizzo"
-            app:layout_constraintEnd_toEndOf="@+id/descrizioneTV"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/descrizioneTV"
-            app:layout_constraintTop_toBottomOf="@+id/descrizioneTV" />
-
-        <EditText
-            android:id="@+id/indirizzoET"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginTop="52dp"
-            android:hint="Indirizzo"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/descrizioneET"
-            app:layout_constraintHorizontal_bias="0.523"
-            app:layout_constraintStart_toStartOf="@+id/descrizioneET"
-            app:layout_constraintTop_toBottomOf="@+id/descrizioneET" />
-
-        <TextView
-            android:id="@+id/dataTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
-            android:text="Data evento"
-            app:layout_constraintEnd_toEndOf="@+id/indirizzoTV"
-            app:layout_constraintHorizontal_bias="0.047"
-            app:layout_constraintStart_toStartOf="@+id/indirizzoTV"
-            app:layout_constraintTop_toBottomOf="@+id/indirizzoTV" />
-
-        <EditText
-            android:id="@+id/dataET"
-            android:layout_width="222dp"
-            android:layout_height="61dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:hint="Inserisci data evento"
-            android:inputType="date"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/indirizzoET"
-            app:layout_constraintHorizontal_bias="0.479"
-            app:layout_constraintStart_toStartOf="@+id/indirizzoET"
-            app:layout_constraintTop_toBottomOf="@+id/indirizzoET" />
-
-        <TextView
-            android:id="@+id/oraInizioTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="Ora inizio"
-            app:layout_constraintEnd_toEndOf="@+id/dataTV"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/dataTV"
-            app:layout_constraintTop_toBottomOf="@+id/dataTV" />
-
-        <EditText
-            android:id="@+id/oraInizioET"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:ems="10"
-            android:hint="Ora inizio"
-            android:inputType="time"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/dataET"
-            app:layout_constraintHorizontal_bias="0.445"
-            app:layout_constraintStart_toStartOf="@+id/dataET"
-            app:layout_constraintTop_toBottomOf="@+id/dataET" />
-
-        <TextView
-            android:id="@+id/oraFineTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:text="Ora fine"
-            app:layout_constraintEnd_toEndOf="@+id/oraInizioTV"
-            app:layout_constraintStart_toStartOf="@+id/oraInizioTV"
-            app:layout_constraintTop_toBottomOf="@+id/oraInizioTV" />
-
-        <EditText
-            android:id="@+id/oraFineET"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
-            android:ems="10"
-            android:hint="Ora fine"
-            android:inputType="time"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/oraInizioET"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/oraInizioET"
-            app:layout_constraintTop_toBottomOf="@+id/oraInizioET" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
