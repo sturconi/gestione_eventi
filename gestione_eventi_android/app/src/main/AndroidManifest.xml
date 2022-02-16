@@ -21,9 +21,11 @@
         >
         <activity
             android:name=".CreaEvento"
+            android:label="Crea Evento"
             android:exported="false" />
         <activity
             android:name=".SezioneCommenti"
+            android:label="Sezione Commenti"
             android:exported="false" />
         <activity
             android:name=".EventoDettagliato"
@@ -33,12 +35,14 @@
             android:exported="false" />
         <activity
             android:name=".Categorie"
+            android:label="Categorie"
             android:exported="false" />
         <activity
             android:name=".Settings"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".Login"
+            android:label="Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -48,30 +52,37 @@
             android:exported="false" />
         <activity
             android:name=".Registrazione"
+            android:label="Registrazione"
             android:exported="false" />
         <activity
             android:name=".Search"
             android:exported="false" />
         <activity
             android:name=".Privacy"
+            android:label="Privacy"
             android:exported="false" />
         <activity
             android:name=".Preferenze"
+            android:label="Preferenze"
             android:exported="false" />
         <activity
             android:name=".Notifiche"
             android:exported="false" />
         <activity
             android:name=".Assistenza"
+            android:label="Assistenza"
             android:exported="false" />
         <activity
             android:name=".Account"
+            android:label="Account"
             android:exported="false" />
         <activity
             android:name=".Cambiopassword"
+            android:label="Cambia password"
             android:exported="false" />
         <activity
             android:name=".Modificaimmagine"
+            android:label="Modifica immagine"
             android:exported="false" />
         <activity
             android:name=".Mappa"
@@ -80,7 +91,7 @@
             android:name=".Calendario"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
