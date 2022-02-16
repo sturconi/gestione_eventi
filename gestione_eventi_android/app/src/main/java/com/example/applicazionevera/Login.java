@@ -38,6 +38,10 @@ public class Login extends AppCompatActivity {
     String usernameControl=null;
     String passwordControl=null;
 
+    private  final  static  String  MY_PREFERENCES  =  "MyPref";
+    private  final  static  String  TEXT_LOGIN_KEY  =  "textLogin";
+    private  final  static  String  TEXT_PASSWORD_KEY  =  "textPassword";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,8 @@ public class Login extends AppCompatActivity {
         Button button;
         userET = findViewById(R.id.username);
         passwordET = findViewById(R.id.password);
+
+
         button =(Button) findViewById(R.id.buttonAccedi);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,10 +58,15 @@ public class Login extends AppCompatActivity {
                  Lusername = userET.getText().toString();
                  Lpassword = passwordET.getText().toString();
                  loginMe();
+                 savePreferencesData();
                  Account();
             }
         });
 
+        if(TEXT_PASSWORD_KEY !=null && TEXT_LOGIN_KEY!=null){
+            updatePreferencesData();
+            openHome();
+        }
         button =(Button) findViewById(R.id.buttonReg);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +87,7 @@ public class Login extends AppCompatActivity {
     }
     public void Account(){
         Intent AccountIntent = new Intent(this, Account.class);
-        AccountIntent.putExtra("utente", Lusername);
+        AccountIntent.putExtra("username", Lusername);
         AccountIntent.putExtra("password", Lpassword);
     }
     public void loginMe() {
@@ -121,4 +132,23 @@ public class Login extends AppCompatActivity {
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build();
+    public  void  savePreferencesData()  {
+        SharedPreferences prefs  =  getSharedPreferences(MY_PREFERENCES,  Context.MODE_PRIVATE);
+        SharedPreferences.Editor  editor  =  prefs.edit();
+        EditText outputUser  =  (EditText)  findViewById(R.id.username);
+        EditText outputPass  =  (EditText)  findViewById(R.id.password);
+        CharSequence  textUser  =  outputUser.getText();
+        CharSequence  textPass  =  outputPass.getText();
+        if  (textUser  !=  null && textPass != null)  {
+            editor.putString(TEXT_LOGIN_KEY,  textUser.toString());
+            editor.putString(TEXT_PASSWORD_KEY,  textPass.toString());
+            editor.commit();
+        }
+        updatePreferencesData();
+    }
+    private  void  updatePreferencesData(){
+        SharedPreferences  prefs  =  getSharedPreferences(MY_PREFERENCES,  Context.MODE_PRIVATE);
+        Lusername  =  prefs.getString(TEXT_LOGIN_KEY,  "");
+        Lpassword  =  prefs.getString(TEXT_PASSWORD_KEY,  "");
+    }
 }
