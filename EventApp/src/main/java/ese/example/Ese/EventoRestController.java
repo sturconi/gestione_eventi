@@ -1,4 +1,4 @@
-/*package ese.example.Ese;
+package ese.example.Ese;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,4 +73,3 @@ public class EventoRestController {
 	return e;
 	}
 }
-*/

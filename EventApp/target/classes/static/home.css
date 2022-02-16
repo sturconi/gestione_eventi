@@ -32,3 +32,25 @@
     background-color: goldenrod;
     color: black;
   }
+  .button {
+    background-color: goldenrod;
+    border: none;
+    color: white;
+    
+  }
+  .calendario {
+      border-radius: 100px;
+      padding: 30px;
+      display: inline-block;
+      font-size: 16px;
+      
+  }
+ .round {
+    border-radius: 100px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+ }

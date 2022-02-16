@@ -15,7 +15,10 @@ public class GloblalElite extends Application {
     private boolean switchButtonCul;
     private boolean switchButtonServ;
    private final static String salva = "textdata";
-    private final static String notifica="notifica";
+    private final static String notificaSport="notificaSport";
+    private final static String notificaCul="notificaCul";
+    private final static String notificaInt="notificaInt";
+    private final static String notificaServ="notificaServ";
     private final static String REGIURL =  "http://10.0.2.2:8080/";
 
     Retrofit retrofit = null;
@@ -29,10 +32,10 @@ public class GloblalElite extends Application {
     public void onCreate() {
 
         super.onCreate();
-        update(switchButtonSport);
-        update(switchButtonCul);
-        update(switchButtonInt);
-        update(switchButtonServ);
+        update(switchButtonSport, notificaSport);
+        update(switchButtonCul, notificaCul);
+        update(switchButtonInt, notificaInt);
+        update(switchButtonServ, notificaServ);
 
     }
     public boolean getSwitchButtonSport(){
@@ -45,7 +48,7 @@ public class GloblalElite extends Application {
         else{
             switchButtonSport=true;
         }
-        save(switchButtonSport);
+        save(switchButtonSport, notificaSport);
     }
     public boolean getSwitchButtonCul(){
         return switchButtonCul;
@@ -56,7 +59,7 @@ public class GloblalElite extends Application {
         } else {
             switchButtonCul = true;
         }
-        save(switchButtonCul);
+        save(switchButtonCul, notificaCul);
     }
         public boolean getSwitchButtonInt(){
             return switchButtonInt;
@@ -68,7 +71,7 @@ public class GloblalElite extends Application {
             else{
                 switchButtonInt=true;
             }
-            save(switchButtonInt);
+            save(switchButtonInt, notificaInt);
         }
         public boolean getSwitchButtonServ(){
             return switchButtonServ;
@@ -80,10 +83,10 @@ public class GloblalElite extends Application {
             else{
                 switchButtonServ=true;
             }
-            save(switchButtonServ);
+            save(switchButtonServ, notificaServ);
         }
 
-    public void save(Boolean switchButton) {
+    public void save(Boolean switchButton, String notifica) {
         SharedPreferences Switch = getSharedPreferences(notifica, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = Switch.edit();
 
@@ -91,10 +94,10 @@ public class GloblalElite extends Application {
         editor.putBoolean(salva, switchButton);
         editor.commit();
 
-        update(switchButton);
+        update(switchButton, notifica);
     }
 
-    private void update(Boolean switchButton){
+    private void update(Boolean switchButton, String notifica){
         SharedPreferences Switch = getSharedPreferences(notifica, Context.MODE_PRIVATE);
         switchButton= Switch.getBoolean(salva, false);
     }
