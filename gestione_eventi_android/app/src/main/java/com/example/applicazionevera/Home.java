@@ -45,7 +45,7 @@ public class Home extends AppCompatActivity {
 
 
 
-        /* CUSTOM LOGO PERSONALIZZATO
+
     androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
 
 
@@ -55,7 +55,7 @@ public class Home extends AppCompatActivity {
         actionBar.setCustomView(view);
 
 
-*/
+
 
         Button b;
 
