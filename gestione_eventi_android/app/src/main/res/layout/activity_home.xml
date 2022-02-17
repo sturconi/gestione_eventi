@@ -7,22 +7,52 @@
     tools:context=".Home">
 
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/homeTitle1"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/creaEvento"
+                    android:layout_width="170dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:text="CREA EVENTO"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_action_add"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.09"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/toCategorie"
+                    android:layout_width="170dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Categorie"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_action_categorie"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.924"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-    </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
@@ -36,49 +66,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation" />
 
-    <Button
-        android:id="@+id/toCategorie"
-        android:layout_width="198dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="236dp"
-        android:layout_marginEnd="137dp"
-        android:text="Categorie"
-        android:textStyle="bold"
-        app:icon="@drawable/ic_action_categorie"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/creaEvento"
-        android:layout_width="204dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="137dp"
-        android:text="CREA EVENTO"
-        android:textStyle="bold"
-        app:icon="@drawable/ic_action_add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toCategorie" />
 
 
-    <Button
-        android:id="@+id/toCalendario"
-        android:layout_width="199dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="140dp"
-        android:text="Aggiungi evento al calendario"
-        android:textStyle="bold"
-        app:icon="@drawable/ic_action_calendario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
 
 
 

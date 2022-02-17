@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Calendar;
+
 public class EventoDettagliato extends AppCompatActivity {
 
     @Override
@@ -64,14 +66,25 @@ public class EventoDettagliato extends AppCompatActivity {
             }
         });
 
-        bottone=(Button)findViewById(R.id.addCalendario);
+
+        bottone =(Button) findViewById(R.id.toCalendario);
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                openCalendario();
-            }
+            public void onClick(View v) {
 
+                Calendar cal = Calendar.getInstance();
+                Intent intent = new Intent(Intent.ACTION_EDIT);
+                intent.setType("vnd.android.cursor.item/event");
+                intent.putExtra("beginTime", cal.getTimeInMillis());
+                intent.putExtra("allDay", true);
+                intent.putExtra("rrule", "FREQ=YEARLY");
+                intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
+                intent.putExtra("title", "Sei stato eventato ;-)" );
+                startActivity(intent);
+
+            }
         });
+
     }
 
     private void openSezioneComm() {
