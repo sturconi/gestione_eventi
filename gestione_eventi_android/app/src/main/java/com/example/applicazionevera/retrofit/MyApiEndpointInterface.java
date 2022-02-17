@@ -1,8 +1,5 @@
 package com.example.applicazionevera.retrofit;
 
-import com.example.applicazionevera.Utente;
-import com.google.firebase.firestore.auth.User;
-
 import java.util.List;
 
 import retrofit2.Call;

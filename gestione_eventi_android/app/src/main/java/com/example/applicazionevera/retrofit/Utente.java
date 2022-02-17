@@ -1,4 +1,4 @@
-package com.example.applicazionevera;
+package com.example.applicazionevera.retrofit;
 
 import com.google.gson.annotations.SerializedName;
 
