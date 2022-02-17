@@ -15,7 +15,8 @@
         android:logo="@drawable/immagine"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Applicazionevera">
+        android:theme="@style/Theme.Applicazionevera"
+        android:name=".GloblalElite">
 
         <activity
             android:name=".Login"
