@@ -2,6 +2,9 @@ package com.example.applicazionevera;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +15,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+
+import com.example.applicazionevera.model_and_adapter.MyData;
+import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Home extends AppCompatActivity {
@@ -29,6 +36,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        setArrayInfo();
 
 
 
@@ -40,7 +48,6 @@ public class Home extends AppCompatActivity {
         LayoutInflater inflater= (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view= inflater.inflate(R.layout.custom_image, null);
         actionBar.setCustomView(view);
-
 
 
 
@@ -107,6 +114,25 @@ public class Home extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    private void setArrayInfo() {
+        MyData[] myListData = new MyData[]{
+                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
+                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
+                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
+                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
+                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
+                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
+                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
+
+        };
+        RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myListData);
+        recyclerViewOKL.setHasFixedSize(true);
+        recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Home.this));
+        recyclerViewOKL.setAdapter(adapter);
     }
 
     public void openCategorie() {
