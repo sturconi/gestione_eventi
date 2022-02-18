@@ -3,6 +3,7 @@ package com.example.applicazionevera;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -120,18 +121,22 @@ public class Home extends AppCompatActivity {
     private void setArrayInfo() {
         MyData[] myListData = new MyData[]{
                 new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
-                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
-                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
-                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
-                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
-                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
-                new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","Zona 4 gang","28 FEB 2002"),
+                new MyData(R.drawable.ic_baseline_music_note_24,"20","4.3","Concerto di Ariana Grande","Via delle esplosioni","14 NOV 2015"),
+                new MyData(R.drawable.ic_baseline_fastfood_24,"20","4.3","Gino il pasticciere","Piazzale Agricoltura","28 FEB 2002"),
+                new MyData(R.drawable.ic_baseline_sports_basketball_24,"20","4.3","NBA All Star Game","Green street","28 FEB 2002"),
+                new MyData(R.drawable.ic_baseline_museum_24,"20","4.3","Museo dei paguri","Via kekkobomba","28 FEB 2002"),
+
 
         };
         RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(Home.this);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(myListData);
         recyclerViewOKL.setHasFixedSize(true);
         recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Home.this));
+        recyclerViewOKL.setNestedScrollingEnabled(false);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewOKL.getContext(), layoutManager.getOrientation());
+        recyclerViewOKL.addItemDecoration(dividerItemDecoration);
         recyclerViewOKL.setAdapter(adapter);
     }
 
