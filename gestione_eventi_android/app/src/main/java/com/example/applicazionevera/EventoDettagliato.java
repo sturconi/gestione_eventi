@@ -21,7 +21,6 @@ public class EventoDettagliato extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evento_dettagliato);
 
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -48,7 +47,7 @@ public class EventoDettagliato extends AppCompatActivity {
             }
         });
         Button bottone;
-        ImageButton button;
+        Button but;
 
         bottone = (Button) findViewById(R.id.sezioneCommenti);
         bottone.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +57,8 @@ public class EventoDettagliato extends AppCompatActivity {
             }
         });
 
-        bottone = (Button) findViewById(R.id.goMap);
-        bottone.setOnClickListener(new View.OnClickListener() {
+        but = (Button) findViewById(R.id.goMap);
+        but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openMappa();

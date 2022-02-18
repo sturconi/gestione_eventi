@@ -3,12 +3,19 @@
     package="com.example.applicazionevera">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="info.android.googlemapsv2.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyC7ZQEj8KF3D4izXIT7DqxviVBtObVGTsg" />
 
     <application
-        android:usesCleartextTraffic="true"
+        android:name=".GloblalElite"
         android:allowBackup="true"
         android:icon="@drawable/immagine"
         android:label="EventApp"
@@ -16,32 +23,47 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Applicazionevera"
-        android:name=".GloblalElite">
+        android:usesCleartextTraffic="true">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY" />
 
         <activity
             android:name=".Login"
-            android:label="LOGIN"
-            android:exported="false" />
+            android:exported="false"
+            android:label="LOGIN" />
         <activity
             android:name=".SezioneCommenti"
-            android:label="COMMENTI"
-            android:exported="false" />
+            android:exported="false"
+            android:label="COMMENTI" />
         <activity
             android:name=".EventoDettagliato"
-            android:label="COMMENTI"
-            android:exported="false" />
+            android:exported="false"
+            android:label="EVENTO DETTAGLIATO" />
         <activity
             android:name=".Evento"
-            android:label="EVENTI"
-            android:exported="false" />
+            android:exported="false"
+            android:label="EVENTI" />
         <activity
             android:name=".Categorie"
-            android:label="CATEGORIE"
-            android:exported="false" />
+            android:exported="false"
+            android:label="CATEGORIE" />
         <activity
             android:name=".Settings"
-            android:label="SETTINGS"
-            android:exported="false" />
+            android:exported="false"
+            android:label="SETTINGS" />
         <activity
             android:name=".Home"
             android:exported="false" />
@@ -50,47 +72,47 @@
             android:exported="false" />
         <activity
             android:name=".CreaEvento"
-            android:label="CREA EVENTO"
-            android:exported="false" />
+            android:exported="false"
+            android:label="CREA EVENTO" />
         <activity
             android:name=".Registrazione"
-            android:label="REGISTRAZIONE"
-            android:exported="false" />
+            android:exported="false"
+            android:label="REGISTRAZIONE" />
         <activity
             android:name=".Search"
             android:exported="false" />
         <activity
             android:name=".Privacy"
-            android:label="PRIVACY"
-            android:exported="false" />
+            android:exported="false"
+            android:label="PRIVACY" />
         <activity
             android:name=".Preferenze"
-            android:label="PREFERENZE"
-            android:exported="false" />
+            android:exported="false"
+            android:label="PREFERENZE" />
         <activity
             android:name=".Notifiche"
-            android:label="NOTIFICHE"
-            android:exported="false" />
+            android:exported="false"
+            android:label="NOTIFICHE" />
         <activity
             android:name=".Assistenza"
-            android:label="ASSISTENZA"
-            android:exported="false" />
+            android:exported="false"
+            android:label="ASSISTENZA" />
         <activity
             android:name=".Account"
-            android:label="ACCOUNT"
-            android:exported="false" />
+            android:exported="false"
+            android:label="ACCOUNT" />
         <activity
             android:name=".Cambiopassword"
-            android:label="CAMBIOPASSWORD"
-            android:exported="false" />
+            android:exported="false"
+            android:label="CAMBIOPASSWORD" />
         <activity
             android:name=".Modificaimmagine"
-            android:label="MODIFICAIMMAGINE"
-            android:exported="false" />
+            android:exported="false"
+            android:label="MODIFICAIMMAGINE" />
         <activity
             android:name=".Mappa"
-            android:label="MAPPA"
-            android:exported="false" />
+            android:exported="false"
+            android:label="MAPPA" />
         <activity
             android:name=".Calendario"
             android:exported="false" />
