@@ -18,136 +18,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/immagine" />
 
-    <TextView
-        android:id="@+id/primaNotifica"
-        android:layout_width="238dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="96dp"
-        android:hint="Notifica"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/secondaNotifica"
-        android:layout_width="238dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="172dp"
-        android:hint="Notifica"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/terzaNotifica"
-        android:layout_width="238dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="248dp"
-        android:hint="Notifica"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/quartaNotifica"
-        android:layout_width="238dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="328dp"
-        android:hint="Notifica"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/quintaNotifica"
-        android:layout_width="238dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="408dp"
-        android:hint="Notifica"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/sestaNotifica"
-        android:layout_width="238dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="488dp"
-        android:hint="Notifica"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/primaFotoProfilo"
-        android:layout_width="51dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/secondaFotoProfilo"
-        android:layout_width="51dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/primaFotoProfilo"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/terzaFotoProfilo"
-        android:layout_width="51dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondaFotoProfilo"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/quartaFotoProfilo"
-        android:layout_width="51dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/terzaFotoProfilo"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/quintaFotoProfilo"
-        android:layout_width="51dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quartaFotoProfilo"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/sestaFotoProfilo"
-        android:layout_width="51dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quintaFotoProfilo"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nrc"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="-350dp"/>
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EventappLogo" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"

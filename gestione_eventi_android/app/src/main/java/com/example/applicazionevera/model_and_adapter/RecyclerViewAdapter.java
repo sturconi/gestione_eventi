@@ -48,6 +48,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter < RecyclerViewAdap
     public int getItemCount() {
         return mydata.size();
     }
+
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView postimage;
         TextView  commento, vmedia, titolo, luogo, data;
