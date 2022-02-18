@@ -24,7 +24,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEventListener {
 
     String username = null;
     String password = null;
@@ -133,7 +133,7 @@ public class Home extends AppCompatActivity {
     private void setData() {
         RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
         LinearLayoutManager layoutManager = new LinearLayoutManager(Home.this);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myData);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myData, this::onEventClick);
         recyclerViewOKL.setHasFixedSize(true);
         recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Home.this));
         recyclerViewOKL.setNestedScrollingEnabled(false);
@@ -171,5 +171,15 @@ public class Home extends AppCompatActivity {
     public void openCreaevento() {
         Intent intent = new Intent(this, CreaEvento.class);
         startActivity(intent);
+    }
+    public void openEventoDettagliato() {
+        Intent intent = new Intent(this, EventoDettagliato.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onEventClick(int position) {
+        openEventoDettagliato();
+
     }
 }
