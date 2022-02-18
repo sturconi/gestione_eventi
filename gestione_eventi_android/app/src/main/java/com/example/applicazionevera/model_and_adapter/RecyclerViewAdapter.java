@@ -11,12 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.applicazionevera.R;
 
+import java.util.ArrayList;
+
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter < RecyclerViewAdapter.ViewHolder > {
-    private MyData[] mydata;
-    // RecyclerView recyclerView;
-    public RecyclerViewAdapter(MyData[] mydata) {
-        this.mydata = mydata;
+    private ArrayList<MyData> mydata;
+
+
+    public RecyclerViewAdapter(ArrayList<MyData> array) {
+        this.mydata = array;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -27,19 +30,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter < RecyclerViewAdap
     }
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final MyData MyData = mydata[position];
+
+        MyData evento = mydata.get(position);
 
 
-        holder.postimage.setImageResource(mydata[position].getPostImage());
-        holder.commento.setText(mydata[position].getCommento());
-        holder.vmedia.setText(mydata[position].getVmedia());
-        holder.titolo.setText(mydata[position].getTitolo());
-        holder.luogo.setText(mydata[position].getLuogo());
-        holder.data.setText(mydata[position].getData());
+        holder.postimage.setImageResource(evento.getPostImage());
+        holder.commento.setText(evento.getCommento());
+        holder.vmedia.setText(evento.getVmedia());
+        holder.titolo.setText(evento.getTitolo());
+        holder.luogo.setText(evento.getLuogo());
+        holder.data.setText(evento.getData());
     }
     @Override
     public int getItemCount() {
-        return mydata.length;
+        return mydata.size();
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView postimage;
