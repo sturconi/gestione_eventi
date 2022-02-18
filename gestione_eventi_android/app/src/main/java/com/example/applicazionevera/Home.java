@@ -172,14 +172,14 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         Intent intent = new Intent(this, CreaEvento.class);
         startActivity(intent);
     }
-    public void openEventoDettagliato() {
-        Intent intent = new Intent(this, EventoDettagliato.class);
+    public void openMappa() {
+        Intent intent = new Intent(this, Mappa.class);
         startActivity(intent);
     }
 
     @Override
     public void onEventClick(int position) {
-        openEventoDettagliato();
+        openMappa();
 
     }
 }

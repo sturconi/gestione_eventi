@@ -109,14 +109,14 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
-    public void openEventoDettagliato() {
-        Intent intent = new Intent(this, EventoDettagliato.class);
+    public void openMappa() {
+        Intent intent = new Intent(this, Mappa.class);
         startActivity(intent);
     }
 
 
     @Override
     public void onEventClick(int position) {
-        openEventoDettagliato();
+        openMappa();
     }
 }
