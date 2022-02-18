@@ -3,6 +3,9 @@ package com.example.applicazionevera;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +14,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.applicazionevera.model_and_adapter.EvCatAdapter;
+import com.example.applicazionevera.model_and_adapter.EvCatData;
+import com.example.applicazionevera.model_and_adapter.MyData;
+import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Evento extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventListener {
+
+    private ArrayList<EvCatData> evcatData;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evento);
+
+        setArrayInfo();
+        setData();
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -46,42 +60,36 @@ public class Evento extends AppCompatActivity {
                 return false;
             }
         });
-        Button bottone;
-        ImageButton button;
 
 
-        bottone=(Button)findViewById(R.id.button24);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEventoDettagliato();
-            }
+    }
 
-        });
-        bottone=(Button)findViewById(R.id.button27);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEventoDettagliato();
-            }
+    private void setArrayInfo() {
+        evcatData = new ArrayList<>();
+        evcatData.add(new EvCatData(R.drawable.duomo,"Calcetto pazzo sgravato","Via Fiorella Mannoia","28 FEB 2002"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_music_note_24, "Concerto di Antonio Lezzi","Via delle esplosioni","14 NOV 2015"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+      }
 
-        });
-        bottone=(Button)findViewById(R.id.button26);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEventoDettagliato();
-            }
 
-        });
-        bottone=(Button)findViewById(R.id.button25);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEventoDettagliato();
-            }
+    private void setData() {
+        RecyclerView recyclerViewO = (RecyclerView) findViewById(R.id.Evrc);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(Evento.this);
+        EvCatAdapter adapter = new EvCatAdapter(evcatData, this::onEventClick);
+        recyclerViewO.setHasFixedSize(true);
+        recyclerViewO.setLayoutManager(new LinearLayoutManager(Evento.this));
+        recyclerViewO.setNestedScrollingEnabled(false);
 
-        });
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewO.getContext(), layoutManager.getOrientation());
+        recyclerViewO.addItemDecoration(dividerItemDecoration);
+        recyclerViewO.setAdapter(adapter);
     }
 
     public void openHome() {
@@ -104,5 +112,11 @@ public class Evento extends AppCompatActivity {
     public void openEventoDettagliato() {
         Intent intent = new Intent(this, EventoDettagliato.class);
         startActivity(intent);
+    }
+
+
+    @Override
+    public void onEventClick(int position) {
+        openEventoDettagliato();
     }
 }

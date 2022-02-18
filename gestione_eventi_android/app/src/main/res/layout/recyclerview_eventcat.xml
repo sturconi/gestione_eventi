@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/immagineEvCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="31dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/duomo" />
+
+    <TextView
+        android:id="@+id/titoloEv"
+        android:layout_width="241dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="44dp"
+        android:gravity="center"
+        android:text="TITOLO"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/immagineEvCat"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/indirizzoEv"
+        android:layout_width="164dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:text="INDIRIZZO"
+        app:layout_constraintStart_toEndOf="@+id/immagineEvCat"
+        app:layout_constraintTop_toBottomOf="@+id/titoloEv" />
+
+    <TextView
+        android:id="@+id/dataEv"
+        android:layout_width="77dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:text="25 FEB 2022"
+        android:textColor="@color/teal_200"
+        app:layout_constraintStart_toEndOf="@+id/indirizzoEv"
+        app:layout_constraintTop_toBottomOf="@+id/titoloEv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

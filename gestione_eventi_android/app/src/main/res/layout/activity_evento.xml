@@ -16,116 +16,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/immagine" />
 
-
-    <Button
-        android:id="@+id/button24"
-        android:layout_width="175dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="105dp"
-        android:layout_marginEnd="80dp"
-        android:text="Nome evento + luogo"
-        app:layout_constraintBottom_toTopOf="@+id/button27"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button25"
-        android:layout_width="175dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="80dp"
-        android:text="Nome evento + luogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button26" />
-
-    <Button
-        android:id="@+id/button26"
-        android:layout_width="175dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="80dp"
-        android:text="Nome evento + luogo"
-        app:layout_constraintBottom_toTopOf="@+id/button25"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button27" />
-
-    <Button
-        android:id="@+id/button27"
-        android:layout_width="175dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="80dp"
-        android:text="Nome evento + luogo"
-        app:layout_constraintBottom_toTopOf="@+id/button26"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button24" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="115dp"
-        app:layout_constraintEnd_toStartOf="@+id/button24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/button24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/button24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="137dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button24"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.049"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Evrc"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EventappLogo" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:textSize="30sp"
-            android:id="@+id/eventoTitle1"
-            android:textAlignment="center"/>
 
-    </RelativeLayout>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
