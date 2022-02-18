@@ -49,10 +49,6 @@
             android:exported="false"
             android:label="COMMENTI" />
         <activity
-            android:name=".EventoDettagliato"
-            android:exported="false"
-            android:label="EVENTO DETTAGLIATO" />
-        <activity
             android:name=".Evento"
             android:exported="false"
             android:label="EVENTI" />
@@ -110,7 +106,7 @@
             android:exported="false"
             android:label="MODIFICAIMMAGINE" />
         <activity
-            android:name=".Mappa"
+            android:name=".EventoDettagliato"
             android:exported="false"
             android:label="MAPPA" />
         <activity

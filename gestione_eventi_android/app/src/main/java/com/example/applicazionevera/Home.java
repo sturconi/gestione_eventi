@@ -2,7 +2,6 @@ package com.example.applicazionevera;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,7 +21,6 @@ import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEventListener {
 
@@ -172,14 +170,14 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         Intent intent = new Intent(this, CreaEvento.class);
         startActivity(intent);
     }
-    public void openMappa() {
-        Intent intent = new Intent(this, Mappa.class);
+    public void openEventoDettagliato() {
+        Intent intent = new Intent(this, EventoDettagliato.class);
         startActivity(intent);
     }
 
     @Override
     public void onEventClick(int position) {
-        openMappa();
+        openEventoDettagliato();
 
     }
 }

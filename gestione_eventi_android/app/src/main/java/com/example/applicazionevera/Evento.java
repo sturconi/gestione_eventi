@@ -10,14 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.example.applicazionevera.model_and_adapter.EvCatAdapter;
 import com.example.applicazionevera.model_and_adapter.EvCatData;
-import com.example.applicazionevera.model_and_adapter.MyData;
-import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -109,14 +104,14 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
-    public void openMappa() {
-        Intent intent = new Intent(this, Mappa.class);
+    public void openEventoDettagliato() {
+        Intent intent = new Intent(this, EventoDettagliato.class);
         startActivity(intent);
     }
 
 
     @Override
     public void onEventClick(int position) {
-        openMappa();
+        openEventoDettagliato();
     }
 }
