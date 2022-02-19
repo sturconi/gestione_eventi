@@ -1,6 +1,8 @@
 package com.example.applicazionevera.model_and_adapter;
 
-public class EvCatData {
+import java.io.Serializable;
+
+public class EvCatData implements Serializable {
 
     int Image;
     String titolo, indirizzo, data;

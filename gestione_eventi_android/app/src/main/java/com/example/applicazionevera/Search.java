@@ -8,6 +8,7 @@ import androidx.core.view.MenuItemCompat;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,12 +29,14 @@ import android.widget.TextView;
 import com.example.applicazionevera.model_and_adapter.EvCatData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class Search extends AppCompatActivity {
 
-    private ArrayList<EvCatData> evcatData;
+    private List<EvCatData> evcatData;
     GridView gridView;
     CustomAdapter customAdapter;
 
@@ -124,11 +127,11 @@ public class Search extends AppCompatActivity {
     }
 
     public class CustomAdapter extends BaseAdapter implements Filterable {
-    private ArrayList<EvCatData> evcatData;
-    private ArrayList<EvCatData> evcatDatafiltered;
+    private List<EvCatData> evcatData;
+    private List<EvCatData> evcatDatafiltered;
     private Context context;
 
-        public CustomAdapter(ArrayList<EvCatData> evcatData,  Context context) {
+        public CustomAdapter(List<EvCatData> evcatData,  Context context) {
             this.evcatData = evcatData;
             this.evcatDatafiltered = evcatData;
             this.context = context;
@@ -175,6 +178,14 @@ public class Search extends AppCompatActivity {
         tvtitolo.setText(titolo);
         tvdata.setText(data);
 
+
+        view1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Search.this, EventoDettagliato.class));
+            }
+        });
+
         return view1;
     }
 
@@ -211,7 +222,7 @@ public class Search extends AppCompatActivity {
                 @Override
                 protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
 
-                    evcatData = (ArrayList<EvCatData>) filterResults.values;
+                    evcatData = (List<EvCatData>) filterResults.values;
                     notifyDataSetChanged();
 
 
@@ -239,6 +250,9 @@ public class Search extends AppCompatActivity {
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
+
+
+
 
 
 }
