@@ -4,32 +4,45 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.example.applicazionevera.model_and_adapter.EvCatData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
 public class Search extends AppCompatActivity {
 
-    ListView listView;
-    ArrayList<String> list;
-    ArrayAdapter<String > adapter;
+    private ArrayList<EvCatData> evcatData;
+    GridView gridView;
+    CustomAdapter customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+    setArrayInfo();
+        gridView = findViewById(R.id.gridView);
+        customAdapter = new CustomAdapter(evcatData, this);
+        gridView.setAdapter(customAdapter);
+
 
 
 
@@ -63,52 +76,72 @@ public class Search extends AppCompatActivity {
         });
 
 
-        listView = (ListView) findViewById(R.id.listView);
+    }
 
-        list = new ArrayList<>();
-        list.add("Apple");
-        list.add("Banana");
-        list.add("Pineapple");
-        list.add("Orange");
-        list.add("Lychee");
-        list.add("Gavava");
-        list.add("Peech");
-        list.add("Melon");
-        list.add("Watermelon");
-        list.add("Papaya");
+    private void setArrayInfo() {
+        evcatData = new ArrayList<>();
+        evcatData.add(new EvCatData(R.drawable.duomo,"Calcetto pazzo sgravato","Via Fiorella Mannoia","28 FEB 2002"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_music_note_24, "Concerto di Antonio Lezzi","Via delle esplosioni","14 NOV 2015"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
+    }
+public class CustomAdapter extends BaseAdapter{
+    private ArrayList<EvCatData> evcatData;
+    private Context context;
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list);
-        listView.setAdapter(adapter);
+    public CustomAdapter(ArrayList<EvCatData> evcatData, Context context) {
+        this.evcatData = evcatData;
+        this.context = context;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.searchview, menu);
-        MenuItem searchViewItem = menu.findItem(R.id.app_bar_search);
-        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                searchView.clearFocus();
-             /*   if(list.contains(query)){
-                    adapter.getFilter().filter(query);
-                }else{
-                    Toast.makeText(MainActivity.this, "No Match found",Toast.LENGTH_LONG).show();
-                }*/
-                return false;
-
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
-                return false;
-            }
-        });
-        return super.onCreateOptionsMenu(menu);
+    public int getCount() {
+        return evcatData.size();
     }
 
+    @Override
+    public Object getItem(int i) {
+        return evcatData.get(i);
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        View view1 = view;
+        EvCatData evCatData = evcatData.get(i);
+
+        if(view1==null){
+            view1 = LayoutInflater.from(context).inflate(R.layout.row_items, viewGroup, false);
+        }
+
+        ImageView tvImage = view1.findViewById(R.id.immagineEvCat);
+        TextView tvindirizzo = view1.findViewById(R.id.indirizzoEv);
+        TextView tvtitolo = view1.findViewById(R.id.titoloEv);
+        TextView tvdata = view1.findViewById(R.id.dataEv);
+
+        String indirizzo = evCatData.getIndirizzo();
+        String titolo = evCatData.getTitolo();
+        String data = evCatData.getData();
+        int image= evCatData.getImage();
+
+        tvImage.setImageResource(image);
+        tvindirizzo.setText(indirizzo);
+        tvtitolo.setText(titolo);
+        tvdata.setText(data);
+
+        return view1;
+    }
+}
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
