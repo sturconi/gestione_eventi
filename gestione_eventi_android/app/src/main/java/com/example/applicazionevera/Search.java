@@ -1,6 +1,7 @@
 package com.example.applicazionevera;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 
@@ -15,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,6 +29,7 @@ import com.example.applicazionevera.model_and_adapter.EvCatData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Search extends AppCompatActivity {
 
@@ -91,14 +95,46 @@ public class Search extends AppCompatActivity {
         evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
         evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
     }
-public class CustomAdapter extends BaseAdapter{
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.searchview, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.searchview);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                customAdapter.getFilter().filter(s);
+                return true;
+            }
+        });
+
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public class CustomAdapter extends BaseAdapter implements Filterable {
     private ArrayList<EvCatData> evcatData;
+    private ArrayList<EvCatData> evcatDatafiltered;
     private Context context;
 
-    public CustomAdapter(ArrayList<EvCatData> evcatData, Context context) {
-        this.evcatData = evcatData;
-        this.context = context;
-    }
+        public CustomAdapter(ArrayList<EvCatData> evcatData,  Context context) {
+            this.evcatData = evcatData;
+            this.evcatDatafiltered = evcatData;
+            this.context = context;
+        }
+
+
 
     @Override
     public int getCount() {
@@ -141,7 +177,50 @@ public class CustomAdapter extends BaseAdapter{
 
         return view1;
     }
-}
+
+        @Override
+        public Filter getFilter() {
+            Filter filter = new Filter() {
+                @Override
+                protected FilterResults performFiltering(CharSequence charSequence) {
+                    FilterResults filterResults = new FilterResults();
+
+                    if(charSequence == null || charSequence.length()==0){
+
+                        filterResults.count= evcatDatafiltered.size();
+                        filterResults.values = evcatDatafiltered;
+
+                    }else{
+                        String searchChr = charSequence.toString().toLowerCase();
+                        ArrayList<EvCatData> searchresult = new ArrayList<>();
+
+                        for(EvCatData evCatData:evcatDatafiltered){
+                            if(evCatData.getData().toLowerCase().contains(searchChr)|| evCatData.getIndirizzo().toLowerCase().contains(searchChr) ||  evCatData.getTitolo().toLowerCase().contains(searchChr)){
+                                searchresult.add(evCatData);
+                            }
+                        }
+
+                        filterResults.count = searchresult.size();
+                        filterResults.values = searchresult;
+                    }
+
+
+                    return filterResults;
+                }
+
+                @Override
+                protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+
+                    evcatData = (ArrayList<EvCatData>) filterResults.values;
+                    notifyDataSetChanged();
+
+
+                }
+            };
+
+            return filter;
+        }
+    }
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
@@ -162,34 +241,4 @@ public class CustomAdapter extends BaseAdapter{
     }
 
 
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 }
