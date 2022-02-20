@@ -101,7 +101,7 @@ public class GloblalElite extends Application {
 
     private void update(Boolean switchButton, String notifica){
         SharedPreferences Switch = getSharedPreferences(notifica, Context.MODE_PRIVATE);
-        switchButton= Switch.getBoolean(salva, false);
+        switchButton= Switch.getBoolean(salva, true);
     }
 
     @POST("/utenti")
