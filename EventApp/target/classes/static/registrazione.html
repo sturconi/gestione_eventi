@@ -1,50 +1,57 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="registrazione.css">
     <script src="registrazione.js" type="text/javascript">
-        <link rel="stylesheet" href="registrazione.css">
+
 </script>
 </head>
 <body>
     <div id="container"> 
         <div id="main">
-        <h2 id="descr" > Registrazione</h2>
+        
+                    <div class="topnav">
+                        <h2 style="color: white;">EventApp</h2>
+                      </div>
+                      <br> <br>
+
+        <h2 id="descr" style="text-align: center;" > Registrazione</h2> 
         <form id="formRegister" onsubmit="return doSubmit()" class="Romagnoni">
             <input id="id" type="text" name="id" readonly hidden>
             <label> Username</label>
-            <br>
+            <br> <br>
             <input id="username" type="text" name="username" required autofocus>
-            <br>
+            <br> <br>
             <label> Nome</label>
-            <br>
+            <br> <br>
             <input id="nome" type="text" name="nome" required autofocus>
-            <br>
+            <br> <br>
             <label> Cognome</label>
-            <br>
+            <br> <br>
             <input id="cognome" type="text" name="cognome" required autofocus>
-            <br>
+            <br> <br>
             <label> Password</label>
-            <br>
+            <br> <br>
             <input id="password" type="password" name="password" required autofocus>
-            <br>
+            <br> <br>
             <label> Conferma Password</label>
-            <br>
+            <br> <br>
             <input id="passwordConf" type="password" name="passwordConf" required autofocus>
-            <br>
+            <br> <br>
             <label> Email</label>
-            <br>
+            <br> <br> 
             <input id="email" type="email" name="email" required autofocus>
-            <br>
+            <br> <br>
             <label> Data di nascita</label>
-            <br>
+            <br> <br>
             <input id="data" type="date" name="data" required autofocus>
             
-            <br>
-            <input type="submit">
-            <input type="reset">
+            <br> <br>
+            <input type="submit" class="button"> 
+            <input type="reset" class="button">
         </form>
         </div>
-        <div id="footer">
+        <div id="footer" style="text-align: center;"> <br> <br> <br>
          Copyright &copy;ScarpaBianca 2022
         </div>
     </div>
