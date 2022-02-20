@@ -61,7 +61,8 @@ public class Account extends AppCompatActivity {
         pass=findViewById(R.id.passTextView);
         img=findViewById(R.id.imgView);
 
-
+        user.setText(getIntent().getStringExtra("username"));
+        pass.setText(getIntent().getStringExtra("password"));
         Button bottone;
 
         bottone  = (Button) findViewById(R.id.CambioPass);
@@ -83,11 +84,15 @@ public class Account extends AppCompatActivity {
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 SharedPreferences prefs = getSharedPreferences("MY_PREFERENCES", Context.MODE_PRIVATE);
                 SharedPreferences.Editor  editor  =  prefs.edit();
-                editor.clear();
+                String us= "";
+                String pas= "";
+                String usern= prefs.getString(us,  "");
+                String passw= prefs.getString(pas,  "");
                 editor.commit();
-                openRegistrazione();
+                openLogin();
             }
         });
 
