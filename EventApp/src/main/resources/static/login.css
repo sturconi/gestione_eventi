@@ -34,12 +34,18 @@
   }
   .button {
     background-color: goldenrod;
-    border: none;
-    color: white;
+    border-radius: 100px;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
     
   }
   .Romagnoni {
-      text-align: center;
-
+      border: 5px solid gray;
+      width: 320px;
+      padding: 10px;
+      margin: auto;      
   }
   
