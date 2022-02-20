@@ -18,6 +18,7 @@ public class Categorie extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorie);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -50,37 +51,13 @@ public class Categorie extends AppCompatActivity {
         ImageButton button;
 
         bottone=(Button)findViewById(R.id.toSport);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEvento();
-            }
-
-        });
+        bottone.setOnClickListener(view -> openEvento());
         bottone=(Button)findViewById(R.id.Cultura);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEvento();
-            }
-
-        });
+        bottone.setOnClickListener(view -> openEvento());
         bottone=(Button)findViewById(R.id.Servizi);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEvento();
-            }
-
-        });
+        bottone.setOnClickListener(view -> openEvento());
         bottone=(Button)findViewById(R.id.Intrattenimento);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEvento();
-            }
-
-        });
+        bottone.setOnClickListener(view -> openEvento());
 
     }
 

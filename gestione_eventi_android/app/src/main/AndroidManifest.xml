@@ -47,6 +47,7 @@
         <activity
             android:name=".SezioneCommenti"
             android:exported="false"
+            android:parentActivityName=".EventoDettagliato"
             android:label="COMMENTI" />
         <activity
             android:name=".Evento"
@@ -54,6 +55,7 @@
             android:label="EVENTI" />
         <activity
             android:name=".Categorie"
+            android:parentActivityName=".Home"
             android:exported="false"
             android:label="CATEGORIE" />
         <activity
@@ -69,6 +71,7 @@
         <activity
             android:name=".CreaEvento"
             android:exported="false"
+            android:parentActivityName=".Home"
             android:label="CREA EVENTO" />
         <activity
             android:name=".Registrazione"
@@ -79,11 +82,13 @@
             android:exported="false" />
         <activity
             android:name=".Privacy"
+            android:parentActivityName=".Settings"
             android:exported="false"
             android:label="PRIVACY" />
         <activity
             android:name=".Preferenze"
             android:exported="false"
+            android:parentActivityName=".Settings"
             android:label="PREFERENZE" />
         <activity
             android:name=".Notifiche"
@@ -92,23 +97,26 @@
         <activity
             android:name=".Assistenza"
             android:exported="false"
+            android:parentActivityName=".Settings"
             android:label="ASSISTENZA" />
         <activity
             android:name=".Account"
+            android:parentActivityName=".Settings"
             android:exported="false"
             android:label="ACCOUNT" />
         <activity
             android:name=".Cambiopassword"
+            android:parentActivityName=".Account"
             android:exported="false"
             android:label="CAMBIOPASSWORD" />
         <activity
             android:name=".Modificaimmagine"
+            android:parentActivityName=".Account"
             android:exported="false"
             android:label="MODIFICAIMMAGINE" />
         <activity
             android:name=".EventoDettagliato"
-            android:exported="false"
-            android:label="MAPPA" />
+            android:exported="false" />
         <activity
             android:name=".Calendario"
             android:exported="false" />
