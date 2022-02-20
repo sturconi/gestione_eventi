@@ -62,44 +62,19 @@ public class Settings<button> extends AppCompatActivity {
 
         Button button;
         button = (Button) findViewById(R.id.Preferenze);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPreferenza();
-            }
-        });
+        button.setOnClickListener(v -> openPreferenza());
 
         button = (Button) findViewById(R.id.Notifiche);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNotifiche();
-            }
-        });
+        button.setOnClickListener(v -> openNotifiche());
 
         button = (Button) findViewById(R.id.Account);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAccount();
-            }
-        });
+        button.setOnClickListener(v -> openAccount());
 
         button = (Button) findViewById(R.id.Assistenza);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAssistenza();
-            }
-        });
+        button.setOnClickListener(v -> openAssistenza());
 
         button = (Button) findViewById(R.id.Privacy);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPrivacy();
-            }
-        });
+        button.setOnClickListener(v -> openPrivacy());
 
 
 

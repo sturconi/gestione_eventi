@@ -29,6 +29,7 @@ public class Preferenze extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferenze);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SharedPreferences prefs;
         
         boolean value = false;
