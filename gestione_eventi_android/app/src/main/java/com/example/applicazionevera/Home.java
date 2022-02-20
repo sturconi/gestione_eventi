@@ -99,21 +99,11 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         ImageButton button;
         Button bottone;
         bottone =(Button) findViewById(R.id.toCategorie);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCategorie();
-            }
-        });
+        bottone.setOnClickListener(v -> openCategorie());
 
 
         bottone =(Button) findViewById(R.id.creaEvento);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCreaevento();
-            }
-        });
+        bottone.setOnClickListener(v -> openCreaevento());
 
     }
 

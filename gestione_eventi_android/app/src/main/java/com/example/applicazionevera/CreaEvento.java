@@ -37,6 +37,7 @@ public class CreaEvento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crea_evento);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initDatePicker();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
