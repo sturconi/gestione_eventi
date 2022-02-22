@@ -28,6 +28,7 @@ import android.widget.TextView;
 
 import com.example.applicazionevera.model_and_adapter.EvCatData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -40,15 +41,37 @@ public class Search extends AppCompatActivity {
     GridView gridView;
     CustomAdapter customAdapter;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-    setArrayInfo();
+     setArrayInfo();
         gridView = findViewById(R.id.gridView);
         customAdapter = new CustomAdapter(evcatData, this);
         gridView.setAdapter(customAdapter);
+
+
+
+
+
+
+        //filter
+        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Search.this, FilterActivity.class);
+                startActivityForResult(intent,104);
+
+            }
+        });
+
+
+
+
 
 
 
@@ -84,6 +107,21 @@ public class Search extends AppCompatActivity {
 
 
     }
+
+
+    //filter
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==104)
+        {
+            TextView textView = findViewById(R.id.tvprova);
+            textView.setText(data.getStringExtra("data"));
+
+        }
+
+    }
+
 
     private void setArrayInfo() {
         evcatData = new ArrayList<>();

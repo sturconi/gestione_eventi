@@ -19,6 +19,7 @@ public class Cambiopassword extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cambiopasswo);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 

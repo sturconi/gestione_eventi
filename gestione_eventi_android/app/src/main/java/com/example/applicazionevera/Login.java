@@ -81,8 +81,8 @@ public class Login extends AppCompatActivity {
     }
     public void Account(){
         Intent AccountIntent = new Intent(this, Account.class);
-        AccountIntent.putExtra("username", Lusername);
-        AccountIntent.putExtra("password", Lpassword);
+        AccountIntent.putExtra("username", TEXT_LOGIN_KEY);
+        AccountIntent.putExtra("password", TEXT_PASSWORD_KEY);
     }
     public void loginMe() {
         MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);

@@ -30,6 +30,11 @@ public class Account extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setSelectedItemId(R.id.toSettings);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -61,33 +66,28 @@ public class Account extends AppCompatActivity {
         pass=findViewById(R.id.passTextView);
         img=findViewById(R.id.imgView);
 
-
+        user.setText(getIntent().getStringExtra("username"));
+        pass.setText(getIntent().getStringExtra("password"));
         Button bottone;
 
         bottone  = (Button) findViewById(R.id.CambioPass);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openCambioPass();
-            }
-        });
+        bottone.setOnClickListener(view -> openCambioPass());
 
         bottone  = (Button) findViewById(R.id.ModImm);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openModImm();
-            }
-        });
+        bottone.setOnClickListener(view -> openModImm());
         bottone  = (Button) findViewById(R.id.buttonLogout);
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 SharedPreferences prefs = getSharedPreferences("MY_PREFERENCES", Context.MODE_PRIVATE);
                 SharedPreferences.Editor  editor  =  prefs.edit();
-                editor.clear();
+                String us= "";
+                String pas= "";
+                String usern= prefs.getString(us,  "");
+                String passw= prefs.getString(pas,  "");
                 editor.commit();
-                openRegistrazione();
+                openLogin();
             }
         });
 
