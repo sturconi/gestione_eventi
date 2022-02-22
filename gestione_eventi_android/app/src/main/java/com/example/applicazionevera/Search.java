@@ -60,13 +60,10 @@ public class Search extends AppCompatActivity {
 
         //filter
         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Search.this, FilterActivity.class);
-                startActivityForResult(intent,104);
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(Search.this, FilterActivity.class);
+            startActivityForResult(intent,104);
 
-            }
         });
 
 
