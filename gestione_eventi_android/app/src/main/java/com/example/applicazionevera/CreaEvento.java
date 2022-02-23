@@ -27,7 +27,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
 
-public class CreaEvento extends AppCompatActivity   implements AdapterView.OnItemSelectedListener {
+public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView timer;
     int thour, tminute;
@@ -47,8 +47,6 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter1);
         spinner.setOnItemSelectedListener(this);
-
-
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -75,7 +73,6 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
                 return false;
             }
         });
-
 
         timer = findViewById(R.id.timerPicker);
 
