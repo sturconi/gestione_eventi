@@ -12,11 +12,13 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -25,7 +27,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
 
-public class CreaEvento extends AppCompatActivity {
+public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView timer;
     int thour, tminute;
@@ -39,6 +41,12 @@ public class CreaEvento extends AppCompatActivity {
         setContentView(R.layout.activity_crea_evento);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initDatePicker();
+
+        Spinner spinner = findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.CategorieArray, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter1);
+        spinner.setOnItemSelectedListener(this);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -66,10 +74,6 @@ public class CreaEvento extends AppCompatActivity {
             }
         });
 
-        String[] Categorie = new String[]{"Intrattenimento", "Servizi", "Cultura", "Sport"};
-        ListView cat = (ListView) findViewById(R.id.Listcategorie);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(CreaEvento.this, android.R.layout.simple_list_item_1, Categorie);
-        cat.setAdapter(adapter);
 
         timer = findViewById(R.id.timerPicker);
 
@@ -178,5 +182,14 @@ public class CreaEvento extends AppCompatActivity {
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
