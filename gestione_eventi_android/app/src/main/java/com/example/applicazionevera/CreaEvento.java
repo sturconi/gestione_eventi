@@ -27,7 +27,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
 
-public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class CreaEvento extends AppCompatActivity   implements AdapterView.OnItemSelectedListener {
 
     TextView timer;
     int thour, tminute;
