@@ -4,16 +4,15 @@ import java.util.List;
 
 public interface eventoInterface {
 
-boolean save(Evento ev);
+int saveE(Evento ev);
 	
-	Evento findById(int id);
+	Evento findByIdE(int numero_evento);
 	
-	List<Evento> findAll();
+	List<Evento> findAllE();
 	
-	boolean deleteById(int id);
+	int deleteByIdE(int numero_evento);
 	
-	boolean deleteAll();
+	int deleteAllE();
 	
-	boolean update(Evento ev);
-	
+	int updateE(Evento ev);
 }

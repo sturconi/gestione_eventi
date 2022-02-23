@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,18 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class EventoRestController {
 	
 	@Autowired
+	@Qualifier("MYSQL")
 	eventoInterface eventoRepositery;
 	
 	@RequestMapping(value="/eventi",method=RequestMethod.GET)
 	public List<Evento> getEvento(){
-		return this.eventoRepositery.findAll();
-		
-		
+		return this.eventoRepositery.findAllE();
 	}
 	
-	@RequestMapping(value="/eventi/{id_evento}", method=RequestMethod.GET)
-	public ResponseEntity<Evento> getEventoByid(@PathVariable int id_evento) {
-		Evento e =this.eventoRepositery.findById(id_evento);
+	@RequestMapping(value="/evento/{numero_evento}", method=RequestMethod.GET)
+	public ResponseEntity<Evento> getEventoByidE(@PathVariable int numero_evento) {
+		Evento e =this.eventoRepositery.findByIdE(numero_evento);
 		if(e!=null) {
 		return new ResponseEntity(e,HttpStatus.OK);
 		}
@@ -37,16 +37,16 @@ public class EventoRestController {
 		}
 	}
 	
-	@RequestMapping(value="/eventi/{id_evento}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/eventi", method=RequestMethod.DELETE)
 	public void deleteAllEventi() {
-		this.eventoRepositery.deleteAll();
+		this.eventoRepositery.deleteAllE();
 	 }
 	
 	
-	@RequestMapping(value="/evento", method=RequestMethod.POST)
+	@RequestMapping(value="/eventi", method=RequestMethod.POST)
 	public ResponseEntity<String> addEvento(@RequestBody Evento newEvento) {
 		String res="";
-		if(this.eventoRepositery.save(newEvento)) {
+		if(this.eventoRepositery.saveE(newEvento)>0) {
 			return new ResponseEntity<String>("Ok", HttpStatus.CREATED);
 		}
 		else {
@@ -56,20 +56,19 @@ public class EventoRestController {
 	}
 	
 
-	@RequestMapping(value="/evento/{id_evento}", method=RequestMethod.DELETE)
-	public void deleteEventoByid(@PathVariable int id_evento) {
-		this.eventoRepositery.deleteById(id_evento);
+	@RequestMapping(value="/evento/{numero_evento}", method=RequestMethod.DELETE)
+	public void deleteEventoByid(@PathVariable int numero_evento) {
+		this.eventoRepositery.deleteByIdE(numero_evento);
 	}
 	
 	
-	@RequestMapping(value="/evento/{id_evento}", method=RequestMethod.PUT)
-	public Evento updateEvento(@PathVariable int id_evento,@RequestBody Evento newEvento) {
-	Evento e=this.eventoRepositery.findById(id_evento);
+	@RequestMapping(value="/eventi/{numero_evento}", method=RequestMethod.PUT)
+	public Evento updateEvento(@PathVariable int numero_evento,@RequestBody Evento newEvento) {
+	Evento ev=this.eventoRepositery.findByIdE(numero_evento);
 	if((!newEvento.getNome_evento().isBlank())&& newEvento.getNome_evento() !=null) {
-		e.setNome_evento(newEvento.getNome_evento());
+		ev.setNome_evento(newEvento.getNome_evento());
 	}
-	
-	this.eventoRepositery.update(e);
-	return e;
+	this.eventoRepositery.updateE(ev);
+	return ev;
 	}
 }
