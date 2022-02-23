@@ -60,13 +60,10 @@ public class Search extends AppCompatActivity {
 
         //filter
         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Search.this, FilterActivity.class);
-                startActivityForResult(intent,104);
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(Search.this, FilterActivity.class);
+            startActivityForResult(intent,104);
 
-            }
         });
 
 
@@ -126,7 +123,7 @@ public class Search extends AppCompatActivity {
     private void setArrayInfo() {
         evcatData = new ArrayList<>();
         evcatData.add(new EvCatData(R.drawable.duomo,"Calcetto pazzo sgravato","Via Fiorella Mannoia","28 FEB 2002"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_music_note_24, "Concerto di Antonio Lezzi","Via delle esplosioni","14 NOV 2015"));
+        evcatData.add(new EvCatData(R.drawable.ic_baseline_music_note_24, "Concerto di Antonio Giuseppe","Via delle esplosioni","14 NOV 2015"));
         evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
         evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
         evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));

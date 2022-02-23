@@ -24,6 +24,7 @@ public class FilterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         chipIntr = findViewById(R.id.chipIntr);
         chipServ = findViewById(R.id.chipServ);
