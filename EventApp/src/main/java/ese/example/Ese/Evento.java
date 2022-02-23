@@ -3,33 +3,36 @@ package ese.example.Ese;
 import java.util.Date;
 
 public class Evento {
-	int id_evento;
+	int numero_evento;
 	String Categoria;
 	String nome_evento;
 	String Descrizione;
 	int Valutazione;
-	String indirizzo;
+	String luogo;
 	Date data;
 	Date oraInizio;
 	Date oraFine;
 	String immagine;
 	int ID_Posto;
 	
-	public Evento(int id_evento, String Categoria, String nome_evento, String Descrizione, int Valutazione, String indirizzo, Date data, Date oraInizio, Date oraFine, String immagine, int ID_Posto) {
-		this.id_evento= id_evento;
+	public Evento() {
+	}
+	
+	public Evento(int numero_evento, String Categoria, String nome_evento, String Descrizione, int Valutazione, String luogo, Date data, Date oraInizio, Date oraFine, String immagine, int ID_Posto) {
+		this.numero_evento= numero_evento;
 		this.Categoria= Categoria;
 		this.nome_evento= nome_evento;
 		this.Descrizione=Descrizione;
 		this.Valutazione=Valutazione;
-		this.indirizzo=indirizzo;
+		this.luogo=luogo;
 		this.data=data;
 		this.oraInizio=oraInizio;
 		this.oraFine=oraFine;
 		this.immagine=immagine;
 		this.ID_Posto=ID_Posto;
 	}
-	public int getId_evento() {
-		return this.id_evento;
+	public int getnumero_evento() {
+		return this.numero_evento;
 	}
 	public String getCategoria() {
 		return this.Categoria;
@@ -43,8 +46,8 @@ public class Evento {
 	public int getValutazione() {
 		return this.Valutazione;
 	}
-	public String getindirizzo() {
-		return this.indirizzo;
+	public String getLuogo() {
+		return this.luogo;
 	}
 	public Date getData() {
 		return this.data;
@@ -62,8 +65,8 @@ public class Evento {
 	public void setCategoria(String Categoria) {
 		this.Categoria= Categoria;
 	}
-	public void setId_Evento(int id_evento) {
-		this.id_evento=id_evento;
+	public void setnumero_Evento(int nnumero_evento) {
+		this.numero_evento=numero_evento;
 	}
 	public void setNome_evento(String nome_evento) {
 		this.nome_evento= nome_evento;
@@ -74,8 +77,8 @@ public class Evento {
 	public void setValutazione(int Valutazione) {
 		this.Valutazione=Valutazione;
 	}
-	public void setIndirizzo(String indirizzo) {
-		this.indirizzo=indirizzo;
+	public void setLuogo(String luogo) {
+		this.luogo=luogo;
 	}
 	public void setData(Date data) {
 		this.data=data;

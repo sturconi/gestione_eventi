@@ -2,9 +2,6 @@ package ese.example.Ese;
 
 import java.sql.Date;
 
-
-
-
 public class Utente {
 	int ID_utente;
 	String username;
