@@ -34,16 +34,18 @@
   }
 
   .preferenze{
-    width: 320px;
+    width: 400px;
     padding: 10px;
     border: 5px solid gray;
     margin: auto;
   }
   .switch {
-    position: relative;
+    
+    position:relative;
     display: inline-block;
     width: 30px;
     height: 17px;
+    
   }
   
   /* Hide default HTML checkbox */
@@ -51,6 +53,7 @@
     opacity: 0;
     width: 0;
     height: 0;
+    
   }
   
   /* The slider */
@@ -95,8 +98,27 @@
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
+    
   }
   
   .slider.round:before {
     border-radius: 50%;
+  }
+  .account{
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .bottone {
+    width: 90%;
+    
+    border-radius: 100px;
+    background-color: goldenrod;
+    color: black;
+  }
+  .invio {
+    
+    border-radius: 100px;
+    background-color: goldenrod;
+    color: black;
   }

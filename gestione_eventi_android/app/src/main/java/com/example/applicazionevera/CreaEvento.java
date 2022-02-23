@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -26,9 +27,21 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.applicazionevera.retrofit.Event;
+import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
+import com.example.applicazionevera.retrofit.Utente;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.sql.Date;
 import java.util.Calendar;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class CreaEvento extends AppCompatActivity   implements AdapterView.OnItemSelectedListener {
 
 public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemSelectedListener ,View.OnClickListener {
     /*private static final int RESULT_LOAD_IMAGE= 1;*/
@@ -36,6 +49,11 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
     int thour, tminute;
     private Button dateButton;
     private DatePickerDialog datePickerDialog;
+    private EditText nomeevento, luogo, descrizioneEvento;
+    Button  data_evento,button;
+    private Event eve;
+    private int numero_evento;
+    Object item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +137,34 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
                 openDatePicker(v);
             }
         });
+
+        nomeevento = (EditText) findViewById(R.id.nomeEvento);
+        luogo = (EditText) findViewById(R.id.indirizzo);
+        descrizioneEvento = (EditText) findViewById(R.id.descrizioneEvento);
+        dateButton= (Button) findViewById(R.id.dataEvento);
+
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                 item = parent.getItemAtPosition(position);
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+        button = (Button) findViewById(R.id.buttonEvent);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String Enome = nomeevento.getText().toString();
+                String Eluogo = luogo.getText().toString();
+                String EdescrizioneEvento = descrizioneEvento.getText().toString();
+                String Edata_evento = dateButton.getText().toString();
+                String Categoria = item.toString();
+
+                eve=new Event(numero_evento,Enome,Categoria, Eluogo, EdescrizioneEvento,Edata_evento);
+                creaEvento();
+            }
+        });
     }
 
     private void initDatePicker() {
@@ -199,8 +245,28 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
+
+    public void creaEvento() {
+
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<Event> call = apiService.createEvent(eve);
+        call.enqueue(new Callback<Event>() {
+            @Override
+            public void onResponse(Call<Event> call, Response<Event> response) {
+                int statusCode = response.code();
+                eve = response.body();
+            }
+            @Override
+            public void onFailure(Call<Event> call, Throwable t) {
+            }
+        });
+    }
+    public static final String BASE_URL = "http://10.0.2.2:8080/";
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 
     /* @Override
     public void onClick(View v) {
@@ -212,3 +278,4 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
 
     }
 }
+

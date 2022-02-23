@@ -3,36 +3,30 @@ package com.example.applicazionevera.retrofit;
 
 import java.sql.Date;
 
-public class Evento {
+public class Event {
         int numero_evento;
         String Categoria;
         String nome_evento;
         String Descrizione;
         int Valutazione;
         String luogo;
-        Date data;
+        String data;
         Date oraInizio;
         Date oraFine;
         String immagine;
         int ID_Posto;
 
-        public Evento() {
-        }
-
-        public Evento(int numero_evento, String Categoria, String nome_evento, String Descrizione, int Valutazione, String luogo, Date data, Date oraInizio, Date oraFine, String immagine, int ID_Posto) {
-            this.numero_evento= numero_evento;
+        public Event(int numero_evento, String Enome, String Categoria, String Eluogo, String EdescrizioneEvento,String Edata_evento) {
+            this.numero_evento=numero_evento;
+            this.nome_evento= Enome;
             this.Categoria= Categoria;
             this.nome_evento= nome_evento;
-            this.Descrizione=Descrizione;
+            this.Descrizione=EdescrizioneEvento;
             this.Valutazione=Valutazione;
-            this.luogo=luogo;
-            this.data=data;
-            this.oraInizio=oraInizio;
-            this.oraFine=oraFine;
-            this.immagine=immagine;
-            this.ID_Posto=ID_Posto;
+            this.luogo=Eluogo;
+            this.data=Edata_evento;
         }
-        public int getnumero_evento() {
+    public int getnumero_evento() {
             return this.numero_evento;
         }
         public String getCategoria() {
@@ -50,7 +44,7 @@ public class Evento {
         public String getLuogo() {
             return this.luogo;
         }
-        public Date getData() {
+        public String getData() {
             return this.data;
         }
         public Date getOraInizio() {
@@ -81,7 +75,7 @@ public class Evento {
         public void setLuogo(String luogo) {
             this.luogo=luogo;
         }
-        public void setData(Date data) {
+        public void setData(String data) {
             this.data=data;
         }
         public void setOraInizio(Date oraInizio) {

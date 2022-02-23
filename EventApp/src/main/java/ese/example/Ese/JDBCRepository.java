@@ -49,7 +49,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface {
 	//----Evento------//
 	@Override
 	public int saveE(Evento ev) {
-		return jdbcTemplate.update("INSERT INTO evento(Categoria, nome-evento, valutazione, luogo) VALUE(?,?,?,?)", new Object[] {ev.getCategoria(), ev.getNome_evento(),ev.getValutazione(), ev.getLuogo()});
+		return jdbcTemplate.update("INSERT INTO evento(Categoria, nome_evento, valutazione, luogo) VALUE(?,?,?,?)", new Object[] {ev.getCategoria(), ev.getNome_evento(),ev.getValutazione(), ev.getLuogo()});
 	
 	}
 	@Override
