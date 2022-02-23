@@ -8,7 +8,9 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.format.DateFormat;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -40,6 +43,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CreaEvento extends AppCompatActivity   implements AdapterView.OnItemSelectedListener {
 
+public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemSelectedListener ,View.OnClickListener {
+    /*private static final int RESULT_LOAD_IMAGE= 1;*/
     TextView timer;
     int thour, tminute;
     private Button dateButton;
@@ -49,7 +54,6 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
     private Event eve;
     private int numero_evento;
     Object item;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,13 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
         spinner.setAdapter(adapter1);
         spinner.setOnItemSelectedListener(this);
 
+       /* ImageView immagineUpload;
+        Button buttonUpload;
+
+        immagineUpload = (ImageView) findViewById(R.id.immagineUpload);
+        buttonUpload = (Button) findViewById(R.id.buttonUpload);
+
+        immagineUpload.setOnClickListener(this); */
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -90,7 +101,6 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
                 return false;
             }
         });
-
 
         timer = findViewById(R.id.timerPicker);
 
@@ -257,5 +267,15 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+
+    /* @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.immagineUpload:
+                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE); */
+        }
+
+    }
 }
 
