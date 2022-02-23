@@ -48,6 +48,8 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         spinner.setAdapter(adapter1);
         spinner.setOnItemSelectedListener(this);
 
+
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
