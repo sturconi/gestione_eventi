@@ -20,58 +20,26 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Preferenze extends AppCompatActivity {
 
-    boolean switchButtonSport;
-    boolean switchButtonCul;
-    boolean switchButtonInt;
-    boolean switchButtonServ;
+    GloblalElite elite = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferenze);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        SharedPreferences prefs;
-        
-        boolean value = false;
+
         Switch SwitchSpo = (Switch) findViewById(R.id.switchSport);
         Switch SwitchInt = (Switch) findViewById(R.id.switchIntr);
         Switch SwitchCul = (Switch) findViewById(R.id.switchCultura);
         Switch SwitchServ = (Switch) findViewById(R.id.switchServizi);
-        GloblalElite elite = ((GloblalElite) getApplicationContext());
+        elite = ((GloblalElite) getApplicationContext());
 
-        switchButtonSport=elite.getSwitchButtonSport();
-        switchButtonCul=elite.getSwitchButtonCul();
-        switchButtonInt=elite.getSwitchButtonInt();
-        switchButtonServ=elite.getSwitchButtonServ();
+        SwitchSpo.setChecked(elite.update(elite.notificaSport));
+        SwitchInt.setChecked(elite.update(elite.notificaInt));
+        SwitchCul.setChecked(elite.update(elite.notificaCul));
+        SwitchServ.setChecked(elite.update(elite.notificaServ));
 
-        if (switchButtonSport==true){
-            SwitchSpo.setChecked(true);
 
-        }
-        else{
-            SwitchSpo.setChecked(false);
-        }
-        if (switchButtonCul==true){
-            SwitchCul.setChecked(true);
-
-        }
-        else{
-            SwitchCul.setChecked(false);
-        }
-        if (switchButtonInt==true){
-            SwitchInt.setChecked(true);
-
-        }
-        else{
-            SwitchInt.setChecked(false);
-        }
-        if (switchButtonServ==true){
-            SwitchServ.setChecked(true);
-
-        }
-        else{
-            SwitchServ.setChecked(false);
-        }
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -103,60 +71,28 @@ public class Preferenze extends AppCompatActivity {
         });
 
 
-
         SwitchSpo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (SwitchSpo.isChecked() == true) {
+                elite.save(isChecked, elite.notificaSport);
 
-                    SwitchSpo.setTextColor(Color.GREEN);
-                    elite.setSwitchButtonSport();
-                } else {
-                    SwitchSpo.setTextColor(Color.RED);
-                    elite.setSwitchButtonSport();
-
-                }
             }
         });
 
         SwitchInt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (SwitchInt.isChecked() == true) {
-
-                    SwitchInt.setTextColor(Color.GREEN);
-                    elite.setSwitchButtonInt();
-                } else {
-                    SwitchInt.setTextColor(Color.RED);
-                    elite.setSwitchButtonInt();
-
-                }
+                elite.save(isChecked, elite.notificaInt);
             }
         });
 
         SwitchCul.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (SwitchCul.isChecked() == true) {
-
-                    SwitchCul.setTextColor(Color.GREEN);
-                    elite.setSwitchButtonCul();
-                } else {
-                    SwitchCul.setTextColor(Color.RED);
-                    elite.setSwitchButtonCul();
-
-                }
+                elite.save(isChecked, elite.notificaCul);
             }
         });
 
         SwitchServ.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (SwitchServ.isChecked() == true) {
-
-                    SwitchServ.setTextColor(Color.GREEN);
-                    elite.setSwitchButtonServ();
-                } else {
-                    SwitchServ.setTextColor(Color.RED);
-                    elite.setSwitchButtonServ();
-
-                }
+                elite.save(isChecked, elite.notificaServ);
             }
         });
 
