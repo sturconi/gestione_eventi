@@ -19,4 +19,7 @@ public interface MyApiEndpointInterface {
 
     @POST("/utenti")
     Call<Utente> createUser(@Body Utente user);
+
+    @POST("/eventi")
+    Call<Event> createEvent(@Body Event eve);
 }
