@@ -31,6 +31,8 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,4 +172,6 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         openEventoDettagliato();
 
     }
+
+
 }
