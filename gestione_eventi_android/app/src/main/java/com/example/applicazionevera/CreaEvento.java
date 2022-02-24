@@ -33,6 +33,7 @@ import com.example.applicazionevera.retrofit.Utente;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.sql.Date;
+import java.sql.Time;
 import java.util.Calendar;
 
 import retrofit2.Call;
@@ -52,8 +53,9 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
     private EditText nomeevento, luogo, descrizioneEvento;
     Button  data_evento,button;
     private Event eve;
-    private int numero_evento;
+    private int numero_evento, ID_posto;
     Object item;
+    int statusCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,8 +121,7 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
 
                                  calendar.set(0 , 0, 0, thour, tminute);
 
-                                 timer.setText(DateFormat.format("hh:mm aa", calendar));
-
+                                 timer.setText(DateFormat.format("hh:mm:aa", calendar));
                             }
                         }, 12, 0, false
                 );
@@ -137,7 +138,6 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
                 openDatePicker(v);
             }
         });
-
         nomeevento = (EditText) findViewById(R.id.nomeEvento);
         luogo = (EditText) findViewById(R.id.indirizzo);
         descrizioneEvento = (EditText) findViewById(R.id.descrizioneEvento);
@@ -155,14 +155,21 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ora=timer.getText().toString();
                 String Enome = nomeevento.getText().toString();
                 String Eluogo = luogo.getText().toString();
                 String EdescrizioneEvento = descrizioneEvento.getText().toString();
                 String Edata_evento = dateButton.getText().toString();
-                String Categoria = item.toString();
-
-                eve=new Event(numero_evento,Enome,Categoria, Eluogo, EdescrizioneEvento,Edata_evento);
+                String categoria = item.toString();
+                eve=new Event(categoria,Enome, Eluogo,Edata_evento,ora,EdescrizioneEvento);
                 creaEvento();
+                if(statusCode==500 || statusCode==400){
+                    Toast.makeText(CreaEvento.this, "Evento non creato", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(CreaEvento.this, "Evento Creato!", Toast.LENGTH_SHORT).show();
+                    openHome();
+                }
             }
         });
     }
@@ -185,7 +192,7 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
         int style = AlertDialog.THEME_HOLO_LIGHT;
 
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener,year, month, day);
-        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+        datePickerDialog.getDatePicker().setMaxDate(System.nanoTime());
     }
 
     private String makeDateString(int day, int month, int year) {
@@ -254,7 +261,7 @@ public class CreaEvento extends AppCompatActivity   implements AdapterView.OnIte
         call.enqueue(new Callback<Event>() {
             @Override
             public void onResponse(Call<Event> call, Response<Event> response) {
-                int statusCode = response.code();
+                 statusCode = response.code();
                 eve = response.body();
             }
             @Override

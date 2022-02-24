@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class Evento {
 	int numero_evento;
-	String Categoria;
+	String categoria;
 	String nome_evento;
-	String Descrizione;
+	String descrizione;
+	String ora;
 	int Valutazione;
 	String luogo;
 	String data;
-	Date oraInizio;
 	Date oraFine;
 	String immagine;
 	int ID_Posto;
@@ -18,30 +18,29 @@ public class Evento {
 	public Evento() {
 	}
 	
-	public Evento(int numero_evento, String Categoria, String nome_evento, String Descrizione, int Valutazione, String luogo, String data, Date oraInizio, Date oraFine, String immagine, int ID_Posto) {
+	public Evento(int numero_evento, String categoria, String nome_evento, String descrizione, int Valutazione, String luogo, String data, String ora) {
 		this.numero_evento= numero_evento;
-		this.Categoria= Categoria;
+		this.categoria= categoria;
 		this.nome_evento= nome_evento;
-		this.Descrizione=Descrizione;
+		this.descrizione=descrizione;
 		this.Valutazione=Valutazione;
 		this.luogo=luogo;
 		this.data=data;
-		this.oraInizio=oraInizio;
+		this.ora=ora;
 		this.oraFine=oraFine;
 		this.immagine=immagine;
-		this.ID_Posto=ID_Posto;
 	}
 	public int getnumero_evento() {
 		return this.numero_evento;
 	}
 	public String getCategoria() {
-		return this.Categoria;
+		return this.categoria;
 	}
 	public String getNome_evento() {
 		return this.nome_evento;
 	}
 	public String getDescrizione() {
-		return this.Descrizione;
+		return this.descrizione;
 	}
 	public int getValutazione() {
 		return this.Valutazione;
@@ -52,8 +51,8 @@ public class Evento {
 	public String getData() {
 		return this.data;
 	}
-	public Date getOraInizio() {
-		return this.oraInizio;
+	public String getOraInizio() {
+		return this.ora;
 	}
 	public Date getOraFine() {
 		return this.oraFine;
@@ -61,9 +60,12 @@ public class Evento {
 	public String getImmagine() {
 		return this.immagine;
 	}
+	public int getId_posto() {
+		return this.ID_Posto;
+	}
 	
-	public void setCategoria(String Categoria) {
-		this.Categoria= Categoria;
+	public void setCategoria(String categoria) {
+		this.categoria= categoria;
 	}
 	public void setnumero_Evento(int nnumero_evento) {
 		this.numero_evento=numero_evento;
@@ -71,8 +73,8 @@ public class Evento {
 	public void setNome_evento(String nome_evento) {
 		this.nome_evento= nome_evento;
 	}
-	public void setDescrizione(String Descrizione) {
-		this.Descrizione=Descrizione;
+	public void setDescrizione(String descrizione) {
+		this.descrizione=descrizione;
 	}
 	public void setValutazione(int Valutazione) {
 		this.Valutazione=Valutazione;
@@ -83,8 +85,8 @@ public class Evento {
 	public void setData(String data) {
 		this.data=data;
 	}
-	public void setOraInizio(Date oraInizio) {
-		this.oraInizio=oraInizio;
+	public void setOraInizio(String ora) {
+		this.ora=ora;
 	}
 	public void setOraFine(Date oraFine) {
 		this.oraFine=oraFine;

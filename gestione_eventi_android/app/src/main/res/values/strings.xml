@@ -15,9 +15,9 @@
     <string name="title_activity_maps">MapsActivity</string>
     
     <string-array name="CategorieArray">
-        <item>Cultura</item>
-        <item>Servizi</item>
-        <item>Intrattenimento</item>
-        <item>Sport</item>
+        <item>cultura</item>
+        <item>servizi</item>
+        <item>intrattenimento</item>
+        <item>sport</item>
     </string-array>
 </resources>

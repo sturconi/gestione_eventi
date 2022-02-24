@@ -2,41 +2,40 @@ package com.example.applicazionevera.retrofit;
 
 
 import java.sql.Date;
+import java.sql.Time;
 
 public class Event {
         int numero_evento;
-        String Categoria;
+        String categoria;
         String nome_evento;
-        String Descrizione;
+        String descrizione;
         int Valutazione;
         String luogo;
         String data;
-        Date oraInizio;
+        String ora;
         Date oraFine;
         String immagine;
-        int ID_Posto;
 
-        public Event(int numero_evento, String Enome, String Categoria, String Eluogo, String EdescrizioneEvento,String Edata_evento) {
-            this.numero_evento=numero_evento;
+
+            public Event(String categoria,String Enome, String Eluogo,String Edata_evento,String ora, String EdescrizioneEvento) {
             this.nome_evento= Enome;
-            this.Categoria= Categoria;
-            this.nome_evento= nome_evento;
-            this.Descrizione=EdescrizioneEvento;
-            this.Valutazione=Valutazione;
+            this.categoria= categoria;
+            this.descrizione=EdescrizioneEvento;
             this.luogo=Eluogo;
             this.data=Edata_evento;
+            this.ora=ora;
         }
-    public int getnumero_evento() {
+        public int getnumero_evento() {
             return this.numero_evento;
         }
         public String getCategoria() {
-            return this.Categoria;
+            return this.categoria;
         }
         public String getNome_evento() {
             return this.nome_evento;
         }
         public String getDescrizione() {
-            return this.Descrizione;
+            return this.descrizione;
         }
         public int getValutazione() {
             return this.Valutazione;
@@ -47,8 +46,8 @@ public class Event {
         public String getData() {
             return this.data;
         }
-        public Date getOraInizio() {
-            return this.oraInizio;
+        public String getOraInizio() {
+            return this.ora;
         }
         public Date getOraFine() {
             return this.oraFine;
@@ -58,7 +57,7 @@ public class Event {
         }
 
         public void setCategoria(String Categoria) {
-            this.Categoria= Categoria;
+            this.categoria= Categoria;
         }
         public void setnumero_Evento(int nnumero_evento) {
             this.numero_evento=numero_evento;
@@ -67,7 +66,7 @@ public class Event {
             this.nome_evento= nome_evento;
         }
         public void setDescrizione(String Descrizione) {
-            this.Descrizione=Descrizione;
+            this.descrizione=Descrizione;
         }
         public void setValutazione(int Valutazione) {
             this.Valutazione=Valutazione;
@@ -78,8 +77,8 @@ public class Event {
         public void setData(String data) {
             this.data=data;
         }
-        public void setOraInizio(Date oraInizio) {
-            this.oraInizio=oraInizio;
+        public void setOraInizio(String ora) {
+            this.ora=ora;
         }
         public void setOraFine(Date oraFine) {
             this.oraFine=oraFine;
@@ -87,8 +86,4 @@ public class Event {
         public void setImmagine(String immagine) {
             this.immagine=immagine;
         }
-        public void setID_Posto(int ID_Posto) {
-            this.ID_Posto=ID_Posto;
-        }
-
     }
