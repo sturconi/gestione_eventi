@@ -43,7 +43,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CreaEvento extends AppCompatActivity   implements AdapterView.OnItemSelectedListener {
 
-public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemSelectedListener ,View.OnClickListener {
+//public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemSelectedListener ,View.OnClickListener {
     /*private static final int RESULT_LOAD_IMAGE= 1;*/
     TextView timer;
     int thour, tminute;
@@ -273,9 +273,9 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         switch(v.getId()) {
             case R.id.immagineUpload:
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE); */
-        }
+                startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE); } */
 
-    }
+
+
 }
 
