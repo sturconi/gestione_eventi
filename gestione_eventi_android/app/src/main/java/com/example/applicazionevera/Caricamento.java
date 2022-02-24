@@ -1,32 +1,57 @@
 package com.example.applicazionevera;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
+
 
 public class Caricamento extends AppCompatActivity {
 
+    MediaPlayer mediaPlayer;
 
-    int timeout = 2000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caricamento);
+        getSupportActionBar().hide();
 
-        new Handler().postDelayed(new Runnable()
-        {
+        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
+
+
+        Thread timer = new Thread() {
             @Override
-            public void run()
-            {
-                openLogin();
-                finish();
+            public void run() {
+                try {
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.eventapp);
+                    mediaPlayer.start();
+                    sleep(2000);
+
+                } catch (InterruptedException e) {
+
+                } finally {
+
+                    openLogin();
+                }
             }
-        }, timeout);
+        };
+        timer.start();
+
     }
 
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mediaPlayer.release();
+        finish();
+    }
 
     public void openLogin() {
         Intent intent = new Intent(this, Login.class);
