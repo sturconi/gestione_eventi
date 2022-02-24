@@ -84,8 +84,8 @@
 
     <EditText
         android:id="@+id/descrizioneEvento"
-        android:layout_width="wrap_content"
-        android:layout_height="148dp"
+        android:layout_width="147dp"
+        android:layout_height="131dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Descrizione Evento"
@@ -93,13 +93,13 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.741" />
 
     <Button
-        android:id="@+id/buttonReg"
+        android:id="@+id/buttonEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="145dp"
@@ -127,5 +127,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.543" />
+
+    <ImageView
+        android:id="@+id/immagineUpload"
+        android:layout_width="136dp"
+        android:layout_height="85dp"
+        app:srcCompat="@drawable/duomo"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="445dp" />
+
+    <Button
+        android:id="@+id/buttonUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Carica Immagine"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="530dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
