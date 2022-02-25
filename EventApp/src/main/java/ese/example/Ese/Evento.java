@@ -18,17 +18,14 @@ public class Evento {
 	public Evento() {
 	}
 	
-	public Evento(int numero_evento, String categoria, String nome_evento, String descrizione, int Valutazione, String luogo, String data, String ora) {
+	public Evento(int numero_evento, String categoria, String nome_evento, String descrizione,String luogo, String data, String ora) {
 		this.numero_evento= numero_evento;
 		this.categoria= categoria;
 		this.nome_evento= nome_evento;
 		this.descrizione=descrizione;
-		this.Valutazione=Valutazione;
 		this.luogo=luogo;
 		this.data=data;
 		this.ora=ora;
-		this.oraFine=oraFine;
-		this.immagine=immagine;
 	}
 	public int getnumero_evento() {
 		return this.numero_evento;
@@ -51,7 +48,7 @@ public class Evento {
 	public String getData() {
 		return this.data;
 	}
-	public String getOraInizio() {
+	public String getOra() {
 		return this.ora;
 	}
 	public Date getOraFine() {
@@ -85,7 +82,7 @@ public class Evento {
 	public void setData(String data) {
 		this.data=data;
 	}
-	public void setOraInizio(String ora) {
+	public void setOra(String ora) {
 		this.ora=ora;
 	}
 	public void setOraFine(Date oraFine) {

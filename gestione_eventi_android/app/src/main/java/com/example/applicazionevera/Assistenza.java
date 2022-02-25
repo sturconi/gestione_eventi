@@ -64,6 +64,7 @@ public class Assistenza extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendMail();
+
             }
         });
     }
@@ -102,7 +103,8 @@ public class Assistenza extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_TEXT, message);
             intent.setType("message/rfc822");
             startActivity(Intent.createChooser(intent, "Seleziona un Client:"));
-
+                Toast.makeText(Assistenza.this, "Email inviata!", Toast.LENGTH_SHORT).show();
+                openHome();
         }
         else{
             Toast.makeText(Assistenza.this, "Compila tutti i campi!", Toast.LENGTH_SHORT).show();
