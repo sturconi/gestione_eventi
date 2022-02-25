@@ -28,15 +28,14 @@ public class EventoDettagliato extends FragmentActivity implements OnMapReadyCal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_evento_dettagliato);
 
-         /* binding = ActivityMappaBinding.inflate(getLayoutInflater());
+        binding = ActivityMappaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);  */
+        mapFragment.getMapAsync(this);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -64,7 +63,6 @@ public class EventoDettagliato extends FragmentActivity implements OnMapReadyCal
             }
         });
         Button bottone;
-        Button but;
 
         bottone = (Button) findViewById(R.id.sezioneCommenti);
         bottone.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +71,6 @@ public class EventoDettagliato extends FragmentActivity implements OnMapReadyCal
                 openSezioneComm();
             }
         });
-
 
         bottone =(Button) findViewById(R.id.toCalendario);
         bottone.setOnClickListener(new View.OnClickListener() {
@@ -117,10 +114,10 @@ public class EventoDettagliato extends FragmentActivity implements OnMapReadyCal
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
-    public void openCalendario() {
+   /* public void openCalendario() {
         Intent intent = new Intent(this, Calendario.class);
         startActivity(intent);
-    }
+    }*/
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
