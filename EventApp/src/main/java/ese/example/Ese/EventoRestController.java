@@ -26,15 +26,11 @@ public class EventoRestController {
 		return this.eventoRepositery.findAllE();
 	}
 	
-	@RequestMapping(value="/evento/{numero_evento}", method=RequestMethod.GET)
-	public ResponseEntity<Evento> getEventoByidE(@PathVariable int numero_evento) {
-		Evento e =this.eventoRepositery.findByIdE(numero_evento);
-		if(e!=null) {
-		return new ResponseEntity(e,HttpStatus.OK);
-		}
-		else {
-			return new ResponseEntity(e,HttpStatus.NOT_FOUND);
-		}
+
+	@RequestMapping(value="/eventi/{categoria}", method=RequestMethod.GET)
+	public List<Evento> getEventbyCat(@PathVariable String categoria) {
+		return this.eventoRepositery.findByIdCat(categoria);
+		
 	}
 	
 	@RequestMapping(value="/eventi", method=RequestMethod.DELETE)
@@ -62,7 +58,7 @@ public class EventoRestController {
 	}
 	
 	
-	@RequestMapping(value="/eventi/{numero_evento}", method=RequestMethod.PUT)
+	/*@RequestMapping(value="/eventi/{numero_evento}", method=RequestMethod.PUT)
 	public Evento updateEvento(@PathVariable int numero_evento,@RequestBody Evento newEvento) {
 	Evento ev=this.eventoRepositery.findByIdE(numero_evento);
 	if((!newEvento.getNome_evento().isBlank())&& newEvento.getNome_evento() !=null) {
@@ -71,4 +67,6 @@ public class EventoRestController {
 	this.eventoRepositery.updateE(ev);
 	return ev;
 	}
+	*/
+	
 }

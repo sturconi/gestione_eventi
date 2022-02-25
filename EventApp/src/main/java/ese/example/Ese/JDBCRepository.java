@@ -52,10 +52,18 @@ public class JDBCRepository implements utenteInterface, eventoInterface {
 		return jdbcTemplate.update("INSERT INTO evento(categoria, nome_evento, luogo, data, ora, descrizione) VALUE(?,?,?,?,?,?)", new Object[] {ev.getCategoria(), ev.getNome_evento(), ev.getLuogo(),ev.getData(), ev.getOraInizio(),ev.getDescrizione()});
 	
 	}
+	
+	@Override
+	public List<Evento> findByIdCat(String categoria) {
+		return jdbcTemplate.query("SELECT * FROM evento WHERE categoria=?", BeanPropertyRowMapper.newInstance(Evento.class),categoria);
+	}
+
+
 	@Override
 	public Evento findByIdE(int numero_evento) {
 		return jdbcTemplate.queryForObject("SELECT * FROM evento WHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Evento.class),numero_evento);
 	}
+	
 	@Override
 	public List<Evento> findAllE() {
 		return jdbcTemplate.query("SELECT * FROM evento", BeanPropertyRowMapper.newInstance(Evento.class));
@@ -73,7 +81,5 @@ public class JDBCRepository implements utenteInterface, eventoInterface {
 	public int updateE(Evento ev) {
 		return jdbcTemplate.update("UPDATE evento SET Categoria=? AND SET nome-evento=? AND SET luogo WHERE numero_evento=?",new Object[] {ev.getCategoria(),ev.getNome_evento(), ev.getLuogo()});
 	}
-//------------------------------------------------------------------
-
 
 }
