@@ -68,6 +68,6 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/immagine" />
+        app:srcCompat="@drawable/transparent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
