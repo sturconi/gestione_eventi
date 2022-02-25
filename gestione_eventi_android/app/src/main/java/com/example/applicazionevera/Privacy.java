@@ -8,15 +8,20 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.example.applicazionevera.model_and_adapter.MyService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Privacy extends AppCompatActivity {
+public class Privacy extends AppCompatActivity implements View.OnClickListener{
+
+    private Intent ServiceIntent;
+    private Button btnstart, btnstop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +29,12 @@ public class Privacy extends AppCompatActivity {
         setContentView(R.layout.activity_privacy);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    btnstart = findViewById(R.id.startmus);
+    btnstop = findViewById(R.id.stopmus);
+    btnstart.setOnClickListener(this);
+    btnstop.setOnClickListener(this);
 
+    ServiceIntent = new Intent(getApplicationContext(), MyService.class);
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -82,7 +92,10 @@ public class Privacy extends AppCompatActivity {
             }
         });
 
+
     }
+
+
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
@@ -100,6 +113,18 @@ public class Privacy extends AppCompatActivity {
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.startmus:
+                startService(new Intent(getApplicationContext(), MyService.class));
+                break;
+            case R.id.stopmus:
+                stopService(new Intent(getApplicationContext(), MyService.class));
+                break;
+        }
     }
 }
 
