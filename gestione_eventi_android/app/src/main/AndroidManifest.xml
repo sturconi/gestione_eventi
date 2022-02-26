@@ -48,11 +48,6 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".FilterActivity"
-            android:exported="false"
-            android:parentActivityName=".Search"
-            android:label="Search" />
-        <activity
             android:name=".Login"
             android:exported="false"
             android:label="LOGIN" />

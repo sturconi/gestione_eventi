@@ -58,13 +58,7 @@ public class Search extends AppCompatActivity {
 
 
 
-        //filter
-        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-        fab.setOnClickListener(view -> {
-            Intent intent = new Intent(Search.this, FilterActivity.class);
-            startActivityForResult(intent,104);
 
-        });
 
 
 
@@ -106,18 +100,6 @@ public class Search extends AppCompatActivity {
     }
 
 
-    //filter
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==104)
-        {
-            TextView textView = findViewById(R.id.tvprova);
-            textView.setText(data.getStringExtra("data"));
-
-        }
-
-    }
 
 
     private void setArrayInfo() {
