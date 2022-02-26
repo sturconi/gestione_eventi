@@ -4,7 +4,7 @@ body {
   position: relative;
   min-height: 100vh;
   /*background-image:  url("https://img.besthqwallpapers.com/Uploads/25-1-2018/38284/milan-cathedral-4k-duomo-di-milano-italian-landmarks-milan.jpg");*/
-  background: linear-gradient(rgb(75, 199, 248), rgb(75, 120, 248));
+  background: linear-gradient(aquamarine, rgb(75, 120, 248));
   display: flex;
   align-items: center;
   justify-content: center;
