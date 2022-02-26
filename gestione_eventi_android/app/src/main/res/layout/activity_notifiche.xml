@@ -7,17 +7,6 @@
     tools:context=".Notifiche">
 
 
-
-    <ImageView
-        android:id="@+id/EventappLogo"
-        android:layout_width="254dp"
-        android:layout_height="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/immagine" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/nrc"
         android:layout_width="match_parent"
@@ -26,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EventappLogo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,6 +28,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation"
+        app:itemIconTint="@android:color/black"
+        app:itemTextColor="@android:color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

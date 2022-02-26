@@ -48,23 +48,16 @@ public class Search extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowCustomEnabled(true);
+        LayoutInflater inflater= (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view= inflater.inflate(R.layout.custom_image, null);
+        actionBar.setCustomView(view);
+
      setArrayInfo();
         gridView = findViewById(R.id.gridView);
         customAdapter = new CustomAdapter(evcatData, this);
         gridView.setAdapter(customAdapter);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
