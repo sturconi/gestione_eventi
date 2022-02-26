@@ -23,20 +23,19 @@ import java.util.Calendar;
 public class EventoDettagliato extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ActivityMappaBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMappaBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_evento_dettagliato);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
+/*
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -90,10 +89,10 @@ public class EventoDettagliato extends FragmentActivity implements OnMapReadyCal
                 startActivity(intent);
 
             }
-        });
+        });*/
 
     }
-
+/*
     private void openSezioneComm() {
         Intent intent = new Intent(this, SezioneCommenti.class);
         startActivity(intent);
@@ -119,18 +118,25 @@ public class EventoDettagliato extends FragmentActivity implements OnMapReadyCal
     public void openCalendario() {
         Intent intent = new Intent(this, Calendario.class);
         startActivity(intent);
-    }
+    }*/
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+        try {
+            googleMap.getUiSettings().setZoomControlsEnabled(true);
+            googleMap.getUiSettings().setZoomGesturesEnabled(false);
+            googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            googleMap.getUiSettings().setCompassEnabled(true);
+            googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        }
+        catch (Exception ex) {}
+
         mMap = googleMap;
 
-        googleMap.getUiSettings().setZoomControlsEnabled(true);
-        googleMap.getUiSettings().setZoomGesturesEnabled(false);
-
         // Add a marker in Sydney and move the camera
-        LatLng milano = new LatLng(45.4654219, 9.1859243);
-        mMap.addMarker(new MarkerOptions().position(milano).title("Marker in Milano"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(milano));
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }

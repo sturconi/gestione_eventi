@@ -38,6 +38,9 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        GloblalElite app = (GloblalElite) getApplication();
+        app.startLocation();
+
         setArrayInfo();
         setData();
 
@@ -163,7 +166,8 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         startActivity(intent);
     }
     public void openEventoDettagliato() {
-        Intent intent = new Intent(this, EventoDettagliato.class);
+        //Intent intent = new Intent(this, EventoDettagliato.class);
+        Intent intent = new Intent(this, ButtareviaActivity.class);
         startActivity(intent);
     }
 

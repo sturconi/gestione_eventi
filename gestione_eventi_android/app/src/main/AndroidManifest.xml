@@ -2,7 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.applicazionevera">
 
+    <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="17" />
 
+    <permission
+        android:name="info.android.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="info.android.googlemapsv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="info.android.googlemapsv2.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -10,13 +26,14 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-
-
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <meta-data
         android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyC7ZQEj8KF3D4izXIT7DqxviVBtObVGTsg" />
+        android:value="AIzaSyAJASd1_pYN8fTZvJ2e6Zf5KPG51n5wPso" />
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
 
     <application
         android:name=".GloblalElite"
@@ -28,9 +45,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Applicazionevera"
         android:usesCleartextTraffic="true">
-
-
-
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -42,15 +56,15 @@
              project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
              "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
-
+        <activity
+            android:name=".Home"
+            android:exported="true"
+            android:label="Home" />
         <activity
             android:name=".FilterActivity"
             android:exported="false"
-            android:parentActivityName=".Search"
-            android:label="Search" />
+            android:label="Search"
+            android:parentActivityName=".Search" />
         <activity
             android:name=".Login"
             android:exported="false"
@@ -58,32 +72,29 @@
         <activity
             android:name=".SezioneCommenti"
             android:exported="false"
-            android:parentActivityName=".EventoDettagliato"
-            android:label="COMMENTI" />
+            android:label="COMMENTI"
+            android:parentActivityName=".EventoDettagliato" />
         <activity
             android:name=".Evento"
             android:exported="false"
             android:label="EVENTI" />
         <activity
             android:name=".Categorie"
-            android:parentActivityName=".Home"
             android:exported="false"
-            android:label="CATEGORIE" />
+            android:label="CATEGORIE"
+            android:parentActivityName=".Home" />
         <activity
             android:name=".Settings"
             android:exported="false"
             android:label="SETTINGS" />
-        <activity
-            android:name=".Home"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".CreaEvento"
             android:exported="false"
-            android:parentActivityName=".Home"
-            android:label="CREA EVENTO" />
+            android:label="CREA EVENTO"
+            android:parentActivityName=".Home" />
         <activity
             android:name=".Registrazione"
             android:exported="false"
@@ -93,14 +104,14 @@
             android:exported="false" />
         <activity
             android:name=".Privacy"
-            android:parentActivityName=".Settings"
             android:exported="false"
-            android:label="PRIVACY" />
+            android:label="PRIVACY"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".Preferenze"
             android:exported="false"
-            android:parentActivityName=".Settings"
-            android:label="PREFERENZE" />
+            android:label="PREFERENZE"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".Notifiche"
             android:exported="false"
@@ -108,23 +119,23 @@
         <activity
             android:name=".Assistenza"
             android:exported="false"
-            android:parentActivityName=".Settings"
-            android:label="ASSISTENZA" />
+            android:label="ASSISTENZA"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".Account"
-            android:parentActivityName=".Settings"
             android:exported="false"
-            android:label="ACCOUNT" />
+            android:label="ACCOUNT"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".Cambiopassword"
-            android:parentActivityName=".Account"
             android:exported="false"
-            android:label="CAMBIOPASSWORD" />
+            android:label="CAMBIOPASSWORD"
+            android:parentActivityName=".Account" />
         <activity
             android:name=".Modificaimmagine"
-            android:parentActivityName=".Account"
             android:exported="false"
-            android:label="MODIFICAIMMAGINE" />
+            android:label="MODIFICAIMMAGINE"
+            android:parentActivityName=".Account" />
         <activity
             android:name=".EventoDettagliato"
             android:exported="false" />
@@ -132,8 +143,17 @@
             android:name=".Calendario"
             android:exported="false" />
         <activity
+            android:name=".ButtareviaActivity"
+            android:exported="false" />
+        <activity
             android:name=".Caricamento"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
+
 </manifest>
