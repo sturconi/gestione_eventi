@@ -178,7 +178,7 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         int style = AlertDialog.THEME_HOLO_LIGHT;
 
          datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-        datePickerDialog.getDatePicker().setMaxDate(System.nanoTime());
+
     }
 
     private String makeDateString(int day, int month, int year) {
