@@ -29,7 +29,7 @@ public class Caricamento extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.eventapp);
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.introguitar);
                     mediaPlayer.start();
                     sleep(2000);
 
