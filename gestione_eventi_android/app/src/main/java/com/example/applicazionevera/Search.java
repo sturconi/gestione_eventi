@@ -48,29 +48,16 @@ public class Search extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowCustomEnabled(true);
+        LayoutInflater inflater= (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view= inflater.inflate(R.layout.custom_image, null);
+        actionBar.setCustomView(view);
+
      setArrayInfo();
         gridView = findViewById(R.id.gridView);
         customAdapter = new CustomAdapter(evcatData, this);
         gridView.setAdapter(customAdapter);
-
-
-
-
-
-
-        //filter
-        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-        fab.setOnClickListener(view -> {
-            Intent intent = new Intent(Search.this, FilterActivity.class);
-            startActivityForResult(intent,104);
-
-        });
-
-
-
-
-
-
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -106,18 +93,6 @@ public class Search extends AppCompatActivity {
     }
 
 
-    //filter
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==104)
-        {
-            TextView textView = findViewById(R.id.tvprova);
-            textView.setText(data.getStringExtra("data"));
-
-        }
-
-    }
 
 
     private void setArrayInfo() {

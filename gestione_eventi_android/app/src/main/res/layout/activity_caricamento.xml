@@ -4,16 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"><![CDATA[
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
 
-    app:layout_constraintBottom_toTopOf="@+id/textMessaggio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
-    ]]>
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:layout_width="wrap_content"
@@ -44,6 +38,6 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/immagine" />
+        app:srcCompat="@drawable/transparent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

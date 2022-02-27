@@ -22,4 +22,8 @@ public interface MyApiEndpointInterface {
 
     @POST("/eventi")
     Call<Event> createEvent(@Body Event eve);
+
+    @GET("/eventi/{categoria}")
+    Call<List<Event>> getEventBycat(@Path("categoria") String categoria);
+
 }

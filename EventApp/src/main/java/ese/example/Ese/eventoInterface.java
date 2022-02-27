@@ -15,4 +15,6 @@ int saveE(Evento ev);
 	int deleteAllE();
 	
 	int updateE(Evento ev);
+
+	List<Evento> findByIdCat(String categoria);
 }

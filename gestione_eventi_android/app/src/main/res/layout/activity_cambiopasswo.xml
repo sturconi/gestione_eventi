@@ -11,28 +11,32 @@
         android:layout_width="241dp"
         android:layout_height="44dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="284dp"
+        android:layout_marginTop="184dp"
         android:layout_marginEnd="100dp"
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="Inserisci password attuale"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonConfer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="145dp"
-        android:text="Conferma"
+    <EditText
+        android:id="@+id/passNuova"
+        android:layout_width="245dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="Inserisci la nuova password"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passRipetizione"
+        app:layout_constraintTop_toBottomOf="@+id/passAttuale"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -40,7 +44,7 @@
         android:layout_width="244dp"
         android:layout_height="43dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="100dp"
         android:ems="10"
         android:gravity="center_horizontal"
@@ -52,20 +56,17 @@
         app:layout_constraintTop_toBottomOf="@+id/passNuova"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/passNuova"
-        android:layout_width="245dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Inserisci la nuova password"
-        android:inputType="textPassword"
+    <Button
+        android:id="@+id/buttonConfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="145dp"
+        android:text="Conferma"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passAttuale"
+        app:layout_constraintTop_toBottomOf="@+id/passRipetizione"
         tools:ignore="MissingConstraints" />
 
     <ImageView

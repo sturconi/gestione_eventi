@@ -91,6 +91,26 @@
             android:id="@+id/privacyTitle1"
             android:textAlignment="center"/>
 
+        <Button
+            android:id="@+id/startmus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginBottom="121dp"
+            android:text="Start Music" />
+
+        <Button
+            android:id="@+id/stopmus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="79dp"
+            android:layout_marginBottom="119dp"
+            android:text="Stop Music" />
+
     </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
