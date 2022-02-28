@@ -56,6 +56,26 @@ body{
 font-family: Gotham;
 }
 
+.event--img {
+
+    overflow: hidden;
+
+}
+
+.event--img img {
+
+    width: 115%;
+
+    transition: all .5s;
+}
+
+.event--img img:hover {
+
+    transform: scale(1.2);
+    filter: brightness(.8);
+
+}
+
 .event--menu h4 {
 
     font-size: 4.5rem;
