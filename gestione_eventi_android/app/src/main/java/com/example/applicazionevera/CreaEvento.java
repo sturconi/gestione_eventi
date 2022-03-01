@@ -124,7 +124,7 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
             }
         });
         nomeevento = (EditText) findViewById(R.id.nomeEvento);
-        luogo = (EditText) findViewById(R.id.indirizzo);
+
         descrizioneEvento = (EditText) findViewById(R.id.descrizioneEvento);
         dateButton = (Button) findViewById(R.id.dataEvento);
 
@@ -143,18 +143,18 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
             public void onClick(View view) {
                 String ora=timer.getText().toString();
                 String Enome = nomeevento.getText().toString();
-                String Eluogo = luogo.getText().toString();
+
                 String EdescrizioneEvento = descrizioneEvento.getText().toString();
                 String Edata_evento = dateButton.getText().toString();
                 String categoria = item.toString();
-                eve=new Event(categoria,Enome, Eluogo,Edata_evento,ora,EdescrizioneEvento);
+                eve=new Event(categoria,Enome, Edata_evento,ora,EdescrizioneEvento);
                 creaEvento();
                 if(statusCode==500 || statusCode==400){
-                    Toast.makeText(CreaEvento.this, "Evento non creato", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
-                    Toast.makeText(CreaEvento.this, "Evento Creato!", Toast.LENGTH_SHORT).show();
-                    openHome();
+
+                    openCreaEvento2();
                 }
             }
         });
@@ -236,6 +236,11 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
+    public void openCreaEvento2() {
+        Intent intent = new Intent(this, CreaEvento2.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

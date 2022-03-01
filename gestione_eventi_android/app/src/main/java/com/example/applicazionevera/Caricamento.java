@@ -20,7 +20,7 @@ public class Caricamento extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caricamento);
         getSupportActionBar().hide();
-
+/*
         AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
       //  audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
 

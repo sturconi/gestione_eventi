@@ -17,11 +17,10 @@ public class Event {
         String immagine;
 
 
-            public Event(String categoria,String Enome, String Eluogo,String Edata_evento,String ora, String EdescrizioneEvento) {
+            public Event(String categoria,String Enome,String Edata_evento,String ora, String EdescrizioneEvento) {
             this.nome_evento= Enome;
             this.categoria= categoria;
             this.descrizione=EdescrizioneEvento;
-            this.luogo=Eluogo;
             this.data=Edata_evento;
             this.ora=ora;
         }
