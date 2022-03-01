@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.applicazionevera">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="info.android.googlemapsv2.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -10,9 +9,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-
-
 
     <meta-data
         android:name="com.google.android.geo.API_KEY"
@@ -28,9 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Applicazionevera"
         android:usesCleartextTraffic="true">
-
-
-
+        <activity
+            android:name=".CreaEvento2"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -44,8 +40,12 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyAJASd1_pYN8fTZvJ2e6Zf5KPG51n5wPso" />
 
+        <activity
+            android:name=".ButtareviaActivity"
+            android:exported="false"
+            android:label="ButtareviaActivity" />
         <activity
             android:name=".Login"
             android:exported="false"
@@ -53,17 +53,17 @@
         <activity
             android:name=".SezioneCommenti"
             android:exported="false"
-            android:parentActivityName=".EventoDettagliato"
-            android:label="COMMENTI" />
+            android:label="COMMENTI"
+            android:parentActivityName=".EventoDettagliato" />
         <activity
             android:name=".Evento"
             android:exported="false"
             android:label="EVENTI" />
         <activity
             android:name=".Categorie"
-            android:parentActivityName=".Home"
             android:exported="false"
-            android:label="CATEGORIE" />
+            android:label="CATEGORIE"
+            android:parentActivityName=".Home" />
         <activity
             android:name=".Settings"
             android:exported="false"
@@ -77,8 +77,8 @@
         <activity
             android:name=".CreaEvento"
             android:exported="false"
-            android:parentActivityName=".Home"
-            android:label="CREA EVENTO" />
+            android:label="CREA EVENTO"
+            android:parentActivityName=".Home" />
         <activity
             android:name=".Registrazione"
             android:exported="false"
@@ -88,14 +88,14 @@
             android:exported="false" />
         <activity
             android:name=".Privacy"
-            android:parentActivityName=".Settings"
             android:exported="false"
-            android:label="PRIVACY" />
+            android:label="PRIVACY"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".Preferenze"
             android:exported="false"
-            android:parentActivityName=".Settings"
-            android:label="PREFERENZE" />
+            android:label="PREFERENZE"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".Notifiche"
             android:exported="false"
@@ -103,23 +103,23 @@
         <activity
             android:name=".Assistenza"
             android:exported="false"
-            android:parentActivityName=".Settings"
-            android:label="ASSISTENZA" />
+            android:label="ASSISTENZA"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".Account"
-            android:parentActivityName=".Settings"
             android:exported="false"
-            android:label="ACCOUNT" />
+            android:label="ACCOUNT"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".Cambiopassword"
-            android:parentActivityName=".Account"
             android:exported="false"
-            android:label="CAMBIOPASSWORD" />
+            android:label="CAMBIOPASSWORD"
+            android:parentActivityName=".Account" />
         <activity
             android:name=".Modificaimmagine"
-            android:parentActivityName=".Account"
             android:exported="false"
-            android:label="MODIFICAIMMAGINE" />
+            android:label="MODIFICAIMMAGINE"
+            android:parentActivityName=".Account" />
         <activity
             android:name=".EventoDettagliato"
             android:exported="false" />
@@ -135,6 +135,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".model_and_adapter.MyService"/>
+
+        <service android:name=".model_and_adapter.MyService" />
     </application>
+
 </manifest>

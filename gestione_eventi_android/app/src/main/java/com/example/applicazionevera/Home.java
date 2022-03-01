@@ -167,7 +167,7 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     }
     public void openEventoDettagliato() {
         //Intent intent = new Intent(this, EventoDettagliato.class);
-        Intent intent = new Intent(this, ButtareviaActivity.class);
+        Intent intent = new Intent(this, EventoDettagliato.class);
         startActivity(intent);
     }
 
