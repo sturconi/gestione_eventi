@@ -1,0 +1,137 @@
+h1 {
+    text-align: center;
+   font-size: 60px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+  
+}
+
+img {
+  padding-left: 20%;
+}
+
+li a {
+  font-size: 20px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+  li a:hover {
+    background-color: rgb(226, 31, 31);
+  }
+
+  .active {
+    background-color: #04AA6D;
+  }
+
+  body{
+      background-color: aquamarine;
+      margin: 0;
+  }
+
+  .sb-title {
+    position: relative;
+    top: -12px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+  }
+  
+  .sb-title-icon {
+    position: relative;
+    top: -5px;
+  }
+  
+  .card-container {
+
+    margin-left: 300px;
+    display: flex;
+    height: 700px;
+    width: 800px;
+  }
+  
+  .panel {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .half-input-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .half-input {
+    max-width: 120px;
+  }
+    
+  .maps > iframe {
+    height: 700px;
+    width: 800px;
+  } 
+
+  h2 {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+  }
+  
+  input {
+    height: 30px;
+  }
+  
+  input {
+    border: 0;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  input:focus::placeholder {
+    color: white;
+  }
+  
+  .b-annulla{
+    height: 40px;
+    width: 40%;
+    background: #ff0122;
+    color: white;
+    font-size: 15px;
+    
+    float: left;
+    text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.48);
+    cursor: pointer;
+  }
+
+  .b-crea{
+    height: 40px;
+    width: 40%;
+    background: #3367d6;
+    color: white;
+    float: right;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.48);
+    cursor: pointer;
+  }
