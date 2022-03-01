@@ -18,7 +18,6 @@ header {
 	background-position: center center;
 	position: relative;
 }
-
 .nav-area {
 	float: right;
 	list-style: none;
@@ -61,7 +60,7 @@ header {
 
 
 .container{
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 
