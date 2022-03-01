@@ -2,87 +2,127 @@
 <html lang="en">
 <head>
  <link rel="stylesheet" href="settings.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
  <script src="settings.js"></script>
     <title>EventApp</title>
 </head>
 <body onload="onPageLoaded();">
-    <div id="container">
-      
-       
-        <div id="main"   >
-       
-        <div class="topnav">
-          <h2>EventApp</h2>
-          <a  href="categorie.html">Categorie</a>
-          <a href="#news">Search</a>
-          <a href="#contact">Notifiche</a>
-          <a class="active" href="settings.html">Settings</a>
-          <a  href="home.html">Home</a>
-        </div>
-        <br>
-        <div class="preferenze">
-            <h3>Preferenze</h3>
-            <p>Applica il filtro nelle categorie</p>
-           
-            <label class="switch">
-                <p>ffffffff</p>
-                
-              </label>
-              
-              <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-              </label><br><br>
-              
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-              
-              <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-              </label>
-        
-        
-            <h3>Account</h3>
-            <label class="account" >
-                <button class="bottone" >Modifica Account</button>
-            </label>
-            <br>
-            <h3>Assistenza</h3>
-            <p>Per qualunque problematica riguardante l'app, contatta il nostro supporto tecnico attraverso un ticket:</p>
-            <label >
-              <input type="text" placeholder="Oggetto">
-            </label>
-            <br><br>
-            <label >
-              <textarea name="" id="" cols="30" rows="10" style="width: 98%;"></textarea>
-            </label>
-            <br><br>
-            <label >
-              <button class="invio">Invia ticket</button>
-            </label>
-            <br>
-            <h3>Privacy</h3>
-            <p>E' possibile cambiare le impostazioni di Privacy riguardanti il segnale GPS e le proprie generalità</p>
-            <label >
-              Segnale GPS
-              <input type="checkbox" name="" id="" checked>
-            </label>
-            <label >
-              Mostra nome e cognome
-              <input type="checkbox" name="" id="" checked>
-            </label>
-        
-       
 
-        
+  <header>
+       <div class="wrapper">
+            <div class="logo">
+                <img src="transparent.png" alt="Eventapp">
+             </div>
+                          <ul class="nav-area">
+                          <li><a href="#">Home</a></li>
+                          <li><a href="search.html">Cerca</a></li>
+                          <li><a class="active"  href="settings.html">Impostazioni</a></li>
+                          <li><a href="categorie.html">Categorie</a></li>
+                        
+                          </ul> <br>
+         </div>
+    
+         <div class="container">
+          <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-4 pb-5">
+                    <!-- Account Sidebar-->
+                    <div class="author-card pb-3">
+                        
+                        <div class="author-card-profile">
+                            <div class="author-card-avatar"><img src="https://yt3.ggpht.com/ytc/AKedOLT7vnLLR6uWi8fLoLKdJ8iZY7c4rTHPD7I3f7pa=s900-c-k-c0x00ffffff-no-rj" alt="Daniel Adams">
+                            </div>
+                            <div class="author-card-details">
+                                <h5 class="author-card-name text-lg">Matteo Romagnoni</h5><span class="author-card-position">@GiangioRoma</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wizard">
+                        <nav class="list-group list-group-flush">
+                            <a class="list-group-item" href="#">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div><i class="fe-icon-shopping-bag mr-1 text-muted"></i>
+                                        <div class="d-inline-block font-weight-medium text-uppercase">Preferenze</div>
+                                    </div>
+                                </div>
+                            </a><a class="list-group-item active" href="#"><i class="fe-icon-user text-muted"></i>Account</a><a class="list-group-item" href="#"><i class="fe-icon-map-pin text-muted"></i>Notifiche</a>
+                            <a class="list-group-item" href="#" target="__blank">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div><i class="fe-icon-heart mr-1 text-muted"></i>
+                                        <div class="d-inline-block font-weight-medium text-uppercase">Assistenza</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="list-group-item" href="#" target="__blank">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div><i class="fe-icon-tag mr-1 text-muted"></i>
+                                        <div class="d-inline-block font-weight-medium text-uppercase">Privacy</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Profile Settings-->
+                <div class="col-lg-8 pb-5">
+                    <form class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="account-fn">Nome</label>
+                                <input class="form-control" type="text" id="account-fn" value="" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="account-ln">Cognome</label>
+                                <input class="form-control" type="text" id="account-ln" value="" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="account-email">E-mail</label>
+                                <input class="form-control" type="email" id="account-email" value="" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="account-phone">Username</label>
+                                <input class="form-control" type="text" id="account-phone" value="" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="account-pass">Nuova Password</label>
+                                <input class="form-control" type="password" id="account-pass">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="account-confirm-pass">Conferma Password</label>
+                                <input class="form-control" type="password" id="account-confirm-pass">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr class="mt-2 mb-3">
+                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                <div class="custom-control custom-checkbox d-block">
+                                    
+                                </div>
+                                <button class="btn btn-style-1 btn-primary" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Aggiorna profilo</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+          </div>
+   
+    </header>
 
-        <div id="footer">
-         Copyright &copy; Davide Cappabianca 2022
-        </div>
-    </div>
+    <footer>
+      <p>Author: Hege Refsnes<br>
+      <a href="mailto:hege@example.com">hege@example.com</a></p>
+    </footer>
 </body>
 </html>
