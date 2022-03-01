@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <title>Eventapp</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Alata|Josefin+Sans|Maven+Pro&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="eventi.css">  
+</head>
+
+<script >
+    $(document).ready(function(){
+        $("#myinput").on("keyup",function(){
+        var value = $(this).val().toLowerCase();
+        $("#card div").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+
+        });
+    });
+        });
+
+
+</script>
+
+
+
+<body >
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="transparent.png" alt="Eventapp">
+            </div>
+                <ul class="nav-area">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="#">Cerca</a></li>
+                        <li><a href="settings.html">Impostazioni</a></li>
+                        <li><a href="categorie.html">Categorie</a></li>
+                        <li><a href="#">Notifiche</a></li>
+                </ul>
+            </div>
+    <div id ="portfolio" class="text-center paddsection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <input id="myinput" type="text"  placeholder="Cerca..." class="form-control"><br><br>
+
+                    <div class="portfolio-container" id="card">
+
+                        <div class="col-md-4 portfolio-thumbnail  " >
+                            <div class="card" id="card">
+                            
+                                   <div class="event--img">
+                                       <img src="https://st.ilfattoquotidiano.it/wp-content/uploads/2020/02/28/concerti-1200.jpg" alt="Eventapp">
+                                   </div> 
+
+                                <div class="event--menu">
+
+                                    <h4> 20 Giugno </h4>
+            
+                                    <ul class="event--detail">
+            
+                                        <li> <i class="fa fa-clock-o" aria-hidden="true"></i> <span> 2.00PM - 2.30PM </span></li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><span> Paderno Dugnano </span></li>
+                                    </ul>
+                                </div>
+            
+                                <div class="event--text">
+            
+                                    <h4> Prova titolo </h4>
+                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Perferendis, hic ullam, dicta eaque perspiciatis minima officiis 
+                                    </p>
+            
+                                </div>
+            
+                                <div class="btn">
+            
+                                    <a href="#"> Scopri di più </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="portfolio-container" id="card">
+
+                        <div class="col-md-4 portfolio-thumbnail  " >
+                            <div class="card" id="card">
+                            
+                                <div class="event--menu">
+
+                                    <h4> 20 Giugno </h4>
+            
+                                    <ul class="event--detail">
+            
+                                        <li> <i class="fa fa-clock-o" aria-hidden="true"></i> <span> 2.00PM - 2.30PM </span></li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><span> Seregno </span></li>
+                                    </ul>
+                                </div>
+            
+                                <div class="event--text">
+            
+                                    <h4> Prova </h4>
+                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Perferendis, hic ullam, dicta eaque perspiciatis minima officiis 
+                                    </p>
+            
+                                </div>
+            
+                                <div class="btn">
+            
+                                    <a href="#"> Scopri di più </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="portfolio-container" id="card">
+
+                        <div class="col-md-4 portfolio-thumbnail  " >
+                            <div class="card" id="card">
+                            
+                                <div class="event--menu">
+
+                                    <h4> 20 Giugno </h4>
+            
+                                    <ul class="event--detail">
+            
+                                        <li> <i class="fa fa-clock-o" aria-hidden="true"></i> <span> 2.00PM - 2.30PM </span></li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><span> Seregno </span></li>
+                                    </ul>
+                                </div>
+            
+                                <div class="event--text">
+            
+                                    <h4> Prova </h4>
+                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Perferendis, hic ullam, dicta eaque perspiciatis minima officiis 
+                                    </p>
+            
+                                </div>
+            
+                                <div class="btn">
+            
+                                    <a href="#"> Scopri di più </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="portfolio-container" id="card">
+
+                        <div class="col-md-4 portfolio-thumbnail  " >
+                            <div class="card" id="card">
+                            
+                                <div class="event--menu">
+
+                                    <h4> 20 Giugno </h4>
+            
+                                    <ul class="event--detail">
+            
+                                        <li> <i class="fa fa-clock-o" aria-hidden="true"></i> <span> 2.00PM - 2.30PM </span></li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><span> Seregno </span></li>
+                                    </ul>
+                                </div>
+            
+                                <div class="event--text">
+            
+                                    <h4> Prova </h4>
+                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Perferendis, hic ullam, dicta eaque perspiciatis minima officiis 
+                                    </p>
+            
+                                </div>
+            
+                                <div class="btn">
+            
+                                    <a href="#"> Scopri di più </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="portfolio-container" id="card">
+
+                        <div class="col-md-4 portfolio-thumbnail  " >
+                            <div class="card" id="card">
+                            
+                                <div class="event--menu">
+
+                                    <h4> 20 Giugno </h4>
+            
+                                    <ul class="event--detail">
+            
+                                        <li> <i class="fa fa-clock-o" aria-hidden="true"></i> <span> 2.00PM - 2.30PM </span></li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><span> Seregno. Via Garibaldi, 15 </span></li>
+                                    </ul>
+                                </div>
+            
+                                <div class="event--text">
+            
+                                    <h4> Prova </h4>
+                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                        Perferendis, hic ullam, dicta eaque perspiciatis minima officiis 
+                                    </p>
+            
+                                </div>
+            
+                                <div class="btn">
+            
+                                    <a href="#"> Scopri di più </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                    
+                
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</header>
+
+
+
+<script src="https://use.fontawesome.com/e4dd7e3a17.js"></script>
+
+</body>
+</html>

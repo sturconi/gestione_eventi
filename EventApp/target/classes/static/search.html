@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	  <title>Eventapp</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  <link href="https://fonts.googleapis.com/css?family=Alata|Josefin+Sans|Maven+Pro&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="search.css">  
+</head>
+
+<script >
+	$(document).ready(function(){
+		$("#myinput").on("keyup",function(){
+		var value = $(this).val().toLowerCase();
+		$("#card div").filter(function(){
+			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+
+		});
+	});
+		});
+
+
+</script>
+
+
+
+<body >
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="transparent.png" alt="Eventapp">
+            </div>
+                <ul class="nav-area">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="#">Cerca</a></li>
+                        <li><a href="settings.html">Impostazioni</a></li>
+                        <li><a href="categorie.html">Categorie</a></li>
+                        <li><a href="#">Notifiche</a></li>
+                </ul>
+            </div>
+	<div id ="portfolio" class="text-center paddsection">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<input id="myinput" type="text"  placeholder="Cerca..." class="form-control"><br><br>
+
+					<div class="portfolio-container" id="card">
+
+						<div class="col-md-4 portfolio-thumbnail  " >
+							<div class="card" id="card">
+								<img src="https://static.sky.it/images/skysport/it/calcio/champions-league/2021/04/19/champions-league-2024-format-squadre/cover_champions_trofeo_ansa.jpg" style="width: 100%">
+                                <div class="time">
+                                    <h2>24  <span> Giugno 2022</span> </h2>
+                                </div>
+                                <br>
+								<h4><b>Concerto di Ana Mena</b></h4>
+								<p>Vuoi fare la chemio gratis? Questo è il posto giusto. Divertimento assicurato ;)
+                                    <br> <br> <span><b>via Alessandra Mussolini, 81. Quarto Oggiaro (Mi)</b></span></p>
+
+
+									<div class="btn">
+            
+										<a href="#"> Scopri di più </a>
+									</div>
+							</div>
+
+							
+						</div>
+
+                    </div>
+
+                    <div class="portfolio-container" id="card">
+
+						<div class="col-md-4 portfolio-thumbnail  " >
+							<div class="card" id="card">
+								<img src="https://static.sky.it/images/skysport/it/calcio/champions-league/2021/04/19/champions-league-2024-format-squadre/cover_champions_trofeo_ansa.jpg" style="width: 100%">
+                                <div class="time">
+                                    <h2>24  <span> Giugno 2022</span> </h2>
+                                </div>
+                                <br>
+								<h4><b>Juve-Salernitana</b></h4>
+								<p>Non c'è bisogno di una descrizione, devi esserci!
+                                    <br> <br> <span><b>via Alessandra Mussolini, 81. Quarto Oggiaro (Mi)</b></span></p>
+
+									<div class="btn">
+            
+										<a href="#"> Scopri di più </a>
+									</div>
+							</div>
+						</div>
+
+                    </div>
+
+                    <div class="portfolio-container" id="card">
+
+						<div class="col-md-4 portfolio-thumbnail  " >
+							<div class="card" id="card">
+								<img src="https://static.sky.it/images/skysport/it/calcio/champions-league/2021/04/19/champions-league-2024-format-squadre/cover_champions_trofeo_ansa.jpg" style="width: 100%">
+                                <div class="time">
+                                    <h2>24  <span> Giugno 2022</span> </h2>
+                                </div>
+                                <br>
+								<h4><b>Saluto al Duce</b></h4>
+								<p>Combattenti di terra e di mare. Siateci e venite ad adorare LVI.
+                                    <br> <br> <span><b>via Alessandra Mussolini, 81. Quarto Oggiaro (Mi)</b></span></p>
+
+
+									<div class="btn">
+            
+										<a href="#"> Scopri di più </a>
+									</div>
+							</div>
+						</div>
+
+                    </div>
+
+                    <div class="portfolio-container" id="card">
+
+						<div class="col-md-4 portfolio-thumbnail  " >
+							<div class="card" id="card">
+								<img src="https://st.ilfattoquotidiano.it/wp-content/uploads/2020/02/28/concerti-1200.jpg" style="width: 100%">
+                                <div class="time">
+                                    <h2>24  <span> Giugno 2022</span> </h2>
+                                </div>
+                                <br>
+								<h4><b>Concerto di Ana Mena</b></h4>
+								<p>Vuoi fare la chemio gratis? Questo è il posto giusto. Divertimento assicurato ;)
+                                    <br> <br> <span><b>via Alessandra Mussolini, 81. Quarto Oggiaro (Mi)</b></span></p>
+
+
+									<div class="btn">
+            
+										<a href="#"> Scopri di più </a>
+									</div>
+							</div>
+						</div>
+
+                    </div>
+
+                    <div class="portfolio-container" id="card">
+
+						<div class="col-md-4 portfolio-thumbnail  " >
+							<div class="card" id="card">
+								<img src="https://st.ilfattoquotidiano.it/wp-content/uploads/2020/02/28/concerti-1200.jpg" style="width: 100%">
+                                <div class="time">
+                                    <h2>24  <span> Giugno 2022</span> </h2>
+                                </div>
+                                <br>
+								<h4><b>Concerto di Ana Mena</b></h4>
+								<p>Vuoi fare la chemio gratis? Questo è il posto giusto. Divertimento assicurato ;)
+                                    <br> <br> <span><b>via Alessandra Mussolini, 81. Quarto Oggiaro (Mi)</b></span></p>
+						
+
+							<div class="btn">
+            
+								<a href="#"> Scopri di più </a>
+							</div>
+
+								</div>
+						</div>
+
+                    </div>
+
+                    <div class="portfolio-container" id="card">
+
+						<div class="col-md-4 portfolio-thumbnail  " >
+							<div class="card" id="card">
+								<img src="https://st.ilfattoquotidiano.it/wp-content/uploads/2020/02/28/concerti-1200.jpg" style="width: 100%">
+                                <div class="time">
+                                    <h2>24  <span> Giugno 2022</span> </h2>
+                                </div>
+                                <br>
+								<h4><b>Concerto di Ana Mena</b></h4>
+								<p>Vuoi fare la chemio gratis? Questo è il posto giusto. Divertimento assicurato ;)
+                                    <br> <br> <span><b>via Alessandra Mussolini, 81. Quarto Oggiaro (Mi)</b></span></p>
+
+									<div class="btn">
+            
+										<a href="#"> Scopri di più </a>
+									</div>
+							</div>
+						</div>
+
+                    </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</header>
+
+
+
+
+
+</body>
+</html>

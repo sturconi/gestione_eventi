@@ -9,28 +9,27 @@
 
 </head>
 
-<body>
+<body style= color:blue; >
      <div class="logo">
      <img  src="transparent.png" alt="" srcset="">
      <hr>
-     <h1 class="mano">QUESTO</h1>
-     <h1 class="mano">SITO</h1>
-     <h1 class="mano">E'</h1>
-     <h1 class="mano">BELLO</h1>
+     <h1 class="slogan" >  CERCA ,   TROVA, </h1>
+     <h1 class="slogan">     VIVI </h1>
+     </body>
      </div>
      <!-- partial:index.partial.html -->
-     <div class="form-structor">
+     <div class="form-structor" onsubmit="return doSubmit();">
           
           <div class="signup">
                <h2 class="form-title" id="signup"><span></span>Registrati</h2>
                <div class="form-holder">
-                    <input type="text" class="input" placeholder="Nome" />
-                    <input type="text" class="input" placeholder="Cognome" />
-                    <input type="text" class="input" placeholder="Data di nascita" />
-                    <input type="text" class="input" placeholder="Nickame" />
-                    <input type="email" class="input" placeholder="Email" />
-                    <input type="password" class="input" placeholder="Password" />
-                    <input type="password" class="input" placeholder="Conferma Password" />
+                    <input type="text" class="input" placeholder="Nome" id="nome"  required autofocus />
+                    <input type="text" class="input" placeholder="Cognome" id="cognome"  required autofocus />
+                    <input type="text" class="input" placeholder="Data di nascita" id="data" required autofocus />
+                    <input type="text" class="input" placeholder="Nickame" id="username"  required autofocus />
+                    <input type="email" class="input" placeholder="Email" id="email"  required autofocus />
+                    <input type="password" class="input" id="password" placeholder="Password" required autofocus/>
+                    <input type="password" class="input" id="passwordConf" placeholder="Conferma Password" required autofocus/>
                   
                </div>
                <button class="submit-btn">Registrati</button>
@@ -39,8 +38,8 @@
                <div class="center">
                     <h2 class="form-title" id="login"><span></span>Accedi</h2>
                     <div class="form-holder">
-                         <input type="email" class="input" placeholder="Email" />
-                         <input type="password" class="input" placeholder="Password" />
+                         <input type="email" class="input" id="usernameLogin" placeholder="Email" />
+                         <input type="password" class="input" id="passwordLogin" placeholder="Password" />
 
                     </div>
                     <button class="submit-btn">Accedi</button>

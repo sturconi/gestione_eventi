@@ -6,35 +6,36 @@
     <title>Eventapp</title>
 </head>
 <body onload="onPageLoaded();">
-    <div id="container">
-      
-       
-        <div id="main"   >
-       
-        <div class="topnav">
-          <h2>EventApp</h2>
-          <a class="active" href="categorie.html">Categorie</a>
-          <a href="#news">Search</a>
-          <a href="#contact">Notifiche</a>
-          <a href="settings.html">Settings</a>
-          <a href="home.html">Home</a>
+    
+       <header> 
+            <div class="wrapper">
+                <div class="logo">
+                    <img src="transparent.png" alt="Eventapp">
+                </div>
+        <ul class="nav-area">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="search.html">Cerca</a></li>
+        <li><a href="settings.html">Impostazioni</a></li>
+        <li><a href="categorie.html">Categorie</a></li>
+        <li><a href="#">Notifiche</a></li>
+        </ul>
         </div>
+    
         <br> <br>
         
+        <div class="botton">
         <form id="formCategorie" style="text-align: center;" onsubmit="return submit();">
             
-            <button style="height: 300px;width: 485.41px;">Sport</button> 
-            <button style="height: 300px;width: 485.41px;">Intrattenimento</button> 
+            <button > <b>Sport</b></button> 
+            <button ><b>Intrattenimento</b></button> 
             <br>
-            <button style="height: 300px;width: 485.41px;">Servizi</button> 
-            <button style="height: 300px;width: 485.41px;">Cultura</button> 
+            <button ><b>Servizi</b></button> 
+            <button ><b>Cultura</b></button> 
             
             <br>
         </form>
-        </div>
-        <div id="footer">
-         Copyright &copy; Kristhen Mercoledisanto 2022
-        </div>
     </div>
+    </header>
+   
 </body>
 </html>
