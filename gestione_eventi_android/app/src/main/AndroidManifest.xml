@@ -48,6 +48,7 @@
             android:label="ButtareviaActivity" />
         <activity
             android:name=".Login"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:exported="false"
             android:label="LOGIN" />
         <activity

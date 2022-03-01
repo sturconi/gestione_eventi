@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    def mdcVersion='1.0.0'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.google.android.material:material:<version>'
     implementation 'androidx.appcompat:appcompat:1.4.0'
@@ -52,5 +54,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.hardik.hsdp:scalablesize-android:1.0.1'
+    implementation "com.google.android.material:material:${mdcVersion}"
 }
 
