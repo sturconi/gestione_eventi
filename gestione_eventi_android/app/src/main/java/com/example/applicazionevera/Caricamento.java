@@ -22,8 +22,8 @@ public class Caricamento extends AppCompatActivity {
         getSupportActionBar().hide();
 /*
         AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
-*/
+      //  audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
+
 
         Thread timer = new Thread() {
             @Override
