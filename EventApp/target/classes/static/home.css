@@ -1,4 +1,5 @@
 * {
+<<<<<<< HEAD
 	margin: 0;
 	padding: 0;
 }
@@ -224,6 +225,222 @@ section .events .crea-evento .slogan a:hover{
 		padding: 5px;
 		font-size: 11px;
 	}
+=======
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+}
+.wrapper {
+	width: 1170px;
+	margin: auto;
+}
+header {
+	background-color:aquamarine;
+	height: 100vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+.nav-area {
+	float: right;
+	list-style: none;
+	margin-top: 30px;
+}
+.nav-area li {
+	display: inline-block;
+}
+.nav-area li a {
+	color: #000;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.nav-area li a:hover {
+	background: #fff;
+	color: #333;
+}
+.logo {
+	float: left;
+}
+.logo img {
+	width: 100%;
+	padding: 15px 0;
+}
+
+
+section .events{
+	padding: 50px;
+	width: 50%;
+	height: 100%;
+	
+}
+
+section .events ul{
+	position: absolute;
+	top: 60%;
+	transform: translateY(-50%);
+	margin: 0;
+	padding: 40px;
+	box-sizing: border-box;
+}
+
+section .events ul li{
+	list-style: none;
+	background: #fff;
+	box-sizing: border-box;
+	height: 180px;
+
+}
+
+section .events ul li .time{
+	position: relative;
+	padding: 20px;
+	background: #262626;
+	box-sizing: border-box;
+	width: 25%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	transition: .5s;
+}
+
+section .events ul li:hover .time{
+	background: #05473a;
+}
+
+section .events ul li .time h2{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 50px;
+	line-height: 30px;
+
+}
+
+section .events ul li .time h2 span{
+	font-size: 25px;	
+}
+
+section .events ul li .details{
+	padding: 20px;
+	background: #fff;
+	box-sizing: border-box;
+	width: 70%;
+	height: 100%;
+	float: left;
+}
+
+section .events ul li .details h3{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-size: 22px;
+}
+
+section .events ul li .details p{
+	position: relative;
+	margin: 10 px 0 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+
+section .events ul li .details a{
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	border: 2px solid #262626;
+	margin-top: 15px;
+	font-size: 18px;
+	transition: .5s;
+}
+
+section .events ul li .details a:hover{
+	background:#05473a;
+	color: #fff;
+	border-color: #05473a;
+}
+
+section .events .crea-evento{
+	padding: 50px;
+	width: 50%;
+	height: 100%;
+	}
+
+section .events .crea-evento .slogan{
+	padding: 100px;
+	padding-left: 30px;
+	width: 1300px;
+	height: 600px;
+	text-align: center;
+}
+
+section .events .crea-evento .slogan h1 {
+	text-align: right;
+	color: #000;
+	text-transform: uppercase;
+	font-size: 30px;
+}
+section .events .crea-evento .slogan h1 span {
+	color: #05473a;
+	font-size: 40px;
+	text-align: center;
+}
+
+section .events .crea-evento .slogan a{
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	border: 2px solid #262626;
+	margin-top: 15px;
+	font-size: 50px;
+	color:#05473a;
+	transition: .5s;
+}
+
+section .events .crea-evento .slogan a:hover{
+	background:#05473a;
+	color: #fff;
+	border-color: #05473a;
+}
+
+
+
+
+ 
+/*resposive*/
+
+@media (max-width:600px) {
+	.wrapper {
+		width: 100%;
+	}
+	.logo {
+		float: none;
+		width: 50%;
+		text-align: center;
+		margin: auto;
+	}
+
+	.nav-area {
+		float: none;
+		margin-top: 0;
+	}
+	.nav-area li a {
+		padding: 5px;
+		font-size: 11px;
+	}
+>>>>>>> 90a6093a4c4fe4653a01a84f87a453dd3341c978
 	.nav-area {
 		text-align: center;
 	}

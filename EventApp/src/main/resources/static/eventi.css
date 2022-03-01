@@ -82,6 +82,7 @@ font-family: Gotham;
     font-weight: 400;
     text-transform: uppercase;
     color: #182731;
+    
 
     line-height: 1.2;
 
@@ -107,6 +108,7 @@ font-family: Gotham;
 
     font-size: 1.7rem;
     font-weight: 400;
+    float: left;
 
     padding: .4rem;
 
@@ -116,6 +118,7 @@ font-family: Gotham;
 
     font-size: 1.4rem;
     font-weight: 400;
+    
 
 }
 
@@ -126,7 +129,7 @@ font-family: Gotham;
 
 }
 .event--text h4 {
-
+    padding-top: 70px;
     font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
