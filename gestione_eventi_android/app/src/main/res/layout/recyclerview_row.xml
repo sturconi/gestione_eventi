@@ -1,113 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/DataEventoHome"
-        android:layout_width="121dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="18 FEB 2022"
-        android:textColor="@color/teal_200"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="1dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="?android:attr/listDivider"
-        android:backgroundTint="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/titoloEventoHome"
-        app:layout_constraintStart_toEndOf="@+id/DataEventoHome"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/titoloEventoHome"
-        android:layout_width="213dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="Calcetto folle pazzesco"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="24dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DataEventoHome" />
-
-    <TextView
-        android:id="@+id/luogoEventoHome"
-        android:layout_width="372dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:text="Via Luigi Soderini, 27- Milano(Mi)"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
-
-    <ImageView
-        android:id="@+id/immagineEventoHome"
-        android:layout_width="383dp"
-        android:layout_height="152dp"
-        android:layout_marginTop="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/luogoEventoHome"
-        app:srcCompat="@drawable/duomo" />
-
-    <TextView
-        android:id="@+id/nCommenti"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/eventCardLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="16dp"
-        android:drawableLeft="@drawable/outline_chat_black_24dp"
-        android:drawablePadding="10dp"
-        android:gravity="center"
-        android:text="0"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/immagineEventoHome" />
+        android:layout_marginVertical="10dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/ValutazioneMedia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="16dp"
-        android:drawableLeft="@drawable/ic_baseline_star_rate_24"
-        android:drawablePadding="10dp"
-        android:gravity="center"
-        android:text="0"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/nCommenti"
-        app:layout_constraintTop_toBottomOf="@+id/immagineEventoHome" />
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/cardImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/duomo"></ImageView>
+
+                <TextView
+                    android:id="@+id/cardTitolo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:background="#99141414"
+                    android:textStyle="bold"></TextView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:elevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="7.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:id="@+id/cardGiorno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:textColor="@color/textBlue"
+                                android:textSize="25sp"
+                                android:textStyle="bold">
+
+                            </TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5"
+                            android:background="@color/lightBlue"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/cardMese"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:textColor="@color/textBlue"
+                                android:textSize="13sp"></TextView>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_weight="5"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_location_on_24"></ImageView>
+
+                <TextView
+                    android:id="@+id/cardLuogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/deepBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:gravity="end|center"
+                android:orientation="horizontal"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/count_background"
+                    android:orientation="vertical"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="+135"
+                        android:textAlignment="center"
+                        android:textColor="@color/textBlue"
+                        android:textSize="15sp"
+                        android:textStyle="bold"></TextView>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:maxLines="1"
+                    android:text="are interested"
+                    android:textColor="@android:color/darker_gray">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

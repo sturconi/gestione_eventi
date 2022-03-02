@@ -1,83 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".SezioneCommenti">
 
-    <ImageView
-        android:id="@+id/EventappLogo"
-        android:layout_width="254dp"
-        android:layout_height="88dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/immagine" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/scriviCommento"
-        android:layout_width="309dp"
-        android:layout_height="138dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Scrivi il commento"
 
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oggettoCommento"
-        app:layout_constraintVertical_bias="0.152" />
+        <LinearLayout
+            android:id="@+id/CommentBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
 
-    <EditText
-        android:id="@+id/sezioneCommenti"
-        android:layout_width="312dp"
-        android:layout_height="246dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="sezione commenti"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/oggettoCommento"
-        android:layout_width="308dp"
-        android:layout_height="69dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Inserisci titolo oggetto"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EventappLogo"
-        app:layout_constraintVertical_bias="0.127" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Scrivi un commento"
+                android:textColor="@color/editTextSubHeading"
+                android:textSize="16sp"></TextView>
+
+            <EditText
+                android:id="@+id/Commentosez"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@color/editTextBackground"
+                android:hint=""
+                android:inputType=""
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/greyDate"></EditText>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonReg"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/registerBtn"
+                android:text="Invia"
+                app:layout_constraintTop_toBottomOf="@id/Commentosez"
+                tools:layout_editor_absoluteX="20dp"></com.google.android.material.button.MaterialButton>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/CommentBox">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcomment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
+        app:itemIconTint="@android:color/black"
+        app:itemTextColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation" />
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

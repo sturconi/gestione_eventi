@@ -4,9 +4,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.applicazionevera.R;
@@ -38,11 +37,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter < RecyclerViewAdap
 
 
         holder.postimage.setImageResource(evento.getPostImage());
-        holder.commento.setText(evento.getCommento());
-        holder.vmedia.setText(evento.getVmedia());
         holder.titolo.setText(evento.getTitolo());
         holder.luogo.setText(evento.getLuogo());
-        holder.data.setText(evento.getData());
+        holder.mese.setText(evento.getMese());
+        holder.giorno.setText(evento.getGiorno());
     }
     @Override
     public int getItemCount() {
@@ -53,18 +51,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter < RecyclerViewAdap
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView postimage;
-        TextView  commento, vmedia, titolo, luogo, data;
+        TextView  titolo, luogo, mese,giorno;
         OnEventListener onEventListener;
 
         public ViewHolder(View itemView, OnEventListener onEventListener) {
             super(itemView);
-            postimage = itemView.findViewById(R.id.immagineEventoHome);
-            commento = itemView.findViewById(R.id.nCommenti);
-            vmedia = itemView.findViewById(R.id.ValutazioneMedia);
-            titolo = itemView.findViewById(R.id.titoloEventoHome);
-            luogo = itemView.findViewById(R.id.luogoEventoHome);
-            data = itemView.findViewById(R.id.DataEventoHome);
-
+            postimage = itemView.findViewById(R.id.cardImage);
+            giorno= itemView.findViewById(R.id.cardGiorno);
+            titolo = itemView.findViewById(R.id.cardTitolo);
+            luogo = itemView.findViewById(R.id.cardLuogo);
+            mese = itemView.findViewById(R.id.cardMese);
             this.onEventListener = onEventListener;
 
             itemView.setOnClickListener(this);
