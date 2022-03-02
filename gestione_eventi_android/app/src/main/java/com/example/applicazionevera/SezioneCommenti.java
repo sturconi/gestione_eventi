@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -29,38 +31,24 @@ public class SezioneCommenti extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sezione_commenti);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         setArrayInfo();
         setData();
 
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        ImageButton b;
+        b = findViewById(R.id.buttonInvia);
+        b.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.toHome:
-                        openHome();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toSearch:
-                        openSearch();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toNotifications:
-                        openNotifications();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toSettings:
-                        openSettings();
-                        overridePendingTransition(0,0);
-                        break;
-                }
-                return false;
+            public void onClick(View view) {
+                EditText commento   = (EditText)findViewById(R.id.Commentosez);
+                String testo = commento.getText().toString();
+                commentData.add(new CommentData(testo,"@Giangio","Matteo Romagnoni", R.drawable.duomo));
+                commento.setText(null);
             }
         });
-
 
 
     }
@@ -68,18 +56,7 @@ public class SezioneCommenti extends AppCompatActivity {
         commentData = new ArrayList<>();
         commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
         commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
+
 
           }
 

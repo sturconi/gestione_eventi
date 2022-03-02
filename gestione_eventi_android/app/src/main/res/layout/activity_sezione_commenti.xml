@@ -17,43 +17,38 @@
             android:id="@+id/CommentBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
+            android:layout_marginTop="20dp"
 
-            android:orientation="vertical"
+            android:layout_weight="5"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="Scrivi un commento"
-                android:textColor="@color/editTextSubHeading"
-                android:textSize="16sp"></TextView>
 
             <EditText
                 android:id="@+id/Commentosez"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@color/editTextBackground"
-                android:hint=""
-                android:inputType=""
-                android:maxLines="1"
+                android:hint="Scrivi un commento"
+                android:inputType="textMultiLine"
                 android:paddingLeft="20dp"
                 android:textColor="@android:color/black"
                 android:textColorHint="@color/greyDate"></EditText>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonReg"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/registerBtn"
-                android:text="Invia"
+
+            <ImageButton
+                android:id="@+id/buttonInvia"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_baseline_send_24"
+                android:text="Pubblica"
                 app:layout_constraintTop_toBottomOf="@id/Commentosez"
-                tools:layout_editor_absoluteX="20dp"></com.google.android.material.button.MaterialButton>
+                tools:layout_editor_absoluteX="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -74,20 +69,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:itemIconTint="@android:color/black"
-        app:itemTextColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
 
 
 </RelativeLayout>
