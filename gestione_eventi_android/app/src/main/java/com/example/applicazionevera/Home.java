@@ -1,11 +1,5 @@
 package com.example.applicazionevera;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.applicazionevera.model_and_adapter.MyData;
 import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
@@ -115,11 +114,11 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
 
     private void setArrayInfo() {
         myData = new ArrayList<>();
-             myData.add(new MyData(R.drawable.duomo,"20","4.3","Calcetto pazzo sgravato","via Risorgimento, Milano","28 FEB 2002"));
-             myData.add(new MyData(R.drawable.ic_baseline_music_note_24,"20","4.3","Concerto di Ariana Grande","Via delle esplosioni","14 NOV 2015"));
-             myData.add(new MyData(R.drawable.ic_baseline_fastfood_24,"20","4.3","Gino il pasticciere","Piazzale Agricoltura","28 FEB 2002"));
-             myData.add(new MyData(R.drawable.ic_baseline_sports_basketball_24,"20","4.3","NBA All Star Game","Green street","28 FEB 2002"));
-             myData.add(new MyData(R.drawable.ic_baseline_museum_24,"20","4.3","Museo dei paguri","Via kekkobomba","28 FEB 2002"));
+             myData.add(new MyData(R.drawable.duomo,"20","Apr","Concerto di rondo","San siro"));
+             myData.add(new MyData(R.drawable.ic_baseline_music_note_24,"20","Apr","Concerto di rondo","San siro"));
+             myData.add(new MyData(R.drawable.ic_baseline_fastfood_24,"20","Apr","Concerto di rondo","San siro"));
+             myData.add(new MyData(R.drawable.ic_baseline_sports_basketball_24,"20","Apr","Concerto di rondo","San siro"));
+             myData.add(new MyData(R.drawable.ic_baseline_museum_24,"20","Apr","Concerto di rondo","San siro"));
         }
 
 
