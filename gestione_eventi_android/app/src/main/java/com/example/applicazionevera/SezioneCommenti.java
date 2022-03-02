@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -36,23 +38,25 @@ public class SezioneCommenti extends AppCompatActivity {
         setData();
 
 
+        ImageButton b;
+        b = findViewById(R.id.buttonInvia);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText commento   = (EditText)findViewById(R.id.Commentosez);
+                String testo = commento.getText().toString();
+                commentData.add(new CommentData(testo,"@Giangio","Matteo Romagnoni", R.drawable.duomo));
+                commento.setText(null);
+            }
+        });
+
+
     }
     private void setArrayInfo() {
         commentData = new ArrayList<>();
         commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
         commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
-        commentData.add(new CommentData("ABBIAMO UN SOGNO NEL CUORE", "@Giangio","Matteo Romagnoni", R.drawable.duomo));
+
 
           }
 
