@@ -1,7 +1,13 @@
-h1 {
-    text-align: center;
-   font-size: 60px;
+* {
+	margin: 0;
+	padding: 0;
 }
+  
+.wrapper {
+	width: 1170px;
+	margin: auto;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -36,8 +42,8 @@ li a {
   }
 
   body{
-      background-color: aquamarine;
-      margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(aquamarine, aqua) fixed;
   }
 
   .sb-title {

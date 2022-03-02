@@ -1,28 +1,22 @@
 package com.example.applicazionevera;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.applicazionevera.databinding.ActivityMappaBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.Calendar;
 
 public class EventoDettagliato extends FragmentActivity {
 
     private GoogleMap mMap;
+    ImageView exit;
 
 
     @Override
@@ -33,7 +27,7 @@ public class EventoDettagliato extends FragmentActivity {
 
 
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+       /* BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -58,18 +52,20 @@ public class EventoDettagliato extends FragmentActivity {
                 return false;
             }
         });
+        */
         Button bottone;
-
-        bottone = (Button) findViewById(R.id.sezioneCommenti);
+        MaterialButton butt;
+        /*bottone = (Button) findViewById(R.id.sezioneCommenti);
         bottone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openSezioneComm();
             }
         });
+         */
 
-        bottone =(Button) findViewById(R.id.toCalendario);
-        bottone.setOnClickListener(new View.OnClickListener() {
+        butt = (MaterialButton) findViewById(R.id.calendar);
+        butt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -83,6 +79,15 @@ public class EventoDettagliato extends FragmentActivity {
                 intent.putExtra("title", "Sei stato eventato ;-)" );
                 startActivity(intent);
 
+            }
+        });
+
+        exit= (ImageView) findViewById(R.id.exit);
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(EventoDettagliato.this,Home.class);
+                startActivity(intent);
             }
         });
 

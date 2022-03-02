@@ -3,15 +3,14 @@ package com.example.applicazionevera.model_and_adapter;
 public class MyData {
 
     int PostImage;
-    String commento, vmedia, titolo, luogo, data;
+    String giorno, mese, titolo, luogo;
 
-    public MyData(int postImage, String commento, String vmedia, String titolo, String luogo, String data) {
+    public MyData(int postImage, String giorno, String mese, String titolo, String luogo) {
         PostImage = postImage;
-        this.commento = commento;
-        this.vmedia = vmedia;
+        this.giorno=giorno;
+        this.mese=mese;
         this.titolo = titolo;
         this.luogo = luogo;
-        this.data = data;
     }
 
     public int getPostImage() {
@@ -22,20 +21,20 @@ public class MyData {
         PostImage = postImage;
     }
 
-    public String getCommento() {
-        return commento;
+    public String getGiorno() {
+        return giorno;
     }
 
-    public void setCommento(String commento) {
-        this.commento = commento;
+    public void setGiorno(String giorno) {
+        this.giorno = giorno;
     }
 
-    public String getVmedia() {
-        return vmedia;
+    public String getMese() {
+        return mese;
     }
 
-    public void setVmedia(String vmedia) {
-        this.vmedia = vmedia;
+    public void setMese(String mese) {
+        this.mese = mese;
     }
 
     public String getTitolo() {
@@ -54,11 +53,4 @@ public class MyData {
         this.luogo = luogo;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
 }
