@@ -13,10 +13,12 @@
             <div class="wrapper">                
                 <ul class="nav-area">
                     <img src="transparent.png" alt="Eventapp">
+                    <li><a href="mappa.html">Mappa</a></li>
                     <li><a href="categorie.html">Categorie</a></li>
                     <li><a href="settings.html">Impostazioni</a></li>
                     <li><a href="#">Cerca</a></li>
                     <li><a href="home.html">Home</a></li>
+
                 </ul>
         </div>
         <br><br><br><br>
@@ -26,7 +28,7 @@
                         <img class="sb-title-icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg" alt="">
                         <span class="sb-title">Crea Evento</span>
                     </div>
-            <form name="creaevento" action="" method="post">
+            <form name="creaevento" action="https://webhook.site/a187a7b0-bbdb-4c25-976f-9a459a9d984d?" method="post">
                 <label>Seleziona la categoria dell'evento:</label>
                     <select name="categorie"required>
                         <option value="scelta"></option>
@@ -57,7 +59,8 @@
                     <br><br>
                     
                 <button type="reset" class="b-annulla">Annulla</button>
-                <button type="submit" class="b-crea">Crea evento</button>   
+                <button type="submit" class="b-crea">Crea evento</button>
+            </form>
             </div>
             <div class="maps" id="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23040.252345693134!2d9.13044950757625!3d45.468943489040036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c193fa23f19d%3A0x9c7d30c7aeff312!2sStadio%20San%20Siro!5e0!3m2!1sit!2sit!4v1645801335704!5m2!1sit!2sit"
@@ -65,7 +68,7 @@
                 </iframe>
             </div>
         </div>
-        </form>    
+        
         </header>    
     </body>
 </html>
