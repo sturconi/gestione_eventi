@@ -198,6 +198,16 @@
                                     android:text="Mario rossi"
                                     android:textColor="@android:color/darker_gray"></TextView>
 
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:id="@+id/floatingActionButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="100dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/white"
+                                    app:borderWidth="0dp"
+                                    app:srcCompat="@drawable/ic_baseline_chat_24" />
+
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -215,10 +225,11 @@
                             android:orientation="vertical"
 
                             >
+
                             <TextView
                                 android:id="@+id/count"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:padding="10dp"
                                 android:text="+135"
                                 android:textAlignment="center"
@@ -234,6 +245,7 @@
                             android:maxLines="1"
                             android:text="are interested"
                             android:textColor="@android:color/darker_gray"></TextView>
+
                     </LinearLayout>
                 </LinearLayout>
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Calendar;
 
@@ -27,42 +28,13 @@ public class EventoDettagliato extends FragmentActivity {
 
 
 
-       /* BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.toHome:
-                        openHome();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toSearch:
-                        openSearch();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toNotifications:
-                        openNotifications();
-                        overridePendingTransition(0,0);
-                        break;
-                    case R.id.toSettings:
-                        openSettings();
-                        overridePendingTransition(0,0);
-                        break;
-                }
-                return false;
-            }
-        });
-        */
-        Button bottone;
+
+
         MaterialButton butt;
-        /*bottone = (Button) findViewById(R.id.sezioneCommenti);
-        bottone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSezioneComm();
-            }
-        });
-         */
+        FloatingActionButton bottone;
+        bottone = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        bottone.setOnClickListener(view -> openSezioneComm());
+
 
         butt = (MaterialButton) findViewById(R.id.calendar);
         butt.setOnClickListener(new View.OnClickListener() {
