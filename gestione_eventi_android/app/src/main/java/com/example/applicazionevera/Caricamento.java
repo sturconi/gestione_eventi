@@ -2,13 +2,13 @@ package com.example.applicazionevera;
 
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class Caricamento extends AppCompatActivity {
@@ -57,4 +57,6 @@ public class Caricamento extends AppCompatActivity {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
+
+
 }

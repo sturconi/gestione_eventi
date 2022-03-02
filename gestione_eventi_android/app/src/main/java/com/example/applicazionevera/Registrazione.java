@@ -1,7 +1,5 @@
 package com.example.applicazionevera;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -10,10 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.example.applicazionevera.retrofit.Utente;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.Calendar;
 
@@ -31,6 +33,7 @@ public class Registrazione extends AppCompatActivity {
     Button data_nascita ;
     private Utente user;
     private int ID_utente;
+    TextView log;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,14 +42,15 @@ public class Registrazione extends AppCompatActivity {
         nome = (EditText) findViewById(R.id.nome);
         cognome = (EditText) findViewById(R.id.cognome);
         username = (EditText) findViewById(R.id.usernameReg);
-        data_nascita = (Button) findViewById(R.id.dataNascita);
+        //data_nascita = (Button) findViewById(R.id.dataNascita);
         email = (EditText) findViewById(R.id.emailReg);
         password = (EditText) findViewById(R.id.passwordReg);
         EditText passConf = findViewById(R.id.passwordConf);
-        Button button;
+        MaterialButton button;
         initDatePicker();
+        log = (TextView) findViewById(R.id.login);
 
-        button = (Button) findViewById(R.id.buttonReg);
+        button = (MaterialButton) findViewById(R.id.buttonReg);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,11 +77,19 @@ public class Registrazione extends AppCompatActivity {
             }
         });
 
-        dateButton = (Button) findViewById(R.id.dataNascita);
+        /*dateButton = (Button) findViewById(R.id.dataNascita);
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDatePicker(v);
+            }
+        });
+
+         */
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLogin();
             }
         });
     }
