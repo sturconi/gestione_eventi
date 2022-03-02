@@ -34,8 +34,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter < RecyclerViewAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         MyData evento = mydata.get(position);
-
-
         holder.postimage.setImageResource(evento.getPostImage());
         holder.titolo.setText(evento.getTitolo());
         holder.luogo.setText(evento.getLuogo());
