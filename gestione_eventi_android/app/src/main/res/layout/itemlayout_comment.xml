@@ -47,26 +47,9 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tv_commento"
         android:layout_marginTop="25dp"
-        android:layout_toEndOf="@id/profile_photo"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/tweet_action_reply"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:src="@drawable/outline_chat_black_24dp"
-           />
-
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-
-            android:layout_marginStart="45dp"
-            android:id="@+id/tweet_action_like"
-            android:src="@drawable/ic_baseline_star_rate_24" />
-
-    </RelativeLayout>
+        android:layout_toEndOf="@id/profile_photo"/>
 
 </RelativeLayout>

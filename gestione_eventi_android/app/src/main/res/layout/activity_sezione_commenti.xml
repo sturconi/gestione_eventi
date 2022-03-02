@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp"
 
             android:layout_weight="5"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
 
             <EditText
                 android:id="@+id/Commentosez"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@color/editTextBackground"
@@ -40,14 +40,15 @@
                 android:textColorHint="@color/greyDate"></EditText>
 
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonReg"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/registerBtn"
-                android:text="Invia"
+            <ImageButton
+                android:id="@+id/buttonInvia"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_baseline_send_24"
+                android:text="Pubblica"
                 app:layout_constraintTop_toBottomOf="@id/Commentosez"
-                tools:layout_editor_absoluteX="20dp"></com.google.android.material.button.MaterialButton>
+                tools:layout_editor_absoluteX="20dp" />
         </LinearLayout>
 
         <LinearLayout
