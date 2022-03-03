@@ -62,7 +62,7 @@ public class Account extends AppCompatActivity {
             }
         });
 
-        user=findViewById(R.id.userTextView);
+        //user=findViewById(R.id.userTextView);
         pass=findViewById(R.id.passTextView);
         img=findViewById(R.id.imgView);
 
