@@ -181,7 +181,7 @@ body {
 
 .container {
     padding-top: 120px;
-    padding-left: 120px;
+    padding-left: 200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -249,13 +249,24 @@ background: linear-gradient(to right, #FFFFFF, #ECE9E6);
 }
 
 
-
-.user {
-  display: flex;
-  gap: .5rem;
+.btn {
+    margin: 1.0rem 0;
+    padding-left: 50px;
+    padding-top: 10px;
 }
 
-.user__image {
-  border-radius: 50%;
+.btn a:link,
+.btn a:visited {
+
+    text-transform: uppercase;
+    padding: 1.4rem 2.7rem;
+    border-radius: 2px;
+    color: #fff;
+    background:#062d49;
 }
+
+.btn a:hover {
+ background: #05473a;
+}
+
 
