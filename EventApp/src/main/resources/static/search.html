@@ -16,16 +16,24 @@
       <link rel="stylesheet" href="search.css">  
      </head>
 
+     <!-- Search function-->
 <script >
-    $(document).ready(function(){
-        $("#myinput").on("keyup",function(){
-        var value = $(this).val().toLowerCase();
-        $("#card div").filter(function(){
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+   function search_events() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('card');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";                 
+        }
+    }
+}
 
-        });
-    });
-        });
+
 
 
 </script>
@@ -67,7 +75,7 @@
 
             <div class="wrap">
                 <div class="search">
-                   <input type="text" class="searchTerm" placeholder="Cerca l'evento adatto a te!">
+                   <input type="text" class="searchTerm" onkeyup="search_events()" id="searchbar" placeholder="Cerca l'evento adatto a te!">
                    <button type="submit" class="searchButton">
                      <i class="fa fa-search"></i>
                   </button>
@@ -86,9 +94,9 @@
                       <li><i class="fa fa-map-marker" aria-hidden="true"></i><span class="indirizzo-evento"> Seregno. Via Garibaldi, 15 </span></li>
                     </ul>
                     
-                    <h4>Concerto di Franco126</h4>
+                    <h4 class="titolo_evento">Concerto di Franco126</h4>
                     <br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+                    <p class="desc_evento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
                   </div>
                   <div class="card__footer">
                     <div class="user">
@@ -110,32 +118,9 @@
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i><span class="indirizzo-evento"> Seregno. Via Garibaldi, 15 </span></li>
                       </ul>
                       
-                      <h4>Concerto di Franco126</h4>
+                      <h4 class="titolo_evento">Concerto di Franco126</h4>
                       <br>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
-                    </div>
-                    <div class="card__footer">
-                      <div class="user">
-                        <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
-                        <div class="user__info">
-                          <h5>Davide Cappabianca</h5>
-                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__header">
-                      <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
-                    </div>
-                    <div class="card__body">
-                      <ul class="event--detail">
-                        <li> <i class="fa fa-clock-o" aria-hidden="true"></i> <span class="orario-evento"> 2.00PM - 2.30PM </span></li>
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><span class="indirizzo-evento"> Seregno. Via Garibaldi, 15 </span></li>
-                      </ul>
-                      
-                      <h4>Concerto di Franco126</h4>
-                      <br>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+                      <p class="desc_evento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
                     </div>
                     <div class="card__footer">
                       <div class="user">
@@ -157,9 +142,9 @@
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i><span class="indirizzo-evento"> Seregno. Via Garibaldi, 15 </span></li>
                       </ul>
                       
-                      <h4>Concerto di Franco126</h4>
+                      <h4 class="titolo_evento">Concerto di Franco126</h4>
                       <br>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+                      <p class="desc_evento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
                     </div>
                     <div class="card__footer">
                       <div class="user">
@@ -181,9 +166,9 @@
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i><span class="indirizzo-evento"> Seregno. Via Garibaldi, 15 </span></li>
                       </ul>
                       
-                      <h4>Concerto di Franco126</h4>
+                      <h4 class="titolo_evento">Concerto di Franco126</h4>
                       <br>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+                      <p class="desc_evento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
                     </div>
                     <div class="card__footer">
                       <div class="user">
@@ -195,6 +180,7 @@
                     </div>
                   </div>
 
+
                   <div class="card">
                     <div class="card__header">
                       <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
@@ -205,9 +191,9 @@
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i><span class="indirizzo-evento"> Seregno. Via Garibaldi, 15 </span></li>
                       </ul>
                       
-                      <h4>Concerto di Franco126</h4>
+                      <h4 class="titolo_evento">DVX MEA LVX</h4>
                       <br>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+                      <p class="desc_evento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
                     </div>
                     <div class="card__footer">
                       <div class="user">
@@ -218,6 +204,8 @@
                       </div>
                     </div>
                   </div>
+
+                
 
 
                       
