@@ -57,14 +57,14 @@ header {
 	padding: 15px 0;
 }
 
-.card{
+.card-container{
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: 0.3s;
     background-color: rgb(220, 245, 221);
     
 }
 
-.card:hover{
+.card-container:hover{
     box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 .container{
