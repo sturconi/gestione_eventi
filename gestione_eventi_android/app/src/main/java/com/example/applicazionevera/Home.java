@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,16 +16,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.applicazionevera.model_and_adapter.MyData;
 import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
+import com.example.applicazionevera.retrofit.Event;
+import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEventListener {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEventListener{
 
     String username = null;
     String password = null;
-
-    private ArrayList<MyData> myData;
+    int statusCode;
+    String Enome;
+    private ArrayList<MyData> myData=null;
+    private List<Event> eve=null;
 
 
 
@@ -40,13 +52,7 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         GloblalElite app = (GloblalElite) getApplication();
         app.startLocation();
 
-        setArrayInfo();
-        setData();
-
-
-
-
-    androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
 
 
     actionBar.setDisplayShowCustomEnabled(true);
@@ -54,25 +60,13 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         View view= inflater.inflate(R.layout.custom_image, null);
         actionBar.setCustomView(view);
 
-
-
-
-
         Bundle datiLogin = getIntent().getExtras();
         if(datiLogin != null) {
             username = datiLogin.getString("user");
             password = datiLogin.getString("pwd");
-
-
         }
-
-
-
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-
         navigation.setSelectedItemId(R.id.toHome);
-
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -97,10 +91,6 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
                 return false;
             }
         });
-
-
-
-        ImageButton button;
         Button bottone;
         bottone =(Button) findViewById(R.id.toCategorie);
         bottone.setOnClickListener(v -> openCategorie());
@@ -108,21 +98,21 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
 
         bottone =(Button) findViewById(R.id.creaEvento);
         bottone.setOnClickListener(v -> openCreaevento());
-
+        allEvent();
+        //setArrayInfo();
+        //setData();
     }
 
 
-    private void setArrayInfo() {
-        myData = new ArrayList<>();
-             myData.add(new MyData(R.drawable.duomo,"20","Apr","Concerto di rondo","San siro"));
-             myData.add(new MyData(R.drawable.ic_baseline_music_note_24,"20","Apr","Concerto di rondo","San siro"));
-             myData.add(new MyData(R.drawable.ic_baseline_fastfood_24,"20","Apr","Concerto di rondo","San siro"));
-             myData.add(new MyData(R.drawable.ic_baseline_sports_basketball_24,"20","Apr","Concerto di rondo","San siro"));
-             myData.add(new MyData(R.drawable.ic_baseline_museum_24,"20","Apr","Concerto di rondo","San siro"));
+
+    /*private void setArrayInfo() {
+        for(int i=0;i<eve.size();i++) {
+            myData = new ArrayList<>();
+            myData.add(new MyData(eve.get(i)));
         }
+    }*/
 
-
-    private void setData() {
+   private void setData() {
         RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
         LinearLayoutManager layoutManager = new LinearLayoutManager(Home.this);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(myData, this::onEventClick);
@@ -176,5 +166,30 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
 
     }
 
+    public void allEvent() {
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Event>> call = apiService.getAllEvent();
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                statusCode = response.code();
+                eve = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+            }
+        });
+    }
+
+    public static final String BASE_URL = "http://10.0.2.2:8080/";
+    Gson gson = new GsonBuilder()
+            .setLenient()
+            .create();
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build();
 
 }
+

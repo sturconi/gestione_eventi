@@ -30,7 +30,7 @@ public class UtenteRestController {
 	public ModelAndView getRoot()
 	{
 		ModelAndView modelAndView = new ModelAndView();
-	    modelAndView.setViewName("login.html");
+	    modelAndView.setViewName("loginregistrazione.html");
 	    return modelAndView;
 	}
 	
