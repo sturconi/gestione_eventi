@@ -1,4 +1,4 @@
-* {
+*{
 	margin: 0;
 	padding: 0;
 }
@@ -25,8 +25,7 @@ header {
 	background-color: white;
 	box-shadow: 5px 5px 2px lightblue;
 	font-size: 25px;
-	
-	
+
 }
 
 
@@ -62,7 +61,7 @@ header {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: 0.3s;
     background-color: rgb(220, 245, 221);
-    margin: 20dp;
+    
 }
 
 .card:hover{
@@ -75,23 +74,96 @@ body{
 font-family: Gotham;
 }
 
-.card .time h2 {
-    font-size: 28px;
-    color: #05473a;
-}
-.card .time h2 span{
-	font-size: 25px;
-    color: #000;	
+.event--img {
+
+    overflow: hidden;
+
 }
 
-.card h4{
-    font-size: 24px;
+.event--img img {
+
+    width: 115%;
+
+    transition: all .5s;
 }
 
-.card p{
-    font-size: 15px;
+.event--img img:hover {
+
+    transform: scale(1.2);
+    filter: brightness(.8);
+
 }
 
+.event--menu h4 {
+
+    font-size: 4.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #182731;
+    
+
+    line-height: 1.2;
+
+}
+
+.event--menu h4::after {
+
+    content: " ";
+    display: block;
+    width: 16rem;
+    height: 4px;
+    background: #0984e3;
+
+}
+.event--detail {
+
+    
+    list-style-type: none;
+
+}
+
+.event--detail li {
+
+    font-size: 1.7rem;
+    font-weight: 400;
+    float: left;
+
+    padding: .4rem;
+
+}
+
+.event--detail li i {
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    
+
+}
+
+.event--detail li span {
+
+    font-size: 1.5rem;
+    font-style: italic;
+
+}
+.event--text h4 {
+    padding-top: 70px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    color: #062d49;
+    letter-spacing: 2px;
+    line-height: 1.7;
+
+}
+
+.event--text p {
+
+    font-size: 1.4rem;
+    font-weight: 400;
+
+}
 .btn {
 
     margin: 3.5rem 0;
