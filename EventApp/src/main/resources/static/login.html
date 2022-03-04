@@ -1,34 +1,47 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-    <script src="login.js" type="text/javascript"></script>
     <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
+    <title>Eventapp</title>
 </head>
 <body>
-    <div id="container">
-        <div id="main">
-            <div class="topnav">
-                <h2 style="color: white;">EventApp</h2>
-              </div>
-              <br> <br>
-        <h2 id="descr" style="text-align: center;" > Login</h2>
-        <form id="formLogin" onsubmit="return doSubmit();" class="Romagnoni">
-            <label> Username</label>
-            <br> <br> 
-            <input id="usernameLogin" type="text" name="usernameLogin" required autofocus>
-            <br> <br>
-            <label> Password</label>
-            <br> <br>
-            <input id="passwordLogin" type="password" name="passwordLogin" required autofocus>
-            <br> <br> 
-            <input type="submit" class= "button">
-            <input type="reset" class= "button">
-        </form>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">Login</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <input type="submit" class="btn solid" value="Login">
+                    <h3 class="social-text">Sei Nuovo?</h3>
+                    <input class="btn solid" type="button" onclick="location.href='registrazione.html';" value="Registrati" />
+                </form>
+            </div>
+            
+                  
+            
         </div>
-        <div id="footer" style="text-align: center;">
-            <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> 
-         Copyright DAVIDE CAPPABIANCA  &copy; 2022
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>CERCA, TROVA</h3>
+                   <H3>VIVI</H3>
+                        
+                </div>
+                <img src="img/log.svg" alt="" class="image">
+            </div>
+          
+                <img src="img/register.svg" alt="" class="image">
+            </div>
         </div>
     </div>
+    
 </body>
 </html>

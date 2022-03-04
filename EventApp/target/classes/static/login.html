@@ -1,34 +1,97 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-    <script src="login.js" type="text/javascript"></script>
     <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
+    <title>Eventapp</title>
 </head>
 <body>
-    <div id="container">
-        <div id="main">
-            <div class="topnav">
-                <h2 style="color: white;">EventApp</h2>
-              </div>
-              <br> <br>
-        <h2 id="descr" style="text-align: center;" > Login</h2>
-        <form id="formLogin" onsubmit="return doSubmit();" class="Romagnoni">
-            <label> Username</label>
-            <br> <br> 
-            <input id="usernameLogin" type="text" name="usernameLogin" required autofocus>
-            <br> <br>
-            <label> Password</label>
-            <br> <br>
-            <input id="passwordLogin" type="password" name="passwordLogin" required autofocus>
-            <br> <br> 
-            <input type="submit" class= "button">
-            <input type="reset" class= "button">
-        </form>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <input type="submit" class="btn solid" value="Login">
+                    <p class="social-text">Oppure fottiti</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fav fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fav fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fav fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fav fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <div class="signup-signup">
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <input type="submit" class="btn solid" value="Login">
+                    <p class="social-text">Oppure fottiti</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fav fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fav fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fav fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fav fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div id="footer" style="text-align: center;">
-            <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> 
-         Copyright DAVIDE CAPPABIANCA  &copy; 2022
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Sei Nuovo?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam debitis magni officiis deleniti, aut maxime nostrum enim, sapiente ex provident eos minima totam saepe tenetur doloribus 
+                        tempore repudiandae fugiat repellendus.</p>
+                        <button class="btn trasparent" id="sign-up-button">Sign Up</button>
+                </div>
+                <img src="img/log.svg" alt="" class="image">
+            </div>
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Uno di noi</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam debitis magni officiis deleniti, aut maxime nostrum enim, sapiente ex provident eos minima totam saepe tenetur doloribus 
+                        tempore repudiandae fugiat repellendus.</p>
+                        <button class="btn trasparent" id="sign-in-button">Sign in</button>
+                </div>
+                <img src="img/register.svg" alt="" class="image">
+            </div>
         </div>
     </div>
+    
 </body>
 </html>
