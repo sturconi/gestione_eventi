@@ -1,31 +1,49 @@
-header {
-	background-color:aquamarine;
-	height: 100vh;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: center center;
-	position: relative;
+* {
+	margin: 0;
+	padding: 0;
 }
+body {
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(aquamarine, aqua) fixed;
+}
+.wrapper {
+	width: 1170px;
+	margin: auto;
+  padding-left: 270px;
+}
+
 .nav-area {
 	float: right;
 	list-style: none;
-	margin-top: 30px;
+	margin-top: 50px;
+	background-color: white;
+	box-shadow: 5px 5px 2px lightblue;
+	font-size: 25px;
+	
+	
 }
+
+
 .nav-area li {
 	display: inline-block;
 }
 .nav-area li a {
-	color: #000;
+	color: black;
 	text-decoration: none;
-	padding: 5px 20px;
+	padding: 5px 10px;
 	font-family: poppins;
-	font-size: 16px;
+	font-size: 20px;
 	text-transform: uppercase;
 }
 .nav-area li a:hover {
-	background: #fff;
-	color: #333;
+	background: #333;
+	color: white;
+	transition: .5s;
 }
+.nav-area a.active {
+    color: white;
+	background-color: #333;
+  }
 .logo {
 	float: left;
 }
@@ -35,19 +53,181 @@ header {
 }
 
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
+
+main{
+	position:relative;
+	height:100vh;
+}
+	
+
+.menu{
+	background:#5bc995;
+	height:100vh;
+	width:240px;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:5;
+	outline:none;
+}
+	
+.menu	.avatar{
+		background:rgba(0,0,0,0.1);
+		padding:2em 0.5em;
+		text-align:center;
+}	
+  .menu	img{
+			width:100px;
+			border-radius:50%;
+			overflow:hidden;
+			border:4px solid #ffea92;
+			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+		}
+		
+	.menu	h2{
+			font-weight:normal;
+			margin-bottom:0;
+		}
+	
+	
+	
+ .leftbar   ul{
+      list-style:none;
+      padding:0.5em 0;
+      margin:0;
+      }
+      
+  .leftbar ul	li{
+        padding:0.5em 1em 0.5em 3em;
+        font-size:0.95em;
+        font-weight:regular;
+        background-repeat:no-repeat;
+        background-position:left 15px center;
+        background-size:auto 20px;
+        transition:all 0.15s linear;
+        cursor:pointer;
+      }
+      
+        
+  .leftbar ul	li:hover{
+          background-color:rgba(0,0,0,0.1);
+        }
+        
+  .leftbar ul li:focus{
+          outline:none;
+        }
+        
+      
+        
+
+/*modifica password*/
+
+
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
 }
 
-.title {
-  color: grey;
-  font-size: 18px;
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+ .form__field:placeholder {
+    color: transparent;
+  }
+
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: gray;
+  max-width: 1000px;
 }
 
 
+.form__field  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    font-weight:700;    
+  }
+  
+/* reset input */
+.form__field:required,.form__field:invalid{
+   box-shadow:none; }
+
+/* demo */
+main{
+	position:relative;
+	height:100vh;
+}
+	
+	.helper{
+		background:lightskyblue;
+		position:absolute;
+		top:60%;
+		left:55%;
+		transform:translate3d(-50%,-50%,0);
+		padding:1.2em 2em;
+
+  }
+
+  
+  .btn-btn-confirm, .btn-btn-cancel{
+      display:inline-block;
+      margin-right:2px;
+      padding: 10px 25px;
+      background: none;
+      border:1px solid #c0c0c0;
+      border-radius:2px;
+      color: rgb(0, 0, 0);
+      background-color:#5bc995;
+      font-size:1.125em;
+      outline:none;
+      transition: all 100ms ease-out;
+    }
+
+    /*modifica password*/
 
 
+
+    /*dati personali e modifica immagine*/
+
+
+    .helper.avatar{
+		padding:2em 0.5em;
+		text-align:center;
+    }
+
+    .helper img{
+      width:150px;
+			border-radius:50px;
+			overflow:hidden;
+			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+      border:4px solid #ffea92;
+
+    }
+
+ 

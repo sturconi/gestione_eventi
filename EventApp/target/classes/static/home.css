@@ -5,19 +5,15 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	background: linear-gradient(aquamarine, aqua) fixed;
+    display: grid;
+    place-items: center;
 }
 .wrapper {
 	width: 1170px;
 	margin: auto;
+  padding-left: 270px;
 }
-header {
-	
-	height: 100vh;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: center center;
-	position: relative;
-}
+
 .nav-area {
 	float: right;
 	list-style: none;
@@ -59,12 +55,10 @@ header {
 }
 
 
-section .events{
-	padding: 50px;
-	width: 50%;
-	height: 100%;
-	
-}
+
+/* main events*/
+
+
 
 section .events ul{
 	position: absolute;
@@ -72,6 +66,8 @@ section .events ul{
 	transform: translateY(-50%);
 	margin: 0;
 	padding: 40px;
+	margin-top: 250px;
+	margin-right: 200px;
 	box-sizing: border-box;
 }
 
@@ -157,52 +153,112 @@ section .events ul li .details a:hover{
 	border-color: #05473a;
 }
 
-section .events .crea-evento{
-	padding: 50px;
-	width: 50%;
-	height: 100%;
-	}
+section .crea-evento{
 
-section .events .crea-evento .slogan{
-	padding: 100px;
-	padding-left: 30px;
-	width: 1300px;
-	height: 600px;
+	padding-left: 100px;
+}
+
+section .crea-evento .slogan{
 	text-align: center;
 }
 
-section .events .crea-evento .slogan h1 {
+section .crea-evento .slogan h1 {
 	text-align: right;
 	color: #000;
 	text-transform: uppercase;
-	font-size: 30px;
-}
-section .events .crea-evento .slogan h1 span {
-	color: #05473a;
 	font-size: 40px;
+}
+section .crea-evento .slogan h1 span {
+	color: #05473a;
+	font-size: 50px;
 	text-align: center;
 }
 
-section .events .crea-evento .slogan a{
+section .crea-evento .slogan a{
 	display: inline-block;
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 10px 15px;
 	border: 2px solid #262626;
 	margin-top: 15px;
-	font-size: 50px;
-	color:#05473a;
+	font-size: 60px;
+	color: blue;
 	transition: .5s;
 }
 
-section .events .crea-evento .slogan a:hover{
+section  .crea-evento .slogan a:hover{
 	background:#05473a;
 	color: #fff;
 	border-color: #05473a;
 }
 
 
+/* main events*/
 
+
+
+main{
+	position:relative;
+	height:100vh;
+}
+	
+
+.menu{
+	background:#5bc995;
+	height:100vh;
+	width:240px;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:5;
+	outline:none;
+}
+	
+.menu	.avatar{
+		background:rgba(0,0,0,0.1);
+		padding:2em 0.5em;
+		text-align:center;
+}	
+  .menu	img{
+			width:100px;
+			border-radius:50%;
+			overflow:hidden;
+			border:4px solid #ffea92;
+			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+		}
+		
+	.menu	h2{
+			font-weight:normal;
+			margin-bottom:0;
+		}
+	
+	
+	
+ .leftbar   ul{
+      list-style:none;
+      padding:0.5em 0;
+      margin:0;
+      }
+      
+  .leftbar ul	li{
+        padding:0.5em 1em 0.5em 3em;
+        font-size:0.95em;
+        font-weight:regular;
+        background-repeat:no-repeat;
+        background-position:left 15px center;
+        background-size:auto 20px;
+        transition:all 0.15s linear;
+        cursor:pointer;
+      }
+      
+        
+  .leftbar ul	li:hover{
+          background-color:rgba(0,0,0,0.1);
+        }
+        
+  .leftbar ul li:focus{
+          outline:none;
+        }
 
  
 /*resposive*/

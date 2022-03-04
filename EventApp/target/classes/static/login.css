@@ -102,10 +102,7 @@ form{
 .social-text{
   padding: 0.7rem 0;
 }
-.social-media{
-  display: flex;
-  justify-content: center;
-}
+
 .social-icom {
   height: 46px;
   width: 46px;
@@ -120,10 +117,7 @@ form{
   border-radius: 50%;
   transition: all 0.5s;
 }
-.social-icom:hover {
-  color: #20dbc2;
-  border-color: #00bfa6;
-}
+
 
 .signin-signup{
   position: absolute;
