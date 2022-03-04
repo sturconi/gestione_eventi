@@ -27,7 +27,7 @@
     <nav class="menu" tabindex="0">
         <div class="smartphone-menu-trigger"></div>
       <header class="avatar">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0zLw957QByyJ31DlQSJEvEmvRYmT6yrzWA&usqp=CAU" />
+            <img id="blah" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0zLw957QByyJ31DlQSJEvEmvRYmT6yrzWA&usqp=CAU" />
         <h2>Matteo Romagnoni</h2>
       </header>
 
@@ -42,16 +42,38 @@
         </div>
     </nav>
 
+<script> function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = function (e) {
+        $('#blah').attr('src', e.target.result).width(150).height(200);
+      };
+  
+      reader.readAsDataURL(input.files[0]);
+    }
+  }</script>
+
      <div class="main">
          <div class="helper">
             <div class="helperprof">
                 <header class="avatar">
-                    <img src="https://www.viagginews.com/wp-content/uploads/2020/10/bello-figo1.jpg" />
+                    
+                    <img id="blah" src="https://www.viagginews.com/wp-content/uploads/2020/10/bello-figo1.jpg" />
+                    
+                    
                 <h2>Davide Cappabianca</h2>
                 <h4>@scarpabianca</h4>
               </header> 
-              <br> <br>
-
+              <br><br> <hr>
+              <h2>Cambia immagine del profilo</h2>
+              <br>
+              <input type="file" onchange="readURL(this);" />
+              <br><br>
+              <div class="btns">
+                <button class="btn-btn-confirm">Conferma</button>
+                <button class="btn-btn-cancel">Annulla</button>
+            </div><br><br> <hr>
            </div>
              <h2>Reimposta qui la tua password</h2>
               

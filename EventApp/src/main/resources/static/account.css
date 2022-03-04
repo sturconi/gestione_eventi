@@ -187,7 +187,7 @@ main{
 	.helper{
 		background:white;
 		position:absolute;
-		top:60%;
+		top:75%;
 		left:55%;
 		transform:translate3d(-50%,-50%,0);
 		padding:1.2em 2em;
