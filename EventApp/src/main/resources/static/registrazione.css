@@ -92,7 +92,7 @@ form{
   color: white;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 0px 0;
   transition: all .5s;
 }
 .btn:hover{
