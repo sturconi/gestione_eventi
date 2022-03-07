@@ -18,4 +18,6 @@ public interface utenteInterface {
 
 	Utente findByUsername(String username);
 	
+	int updatePassword(Utente u);
+	
 }
