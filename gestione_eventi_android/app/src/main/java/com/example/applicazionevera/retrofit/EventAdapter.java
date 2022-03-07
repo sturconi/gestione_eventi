@@ -10,17 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.applicazionevera.R;
-import com.example.applicazionevera.model_and_adapter.MyData;
 import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class EventAdapter extends RecyclerView.Adapter < EventAdapter.ViewHolder > {
-    private ArrayList<Event> events;
+public class
+EventAdapter extends RecyclerView.Adapter < EventAdapter.ViewHolder > {
+    private List<Event> events;
     private RecyclerViewAdapter.OnEventListener mOnEventListener ;
 
 
-    public EventAdapter(ArrayList<Event> array, RecyclerViewAdapter.OnEventListener onEventListener) {
+    public EventAdapter(List<Event> array, RecyclerViewAdapter.OnEventListener onEventListener) {
         this.events = array;
         this.mOnEventListener = onEventListener;
 
@@ -45,6 +45,9 @@ public class EventAdapter extends RecyclerView.Adapter < EventAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
+        if (events == null)
+            return 0;
+
         return events.size();
     }
 
