@@ -14,7 +14,7 @@ public class Event {
         String data;
         String ora;
         Date oraFine;
-        String immagine;
+        int immagine;
 
 
             public Event(String categoria,String Enome,String Edata_evento,String ora, String EdescrizioneEvento) {
@@ -24,7 +24,11 @@ public class Event {
             this.data=Edata_evento;
             this.ora=ora;
         }
-        public int getnumero_evento() {
+
+
+
+
+    public int getnumero_evento() {
             return this.numero_evento;
         }
         public String getCategoria() {
@@ -51,7 +55,7 @@ public class Event {
         public Date getOraFine() {
             return this.oraFine;
         }
-        public String getImmagine() {
+        public int getImmagine() {
             return this.immagine;
         }
 
@@ -82,7 +86,7 @@ public class Event {
         public void setOraFine(Date oraFine) {
             this.oraFine=oraFine;
         }
-        public void setImmagine(String immagine) {
+        public void setImmagine(int immagine) {
             this.immagine=immagine;
         }
     }
