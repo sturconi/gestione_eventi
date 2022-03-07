@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.applicazionevera.model_and_adapter.MyData;
 import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
 import com.example.applicazionevera.retrofit.Event;
+import com.example.applicazionevera.retrofit.EventAdapter;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
@@ -36,11 +37,8 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     String username = null;
     String password = null;
     int statusCode;
-    String Enome;
-    private ArrayList<MyData> myData=null;
+    private ArrayList<Event> event=null;
     private List<Event> eve=null;
-
-
 
 
 
@@ -99,23 +97,24 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         bottone =(Button) findViewById(R.id.creaEvento);
         bottone.setOnClickListener(v -> openCreaevento());
         allEvent();
-        //setArrayInfo();
-        //setData();
+     /* setArrayInfo();
+        setData(); */
     }
 
 
 
-    /*private void setArrayInfo() {
+    private void setArrayInfo() {
+        event = new ArrayList<>();
+
         for(int i=0;i<eve.size();i++) {
-            myData = new ArrayList<>();
-            myData.add(new MyData(eve.get(i)));
+            event.add(new Event("...","MISSCROFT98: Noooo amo non puoi capire, siamo tantisssimi,","...",",,,",",,,"));
         }
-    }*/
+    }
 
    private void setData() {
         RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
         LinearLayoutManager layoutManager = new LinearLayoutManager(Home.this);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myData, this::onEventClick);
+        EventAdapter adapter = new EventAdapter(event, this::onEventClick);
         recyclerViewOKL.setHasFixedSize(true);
         recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Home.this));
         recyclerViewOKL.setNestedScrollingEnabled(false);
@@ -192,4 +191,8 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
             .build();
 
 }
+
+
+
+
 
