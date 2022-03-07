@@ -27,7 +27,7 @@
     <nav class="menu" tabindex="0">
         <div class="smartphone-menu-trigger"></div>
       <header class="avatar">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0zLw957QByyJ31DlQSJEvEmvRYmT6yrzWA&usqp=CAU" />
+            <img class="blah" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0zLw957QByyJ31DlQSJEvEmvRYmT6yrzWA&usqp=CAU" />
         <h2>Matteo Romagnoni</h2>
       </header>
 
@@ -42,18 +42,63 @@
         </div>
     </nav>
 
+<script> function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = function (e) {
+        $('.blah').attr('src', e.target.result).width(100).height(100);
+      };
+  
+      reader.readAsDataURL(input.files[0]);
+    }
+  }</script>
+
      <div class="main">
          <div class="helper">
             <div class="helperprof">
                 <header class="avatar">
-                    <img src="https://www.viagginews.com/wp-content/uploads/2020/10/bello-figo1.jpg" />
+                    
+                    <img class="blah" src="https://www.viagginews.com/wp-content/uploads/2020/10/bello-figo1.jpg" />
+                    
+                    
                 <h2>Davide Cappabianca</h2>
                 <h4>@scarpabianca</h4>
               </header> 
-              <br> <br>
+            </div>
+         </div>
+         
 
-           </div>
-             <h2>Resetta qui la tua password</h2>
+
+         <div class="helperslogan">
+            <div class="helperprof">
+                    
+                    <img  src="https://i1.wp.com/www.manuscritto.it/wp-content/uploads/2018/12/slogan-pubblicitari.jpg?resize=696%2C435&ssl=1" />
+                 
+            </div>
+         </div>      
+
+
+
+              
+  <div class="helperimg">
+         <div class="helperprofimg">
+            <br><br>
+              <h2>Cambia immagine del profilo</h2>
+              <br><br>
+              <input type="file" onchange="readURL(this);" />
+              <br><br><br>
+              <div class="btns">
+                <button class="btn-btn-confirm">Conferma</button>
+                <button class="btn-btn-cancel">Annulla</button>
+               <br> 
+             </div>
+          </div>
+        </div>  
+
+        <div class="helperpass">
+            <div class="helperprofpass">   
+             <h2>Reimposta qui la tua password</h2>
               
             <div class="form__group field">
                 <input type="password" class="form__field" placeholder="Nuova password" name="name" id='name' required />
