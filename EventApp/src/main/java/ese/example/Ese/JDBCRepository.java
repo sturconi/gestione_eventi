@@ -33,6 +33,10 @@ public class JDBCRepository implements utenteInterface, eventoInterface {
 		return jdbcTemplate.update("UPDATE utente SET nome=? WHERE id=?",new Object[] {u.getNome(),u.getId()});
 	}
 	@Override
+	public int updatePassword(Utente u) {
+		return jdbcTemplate.update("UPDATE utente SET password=? WHERE ID_utente=?",new Object[] {u.getPassword(),u.getId()});
+	}
+	@Override
 	public int deleteById(int id) {
 
 	    return jdbcTemplate.update("DELETE FROM utente WHERE id=?",id);

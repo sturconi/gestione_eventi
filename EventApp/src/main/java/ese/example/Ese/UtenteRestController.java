@@ -88,14 +88,13 @@ public class UtenteRestController {
 	}
 	
 	
-	@RequestMapping(value="/utenti/{id}", method=RequestMethod.PUT)
-	public Utente updateUtente(@PathVariable int id,@RequestBody Utente newUtente) {
-	Utente u=this.utenteRepositery.findById(id);
-	if((!newUtente.getNome().isBlank())&& newUtente.getNome() !=null) {
-		u.setNome(newUtente.getNome());
-	}
+	@RequestMapping(value="/utenti/{ID_utente}", method=RequestMethod.PUT)
+	public Utente updatePass(@PathVariable int ID_utente,@RequestBody Utente newUtente) {
+	Utente u=this.utenteRepositery.findById(ID_utente);
+	u.setPassword(newUtente.getPassword());
 	
-	this.utenteRepositery.update(u);
+	
+	this.utenteRepositery.updatePassword(u);
 	return u;
 	}
 }
