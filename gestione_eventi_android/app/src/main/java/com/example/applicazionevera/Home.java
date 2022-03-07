@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.applicazionevera.model_and_adapter.MyData;
 import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
 import com.example.applicazionevera.retrofit.Event;
 import com.example.applicazionevera.retrofit.EventAdapter;
@@ -37,8 +36,10 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     String username = null;
     String password = null;
     int statusCode;
-    private ArrayList<Event> event=null;
-    private List<Event> eve=null;
+
+    EventAdapter adapter = null;
+    private List<Event> events=new ArrayList<>();
+    MyApiEndpointInterface apiService;
 
 
 
@@ -46,9 +47,8 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        GloblalElite app = (GloblalElite) getApplication();
-        app.startLocation();
+        /*GloblalElite app = (GloblalElite) getApplicationContext();
+        apiService = app.retrofit.create(MyApiEndpointInterface.class);*/
 
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
 
@@ -97,24 +97,23 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         bottone =(Button) findViewById(R.id.creaEvento);
         bottone.setOnClickListener(v -> openCreaevento());
         allEvent();
-     /* setArrayInfo();
-        setData(); */
+        //setFAKEInfo();
+        setData();
     }
 
 
 
-    private void setArrayInfo() {
-        event = new ArrayList<>();
-
-        for(int i=0;i<eve.size();i++) {
-            event.add(new Event("...","MISSCROFT98: Noooo amo non puoi capire, siamo tantisssimi,","...",",,,",",,,"));
+    private void setFAKEInfo() {
+        for(int i=0;i<10;i++) {
+            Event e = new Event("Prova", "Prova" + (i + 1), "Prova", "Prova", "Prova");
+            events.add(e);
         }
     }
 
    private void setData() {
         RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
         LinearLayoutManager layoutManager = new LinearLayoutManager(Home.this);
-        EventAdapter adapter = new EventAdapter(event, this::onEventClick);
+        adapter = new EventAdapter(events, this::onEventClick);
         recyclerViewOKL.setHasFixedSize(true);
         recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Home.this));
         recyclerViewOKL.setNestedScrollingEnabled(false);
@@ -172,7 +171,8 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
                 statusCode = response.code();
-                eve = response.body();
+                events.addAll(response.body());
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -182,13 +182,12 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     }
 
     public static final String BASE_URL = "http://10.0.2.2:8080/";
-    Gson gson = new GsonBuilder()
-            .setLenient()
-            .create();
+    Gson gson= new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build();
+
 
 }
 
