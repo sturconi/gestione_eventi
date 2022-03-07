@@ -123,6 +123,8 @@ main{
             width: 70%;
             height: 65%;
             background-color: white;
+			border-color: black;
+			border-radius: 10px;
             top: 170px;
             left: 350px;
         }

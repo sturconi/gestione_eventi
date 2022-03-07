@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+	background: linear-gradient(aquamarine, aqua) fixed;
+}
+
+.wrapper {
+	width: 1170px;
+	margin: auto;
+}
+
+header {
+	height: 25vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+
+.nav-area {
+	float: right;
+	list-style: none;
+	margin-top: 50px;
+	background-color: white;
+	box-shadow: 5px 5px 2px lightblue;
+	font-size: 25px;	
+}
+
+.nav-area li {
+	display: inline-block;
+}
+
+.nav-area li a {
+	color: black;
+	text-decoration: none;
+	padding: 5px 10px;
+	font-family: poppins;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.nav-area li a:hover {
+	background: #333;
+	color: white;
+	transition: .5s;
+}
+
+.logo {
+	float: left;
+}
+
+.logo img {
+	width: 100%;
+	padding: 15px 0;
+}
+
+.sb-title {
+  position: relative;
+  top: -12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+  
+.sb-title-icon {
+  position: relative;
+  top: -5px;
+}
+  
+  .card-container {
+
+    margin-left: 300px;
+    display: flex;
+    height: 700px;
+    width: 800px;
+  }
+  
+  .panel {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .half-input-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .half-input {
+    max-width: 120px;
+  }
+    
+  .maps > iframe {
+    height: 700px;
+    width: 800px;
+  } 
+
+  h2 {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+  }
+  
+  input {
+    height: 30px;
+  }
+  
+  input {
+    border: 0;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  input:focus::placeholder {
+    color: white;
+  }
+  
+  .b-annulla{
+    height: 40px;
+    width: 40%;
+    background: #ff0122;
+    color: white;
+    font-size: 15px;
+    
+    float: left;
+    text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.48);
+    cursor: pointer;
+  }
+
+  .b-crea{
+    height: 40px;
+    width: 40%;
+    background: #3367d6;
+    color: white;
+    float: right;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.48);
+    cursor: pointer;
+  }
