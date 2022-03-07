@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "857309146361",
+    "project_id": "eventapp-341314",
+    "storage_bucket": "eventapp-341314.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857309146361:android:5dc3cdde37fd99d51a4628",
+        "android_client_info": {
+          "package_name": "com.example.applicazionevera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857309146361-2rpq7cb1082goo7uhlmunb0a6kc5bqd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4ZVuIMRl7qDeTuB3NpAC3I0YiwwJw5N8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857309146361-2rpq7cb1082goo7uhlmunb0a6kc5bqd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
