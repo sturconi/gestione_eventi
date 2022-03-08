@@ -187,8 +187,8 @@ main{
 	.helper{
 		background:white;
 		position:absolute;
-		top:35%;
-		left:38.6%;
+		top:250px;
+		left:593px;
 		transform:translate3d(-50%,-50%,0);
 		padding:1.2em 2em;
     width: 370px;
@@ -228,8 +228,8 @@ main{
     .helperpass{
       background:white;
       position:absolute;
-      top:69%;
-      left:38.85%;
+      top:468px;
+      left:585px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
   
@@ -241,8 +241,8 @@ main{
     .helperimg{
       background:white;
       position:absolute;
-      top:68.6%;
-      left:66%;
+      top:469px;
+      left:989px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
   
@@ -254,10 +254,11 @@ main{
     .helperslogan{
       background:white;
       position:absolute;
-      top:39%;
-      left:66.2%;
+      top:286px;
+      left:976px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
+      
     }
     .helperslogan img{
       width:345px;
