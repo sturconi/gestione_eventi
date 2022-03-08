@@ -1,4 +1,4 @@
-package ese.example.Ese;
+/*package ese.example.Ese;
 
 import java.util.List;
 
@@ -59,7 +59,7 @@ public class TicketRestController {
 		}
 	}
 	
-	@RequestMapping(value="/ticket/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/ticket", method=RequestMethod.DELETE)
 	public void deleteAllTicket() {
 		this.ticketRepositery.deleteAllT();
 	 }
@@ -84,14 +84,6 @@ public class TicketRestController {
 	}
 	
 	
-	/*@RequestMapping(value="/ticket/{ID_ticket}", method=RequestMethod.PUT)
-	public Ticket updatePass(@PathVariable int ID_ticket,@RequestBody Ticket newTicket) {
-	Ticket t=this.ticketRepositery.findByIdT(ID_ticket);
-	t.setPassword(newTicket.getPassword());
-	*/
 	
-	/*this.ticketRepositery.updatePassword(u);
-	return u;
-	}*/
-}
+}*/
 
