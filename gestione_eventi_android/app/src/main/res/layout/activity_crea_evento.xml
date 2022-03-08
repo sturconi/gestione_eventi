@@ -9,7 +9,17 @@
     tools:context=".CreaEvento">
 
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+    <ImageView
+        android:id="@+id/eventappLogo"
+        android:layout_width="254dp"
+        android:layout_height="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/immagine" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -28,31 +38,18 @@
         android:id="@+id/spinner1"
         android:layout_width="209dp"
         android:layout_height="42dp"
+        android:hint="Seleziona la categoria"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
-
-    <EditText
-        android:id="@+id/nomeEvento"
-        android:layout_width="wrap_content"
-        android:layout_height="62dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Nome Evento"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193" />
+        app:layout_constraintVertical_bias="0.304" />
 
     <Button
         android:id="@+id/dataEvento"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
+        android:layout_width="177dp"
+        android:layout_height="51dp"
         android:background="@android:color/transparent"
         android:hint="Data Evento"
         android:inputType="date"
@@ -62,10 +59,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timerPicker"
+        android:layout_width="168dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Orario evento"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.868"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintVertical_bias="0.498" />
 
     <EditText
         android:id="@+id/descrizioneEvento"
@@ -78,10 +91,26 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607" />
+        app:layout_constraintVertical_bias="0.705" />
+
+    <EditText
+        android:id="@+id/nomeEvento"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Nome Evento"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.207" />
 
     <Button
         android:id="@+id/buttonEvent"
@@ -94,24 +123,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.876" />
-
-    <TextView
-        android:id="@+id/timerPicker"
-        android:layout_width="210dp"
-        android:layout_height="62dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Orario evento"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintVertical_bias="0.859" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
