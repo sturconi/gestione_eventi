@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository(value="MYSQL")
-public class JDBCRepository implements utenteInterface, eventoInterface {
+public class JDBCRepository implements utenteInterface, eventoInterface, CommentoInterface {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
@@ -125,4 +125,20 @@ public class JDBCRepository implements utenteInterface, eventoInterface {
 		 return jdbcTemplate.queryForObject("SELECT * FROM ticket WHERE oggetto=?", BeanPropertyRowMapper.newInstance(Ticket.class),oggetto);
 	}
 */
+	
+	
+	//------------------------------------------------------------------
+		//----Commento------//
+	
+	@Override
+	public Commento findByIdC(int codice) {
+		return jdbcTemplate.queryForObject("SELECT username, testo_commento, foto_profilo, nome \r\n"
+				+ "FROM commento c INNER JOIN evento e\r\n"
+				+ "ON ID_evento = numero_evento\r\n"
+				+ "INNER JOIN utente u\r\n"
+				+ "ON c.ID_utente = u.ID_utenteWHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Commento.class),codice);
+	}
+	
+	
+
 }
