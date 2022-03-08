@@ -192,6 +192,7 @@ main{
 		transform:translate3d(-50%,-50%,0);
 		padding:1.2em 2em;
     width: 370px;
+    
 
   }
 
@@ -232,6 +233,8 @@ main{
       left:585px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
+      border-right:1px solid #333;
+      border-top: 1px solid #333;
   
     }
   
@@ -241,10 +244,12 @@ main{
     .helperimg{
       background:white;
       position:absolute;
-      top:469px;
+      top:468px;
       left:989px;
+      height: 204px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
+      border-top:1px solid #333;
   
     }
   
