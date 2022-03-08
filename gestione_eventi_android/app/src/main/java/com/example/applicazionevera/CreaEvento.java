@@ -4,7 +4,10 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,9 +26,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicazionevera.model_and_adapter.PlaceAutoSuggestAdapter;
 import com.example.applicazionevera.retrofit.Event;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,8 +68,36 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         final AutoCompleteTextView autoCompleteTextView=findViewById(R.id.autoComplete);
         autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(CreaEvento.this,android.R.layout.simple_list_item_1));
 
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("Address : ",autoCompleteTextView.getText().toString());
+                LatLng latLng=getLatLngFromAddress(autoCompleteTextView.getText().toString());
+                if(latLng!=null) {
+                    Log.d("Lat Lng : ", " " + latLng.latitude + " " + latLng.longitude);
+                    Address address=getAddressFromLatLng(latLng);
+                    if(address!=null) {
+                        Log.d("Address : ", "" + address.toString());
+                        Log.d("Address Line : ",""+address.getAddressLine(0));
+                        Log.d("Phone : ",""+address.getPhone());
+                        Log.d("Pin Code : ",""+address.getPostalCode());
+                        Log.d("Feature : ",""+address.getFeatureName());
+                        Log.d("More : ",""+address.getLocality());
+                    }
+                    else {
+                        Log.d("Address","Address Not Found");
+                    }
+                }
+                else {
+                    Log.d("Lat Lng","Lat Lng Not Found");
+                }
 
-    Spinner spinner = findViewById(R.id.spinner1);
+            }
+        });
+
+
+
+        Spinner spinner = findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.CategorieArray, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter1);
@@ -162,7 +196,48 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
 
     }
 
+    private LatLng getLatLngFromAddress(String address){
 
+        Geocoder geocoder=new Geocoder(CreaEvento.this);
+        List<Address> addressList;
+
+        try {
+            addressList = geocoder.getFromLocationName(address, 1);
+            if(addressList!=null){
+                Address singleaddress=addressList.get(0);
+                LatLng latLng=new LatLng(singleaddress.getLatitude(),singleaddress.getLongitude());
+                return latLng;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    private Address getAddressFromLatLng(LatLng latLng){
+        Geocoder geocoder=new Geocoder(CreaEvento.this);
+        List<Address> addresses;
+        try {
+            addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 5);
+            if(addresses!=null){
+                Address address=addresses.get(0);
+                return address;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+
+    }
 
     private void initDatePicker() {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
