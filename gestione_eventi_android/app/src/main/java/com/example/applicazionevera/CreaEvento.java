@@ -141,21 +141,18 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String ora=timer.getText().toString();
+                String ora = timer.getText().toString();
                 String Enome = nomeevento.getText().toString();
 
                 String EdescrizioneEvento = descrizioneEvento.getText().toString();
                 String Edata_evento = dateButton.getText().toString();
                 String categoria = item.toString();
-                eve=new Event(categoria,Enome, Edata_evento,ora,EdescrizioneEvento);
+                eve = new Event(categoria, Enome, Edata_evento, ora, EdescrizioneEvento);
                 creaEvento();
-                if(statusCode==500 || statusCode==400){
+                if (statusCode == 500 || statusCode == 400) {
 
                 }
-                else{
 
-                    openCreaEvento2();
-                }
             }
         });
     }
@@ -236,11 +233,6 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
-    public void openCreaEvento2() {
-        Intent intent = new Intent(this, CreaEvento2.class);
-        startActivity(intent);
-    }
-
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
