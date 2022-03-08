@@ -118,31 +118,13 @@ main{
           outline:none;
         }
 
-        .main {
-            position: relative;
-            width: 75%;
-            height: 25%;
-            background-color: white;
-			border-color: black;
-			border-radius:0px;
-            top: 170px;
-            left: 300px;
-        }
-    .container {
-        font-style: normal;
-        font-family: sans-serif;
-        font-size:medium; 
-
-
-    }
-	.titolo {
-		position: relative; top:40; left: -370px;
-	}
-
-	.notifiche{ 
-		position:relative;
-		font-family: 'Times New Roman', Times, serif;
-        font-size: large;
-	}
-
-
+        
+       .quadrato {
+		   background-color: white;
+		   
+		   position:absolute;
+		   justify-content: center;
+		   align-self: center;
+		   margin-left: 50%;
+		   margin-top: 20%;
+	   }
