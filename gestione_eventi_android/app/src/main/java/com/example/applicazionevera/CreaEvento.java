@@ -9,23 +9,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.applicazionevera.model_and_adapter.PlaceAutoSuggestAdapter;
 import com.example.applicazionevera.retrofit.Event;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -59,7 +59,11 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initDatePicker();
 
-        Spinner spinner = findViewById(R.id.spinner1);
+        final AutoCompleteTextView autoCompleteTextView=findViewById(R.id.autoComplete);
+        autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(CreaEvento.this,android.R.layout.simple_list_item_1));
+
+
+    Spinner spinner = findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.CategorieArray, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter1);
@@ -155,7 +159,10 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
 
             }
         });
+
     }
+
+
 
     private void initDatePicker() {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {

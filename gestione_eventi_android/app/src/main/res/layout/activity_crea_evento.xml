@@ -125,5 +125,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.859" />
 
+    <AutoCompleteTextView
+        android:id="@+id/autoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="indirizzo"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/eventappLogo"
+        app:layout_constraintVertical_bias="0.409" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
