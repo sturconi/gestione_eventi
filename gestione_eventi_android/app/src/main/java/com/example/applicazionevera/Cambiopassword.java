@@ -3,6 +3,11 @@ package com.example.applicazionevera;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.example.applicazionevera.retrofit.Utente;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -24,13 +30,27 @@ public class Cambiopassword extends AppCompatActivity {
     String Id_utente;
     Utente u;
     int statusCode;
+    EditText passwordET = null;
+    String Lpassword= null;
+    String passwordControl=null;
+    Button button;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cambiopasswo);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        passwordET = findViewById(R.id.passAttuale);
 
+        button = (Button) findViewById(R.id.buttonConfer);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Lpassword = passwordET.getText().toString();
+                updatepass();
+            }
+        });
 
 
 
@@ -90,6 +110,14 @@ public class Cambiopassword extends AppCompatActivity {
             public void onResponse(Call<Utente> call, Response<Utente> response) {
                 statusCode = response.code();
                 u = response.body();
+                if(statusCode==500){
+                    Toast.makeText(Cambiopassword.this, "Grosso baco", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    u=response.body();
+                    passwordControl=u.getPassword();
+                    Controllo();
+                }
             }
 
             @Override
@@ -97,7 +125,15 @@ public class Cambiopassword extends AppCompatActivity {
             }
         });
     }
+    public void Controllo(){
 
+        if( Lpassword.equals(passwordControl)){
+            Toast.makeText(Cambiopassword.this, "GG ", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(Cambiopassword.this, "Password precedente non valida!", Toast.LENGTH_SHORT).show();
+        }
+    }
     public static final String BASE_URL = "http://10.0.2.2:8080/";
     Gson gson = new GsonBuilder()
             .setLenient()
