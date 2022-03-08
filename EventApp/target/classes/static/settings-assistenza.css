@@ -225,8 +225,10 @@ main{
   font-size: 24px;
 }
 .invia{
+  transition: all 100ms ease-out;
   margin-top: 20px;
   font-size: 18px;
+  display: inline-block;
   color: white;
   text-transform: uppercase;
   padding-left: 5px;
@@ -235,6 +237,9 @@ main{
   padding-right: 20px;
   border-radius: 10px;
   margin-left: 5px;
+  outline: none;
+  border:1px solid #c0c0c0;
+  background: none;
   background-color: #5bc995;
   
 }

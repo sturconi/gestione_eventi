@@ -119,17 +119,30 @@ main{
         }
 
         .main {
-            position: absolute;
-            width: 70%;
-            height: 65%;
+            position: relative;
+            width: 75%;
+            height: 25%;
             background-color: white;
 			border-color: black;
-			border-radius: 10px;
+			border-radius:0px;
             top: 170px;
-            left: 350px;
+            left: 300px;
         }
     .container {
         font-style: normal;
         font-family: sans-serif;
         font-size:medium; 
+
+
     }
+	.titolo {
+		position: relative; top:40; left: -370px;
+	}
+
+	.notifiche{ 
+		position:relative;
+		font-family: 'Times New Roman', Times, serif;
+        font-size: large;
+	}
+
+
