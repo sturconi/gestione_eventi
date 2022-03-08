@@ -187,11 +187,13 @@ main{
 	.helper{
 		background:white;
 		position:absolute;
-		top:35%;
-		left:38.6%;
+		top:250px;
+		left:593px;
 		transform:translate3d(-50%,-50%,0);
 		padding:1.2em 2em;
     width: 370px;
+    border-top-left-radius: 10px;
+    
 
   }
 
@@ -206,6 +208,7 @@ main{
 			overflow:hidden;
 			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
       border:4px solid #ffea92;
+      
 
     }
 
@@ -223,30 +226,42 @@ main{
       outline:none;
       transition: all 100ms ease-out;
     }
+    .helperimg{
+      background:white;
+      position:absolute;
+      top:468px;
+      left:989px;
+      height: 204px;
+      transform:translate3d(-50%,-50%,0);
+      padding:1.2em 2em;
+      border-top:1px solid #333;
+      border-bottom-right-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
+      position: absolute;
+      z-index: 1;
+      border-left:1px solid #333;
+  
+    }
 
     /*modifica password*/
     .helperpass{
       background:white;
       position:absolute;
-      top:69%;
-      left:38.85%;
+      top:468px;
+      left:585px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
-  
+      
+      border-top: 1px solid #333;
+      border-bottom-left-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
+      position: absolute;
     }
   
 
 
     /*dati personali e modifica immagine*/
-    .helperimg{
-      background:white;
-      position:absolute;
-      top:68.6%;
-      left:66%;
-      transform:translate3d(-50%,-50%,0);
-      padding:1.2em 2em;
-  
-    }
+    
   
 
     /*slogan*/
@@ -254,16 +269,20 @@ main{
     .helperslogan{
       background:white;
       position:absolute;
-      top:39%;
-      left:66.2%;
+      top:251px;
+      left:976.2px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
+      border-top-right-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
+      
     }
     .helperslogan img{
       width:345px;
 			overflow:hidden;
 			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
       border:4px solid #ffea92;
+      height: 145px;
 
     }
     
