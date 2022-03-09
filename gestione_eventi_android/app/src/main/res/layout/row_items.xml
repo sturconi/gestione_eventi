@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -37,6 +37,7 @@
                     android:layout_marginBottom="20dp"
                     android:textColor="@color/white"
                     android:textSize="25sp"
+                    android:background="#99141414"
                     android:textStyle="bold"></TextView>
 
                 <androidx.cardview.widget.CardView
@@ -167,8 +168,15 @@
                     android:textColor="@android:color/darker_gray">
 
                 </TextView>
+
             </LinearLayout>
         </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/lightGrey" />
 
     </LinearLayout>
 </LinearLayout>

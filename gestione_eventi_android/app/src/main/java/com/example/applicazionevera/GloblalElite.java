@@ -11,12 +11,8 @@ import android.location.LocationManager;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 
-import com.example.applicazionevera.retrofit.Utente;
-
-import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
-import retrofit2.http.POST;
 
 public class GloblalElite extends Application implements android.location.LocationListener {
 
@@ -80,9 +76,4 @@ public class GloblalElite extends Application implements android.location.Locati
         position = location;
     }
 
-
-    @POST("/utenti")
-    public Call<Utente> createUser(Utente user) {
-        return (Call<Utente>) user;
-    }
 }

@@ -62,12 +62,10 @@ public class Account extends AppCompatActivity {
             }
         });
 
-        //user=findViewById(R.id.userTextView);
-        pass=findViewById(R.id.passTextView);
-        img=findViewById(R.id.imgView);
 
-        user.setText(getIntent().getStringExtra("username"));
-        pass.setText(getIntent().getStringExtra("password"));
+
+/*        user.setText(getIntent().getStringExtra("username"));
+        pass.setText(getIntent().getStringExtra("password")); */
         Button bottone;
 
         bottone  = (Button) findViewById(R.id.CambioPass);

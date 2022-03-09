@@ -1,117 +1,171 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreaEvento">
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="20dp">
 
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigation"
-            android:layout_width="0dp"
+
+
+    <ImageView
+        android:id="@+id/eventappLogo"
+        android:layout_width="254dp"
+        android:layout_height="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/immagine" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="209dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="40dp"
+            android:hint="Seleziona la categoria"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descrizioneEvento" />
+
+        <LinearLayout
+            android:id="@+id/dataeora"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/navigation">
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="vertical">
 
 
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+                <TextView
+                    android:id="@+id/timerPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:drawableLeft="@drawable/ic_baseline_access_time_sky"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:hint="Orario Evento"
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="vertical">
 
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="209dp"
-        android:layout_height="42dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+                <Button
+                    android:id="@+id/dataEvento"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="@android:color/white"
+                    android:drawableLeft="@drawable/ic_baseline_calendar_today_sky"
+                    android:hint="Data Evento"
+                    android:inputType="date"
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
 
-    <EditText
-        android:id="@+id/nomeEvento"
-        android:layout_width="wrap_content"
-        android:layout_height="62dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Nome Evento"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/dataEvento"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:hint="Data Evento"
-        android:inputType="date"
-        android:minHeight="48dp"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
+        <EditText
+            android:id="@+id/descrizioneEvento"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Descrizione Evento"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nomeEvento" />
 
-    <EditText
-        android:id="@+id/descrizioneEvento"
-        android:layout_width="206dp"
-        android:layout_height="130dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Descrizione Evento"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607" />
+        <EditText
+            android:id="@+id/nomeEvento"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Titolo Evento"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventappLogo" />
 
-    <Button
-        android:id="@+id/buttonEvent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginEnd="145dp"
-        android:text="Avanti"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.876" />
+        <Button
+            android:id="@+id/buttonEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Crea evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fotoevento" />
 
-    <TextView
-        android:id="@+id/timerPicker"
-        android:layout_width="210dp"
-        android:layout_height="62dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Orario evento"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:hint="indirizzo"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dataeora" />
+
+        <Button
+            android:id="@+id/addfotoevento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@android:color/white"
+            android:drawableLeft="@drawable/ic_baseline_insert_photo_24"
+            android:hint="Aggiungi  un'immagine dell'evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/autoComplete" />
+
+        <ImageView
+            android:id="@+id/fotoevento"
+            android:layout_width="152dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addfotoevento"
+            app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

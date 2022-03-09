@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -20,6 +21,9 @@ public interface MyApiEndpointInterface {
     @POST("/utenti")
     Call<Utente> createUser(@Body Utente user);
 
+    @PUT("/utenti/{ID_utente}")
+    Call<Utente> updatePass(@Path("ID_utente")String ID_utente);
+
     @POST("/eventi")
     Call<Event> createEvent(@Body Event eve);
 
@@ -28,6 +32,4 @@ public interface MyApiEndpointInterface {
 
     @GET("/eventi")
     Call<List<Event>> getAllEvent();
-
-
 }

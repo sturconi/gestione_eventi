@@ -138,7 +138,7 @@ main{
   border-bottom: 2px solid gray;
   outline: 0;
   font-size: 1.3rem;
-  color: white;
+  color: black;
   background: transparent;
   transition: border-color 0.2s;
 }
@@ -185,38 +185,19 @@ main{
 }
 	
 	.helper{
-		background:lightskyblue;
+		background:white;
 		position:absolute;
-		top:60%;
-		left:55%;
+		top:250px;
+		left:593px;
 		transform:translate3d(-50%,-50%,0);
 		padding:1.2em 2em;
+    width: 370px;
+    border-top-left-radius: 10px;
+    
 
   }
 
-  
-  .btn-btn-confirm, .btn-btn-cancel{
-      display:inline-block;
-      margin-right:2px;
-      padding: 10px 25px;
-      background: none;
-      border:1px solid #c0c0c0;
-      border-radius:2px;
-      color: rgb(0, 0, 0);
-      background-color:#5bc995;
-      font-size:1.125em;
-      outline:none;
-      transition: all 100ms ease-out;
-    }
-
-    /*modifica password*/
-
-
-
-    /*dati personali e modifica immagine*/
-
-
-    .helper.avatar{
+  .helper.avatar{
 		padding:2em 0.5em;
 		text-align:center;
     }
@@ -227,7 +208,87 @@ main{
 			overflow:hidden;
 			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
       border:4px solid #ffea92;
+      
 
     }
+
+  
+  .btn-btn-confirm, .btn-btn-cancel{
+      display:inline-block;
+      margin-right:2px;
+      padding: 10px 25px;
+      background: none;
+      border:1px solid #c0c0c0;
+      color: white;
+      border-radius: 10px;
+      text-transform: uppercase;
+      background-color:#5bc995;
+      font-size:1.125em;
+      outline:none;
+      transition: all 100ms ease-out;
+    }
+    .helperimg{
+      background:white;
+      position:absolute;
+      color: #333;
+      text-shadow: 1px 1px lightblue;
+      top:468px;
+      left:989px;
+      height: 204px;
+      transform:translate3d(-50%,-50%,0);
+      padding:1.2em 2em;
+      border-top:1px solid #333;
+      border-bottom-right-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
+      position: absolute;
+      z-index: 1;
+      border-left:1px solid #333;
+  
+    }
+
+    /*modifica password*/
+    .helperpass{
+      background:white;
+      position:absolute;
+      top:468px;
+      left:585px;
+      transform:translate3d(-50%,-50%,0);
+      padding:1.2em 2em;
+      color: #333;
+      text-shadow: 1px 1px lightblue;
+      border-top: 1px solid #333;
+      border-bottom-left-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
+      position: absolute;
+    }
+  
+
+
+    /*dati personali e modifica immagine*/
+    
+  
+
+    /*slogan*/
+
+    .helperslogan{
+      background:white;
+      position:absolute;
+      top:251px;
+      left:976.2px;
+      transform:translate3d(-50%,-50%,0);
+      padding:1.2em 2em;
+      border-top-right-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
+      
+    }
+    .helperslogan img{
+      width:345px;
+			overflow:hidden;
+			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+      border:4px solid #ffea92;
+      height: 145px;
+
+    }
+    
 
  

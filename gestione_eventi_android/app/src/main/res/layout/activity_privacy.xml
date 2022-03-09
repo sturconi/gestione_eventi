@@ -26,6 +26,7 @@
         android:gravity="center"
         android:text="Segnale Gps"
         android:textSize="35sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +51,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.50"
-        tools:text="Mostra nome e cognome" />
+        tools:text="Mostra nome e cognome"
+        android:textColor="@color/black"/>
 
     <ToggleButton
         android:id="@+id/ToggleNC"
@@ -108,7 +110,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="79dp"
-            android:layout_marginBottom="119dp"
+            android:layout_marginBottom="122dp"
             android:text="Stop Music" />
 
     </RelativeLayout>

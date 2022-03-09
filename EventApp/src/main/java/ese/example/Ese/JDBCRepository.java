@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository(value="MYSQL")
-public class JDBCRepository implements utenteInterface, eventoInterface {
+public class JDBCRepository implements utenteInterface, eventoInterface, CommentoInterface {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
@@ -31,6 +31,10 @@ public class JDBCRepository implements utenteInterface, eventoInterface {
 	@Override
 	public int update(Utente u) {
 		return jdbcTemplate.update("UPDATE utente SET nome=? WHERE id=?",new Object[] {u.getNome(),u.getId()});
+	}
+	@Override
+	public int updatePassword(Utente u) {
+		return jdbcTemplate.update("UPDATE utente SET password=? WHERE ID_utente=?",new Object[] {u.getPassword(),u.getId()});
 	}
 	@Override
 	public int deleteById(int id) {
@@ -81,5 +85,60 @@ public class JDBCRepository implements utenteInterface, eventoInterface {
 	public int updateE(Evento ev) {
 		return jdbcTemplate.update("UPDATE evento SET Categoria=? AND SET nome-evento=? AND SET luogo WHERE numero_evento=?",new Object[] {ev.getCategoria(),ev.getNome_evento(), ev.getLuogo()});
 	}
+	
+//------------------------------------------------------------------
+	//----Ticket------//
+	
+	/*@Override
+	public int saveT(Ticket t) {
+		return jdbcTemplate.update("INSERT INTO ticket(oggetto, testo) VALUE(?,?)", new Object[] {t.getOggetto(), t.getTesto()});
+		
+	}
+	@Override
+	public Ticket findByIdT(int ID_ticket) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.queryForObject("SELECT * FROM ticket WHERE ID_ticket=?", BeanPropertyRowMapper.newInstance(Ticket.class),ID_ticket);
+	}
+	@Override
+	public List<Ticket> findAllT() {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.query("SELECT * FROM utente", BeanPropertyRowMapper.newInstance(Ticket.class));
+	}
+	@Override
+	public int deleteByIdT(int ID_ticket) {
+		// TODO Auto-generated method stub
+		 return jdbcTemplate.update("DELETE FROM ticket WHERE ID_ticket=?",ID_ticket);
+	}
+	@Override
+	public int deleteAllT() {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.update("DELETE FROM ticket");
+	}
+	@Override
+	public int updateT(Ticket t) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.update("UPDATE ticket SET Oggetto=? AND SET Testo=? WHERE ID_ticket=?",new Object[] {t.getOggetto(),t.getTesto()});
+	}
+	@Override
+	public Ticket findByOggetto(String oggetto) {
+		// TODO Auto-generated method stub
+		 return jdbcTemplate.queryForObject("SELECT * FROM ticket WHERE oggetto=?", BeanPropertyRowMapper.newInstance(Ticket.class),oggetto);
+	}
+*/
+	
+	
+	//------------------------------------------------------------------
+		//----Commento------//
+	
+	@Override
+	public Commento findByIdC(int codice) {
+		return jdbcTemplate.queryForObject("SELECT username, testo_commento, foto_profilo, nome \r\n"
+				+ "FROM commento c INNER JOIN evento e\r\n"
+				+ "ON ID_evento = numero_evento\r\n"
+				+ "INNER JOIN utente u\r\n"
+				+ "ON c.ID_utente = u.ID_utenteWHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Commento.class),codice);
+	}
+	
+	
 
 }

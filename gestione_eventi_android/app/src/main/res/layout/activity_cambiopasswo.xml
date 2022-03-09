@@ -6,68 +6,127 @@
     android:layout_height="match_parent"
     tools:context=".Cambiopassword">
 
-    <EditText
-        android:id="@+id/passAttuale"
-        android:layout_width="241dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Inserisci password attuale"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+    <LinearLayout
+        android:id="@+id/passwordBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/EventappLogo"
 
-    <EditText
-        android:id="@+id/passNuova"
-        android:layout_width="245dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Inserisci la nuova password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passAttuale"
-        tools:ignore="MissingConstraints" />
+        >
 
-    <EditText
-        android:id="@+id/passRipetizione"
-        android:layout_width="244dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Ripeti la password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passNuova"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Password attuale"
+            android:textColor="@color/editTextSubHeading"
+            android:textSize="16sp"></TextView>
+
+        <EditText
+            android:id="@+id/passAttuale"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@color/editTextBackground"
+            android:drawableRight="@drawable/ic_baseline_lock_24"
+            android:gravity="center"
+            android:hint="********"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="20dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/greyDate"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/passwordBox"
+        android:id="@+id/countryBox"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Nuova password"
+            android:textColor="@color/editTextSubHeading"
+            android:textSize="16sp"></TextView>
+
+        <EditText
+            android:id="@+id/passNuova"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@color/editTextBackground"
+            android:drawableRight="@drawable/ic_baseline_lock_24"
+            android:gravity="center"
+            android:hint="********"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="20dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/greyDate"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/countryBox"
+        android:id="@+id/phoneBox"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Conferma password"
+            android:textColor="@color/editTextSubHeading"
+            android:textSize="16sp"></TextView>
+
+        <EditText
+            android:id="@+id/passRipetizione"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@color/editTextBackground"
+            android:drawableRight="@drawable/ic_baseline_lock_24"
+            android:gravity="center"
+            android:hint="********"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="20dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/greyDate"></EditText>
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/buttonConfer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="145dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="145dp"
-        android:text="Conferma"
+        android:text="Cambia Password"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passRipetizione"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneBox"
+        app:layout_constraintVertical_bias="0.317" />
 
     <ImageView
         android:id="@+id/EventappLogo"

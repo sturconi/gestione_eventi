@@ -19,6 +19,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/immagine" />
 
+
     <TextView
         android:id="@+id/textTitolo"
         android:layout_width="250dp"
@@ -31,11 +32,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
-
+        app:layout_constraintVertical_bias="0.181" />
 
     <TextView
         android:id="@+id/textView7"
@@ -52,17 +52,17 @@
         app:layout_constraintVertical_bias="0.306" />
 
     <EditText
-        android:id="@+id/edit_text_subject"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:inputType="textEmailSubject"
+        android:id="@+id/edit_text_message"
+        android:layout_width="410dp"
+        android:layout_height="128dp"
+        android:gravity="center|top"
+        android:lines="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.357" />
+        app:layout_constraintVertical_bias="0.583" />
 
     <TextView
         android:layout_width="match_parent"
@@ -75,21 +75,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
-
+        app:layout_constraintVertical_bias="0.443" />
 
     <EditText
-        android:id="@+id/edit_text_message"
-        android:layout_width="410dp"
-        android:layout_height="128dp"
-        android:gravity="center|top"
-        android:lines="10"
+        android:id="@+id/edit_text_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="textEmailSubject"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <Button
         android:id="@+id/buttonInvia"
@@ -98,10 +97,10 @@
         android:text="Invia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688" />
+        app:layout_constraintVertical_bias="0.781" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
