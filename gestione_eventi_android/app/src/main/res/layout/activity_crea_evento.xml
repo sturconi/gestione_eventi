@@ -28,7 +28,7 @@
             android:id="@+id/spinner1"
             android:layout_width="209dp"
             android:layout_height="42dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:hint="Seleziona la categoria"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
             android:id="@+id/dataeora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal"
             android:weightSum="10"
             app:layout_constraintEnd_toEndOf="parent"
@@ -125,18 +125,17 @@
             android:id="@+id/buttonEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="Crea evento"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/autoComplete" />
+            app:layout_constraintTop_toBottomOf="@+id/fotoevento" />
 
         <AutoCompleteTextView
             android:id="@+id/autoComplete"
             android:layout_width="match_parent"
             android:layout_height="62dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:gravity="center"
             android:hint="indirizzo"
             android:textSize="18sp"
@@ -144,6 +143,28 @@
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dataeora" />
+
+        <Button
+            android:id="@+id/addfotoevento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@android:color/white"
+            android:drawableLeft="@drawable/ic_baseline_insert_photo_24"
+            android:hint="Aggiungi  un'immagine dell'evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/autoComplete" />
+
+        <ImageView
+            android:id="@+id/fotoevento"
+            android:layout_width="152dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addfotoevento"
+            app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
