@@ -6,9 +6,9 @@ body {
 	font-family: 'Poppins', sans-serif;
 	background: linear-gradient(aquamarine, aqua) fixed;
     display: grid;
-    
+    place-items: center;
 }
-.wrapper {
+.header  {
 	width: 1170px;
 	margin: auto;
   padding-left: 270px;
@@ -19,11 +19,10 @@ body {
 	float: right;
 	list-style: none;
 	margin-top: 50px;
+	margin-left: 5cm;
 	background-color: white;
 	box-shadow: 5px 5px 2px lightblue;
 	font-size: 25px;
-	
-	
 }
 
 
@@ -52,8 +51,7 @@ body {
 	float: left;
 }
 .logo img {
-	
-	width: 100%;
+	margin-left: 7cm;
 	padding: 15px 0;
 }
 
@@ -71,26 +69,22 @@ section .events ul{
 	top: 60%;
 	transform: translateY(-50%);
 	margin: 0;
-	
-	
 	box-sizing: border-box;
 }
 section .events ul li{
 	list-style: none;
-	background: rgb(206, 36, 36);
 	box-sizing: border-box;
 	height: 180px;
 
 }
 
-
-
 section .events ul li .time{
 	position: relative;
 	padding: 20px;
+	margin-left: 2cm;
 	background: #262626;
 	box-sizing: border-box;
-	width: 25%;
+	width: 20%;
 	height: 100%;
 	float: left;
 	text-align: center;
@@ -122,7 +116,7 @@ section .events ul li .details{
 	padding: 20px;
 	background: #fff;
 	box-sizing: border-box;
-	width: 70%;
+	width: 54%;
 	height: 100%;
 	float: left;
 }
@@ -153,42 +147,16 @@ section .events ul li .details a{
 	transition: .5s;
 }
 
-section .events ul li .details a:hover{
-	background:#05473a;
-	color: #fff;
-	border-color: #05473a;
+section .events ul li .prova{
+	float: right;
+	margin-right: 7px;
+	height: 180px;
+	width: 200px;
 }
-
-
-.sb-title-icon {
-	position: relative;
-	top: -5px;
-  }
-
-
-.event--detail li i {
-
-    font-size: 1.4rem;
-    font-weight: 400;
-    
-
-}
-section .events ul li .time h2 span{
-	font-size: 25px;	
-}
-
-section .events ul li .details{
-	padding: 20px;
-	background: white;
-	box-sizing: border-box;
-	width: 50%;
-	height: 100%;
-	float: left;
-}
-
 .mappa{
 	margin-left: 6cm;
 	width: 74%;
+	margin-bottom: 10cm;
 
 }
 
@@ -196,6 +164,10 @@ main{
 	position:relative;
 	height:100vh;
 }
+.sb-title-icon {
+	position: relative;
+	top: -5px;
+  }
 	
 /* menù laterale*/
 .menu{
