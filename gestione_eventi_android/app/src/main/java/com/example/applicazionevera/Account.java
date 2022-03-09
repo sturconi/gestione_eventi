@@ -62,9 +62,7 @@ public class Account extends AppCompatActivity {
             }
         });
 
-        //user=findViewById(R.id.userTextView);
-        pass=findViewById(R.id.passTextView);
-        img=findViewById(R.id.imageView3);
+
 
 /*        user.setText(getIntent().getStringExtra("username"));
         pass.setText(getIntent().getStringExtra("password")); */

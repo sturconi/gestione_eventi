@@ -8,37 +8,40 @@
 
 
     <TextView
-        android:id="@+id/passTextView4"
+        android:id="@+id/cognomeaccount"
         android:layout_width="209dp"
         android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:drawableRight="@drawable/ic_baseline_account_box_24"
+
         android:hint="Cognome"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618" />
+        app:layout_constraintTop_toBottomOf="@+id/nameaccount" />
 
     <TextView
-        android:id="@+id/passTextView3"
+        android:id="@+id/nameaccount"
         android:layout_width="209dp"
         android:layout_height="32dp"
+        android:layout_marginTop="20dp"
         android:hint="Nome"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:drawableRight="@drawable/ic_baseline_account_box_24"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535" />
+        app:layout_constraintTop_toBottomOf="@+id/emailuser" />
 
     <TextView
-        android:id="@+id/passTextView2"
+        android:id="@+id/usernameaccount"
         android:layout_width="209dp"
         android:layout_height="32dp"
+        android:layout_marginTop="20dp"
         android:hint="Username"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:drawableRight="@drawable/ic_baseline_sentiment_very_satisfied_24"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
+        app:layout_constraintTop_toBottomOf="@+id/imageuser" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
@@ -58,44 +61,43 @@
         android:id="@+id/ModImm"
         android:layout_width="193dp"
         android:layout_height="43dp"
+        android:layout_marginTop="30dp"
         android:text="Modifica immagine"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.709" />
+        app:layout_constraintTop_toBottomOf="@+id/cognomeaccount" />
 
     <Button
         android:id="@+id/CambioPass"
         android:layout_width="189dp"
         android:layout_height="43dp"
+        android:layout_marginTop="10dp"
         android:text="Cambia password"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787" />
+        app:layout_constraintTop_toBottomOf="@+id/ModImm" />
 
     <TextView
-        android:id="@+id/passTextView"
+        android:id="@+id/emailuser"
         android:layout_width="209dp"
         android:layout_height="32dp"
+        android:layout_marginTop="20dp"
         android:hint="E-Mail"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:drawableRight="@drawable/ic_baseline_email_24"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.457" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameaccount" />
 
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
+        android:layout_marginTop="20dp"
         android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CambioPass" />
 
     <ImageView
         android:id="@+id/EventappLogo"
@@ -108,14 +110,13 @@
         app:srcCompat="@drawable/immagine" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageuser"
         android:layout_width="133dp"
         android:layout_height="128dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/EventappLogo"
-        app:layout_constraintVertical_bias="0.19"
-        app:srcCompat="@drawable/ritratto" />
+        app:layout_constraintTop_toBottomOf="@+id/EventappLogo"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

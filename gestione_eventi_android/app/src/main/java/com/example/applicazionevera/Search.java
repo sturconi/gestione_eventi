@@ -183,11 +183,11 @@ public class Search extends AppCompatActivity {
         String data = evCatData.getData();
         int image= evCatData.getImage();
 
-        tvImage.setImageResource(image);
+      /*  tvImage.setImageResource(image);
         tvindirizzo.setText(indirizzo);
         tvtitolo.setText(titolo);
         tvdata.setText(data);
-
+*/
 
         view1.setOnClickListener(new View.OnClickListener() {
             @Override
