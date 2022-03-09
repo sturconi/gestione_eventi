@@ -30,7 +30,8 @@ public class PlaceApi {
             int read;
 
             char[] buff=new char[1024];
-            while ((read=inputStreamReader.read(buff))!=-1){
+            while ((read=inputStreamReader
+                    .read(buff))!=-1){
                 jsonResult.append(buff,0,read);
             }
 

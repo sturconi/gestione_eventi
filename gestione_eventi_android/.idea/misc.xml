@@ -82,6 +82,7 @@
         <entry key="..\:/Users/MatteoRomagnoni/Desktop/App_eventi_android/gestione_eventi_android/app/src/main/res/layout/activity_login.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/MatteoRomagnoni/Desktop/App_eventi_android/gestione_eventi_android/app/src/main/res/layout/activity_main.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/MatteoRomagnoni/Desktop/App_eventi_android/gestione_eventi_android/app/src/main/res/layout/activity_mappa.xml" value="0.18840579710144928" />
+        <entry key="..\:/Users/MatteoRomagnoni/Desktop/App_eventi_android/gestione_eventi_android/app/src/main/res/layout/activity_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/MatteoRomagnoni/Desktop/App_eventi_android/gestione_eventi_android/app/src/main/res/layout/activity_modificaimmagine.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/MatteoRomagnoni/Desktop/App_eventi_android/gestione_eventi_android/app/src/main/res/layout/activity_notifiche.xml" value="0.1" />
         <entry key="..\:/Users/MatteoRomagnoni/Desktop/App_eventi_android/gestione_eventi_android/app/src/main/res/layout/activity_preferenze.xml" value="0.18840579710144928" />
@@ -106,9 +107,6 @@
         <entry key="..\:/Users/SimoneTurconi/Desktop/gestione_eventi/gestione_eventi_android/app/src/main/res/layout/activity_mappa.xml" value="0.264" />
       </map>
     </option>
-  </component>
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_crea_evento2.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
