@@ -31,9 +31,9 @@ public class Cambiopassword extends AppCompatActivity {
     Utente u;
     int statusCode;
     EditText passwordET = null;
-    String Lpassword= null;
     String passwordControl=null;
     Button button;
+    EditText  etPassword, etRepeatPassword;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,14 +41,14 @@ public class Cambiopassword extends AppCompatActivity {
         setContentView(R.layout.activity_cambiopasswo);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        passwordET = findViewById(R.id.passAttuale);
+        viewInitializations();
 
         button = (Button) findViewById(R.id.buttonConfer);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Lpassword = passwordET.getText().toString();
-                updatepass();
+
+                performResetPassword(v);
             }
         });
 
@@ -102,6 +102,63 @@ public class Cambiopassword extends AppCompatActivity {
         startActivity(intent);
     }
 
+    void viewInitializations() {
+        passwordET = findViewById(R.id.passAttuale);
+        etPassword = findViewById(R.id.passNuova);
+        etRepeatPassword = findViewById(R.id.passRipetizione);
+
+        // To show back button in actionbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    // Form valido?
+    boolean validateInput() {
+        if (passwordET.getText().toString().equals("")) {
+            passwordET.setError("Inserisci la tua vecchia password");
+            return false;
+        }
+
+
+        if (etPassword.getText().toString().equals("")) {
+            etPassword.setError("Inserisci la tua nuova password");
+            return false;
+        }
+        if (etRepeatPassword.getText().toString().equals("")) {
+            etRepeatPassword.setError("Inserisci di nuovo la tua nuova password");
+            return false;
+        }
+
+
+
+
+        if (!etPassword.getText().toString().equals(etRepeatPassword.getText().toString())) {
+            etRepeatPassword.setError("Password non coincide");
+            return false;
+        }
+        return true;
+    }
+
+
+
+
+    public void performResetPassword (View v) {
+        if (validateInput()) {
+
+            // Input is valid, here send data to your server
+
+            String et_code1 = passwordET.getText().toString();
+            String password = etPassword.getText().toString();
+            String repeatPassword = etRepeatPassword.getText().toString();
+
+            Toast.makeText(this,"Password Reset Successfully",Toast.LENGTH_SHORT).show();
+
+            //API
+            updatepass();
+
+        }
+    }
+
+
     public void updatepass() {
         MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
         Call<Utente> call = apiService.updatePass(Id_utente);
@@ -116,7 +173,7 @@ public class Cambiopassword extends AppCompatActivity {
                 else{
                     u=response.body();
                     passwordControl=u.getPassword();
-                    Controllo();
+
                 }
             }
 
@@ -125,15 +182,7 @@ public class Cambiopassword extends AppCompatActivity {
             }
         });
     }
-    public void Controllo(){
 
-        if( Lpassword.equals(passwordControl)){
-            Toast.makeText(Cambiopassword.this, "GG ", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(Cambiopassword.this, "Password precedente non valida!", Toast.LENGTH_SHORT).show();
-        }
-    }
     public static final String BASE_URL = "http://10.0.2.2:8080/";
     Gson gson = new GsonBuilder()
             .setLenient()
