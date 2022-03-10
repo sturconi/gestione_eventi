@@ -3,26 +3,26 @@
 	padding: 0;
 }
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif, 'Montserrat';
 	background: linear-gradient(aquamarine, aqua) fixed;
     display: grid;
     place-items: center;
 }
-.header  {
+.wrapper {
 	width: 1170px;
 	margin: auto;
   padding-left: 270px;
 }
 
-
 .nav-area {
 	float: right;
 	list-style: none;
 	margin-top: 50px;
-	margin-left: 5cm;
 	background-color: white;
 	box-shadow: 5px 5px 2px lightblue;
 	font-size: 25px;
+	
+	
 }
 
 
@@ -47,127 +47,15 @@ body {
 	background-color: #333;
   }
 .logo {
-	
 	float: left;
 }
 .logo img {
-	margin-left: 7cm;
+	width: 100%;
 	padding: 15px 0;
 }
 
 
-section .events{
-	padding: 200px;
-	width: 100%;
-	height: 100%;
-    
-	
-}
 
-section .events ul{
-	
-	top: 60%;
-	transform: translateY(-50%);
-	margin: 0;
-	box-sizing: border-box;
-}
-section .events ul li{
-	list-style: none;
-	box-sizing: border-box;
-	height: 180px;
-
-}
-
-section .events ul li .time{
-	position: relative;
-	padding: 20px;
-	margin-left: 2cm;
-	background: #262626;
-	box-sizing: border-box;
-	width: 20%;
-	height: 100%;
-	float: left;
-	text-align: center;
-	transition: .5s;
-}
-
-section .events ul li:hover .time{
-	background: #05473a;
-}
-
-section .events ul li .time h2{
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	color: #fff;
-	font-size: 50px;
-	line-height: 30px;
-
-}
-
-section .events ul li .time h2 span{
-	font-size: 25px;	
-}
-
-section .events ul li .details{
-	padding: 20px;
-	background: #fff;
-	box-sizing: border-box;
-	width: 54%;
-	height: 100%;
-	float: left;
-}
-
-
-section .events ul li .details h3{
-	position: relative;
-	margin: 0;
-	padding: 0;
-	font-size: 22px;
-}
-
-section .events ul li .details p{
-	position: relative;
-	margin: 10 px 0 0;
-	padding: 0;
-	font-size: 16px;
-}
-
-section .events ul li .details a{
-	display: inline-block;
-	text-decoration: none;
-	text-transform: uppercase;
-	padding: 10px 15px;
-	border: 2px solid #262626;
-	margin-top: 15px;
-	font-size: 18px;
-	transition: .5s;
-}
-
-section .events ul li .prova{
-	float: right;
-	margin-right: 7px;
-	height: 180px;
-	width: 200px;
-}
-.mappa{
-	margin-left: 6cm;
-	width: 74%;
-	margin-bottom: 10cm;
-
-}
-
-main{
-	position:relative;
-	height:100vh;
-}
-.sb-title-icon {
-	position: relative;
-	top: -5px;
-  }
 	
 /* menù laterale*/
 .menu{
@@ -226,3 +114,59 @@ main{
   .leftbar ul li:focus{
           outline:none;
         }
+
+
+
+
+/* Sezione commenti*/
+
+  
+  .maincomment {
+	margin: 0 0 0 80px;
+	max-height: 1100px;
+	overflow: hidden;
+  }
+  
+  form {
+	margin: 0 0 100px 0;
+  }
+  
+  form input {
+	background: #f0f0f0;
+	border: none;
+	font-size: 36px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	width: 600px;
+  }
+  
+  form input:focus {
+	background: #fff;
+	box-shadow: none;
+	outline: none;
+  }
+  
+  button.btn {
+	background: blue;
+	border: none;
+	color:rgb(255, 255, 255);
+	cursor: pointer;
+	font-size: 36px;
+	padding: 20px 24px;
+  }
+  
+  
+  .container ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .container li {
+	
+	font-size: 36px;
+	margin: 0 0 36px;
+	opacity: 1;
+	padding-left: 20px;
+  }
+  

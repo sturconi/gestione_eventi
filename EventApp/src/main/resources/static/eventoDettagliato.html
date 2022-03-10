@@ -4,64 +4,60 @@
         <meta charset="UTF-8">
         <title>Eventapp</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="eventoDettagliato.css">    
+        <script src="https://s3.amazonaws.com/codecademy-content/projects/jquery.min.js"></script>
+        <link rel="stylesheet" href="eventoDettagliato.css">  
+        <script src='eventoDettagliato.js'></script>  
     </head>
     <body>
-        <header>
-                <div class="logo">
-                    <img src="transparent.png" alt="Eventapp">
-                </div>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="transparent.png" alt="Eventapp">
+            </div>
                 <ul class="nav-area">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="search.html">Cerca</a></li>
-                    <li><a href="settings.html">Impostazioni</a></li>
+                    <li><a  class="active" href="home.html">Home</a></li>
+                    <li><a  href="search.html">Cerca</a></li>
+                    <li><a  href="settings.html">Mappa</a></li>
                     <li><a href="categorie.html">Categorie</a></li>
                 </ul>
-        </header>
+        </div>
         <nav class="menu" tabindex="0">
             <div class="smartphone-menu-trigger"></div>
           <header class="avatar">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0zLw957QByyJ31DlQSJEvEmvRYmT6yrzWA&usqp=CAU" />
-            <h5>Matteo Romagnoni</h5>
+            <h2>Matteo Romagnoni</h2>
           </header>
+    
              <div class="leftbar">
                 <ul>
-                <li><a href="account.html"><span>Account</span></a></li>
+                <li  ><a href="account.html"><span>Account</span></a></li>
                 <li tabindex="0" class="icon-customers"><span>Preferenze</span></li>
-                <li tabindex="0" class="icon-users"><span>Notifiche</span></li>
+                <li > <a href="notifiche.html"><span>Notifiche</span></a></li>
                 <li tabindex="0" class="icon-settings"><span>Assistenza</span></li>
                     <li tabindex="0" class="icon-settings"><span>Contattaci</span></li>
                 </ul>
             </div>
         </nav>
-        <section>    
-            <div class="events">
-                <ul>
-                    <li>
-                        <div class="time">
-                            <h2>24 <br> <span> Giugno</span> </h2>
-                        </div>
-                            <div class="details">
-                                <h3><b>Grossa abbuffata con Ciccio</b></h3>
-                                    <p> Non sto cappando bro si tratta di un evento incredibile. 
-                                        Si svolgerà in via Jokerinho 27 a Lambrate.  
-                                        Sarà molto trap.<br><br>  
-                                                       
-                                    <img class="sb-title-icon" src="orologio.png" width="24" height="24" alt="">
-                                        <i> 14:00 - 14:30</i>
-                                    <br>
-                                
-                                    <img class="sb-title-icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg" alt="">
-                                        <i><b>  Seregno, Via Garibaldi 15</i> </b>
-                                    </p>
-                            </div>
-                        <img class="prova" alt="Immagine" src="https://aboutcreators.it/wp-content/uploads/2018/04/In-cucina-con-Ciccio-2015-1024x683.jpg">
-                    </li>
-                </ul>    
-            </div>
-    </section>
+       
         <iframe class="mappa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.9863694830733!2d9.201998015436885!3d45.65109547910355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786bcf945af1b79%3A0xd8d0148973d480c4!2sVia%20Giuseppe%20Garibaldi%2C%2015%2C%2020831%20Seregno%20MB!5e0!3m2!1sit!2sit!4v1646495516496!5m2!1sit!2sit" 
                 width="800" height="650" style="border:0;" allowfullscreen></iframe>
+
+                <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+                <div class="maincomment">
+                    <div class="container">
+                      
+                      <form class="form">
+                        <input id="comment" type="text" placeholder="scrivi un commento">
+                        <button type="submit" class="btn">invia</button>
+                      </form>
+              
+                      <ul class="comments">
+                        
+                      </ul>
+                    </div>
+                  </div>
+              
+                 
+                </body>
     </body>
 </html>
