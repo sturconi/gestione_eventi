@@ -77,6 +77,8 @@ public class Login extends AppCompatActivity {
         HomeIntent.putExtra("user", Lusername);
         HomeIntent.putExtra("pwd", Lpassword);
         startActivity(HomeIntent);
+        finish();
+
     }
     public void openRegistrazione() {
         Intent intent = new Intent(this, Registrazione.class);

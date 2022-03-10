@@ -120,6 +120,7 @@ public class Account extends AppCompatActivity {
     public void openLogin() {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
+        finish();
     }
 
     public void openSearch() {
