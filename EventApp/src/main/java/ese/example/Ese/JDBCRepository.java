@@ -131,12 +131,8 @@ public class JDBCRepository implements utenteInterface, eventoInterface, Comment
 		//----Commento------//
 	
 	@Override
-	public Commento findByIdC(int codice) {
-		return jdbcTemplate.queryForObject("SELECT username, testo_commento, foto_profilo, nome \r\n"
-				+ "FROM commento c INNER JOIN evento e\r\n"
-				+ "ON ID_evento = numero_evento\r\n"
-				+ "INNER JOIN utente u\r\n"
-				+ "ON c.ID_utente = u.ID_utenteWHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Commento.class),codice);
+	public List<Commento> findByIdC(int ID_evento) {
+		return jdbcTemplate.query("SELECT * FROM commento c INNER JOIN evento e ON ID_evento = numero_evento INNER JOIN utente u ON c.ID_utente = u.ID_utente WHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Commento.class),ID_evento);
 	}
 	
 	

@@ -10,16 +10,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+@RestController
 public class CommentoRestController {
-	@Autowired()
+	
+	@Autowired
 	@Qualifier("MYSQL")
 	CommentoInterface commentoRepositery;
 	
-	
-	}
-	
+	@RequestMapping(value="/commenti/{ID_evento}", method=RequestMethod.GET)
+	public List<Commento> findByIdC(@PathVariable int ID_evento) {
+		return this.commentoRepositery.findByIdC(ID_evento);
+		}
+}
 	
 	
 

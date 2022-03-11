@@ -8,7 +8,9 @@ public class Commento {
 	
 	
 
-
+public Commento() {
+	
+}
 
 	public Commento(int codice, String testo_commento, int iD_utente, int iD_evento) {
 		this.codice = codice;

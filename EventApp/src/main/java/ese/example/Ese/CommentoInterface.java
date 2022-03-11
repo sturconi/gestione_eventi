@@ -1,6 +1,8 @@
 package ese.example.Ese;
 
+import java.util.List;
+
 public interface CommentoInterface {
 	
-	public Commento findByIdC(int codice) ;
+	List<Commento> findByIdC(int ID_evento);
 }
