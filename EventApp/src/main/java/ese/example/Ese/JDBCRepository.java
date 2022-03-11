@@ -135,6 +135,12 @@ public class JDBCRepository implements utenteInterface, eventoInterface, Comment
 		return jdbcTemplate.query("SELECT * FROM commento c INNER JOIN evento e ON ID_evento = numero_evento INNER JOIN utente u ON c.ID_utente = u.ID_utente WHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Commento.class),ID_evento);
 	}
 	
+	@Override
+	public int save(Commento c) {
+		return jdbcTemplate.update("INSERT INTO commento(testo_commento, ID_utente, ID_evento) VALUE(?,?,?)", new Object[] {c.getTesto_commento(), c.getID_utente(), c.getID_evento()});
+	
+	}
+	
 	
 
 }
