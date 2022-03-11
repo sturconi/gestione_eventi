@@ -190,11 +190,31 @@ body {
    
 }
 
-.container img {
-  max-width: 100%;
-  display: block;
-  object-fit: cover;
+.card__header{
+  position: relative;
+	padding: 20px;
+	background: #262626;
+	box-sizing: border-box;
+	width: 100%;
+	height: 200px;
+	float: left;
+	text-align: center;
 }
+
+.card__header .time h2{
+	position: absolute;
+	margin: 0;
+	
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 50px;
+	line-height: 50px;
+
+}
+
+
 
 .card {
   display: flex;
