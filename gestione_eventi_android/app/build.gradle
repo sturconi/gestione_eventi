@@ -60,5 +60,17 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-messaging'
+
+
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.libraries.places:places:1.1.0'
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:2.0.3'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.2@aar'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.github.arimorty:floatingsearchview:2.1.1'
 }
 

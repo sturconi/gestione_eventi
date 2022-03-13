@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.applicazionevera">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -7,8 +8,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <meta-data
         android:name="com.google.android.geo.API_KEY"
@@ -23,7 +22,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Applicazionevera"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label">
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -41,13 +44,15 @@
 
         <activity
             android:name=".ButtareviaActivity"
-            android:exported="false"
-            android:label="ButtareviaActivity" />
+            android:exported="false" />
+        <activity
+            android:name=".Caricamento"
+            android:exported="false" />
         <activity
             android:name=".Login"
-            android:windowSoftInputMode="adjustResize|stateHidden"
             android:exported="false"
-            android:label="LOGIN" />
+            android:label="LOGIN"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".SezioneCommenti"
             android:exported="false"
@@ -69,7 +74,6 @@
         <activity
             android:name=".Home"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -126,7 +130,7 @@
             android:name=".Calendario"
             android:exported="false" />
         <activity
-            android:name=".Caricamento"
+            android:name=".PermissionsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -134,16 +138,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service
-            android:name=".notifichepush.MyFirebaseMessagingService"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-
-        <service android:name=".model_and_adapter.MyService" />
     </application>
 
 </manifest>
