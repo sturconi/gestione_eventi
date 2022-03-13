@@ -19,9 +19,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.arlib.floatingsearchview.FloatingSearchView;
+
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -34,38 +35,37 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.AutocompletePrediction;
-import com.google.android.libraries.places.api.model.AutocompleteSessionToken;
 import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.api.model.TypeFilter;
-import com.google.android.libraries.places.api.net.FetchPlaceRequest;
-import com.google.android.libraries.places.api.net.FetchPlaceResponse;
-import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest;
-import com.google.android.libraries.places.api.net.FindAutocompletePredictionsResponse;
-import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.skyfishjy.library.RippleBackground;
+import com.google.android.gms.common.api.Status;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderClient;
-    private PlacesClient placesClient;
     private List<AutocompletePrediction> predictionList;
 
     private Location mLastKnownLocation;
     private LocationCallback locationCallback;
-
-    private FloatingSearchView materialSearchBar;
     private View mapView;
     private Button btnFind;
     private RippleBackground rippleBg;
@@ -77,18 +77,47 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        materialSearchBar = findViewById(R.id.searchBar);
+
         btnFind = findViewById(R.id.btn_find);
         rippleBg = findViewById(R.id.ripple_bg);
+
+
+        if (!Places.isInitialized()) {
+            Places.initialize(getApplicationContext(), getString(R.string.google_maps_api), Locale.ITALY);
+        }
+
+
+
+        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
+                getSupportFragmentManager().findFragmentById(R.id.place_autocomplete);
+
+        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
+
+        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(@NonNull Place place) {
+
+                addMarker(place);
+            }
+
+
+            @Override
+            public void onError(Status status) {
+                Log.d("Maps", "An error occurred: " + status);
+            }
+        });
+
+
+
+
+
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         mapView = mapFragment.getView();
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MapActivity.this);
-        Places.initialize(MapActivity.this, getString(R.string.google_maps_api));
-        placesClient = Places.createClient(this);
-        final AutocompleteSessionToken token = AutocompleteSessionToken.newInstance();
+
 
 
 
@@ -204,5 +233,19 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         }
                     }
                 });
+    }
+
+
+    public void addMarker(Place p){
+
+        MarkerOptions markerOptions = new MarkerOptions();
+
+        markerOptions.position(p.getLatLng());
+        markerOptions.title(p.getName()+"");
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+
+        mMap.addMarker(markerOptions);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(p.getLatLng()));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(13));
     }
 }
