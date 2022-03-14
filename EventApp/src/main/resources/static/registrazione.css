@@ -52,6 +52,11 @@ form{
   text-shadow: 2px 2px 2px lightblue;
 
 }
+.content {
+  position: relative;
+  top: -270px;
+  left: -70px;
+}
 .input-field{
   max-width: 350px;
   width: 100%;

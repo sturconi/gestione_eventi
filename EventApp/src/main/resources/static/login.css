@@ -52,6 +52,7 @@ form{
   text-shadow: 2px 2px 2px lightblue;
 
 }
+
 .input-field{
   max-width: 380px;
   width: 100%;
@@ -120,6 +121,11 @@ form{
   transition: all 0.5s;
 }
 
+.content {
+  position: relative;
+  top: -270px;
+  left: -70px;
+}
 
 .signin-signup{
   position: absolute;
