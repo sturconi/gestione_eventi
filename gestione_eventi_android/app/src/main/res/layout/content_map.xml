@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Find Restaurants"
+        android:text="Trova gli eventi vicini a te"
         android:textColor="@color/black"
         android:background="@color/colorPrimary"
         android:layout_margin="16dp"
