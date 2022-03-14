@@ -11,7 +11,7 @@ body, input {
 .container{
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background: linear-gradient(aquamarine, aqua) fixed;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -49,6 +49,7 @@ form{
   font-size: 2.2rem;
   color: #444;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 2px lightblue;
 
 }
 .input-field{
@@ -57,6 +58,7 @@ form{
   height: 40px;
   background-color: #f0f0f0;
   margin: 5px 0;
+  box-shadow: 2px 2px 10px #333;
   border-radius: 55px;
   display: grid;
   grid-template-columns: 15% 85%;
@@ -88,7 +90,7 @@ form{
   outline: none;
   border: none;
   border-radius: 48px;
-  background-color: #20dbc2;
+  background-color: #0b8f74;
   color: white;
   text-transform: uppercase;
   font-weight: 600;
@@ -96,7 +98,7 @@ form{
   transition: all .5s;
 }
 .btn:hover{
-  background-color: #00bfa6;
+  background-color: #05473a;
 
 }
 .social-text{
