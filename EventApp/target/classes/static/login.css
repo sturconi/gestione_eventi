@@ -11,7 +11,7 @@ body, input {
 .container{
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background: linear-gradient(aquamarine, aqua) fixed;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -29,7 +29,7 @@ body, input {
   width: 2000px;
   top: -10%;
   right: 48%;
-  background-image: linear-gradient(-45deg, #20dbc2 0%, #00bfa6 100%);
+  background-image: url("Duomo4.jpg");
   transform: translateY(-50%);
   border-radius: 50%;
   z-index: 6;
@@ -49,13 +49,16 @@ form{
   font-size: 2.2rem;
   color: #444;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 2px lightblue;
 
 }
+
 .input-field{
   max-width: 380px;
   width: 100%;
   height: 55px;
   background-color: #f0f0f0;
+  box-shadow: 2px 2px 10px #333;
   margin: 10px 0;
   border-radius: 55px;
   display: grid;
@@ -88,7 +91,7 @@ form{
   outline: none;
   border: none;
   border-radius: 48px;
-  background-color: #20dbc2;
+  background-color: #0b8f74;
   color: white;
   text-transform: uppercase;
   font-weight: 600;
@@ -96,7 +99,7 @@ form{
   transition: all .5s;
 }
 .btn:hover{
-  background-color: #00bfa6;
+  background-color: #05473a;
 
 }
 .social-text{
@@ -118,6 +121,11 @@ form{
   transition: all 0.5s;
 }
 
+.content {
+  position: relative;
+  top: -270px;
+  left: -70px;
+}
 
 .signin-signup{
   position: absolute;
