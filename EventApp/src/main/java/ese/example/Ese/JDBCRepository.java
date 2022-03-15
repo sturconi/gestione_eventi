@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository(value="MYSQL")
-public class JDBCRepository implements utenteInterface, eventoInterface, CommentoInterface {
+public class JDBCRepository implements utenteInterface, eventoInterface, CommentoInterface, ticketInterface {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
@@ -89,7 +89,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface, Comment
 //------------------------------------------------------------------
 	//----Ticket------//
 	
-	/*@Override
+	@Override
 	public int saveT(Ticket t) {
 		return jdbcTemplate.update("INSERT INTO ticket(oggetto, testo) VALUE(?,?)", new Object[] {t.getOggetto(), t.getTesto()});
 		
@@ -124,7 +124,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface, Comment
 		// TODO Auto-generated method stub
 		 return jdbcTemplate.queryForObject("SELECT * FROM ticket WHERE oggetto=?", BeanPropertyRowMapper.newInstance(Ticket.class),oggetto);
 	}
-*/
+
 	
 	
 	//------------------------------------------------------------------
