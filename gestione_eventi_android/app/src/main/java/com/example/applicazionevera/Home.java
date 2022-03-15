@@ -60,8 +60,9 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
 
         Bundle datiLogin = getIntent().getExtras();
         if(datiLogin != null) {
-            username = datiLogin.getString("user");
-            password = datiLogin.getString("pwd");
+            username = getIntent().getExtras().getString("username");
+            password = getIntent().getExtras().getString("password");
+
         }
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setSelectedItemId(R.id.toHome);
@@ -137,6 +138,8 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     }
     public void openSettings() {
         Intent intent = new Intent(this, Settings.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
         startActivity(intent);
     }
     public void openNotifications() {

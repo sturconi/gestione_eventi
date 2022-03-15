@@ -60,11 +60,11 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        /*if(TEXT_PASSWORD_KEY !=null && TEXT_LOGIN_KEY!=null){
+       /* if(TEXT_PASSWORD_KEY !=null && TEXT_LOGIN_KEY!=null){
             updatePreferencesData();
             openHome();
-        }
-         */
+        }*/
+
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,8 +74,8 @@ public class Login extends AppCompatActivity {
     }
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
-        HomeIntent.putExtra("user", Lusername);
-        HomeIntent.putExtra("pwd", Lpassword);
+        HomeIntent.putExtra("username", Lusername);
+        HomeIntent.putExtra("password", Lpassword);
         startActivity(HomeIntent);
         finish();
 
@@ -86,8 +86,8 @@ public class Login extends AppCompatActivity {
     }
     public void Account(){
         Intent AccountIntent = new Intent(this, Account.class);
-        AccountIntent.putExtra("username", TEXT_LOGIN_KEY);
-        AccountIntent.putExtra("password", TEXT_PASSWORD_KEY);
+        AccountIntent.putExtra("username", Lusername);
+        AccountIntent.putExtra("password", Lpassword);
     }
     public void loginMe() {
         MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
