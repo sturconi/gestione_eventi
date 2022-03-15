@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Privacy">
 
     <ImageView
@@ -24,10 +25,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="Segnale Gps"
-        android:textSize="35sp"
+        android:text="Chi siamo?"
         android:textColor="@color/black"
-        android:textStyle="bold"
+        android:textSize="34sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
@@ -37,83 +38,21 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="242dp"
+        android:layout_height="407dp"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:text="Mostra nome e cognome"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:text="Siamo degli studenti dell'ITS Rizzoli, del corso IFTS Developer 2021/2022                                                                EventApp è stata realizzata dalle nostre idee, ed è la nostra prima applicazione creata partendo da 0.                                                                           Quando abbiamo disegnato il nostro progetto, abbiamo pensato che sarebbe stato utile per le persone di Milano in cerca di svago nel tempo libero, quindi abbiamo messo le principali &quot;Attrazioni&quot; che caratterizzano la nostra città.                                                        I programmatori che hanno lavorato a questo progetto sono:                                                                                                                                           Kristhen Mercoledisanto                            Simone Turconi                                                                      Davide Cappabianca                                                           Matteo Romagnoni                                         Franco Ceruti"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
-        tools:text="Mostra nome e cognome"
-        android:textColor="@color/black"/>
-
-    <ToggleButton
-        android:id="@+id/ToggleNC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="ToggleButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.60" />
-
-    <ToggleButton
-        android:id="@+id/ToggleGps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="ToggleButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.30" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:textSize="30sp"
-            android:id="@+id/privacyTitle1"
-            android:textAlignment="center"/>
-
-        <Button
-            android:id="@+id/startmus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="75dp"
-            android:layout_marginBottom="121dp"
-            android:text="Start Music" />
-
-        <Button
-            android:id="@+id/stopmus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="79dp"
-            android:layout_marginBottom="122dp"
-            android:text="Stop Music" />
-
-    </RelativeLayout>
+        app:layout_constraintVertical_bias="0.595" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"

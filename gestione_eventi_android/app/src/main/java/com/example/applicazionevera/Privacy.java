@@ -18,7 +18,7 @@ import android.widget.ToggleButton;
 import com.example.applicazionevera.model_and_adapter.MyService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Privacy extends AppCompatActivity implements View.OnClickListener{
+public class Privacy extends AppCompatActivity {
 
     private Intent ServiceIntent;
     private Button btnstart, btnstop;
@@ -29,12 +29,8 @@ public class Privacy extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_privacy);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-    btnstart = findViewById(R.id.startmus);
-    btnstop = findViewById(R.id.stopmus);
-    btnstart.setOnClickListener(this);
-    btnstop.setOnClickListener(this);
 
-    ServiceIntent = new Intent(getApplicationContext(), MyService.class);
+        ServiceIntent = new Intent(getApplicationContext(), MyService.class);
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -45,19 +41,19 @@ public class Privacy extends AppCompatActivity implements View.OnClickListener{
                 switch (item.getItemId()) {
                     case R.id.toHome:
                         openHome();
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.toSearch:
                         openSearch();
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.toNotifications:
                         openNotifications();
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.toSettings:
                         openSettings();
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         break;
                 }
                 return false;
@@ -65,46 +61,19 @@ public class Privacy extends AppCompatActivity implements View.OnClickListener{
         });
 
 
-        ToggleButton ToggleGps = (ToggleButton) findViewById(R.id.ToggleGps);
-        ToggleButton ToggleNC = (ToggleButton) findViewById(R.id.ToggleNC);
-
-        ToggleGps.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (ToggleGps.isChecked() == true) {
-
-                    ToggleGps.setTextColor(Color.GREEN);
-                } else {
-                    ToggleGps.setTextColor(Color.RED);
-
-                }
-            }
-        });
-
-        ToggleNC.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (ToggleNC.isChecked() == true) {
-
-                    ToggleNC.setTextColor(Color.GREEN);
-                } else {
-                    ToggleNC.setTextColor(Color.RED);
-
-                }
-            }
-        });
-
-
     }
-
 
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
         startActivity(HomeIntent);
     }
+
     public void openSettings() {
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
+
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
         startActivity(intent);
@@ -114,18 +83,7 @@ public class Privacy extends AppCompatActivity implements View.OnClickListener{
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.startmus:
-                startService(new Intent(getApplicationContext(), MyService.class));
-                break;
-            case R.id.stopmus:
-                stopService(new Intent(getApplicationContext(), MyService.class));
-                break;
-        }
-    }
 }
+
 
 
