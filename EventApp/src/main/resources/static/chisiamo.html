@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventapp</title>
+       <link rel="stylesheet" href="chisiamo.css"> 
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <link href="https://fonts.googleapis.com/css?family=Alata|Josefin+Sans|Maven+Pro&display=swap" rel="stylesheet">
+ 
+    <script src="settings.js" type="text/javascript"></script>   
+</head>
+<body >
+    <header> 
+        <div class="wrapper">
+            <div class="logo">
+                <img src="transparent.png" alt="Eventapp">
+            </div>
+    <ul class="nav-area">
+    <li><a href="home.html">Home</a></li>
+    <li><a  href="search.html">Cerca</a></li>
+    <li><a  href="mappa.html">Mappa</a></li>
+    <li><a  href="categorie.html">Categorie</a></li>
+    
+    </ul>
+    </div>
+    <nav class="menu" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+      <header class="avatar">
+            <img class="blah" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0zLw957QByyJ31DlQSJEvEmvRYmT6yrzWA&usqp=CAU" />
+        <h2>Matteo Romagnoni</h2>
+      </header>
+
+         <div class="leftbar">
+            <ul>
+                <li  ><a href="account.html"><span>Account</span></a></li>
+                <li ><a href="settings-preferenze.html"><span>Preferenze</span></a></li>
+                <li ><a href="notifiche.html"><span>Notifiche</span></a></li>
+                <li ><a href="settings-assistenza.html"><span>Assistenza</span></a></li>
+                    <li tabindex="0" class="icon-settings"><span>Chi siamo?</span></li>
+                </ul>
+        </div>
+    </nav>
+    <div class="quadrato"> 
+        <h1 class="Titolo" align="center"> CHI SIAMO?</h1> <br><br>
+        <p class="testo" align="center">Siamo degli studenti dell'ITS Rizzoli, del corso IFTS Developer 2021/2022 <br> <br>EventApp è stata realizzata dalle nostre idee, ed è la nostra prima applicazione creata partendo da 0. <br>  <br>  Quando abbiamo disegnato il nostro progetto, abbiamo pensato che sarebbe stato utile per le persone di Milano in cerca di svago nel tempo libero, quindi abbiamo messo le principali &quot;Attrazioni&quot; che caratterizzano la nostra città. <br><br><br>   I programmatori che hanno lavorato a questo progetto sono:<br>  <br> Kristhen Mercoledisanto <br>  Simone Turconi <br>  Davide Cappabianca <br> Matteo Romagnoni <br> Franco Ceruti </p>
+      
+    </div>
+
+<script> function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = function (e) {
+        $('.blah').attr('src', e.target.result).width(100).height(100);
+      };
+  
+      reader.readAsDataURL(input.files[0]);
+    }
+  }</script>
+
+  
+ 
+  
+</body>
+</html>
