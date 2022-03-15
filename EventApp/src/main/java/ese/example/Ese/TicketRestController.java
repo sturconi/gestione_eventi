@@ -1,4 +1,4 @@
-/*package ese.example.Ese;
+package ese.example.Ese;
 
 import java.util.List;
 
@@ -20,14 +20,6 @@ public class TicketRestController {
 	@Autowired()
 	@Qualifier("MYSQL")
 	ticketInterface ticketRepositery;
-	
-	@GetMapping("/")
-	public ModelAndView getRoot()
-	{
-		ModelAndView modelAndView = new ModelAndView();
-	    modelAndView.setViewName("settings-assistenza.html");
-	    return modelAndView;
-	}
 	
 	
 	
@@ -85,5 +77,5 @@ public class TicketRestController {
 	
 	
 	
-}*/
+}
 
