@@ -1,4 +1,4 @@
-/*package ese.example.Ese;
+package ese.example.Ese;
 
 import java.sql.Date;
 
@@ -44,4 +44,4 @@ public class Ticket {
 		this.testo=testo;
 	}
 	
-}*/
+}

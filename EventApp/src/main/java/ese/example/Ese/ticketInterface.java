@@ -1,8 +1,9 @@
-/*package ese.example.Ese;
+package ese.example.Ese;
 
 import java.util.List;
 
 public interface ticketInterface {
+	
     int saveT(Ticket t);
 	
 	Ticket findByIdT(int ID_ticket);
@@ -17,5 +18,5 @@ public interface ticketInterface {
 
 	Ticket findByOggetto(String oggetto);
 	
-}*/
+}
 
