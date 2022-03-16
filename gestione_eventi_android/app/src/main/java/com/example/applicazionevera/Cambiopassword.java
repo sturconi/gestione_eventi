@@ -25,8 +25,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Cambiopassword extends AppCompatActivity {
-    String Id_utente;
-    Utente u;
+    Utente u=null;
     int statusCode;
     EditText passwordET = null;
     String passwordControl=null;
@@ -36,6 +35,9 @@ public class Cambiopassword extends AppCompatActivity {
     String username =  null;
     String password = null ;
     String passwordAttuale=null;
+    String nome=null;
+    String cognome=null;
+    String email=null;
 
 
     @Override
@@ -46,13 +48,19 @@ public class Cambiopassword extends AppCompatActivity {
 
         username = getIntent().getExtras().getString("username");
         password = getIntent().getExtras().getString("password");
+        nome = getIntent().getExtras().getString("nome");
+        cognome = getIntent().getExtras().getString("cognome");
+        email = getIntent().getExtras().getString("email");
         viewInitializations();
-        Controllo();
+
         button = (Button) findViewById(R.id.buttonConfer);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                passwordAttuale=passwordET.getText().toString();
+                passwordControl=etPassword.getText().toString();
+                passwordControl1=etRepeatPassword.getText().toString();
+            Controllo();
             }
         });
 
@@ -105,15 +113,20 @@ public class Cambiopassword extends AppCompatActivity {
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
+    public void openAccount() {
+        Intent intent = new Intent(this, Account.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", passwordControl);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
+        startActivity(intent);
+    }
 
     void viewInitializations() {
         passwordET = findViewById(R.id.passAttuale);
         etPassword = findViewById(R.id.passNuova);
         etRepeatPassword = findViewById(R.id.passRipetizione);
-
-        passwordAttuale=passwordET.getText().toString();
-        passwordControl=etPassword.getText().toString();
-        passwordControl1=etRepeatPassword.getText().toString();
         // To show back button in actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -123,6 +136,7 @@ public class Cambiopassword extends AppCompatActivity {
         if(passwordAttuale.equals(password)){
             if(passwordControl.equals(passwordControl1)){
                 updatepass();
+                openAccount();
             }
             else{
                 Toast.makeText(Cambiopassword.this, "Le password non corrispondono!", Toast.LENGTH_SHORT).show();
@@ -137,7 +151,7 @@ public class Cambiopassword extends AppCompatActivity {
 
     public void updatepass() {
         MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
-        Call<Utente> call = apiService.updatePass(username);
+        Call<Utente> call = apiService.updatePass(username,passwordControl);
         call.enqueue(new Callback<Utente>() {
             @Override
             public void onResponse(Call<Utente> call, Response<Utente> response) {

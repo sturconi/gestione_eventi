@@ -28,8 +28,8 @@ public interface MyApiEndpointInterface {
     @POST("/utenti")
     Call<Utente> createUser(@Body Utente user);
 
-    @PUT("/utenti/{username}")
-    Call<Utente> updatePass(@Path("username")String username);
+    @PUT("/utenti/{username}/{password}")
+    Call<Utente> updatePass(@Path("username")String username ,@Path("password")String password);
 
     @POST("/eventi")
     Call<Event> createEvent(@Body Event eve);
