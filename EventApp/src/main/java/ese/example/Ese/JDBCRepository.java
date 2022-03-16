@@ -91,13 +91,13 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 	
 	/*@Override
 	public int saveT(Ticket t) {
-		return jdbcTemplate.update("INSERT INTO ticket(oggetto, testo) VALUE(?,?)", new Object[] {t.getOggetto(), t.getTesto()});
+		return jdbcTemplate.update("INSERT INTO ticket(oggetto_ticket, testo_ticket) VALUE(?,?)", new Object[] {t.getOggetto_ticket(), t.getTesto_ticket()});
 		
 	}
 	@Override
-	public Ticket findByIdT(int ID_ticket) {
+	public Ticket findByIdT(int codice) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.queryForObject("SELECT * FROM ticket WHERE ID_ticket=?", BeanPropertyRowMapper.newInstance(Ticket.class),ID_ticket);
+		return jdbcTemplate.queryForObject("SELECT * FROM ticket WHERE codice=?", BeanPropertyRowMapper.newInstance(Ticket.class),codice);
 	}
 	@Override
 	public List<Ticket> findAllT() {
@@ -105,9 +105,9 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 		return jdbcTemplate.query("SELECT * FROM utente", BeanPropertyRowMapper.newInstance(Ticket.class));
 	}
 	@Override
-	public int deleteByIdT(int ID_ticket) {
+	public int deleteByIdT(int codice) {
 		// TODO Auto-generated method stub
-		 return jdbcTemplate.update("DELETE FROM ticket WHERE ID_ticket=?",ID_ticket);
+		 return jdbcTemplate.update("DELETE FROM ticket WHERE codice=?",codice);
 	}
 	@Override
 	public int deleteAllT() {
@@ -117,12 +117,12 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 	@Override
 	public int updateT(Ticket t) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("UPDATE ticket SET Oggetto=? AND SET Testo=? WHERE ID_ticket=?",new Object[] {t.getOggetto(),t.getTesto()});
+		return jdbcTemplate.update("UPDATE ticket SET oggetto_ticket=? AND SET testo_ticket=? WHERE codice=?",new Object[] {t.getOggetto_ticket(),t.getTesto_ticket()});
 	}
 	@Override
-	public Ticket findByOggetto(String oggetto) {
+	public Ticket findByOggetto(String oggetto_ticket) {
 		// TODO Auto-generated method stub
-		 return jdbcTemplate.queryForObject("SELECT * FROM ticket WHERE oggetto=?", BeanPropertyRowMapper.newInstance(Ticket.class),oggetto);
+		 return jdbcTemplate.queryForObject("SELECT * FROM ticket WHERE oggetto_ticket=?", BeanPropertyRowMapper.newInstance(Ticket.class),oggetto_ticket);
 	}
 
 	

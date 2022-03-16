@@ -25,7 +25,7 @@ function onPageLoaded(){
                 //  $(cards).find(".card-header").html("user id: " + userId + " - " + "id: " + typeId);
                   $(cards).find(".titolo_evento").html(nome);
                   $(cards).find(".card__image").html(immag);
-                  $(cards).find(".data-evento").html(dataev);
+                  $(cards).find(".data_evento").html(dataev);
                   $(cards).find(".indirizzo-evento").html(indev);
                   $(cards).find(".orario-evento").html(oraev);
                   $(cards).find(".desc_evento").html(descev);

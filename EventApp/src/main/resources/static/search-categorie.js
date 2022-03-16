@@ -1,13 +1,15 @@
 function onPageLoaded(){
     console.log("PAGINA CARICATA");
-    
+    var pars= new URLSearchParams(window.location.search);
+    var pass=pars.get("categoria");
+    console.log(pass);
 
 
 
     $(function () {
         $(".card:first").hide()
         $.ajax({
-            url: "http://localhost:8080/eventi"   ,
+            url: "http://localhost:8080/eventi/" + pass  ,
             
             success: function(result) {
                 $.each(result, function(index, item) {

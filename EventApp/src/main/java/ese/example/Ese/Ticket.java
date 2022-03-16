@@ -4,44 +4,55 @@ import java.sql.Date;
 
 public class Ticket {
 
-	int ID_ticket;
-	String oggetto;
-	String testo;
+	int codice;
+	String oggetto_ticket;
+	String testo_ticket;
 	int ID_utente;
 	
 	public Ticket() {
 	}
 	
-	public Ticket(int ID_ticket, String oggetto, String testo, int ID_utente) {
-		this.ID_utente= ID_utente;
-		this.oggetto= oggetto;
-		this.testo= testo;
-		this.ID_ticket= ID_ticket;
+
+	public Ticket(int codice, String oggetto_ticket, String testo_ticket, int iD_utente) {
+		super();
+		this.codice = codice;
+		this.oggetto_ticket = oggetto_ticket;
+		this.testo_ticket = testo_ticket;
+		ID_utente = iD_utente;
 	}
-	public int getId() {
-		return this.ID_ticket;
+
+
+	public int getCodice() {
+		return codice;
 	}
-	public String getOggetto() {
-		return this.oggetto;
+
+	public void setCodice(int codice) {
+		this.codice = codice;
 	}
-	public String getTesto() {
-		return this.testo;
+
+	public String getOggetto_ticket() {
+		return oggetto_ticket;
 	}
-	public int getUtenteId() {
-		return this.ID_utente;
+
+	public void setOggetto_ticket(String oggetto_ticket) {
+		this.oggetto_ticket = oggetto_ticket;
+	}
+
+	public String getTesto_ticket() {
+		return testo_ticket;
+	}
+
+	public void setTesto_ticket(String testo_ticket) {
+		this.testo_ticket = testo_ticket;
+	}
+
+	public int getID_utente() {
+		return ID_utente;
+	}
+
+	public void setID_utente(int iD_utente) {
+		ID_utente = iD_utente;
 	}
 	
-	public void setId(int ID_ticket) {
-		this.ID_ticket=ID_ticket;
-	}
-	public void setUtenteId(int ID_utente) {
-		this.ID_utente=ID_utente;
-	}
-	public void setOggetto(String oggetto) {
-		this.oggetto=oggetto;
-	}
-	public void setTesto(String testo) {
-		this.testo=testo;
-	}
 	
 }

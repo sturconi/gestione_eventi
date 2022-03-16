@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Eventapp</title>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="settings-assistenza.js"></script>
-       <link rel="stylesheet" href="settings-assistenza.css"> 
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="chisiamo.css"> 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <link href="https://fonts.googleapis.com/css?family=Alata|Josefin+Sans|Maven+Pro&display=swap" rel="stylesheet">
@@ -40,10 +37,16 @@
                 <li ><a href="settings-preferenze.html"><span>Preferenze</span></a></li>
                 <li ><a href="notifiche.html"><span>Notifiche</span></a></li>
                 <li ><a href="settings-assistenza.html"><span>Assistenza</span></a></li>
-                <li> <a href="chisiamo.html"><span>Chi siamo?</span></a></li>
+                    <li> <a href="chisiamo.html"><span>Chi siamo?</span></a></li>
                 </ul>
         </div>
     </nav>
+    <div class="quadrato"> 
+        <h1 class="titolo" align="center"> CHI SIAMO?</h1> <br>
+        <hr> <br><br>
+        <p class="testo" align="center">Siamo degli studenti dell'ITS Rizzoli, del corso IFTS Developer 2021/2022 <br> <br>EventApp è stata realizzata dalle nostre idee, ed è la nostra prima applicazione creata partendo da 0. <br>  <br>  Quando abbiamo disegnato il nostro progetto, abbiamo pensato che sarebbe stato utile per le persone di Milano in cerca di svago nel tempo libero, quindi abbiamo messo le principali &quot;Attrazioni&quot; che caratterizzano la nostra città. <br><br><br>   I programmatori che hanno lavorato a questo progetto sono:<br>  <br> Kristhen Mercoledisanto <br>  Simone Turconi <br>  Davide Cappabianca <br> Matteo Romagnoni <br> Franco Ceruti </p>
+      
+    </div>
 
 <script> function readURL(input) {
     if (input.files && input.files[0]) {
@@ -56,35 +59,9 @@
       reader.readAsDataURL(input.files[0]);
     }
   }</script>
-    
-    
-     <div class="main">
-        <form id="formTicket" onsubmit="return sendEmail();">
-         <div class="helper">
-           <h2 class="gul">Hai riscontrato qualche problema?</h2>
-           <h2 class="ena">Contattaci inviando un Ticket:</h2>
-           <hr>
-           <div>
-               <label for="">
-                   <input type="text" placeholder="Oggetto" class="oggetto">
-               </label>
-           </div>
-           <div>
-               <label for="">
-                   <textarea name="" id="" cols="80" rows="15" class="testo"></textarea>
-               </label>
-           </div>
-           <div>
-               <label for="">
-                   
-                   <button type="submit" class="invia"><i class="fa fa-send"></i>Invia</button>
-                   
-               </label>
-           </div>
-        
-         </div>
-        </form>
-    </div>
 
+  
+ 
+  
 </body>
 </html>

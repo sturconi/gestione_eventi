@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crea Evento</title>
+        <link rel="stylesheet" type="text/css" href="creavento.css">
+        <script type="text/javascript" src="eventojs.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> 
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBjFSumfyTkGsJhViAvtmi8M6_ZrYYwz6o&callback=initMap"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        
+    
+    </head>
+    <body>
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <img src="transparent.png" alt="Eventapp">
+                </div>
+        <ul class="nav-area">
+        <li><a  href="home.html">Home</a></li>
+        <li><a href="search.html">Cerca</a></li>
+        <li><a href="settings.html">Impostazioni</a></li>
+        <li><a href="categorie.html">Categorie</a></li>
+        </ul>
+        </div>
+        <br>
+    </header>    
+        <div class="card-container" >
+            <div class="panel">
+                    <div>
+                        <img class="sb-title-icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg" alt="">
+                        <span class="sb-title">Crea Evento</span>
+                    </div>
+            <form class="form" name="creaevento" action="" method="post">
+                <label>Seleziona la categoria dell'evento:</label>
+                    <select name="categorie"required>
+                        <option value="scelta"></option>
+                        <option value="cult">Cultura</option>
+                        <option value="int">Intrattenimento</option>
+                        <option value="serv">Servizi</option>
+                        <option value="sport">Sport</option>
+                    </select>
+                    <br><br>
+                <label>Inserisci nome dell'evento:</label>
+                    <input type="text" name="nomeevento" placeholder="Nome evento" required>
+                    <br><br>
+                <label>Descrizione dell'evento:</label>
+                    <textarea name="descr" rows="10" cols="30">
+                </textarea>
+                    <br><br>
+                <label>Indirizzo evento:</label>
+                    <input id="indirizzo" type="text" name="indirizzo" placeholder="Indirizzo" id="ship-address" name="address" required autocomplete="off">
+                    <br><br>
+                <label>Luogo evento:</label>
+                    <input id="luogo" type="text" name="luogo" placeholder="Luogo" id="locality" required>  <!-- autocomplete? https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform?hl=it#maps_places_autocomplete_addressform-html src api-->
+                    <br><br>
+                <label>Orario evento:</label>
+                    <input type="time" name="ora"required>
+                    <br><br>
+                <label>Data evento:</label>
+                    <input type="date" name="data" required>
+                    <br><br>
+                    
+                <button type="reset" class="b-annulla">Annulla</button>
+                <button type="submit" class="b-crea">Crea evento</button>
+            </form>
+            </div>
+            <div class="maps" id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23040.252345693134!2d9.13044950757625!3d45.468943489040036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c193fa23f19d%3A0x9c7d30c7aeff312!2sStadio%20San%20Siro!5e0!3m2!1sit!2sit!4v1645801335704!5m2!1sit!2sit"
+                    frameborder="0" style="border:0" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
+        
+    </body>
+</html>
+    
