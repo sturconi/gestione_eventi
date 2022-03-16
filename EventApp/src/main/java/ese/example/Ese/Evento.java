@@ -64,7 +64,7 @@ public class Evento {
 	public void setCategoria(String categoria) {
 		this.categoria= categoria;
 	}
-	public void setnumero_Evento(int nnumero_evento) {
+	public void setnumero_Evento(int numero_evento) {
 		this.numero_evento=numero_evento;
 	}
 	public void setNome_evento(String nome_evento) {
