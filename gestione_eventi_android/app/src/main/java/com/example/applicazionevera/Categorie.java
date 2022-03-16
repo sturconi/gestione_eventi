@@ -1,15 +1,14 @@
 package com.example.applicazionevera;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicazionevera.retrofit.Event;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
@@ -25,6 +24,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Categorie extends AppCompatActivity {
 
+    String username =  null;
+    String password = null ;
+    String nome=null;
+    String cognome=null;
+    String email=null;
     String categoria;
     int statusCode;
     List<Event> eve;
@@ -33,6 +37,13 @@ public class Categorie extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorie);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        username = getIntent().getExtras().getString("username");
+        password = getIntent().getExtras().getString("password");
+        nome = getIntent().getExtras().getString("nome");
+        cognome = getIntent().getExtras().getString("cognome");
+        email = getIntent().getExtras().getString("email");
+
 
 
 
@@ -108,23 +119,48 @@ public class Categorie extends AppCompatActivity {
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
+        HomeIntent.putExtra("username", username);
+        HomeIntent.putExtra("password", password);
+        HomeIntent.putExtra("nome", nome);
+        HomeIntent.putExtra("cognome", cognome);
+        HomeIntent.putExtra("email", email);
         startActivity(HomeIntent);
     }
     public void openSettings() {
         Intent intent = new Intent(this, Settings.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openEvento() {
         Intent intent = new Intent(this, Evento.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 

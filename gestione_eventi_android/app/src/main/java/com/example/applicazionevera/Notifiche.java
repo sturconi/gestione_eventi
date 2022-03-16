@@ -1,25 +1,20 @@
 package com.example.applicazionevera;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.applicazionevera.model_and_adapter.MyData;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.applicazionevera.model_and_adapter.NotData;
 import com.example.applicazionevera.model_and_adapter.NotViewAdapter;
-import com.example.applicazionevera.model_and_adapter.RecyclerViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -27,12 +22,23 @@ import java.util.ArrayList;
 public class Notifiche extends AppCompatActivity {
 
     private ArrayList<NotData> notdata;
-
+    String username = null;
+    String password = null;
+    String nome=null;
+    String cognome=null;
+    String email=null;
+    int statusCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifiche);
+
+        username = getIntent().getExtras().getString("username");
+        password = getIntent().getExtras().getString("password");
+        nome = getIntent().getExtras().getString("nome");
+        cognome = getIntent().getExtras().getString("cognome");
+        email = getIntent().getExtras().getString("email");
 
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
@@ -110,19 +116,39 @@ public class Notifiche extends AppCompatActivity {
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
+        HomeIntent.putExtra("username", username);
+        HomeIntent.putExtra("password", password);
+        HomeIntent.putExtra("nome", nome);
+        HomeIntent.putExtra("cognome", cognome);
+        HomeIntent.putExtra("email", email);
         startActivity(HomeIntent);
     }
     public void openSettings() {
         Intent intent = new Intent(this, Settings.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 

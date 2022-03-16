@@ -132,10 +132,11 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
 
     public void openCategorie() {
         Intent intent = new Intent(this, Categorie.class);
-        startActivity(intent);
-    }
-    public void openCalendario() {
-        Intent intent = new Intent(this, Calendario.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openHome() {
@@ -154,20 +155,40 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     }
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openCreaevento() {
         Intent intent = new Intent(this, CreaEvento.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openEventoDettagliato() {
         //Intent intent = new Intent(this, EventoDettagliato.class);
         Intent intent = new Intent(this, EventoDettagliato.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 

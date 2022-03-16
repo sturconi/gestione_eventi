@@ -1,15 +1,15 @@
 package com.example.applicazionevera;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.example.applicazionevera.model_and_adapter.EvCatAdapter;
 import com.example.applicazionevera.model_and_adapter.EvCatData;
@@ -20,11 +20,22 @@ import java.util.ArrayList;
 public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventListener {
 
     private ArrayList<EvCatData> evcatData;
+    String username = null;
+    String password = null;
+    String nome=null;
+    String cognome=null;
+    String email=null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evento);
+
+        username = getIntent().getExtras().getString("username");
+        password = getIntent().getExtras().getString("password");
+        nome = getIntent().getExtras().getString("nome");
+        cognome = getIntent().getExtras().getString("cognome");
+        email = getIntent().getExtras().getString("email");
 
         setArrayInfo();
         setData();
@@ -89,23 +100,48 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
+        HomeIntent.putExtra("username", username);
+        HomeIntent.putExtra("password", password);
+        HomeIntent.putExtra("nome", nome);
+        HomeIntent.putExtra("cognome", cognome);
+        HomeIntent.putExtra("email", email);
         startActivity(HomeIntent);
     }
     public void openSettings() {
         Intent intent = new Intent(this, Settings.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openEventoDettagliato() {
         Intent intent = new Intent(this, EventoDettagliato.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
