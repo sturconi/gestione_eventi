@@ -123,7 +123,9 @@ main{
 	padding-left: 200px;
 	
 }
-.botton button{
+.btn {
+	text-transform: uppercase;
+	
 	margin: 10px;
 	height: 200px;
 	width: 500px;
