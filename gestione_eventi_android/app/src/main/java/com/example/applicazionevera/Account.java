@@ -108,6 +108,11 @@ public class Account extends AppCompatActivity {
 
     public void openCambioPass() {
         Intent intent = new Intent(this, Cambiopassword.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openModImm() {
