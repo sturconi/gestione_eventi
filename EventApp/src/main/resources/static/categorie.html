@@ -6,7 +6,24 @@
     <title>Eventapp</title>
 </head>
 <body onload="onPageLoaded();">
-    
+    <script>
+        var sport=new URLSearchParams();
+        sport.append("categoria", "Sport");
+      sportc=  sport.toString();
+
+      var intrattenimento=new URLSearchParams();
+        intrattenimento.append("categoria", "Intrattenimento");
+      intrattenimentoc=  intrattenimento.toString();
+
+      var cultura=new URLSearchParams();
+        cultura.append("categoria", "Cultura");
+      culturac=  cultura.toString();
+
+      var servizi=new URLSearchParams();
+        servizi.append("categoria", "Servizi");
+      servizic=  servizi.toString();
+        
+    </script>
        <header> 
             <div class="wrapper">
                 <div class="logo">
@@ -15,7 +32,7 @@
         <ul class="nav-area">
         <li><a href="home.html">Home</a></li>
         <li><a href="search.html">Cerca</a></li>
-        <li><a href="settings.html">Mappa</a></li>
+        <li><a href="mappa.html">Mappa</a></li>
         <li><a class="active" href="categorie.html">Categorie</a></li>
         
         </ul>
@@ -43,13 +60,13 @@
         <br> <br>
         
         <div class="botton">
-        <form id="formCategorie" style="text-align: center;" onsubmit="return submit();">
+        <form id="formCategorie" style="text-align: center;" >
             
-            <button > <b>Sport</b></button> 
-            <button ><b>Intrattenimento</b></button> 
+            <input class="btn" type="button" onclick="location.href='search-categorie.html?'+sportc;" value="Sport" />
+            <input class="btn" type="button" onclick="location.href='search-categorie.html?'+intrattenimentoc;" value="Intrattenimento" />
             <br>
-            <button ><b>Servizi</b></button> 
-            <button ><b>Cultura</b></button> 
+            <input class="btn" type="button" onclick="location.href='search-categorie.html?'+culturac;" value="Cultura" />
+            <input class="btn" type="button" onclick="location.href='search-categorie.html?'+servizic;" value="servizi" />
             
             <br>
         </form>

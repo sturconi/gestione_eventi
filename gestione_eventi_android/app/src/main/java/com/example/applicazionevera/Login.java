@@ -30,6 +30,9 @@ public class Login extends AppCompatActivity {
 
     String Lusername = null;
     String Lpassword= null;
+    String Lnome=null;
+    String Lcognome=null;
+    String Lemail=null;
     Utente u= null;
     String usernameControl=null;
     String passwordControl=null;
@@ -56,7 +59,6 @@ public class Login extends AppCompatActivity {
                  Lpassword = passwordET.getText().toString();
                  loginMe();
                  savePreferencesData();
-                 Account();
             }
         });
 
@@ -76,6 +78,11 @@ public class Login extends AppCompatActivity {
         Intent HomeIntent = new Intent(this, Home.class);
         HomeIntent.putExtra("username", Lusername);
         HomeIntent.putExtra("password", Lpassword);
+        HomeIntent.putExtra("nome", Lnome);
+        HomeIntent.putExtra("cognome", Lcognome);
+        HomeIntent.putExtra("email", Lemail);
+
+
         startActivity(HomeIntent);
         finish();
 
@@ -83,11 +90,6 @@ public class Login extends AppCompatActivity {
     public void openRegistrazione() {
         Intent intent = new Intent(this, Registrazione.class);
         startActivity(intent);
-    }
-    public void Account(){
-        Intent AccountIntent = new Intent(this, Account.class);
-        AccountIntent.putExtra("username", Lusername);
-        AccountIntent.putExtra("password", Lpassword);
     }
     public void loginMe() {
         MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
@@ -103,6 +105,9 @@ public class Login extends AppCompatActivity {
                     u=response.body();
                     usernameControl=u.getUsername();
                     passwordControl=u.getPassword();
+                    Lnome=u.getNome();
+                    Lcognome=u.getCognome();
+                    Lemail=u.getEmail();
                     Controllo();
                 }
 

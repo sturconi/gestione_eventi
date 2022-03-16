@@ -19,9 +19,14 @@ public class Account extends AppCompatActivity {
 
     String username =  null;
     String password = null ;
+    String nome=null;
+    String cognome=null;
+    String email=null;
 
     TextView user;
-    TextView pass;
+    TextView n;
+    TextView c;
+    TextView e;
     ImageView img=null;
 
 
@@ -31,8 +36,10 @@ public class Account extends AppCompatActivity {
         setContentView(R.layout.activity_account);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        user = findViewById(R.id.nameaccount);
-
+        user = findViewById(R.id.usernameaccount);
+        n = findViewById(R.id.nameaccount);
+        e = findViewById(R.id.emailuser);
+        c = findViewById(R.id.cognomeaccount);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setSelectedItemId(R.id.toSettings);
@@ -64,8 +71,14 @@ public class Account extends AppCompatActivity {
         if(dati!=null) {
             username = getIntent().getExtras().getString("username");
             password = getIntent().getExtras().getString("password");
+            nome = getIntent().getExtras().getString("nome");
+            cognome = getIntent().getExtras().getString("cognome");
+            email = getIntent().getExtras().getString("email");
 
             user.setText(username);
+            n.setText(nome);
+            e.setText(email);
+            c.setText(cognome);
         }
         Button bottone;
 
@@ -95,6 +108,11 @@ public class Account extends AppCompatActivity {
 
     public void openCambioPass() {
         Intent intent = new Intent(this, Cambiopassword.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openModImm() {

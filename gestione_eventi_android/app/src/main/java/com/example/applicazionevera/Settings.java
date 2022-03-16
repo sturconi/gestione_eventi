@@ -14,8 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Settings<button> extends AppCompatActivity {
-    String username;
-    String password;
+    String username = null;
+    String password = null;
+    String nome=null;
+    String cognome=null;
+    String email=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,9 @@ public class Settings<button> extends AppCompatActivity {
 
         username = getIntent().getExtras().getString("username");
         password = getIntent().getExtras().getString("password");
+        nome = getIntent().getExtras().getString("nome");
+        cognome = getIntent().getExtras().getString("cognome");
+        email = getIntent().getExtras().getString("email");
 
 
 
@@ -94,6 +100,9 @@ public class Settings<button> extends AppCompatActivity {
         Intent intent = new Intent(this, Account.class);
         intent.putExtra("username", username);
         intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openAssistenza() {
