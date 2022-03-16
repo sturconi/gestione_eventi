@@ -133,8 +133,16 @@ main{
 	text-transform: uppercase;
 	font-size: 40px;
 	color:#05473a;
-	background: linear-gradient(aquamarine, rgb(68, 221, 221));
+	border-radius: 10px;
+	font-weight: bold;
 	
+	background: linear-gradient(aquamarine, #0b8f74);
+	transition: all .5s;
+	
+}
+.btn:hover {
+	color: white;
+	background: linear-gradient(#05473a, #043d32);
 }
 
 
