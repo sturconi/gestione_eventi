@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository(value="MYSQL")
-public class JDBCRepository implements utenteInterface, eventoInterface, CommentoInterface, ticketInterface {
+public class JDBCRepository implements utenteInterface, eventoInterface{
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
@@ -34,7 +34,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface, Comment
 	}
 	@Override
 	public int updatePassword(Utente u) {
-		return jdbcTemplate.update("UPDATE utente SET password=? WHERE ID_utente=?",new Object[] {u.getPassword(),u.getId()});
+		return jdbcTemplate.update("UPDATE utente SET password=? WHERE username=?",new Object[] {u.getPassword(),u.getUsername()});
 	}
 	@Override
 	public int deleteById(int id) {
@@ -89,7 +89,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface, Comment
 //------------------------------------------------------------------
 	//----Ticket------//
 	
-	@Override
+	/*@Override
 	public int saveT(Ticket t) {
 		return jdbcTemplate.update("INSERT INTO ticket(oggetto_ticket, testo_ticket) VALUE(?,?)", new Object[] {t.getOggetto_ticket(), t.getTesto_ticket()});
 		
@@ -126,11 +126,11 @@ public class JDBCRepository implements utenteInterface, eventoInterface, Comment
 	}
 
 	
-	
+	*/
 	//------------------------------------------------------------------
 		//----Commento------//
 	
-	@Override
+	/*@Override
 	public List<Commento> findByIdC(int ID_evento) {
 		return jdbcTemplate.query("SELECT * FROM commento c INNER JOIN evento e ON ID_evento = numero_evento INNER JOIN utente u ON c.ID_utente = u.ID_utente WHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Commento.class),ID_evento);
 	}
@@ -139,7 +139,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface, Comment
 	public int save(Commento c) {
 		return jdbcTemplate.update("INSERT INTO commento(testo_commento, ID_utente, ID_evento) VALUE(?,?,?)", new Object[] {c.getTesto_commento(), c.getID_utente(), c.getID_evento()});
 	
-	}
+	}*/
 	
 	
 

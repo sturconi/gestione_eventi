@@ -35,6 +35,9 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
 
     String username = null;
     String password = null;
+    String nome=null;
+    String cognome=null;
+    String email=null;
     int statusCode;
 
     EventAdapter adapter = null;
@@ -62,6 +65,9 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         if(datiLogin != null) {
             username = getIntent().getExtras().getString("username");
             password = getIntent().getExtras().getString("password");
+            nome = getIntent().getExtras().getString("nome");
+            cognome = getIntent().getExtras().getString("cognome");
+            email = getIntent().getExtras().getString("email");
 
         }
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -140,6 +146,10 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         Intent intent = new Intent(this, Settings.class);
         intent.putExtra("username", username);
         intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
+
         startActivity(intent);
     }
     public void openNotifications() {
