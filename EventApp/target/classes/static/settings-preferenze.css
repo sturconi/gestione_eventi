@@ -190,6 +190,7 @@ main{
   background-color: white;
   top: 44%;
   left:38.6%;
+  width: 380px;
   transform:translate3d(-50%,-50%,0);
   padding: 1.5rem;
   padding-top: 30px;
@@ -261,12 +262,12 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .gul{
-  margin-left: -250px;
+  margin-left: -270px;
   color: #333;
   text-shadow: 2px 2px lightblue;
 }
 .ena {
-  margin-left: -180px;
+  margin-left: -200px;
   margin-bottom: 40px;
   color: #333;
   text-shadow: 1px 1px lightblue;
@@ -275,6 +276,14 @@ input:checked + .slider:before {
 .toggle {
   
   margin-left: 200px;
+}
+.linea {
+  position: relative;
+  width: 400px;
+  height: 1px;
+  top: -21px;
+  left: -210px;
+  border-bottom: 1px solid rgb(151, 151, 151);
 }
 
 
