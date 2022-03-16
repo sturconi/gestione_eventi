@@ -28,9 +28,9 @@ public class TicketRestController {
 		return this.ticketRepositery.findAllT();
 	}
 	
-	@RequestMapping(value="/ticket/{oggetto}",method=RequestMethod.GET)
-	public ResponseEntity<Ticket> getTicketByOggetto(@PathVariable String oggetto){
-		Ticket t = ticketRepositery.findByOggetto(oggetto);
+	@RequestMapping(value="/ticket/{oggetto_ticket}",method=RequestMethod.GET)
+	public ResponseEntity<Ticket> getTicketByOggetto(@PathVariable String oggetto_ticket){
+		Ticket t = ticketRepositery.findByOggetto(oggetto_ticket);
 		if(t!=null) {
 			return new ResponseEntity(t,HttpStatus.OK);
 			}
@@ -40,9 +40,9 @@ public class TicketRestController {
 	}
 	
 	
-	@RequestMapping(value="/ticket/{ID_ticket}", method=RequestMethod.GET)
-	public ResponseEntity<Ticket> getTiketByid(@PathVariable int ID_ticket) {
-		Ticket t =this.ticketRepositery.findByIdT(ID_ticket);
+	@RequestMapping(value="/ticket/{codice}", method=RequestMethod.GET)
+	public ResponseEntity<Ticket> getTiketByid(@PathVariable int codice) {
+		Ticket t =this.ticketRepositery.findByIdT(codice);
 		if(t!=null) {
 		return new ResponseEntity(t,HttpStatus.OK);
 		}
