@@ -182,7 +182,6 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         startActivity(intent);
     }
     public void openEventoDettagliato() {
-        //Intent intent = new Intent(this, EventoDettagliato.class);
         Intent intent = new Intent(this, EventoDettagliato.class);
         intent.putExtra("username", username);
         intent.putExtra("password", password);

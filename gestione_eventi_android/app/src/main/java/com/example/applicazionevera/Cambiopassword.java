@@ -136,6 +136,7 @@ public class Cambiopassword extends AppCompatActivity {
         if(passwordAttuale.equals(password)){
             if(passwordControl.equals(passwordControl1)){
                 updatepass();
+                Toast.makeText(Cambiopassword.this, "Password cambiata!", Toast.LENGTH_SHORT).show();
                 openAccount();
             }
             else{

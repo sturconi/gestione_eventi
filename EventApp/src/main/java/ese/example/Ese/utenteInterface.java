@@ -20,4 +20,5 @@ public interface utenteInterface {
 	
 	int updatePassword(Utente u);
 	
+	List<Utente> findAllusername();
 }

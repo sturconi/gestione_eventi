@@ -17,7 +17,9 @@ import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.example.applicazionevera.retrofit.Utente;
 import com.google.android.material.button.MaterialButton;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,7 +35,9 @@ public class Registrazione extends AppCompatActivity {
     Button data_nascita ;
     private Utente user;
     private int ID_utente;
+    List<Utente> allusers=new ArrayList<>();
     TextView log;
+    int flag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,7 @@ public class Registrazione extends AppCompatActivity {
         MaterialButton button;
         initDatePicker();
         log = (TextView) findViewById(R.id.login);
+        Controllo();
 
         button = (MaterialButton) findViewById(R.id.buttonReg);
         button.setOnClickListener(new View.OnClickListener() {
@@ -57,17 +62,33 @@ public class Registrazione extends AppCompatActivity {
                 String Fnome = nome.getText().toString();
                 String Fcognome = cognome.getText().toString();
                 String Funame = username.getText().toString();
-                String Fdata_nascita = data_nascita.getText().toString();
+//                String Fdata_nascita = data_nascita.getText().toString();
                 String emailString = email.getText().toString();
                 String passwordString = password.getText().toString();
                 String passConfString = passConf.getText().toString();
                 if (emailString.contains("@")) {
                     if (passwordString.length() >= 5) {
                         if (passwordString.equals(passConfString)) {
-                            user=new Utente(Funame,Fcognome,Fnome,emailString,passwordString,ID_utente);
-                            registerMe();
-                            openLogin();
-                        } else
+                            for (int i = 0; i < allusers.size(); i++) {
+                                String uss=allusers.get(i).getUsername();
+                                if (Funame.equals(uss)) {
+                                    flag=0;
+                                }
+                                else{
+                                    flag=1;
+                                }
+                            }
+                            if(flag==1){
+                                user = new Utente(Funame, Fcognome, Fnome, emailString, passwordString, ID_utente);
+                                registerMe();
+                                openLogin();
+                            }
+                            else{
+                                Toast.makeText(Registrazione.this, "Username già esistente!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else
                             Toast.makeText(Registrazione.this, "la conferma password deve essere uguale alla password", Toast.LENGTH_SHORT).show();
                     } else
                         Toast.makeText(Registrazione.this, "La password deve essere almeno di cinque caratteri", Toast.LENGTH_SHORT).show();
@@ -170,4 +191,20 @@ public class Registrazione extends AppCompatActivity {
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+
+    public void Controllo() {
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Utente>> call = apiService.geteAllusername();
+        call.enqueue(new Callback<List<Utente>>() {
+            @Override
+            public void onResponse(Call<List<Utente>> call, Response<List<Utente>> response) {
+                    int statusCode = response.code();
+                    allusers = response.body();
+            }
+            @Override
+            public void onFailure(Call<List<Utente>> call, Throwable t) {
+                Toast.makeText(Registrazione.this, "Errore", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

@@ -24,6 +24,12 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 	public Utente findById(int ID_utente) {
 		return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE ID_utente=?", BeanPropertyRowMapper.newInstance(Utente.class),ID_utente);
 	}
+	
+	@Override
+	public List<Utente> findAllusername() {
+		return jdbcTemplate.query("SELECT username FROM utente", BeanPropertyRowMapper.newInstance(Utente.class));
+	}
+	
 	@Override
 	public List<Utente> findAll() {
 		return jdbcTemplate.query("SELECT * FROM utente", BeanPropertyRowMapper.newInstance(Utente.class));

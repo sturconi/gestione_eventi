@@ -13,9 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.applicazionevera.model_and_adapter.EvCatAdapter;
 import com.example.applicazionevera.model_and_adapter.EvCatData;
+import com.example.applicazionevera.retrofit.Event;
+import com.example.applicazionevera.retrofit.EventAdapter;
+import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventListener {
 
@@ -25,6 +37,11 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
     String nome=null;
     String cognome=null;
     String email=null;
+    String categoria=null;
+
+    int statusCode;
+    EventAdapter adapter = null;
+    private List<Event> events=new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,8 +53,8 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
         nome = getIntent().getExtras().getString("nome");
         cognome = getIntent().getExtras().getString("cognome");
         email = getIntent().getExtras().getString("email");
-
-        setArrayInfo();
+        categoria = getIntent().getExtras().getString("categoria");
+        allEvent();
         setData();
 
 
@@ -86,16 +103,16 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
 
 
     private void setData() {
-        RecyclerView recyclerViewO = (RecyclerView) findViewById(R.id.Evrc);
+        RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.Evrc);
         LinearLayoutManager layoutManager = new LinearLayoutManager(Evento.this);
-        EvCatAdapter adapter = new EvCatAdapter(evcatData, this::onEventClick);
-        recyclerViewO.setHasFixedSize(true);
-        recyclerViewO.setLayoutManager(new LinearLayoutManager(Evento.this));
-        recyclerViewO.setNestedScrollingEnabled(false);
+        adapter = new EventAdapter(events, this::onEventClick);
+        recyclerViewOKL.setHasFixedSize(true);
+        recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Evento.this));
+        recyclerViewOKL.setNestedScrollingEnabled(false);
 
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewO.getContext(), layoutManager.getOrientation());
-        recyclerViewO.addItemDecoration(dividerItemDecoration);
-        recyclerViewO.setAdapter(adapter);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewOKL.getContext(), layoutManager.getOrientation());
+        recyclerViewOKL.addItemDecoration(dividerItemDecoration);
+        recyclerViewOKL.setAdapter(adapter);
     }
 
     public void openHome() {
@@ -150,4 +167,28 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
     public void onEventClick(int position) {
         openEventoDettagliato();
     }
+
+    public void allEvent() {
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Event>> call = apiService.getEventBycat(categoria);
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                statusCode = response.code();
+                events.addAll(response.body());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+            }
+        });
+    }
+
+    public static final String BASE_URL = "http://10.0.2.2:8080/";
+    Gson gson= new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build();
 }

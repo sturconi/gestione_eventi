@@ -40,6 +40,11 @@ public class UtenteRestController {
 		return this.utenteRepositery.findAll();
 	}
 	
+	@RequestMapping(value="/username",method=RequestMethod.GET)
+	public List<Utente> getAllusername(){
+		return this.utenteRepositery.findAllusername();
+	}
+	
 	@RequestMapping(value="/utente/{username}",method=RequestMethod.GET)
 	public ResponseEntity<Utente> getUtenteByUserAndPass(@PathVariable String username){
 		Utente u = utenteRepositery.findByUsername(username);

@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class TicketRestController {
 	
-	@Autowired()
+	/*@Autowired
 	@Qualifier("MYSQL")
 	ticketInterface ticketRepositery;
 	
@@ -73,7 +73,7 @@ public class TicketRestController {
 	@RequestMapping(value="/ticket/{id}", method=RequestMethod.DELETE)
 	public void deleteTicketByid(@PathVariable int id) {
 		this.ticketRepositery.deleteByIdT(id);
-	}
+	}*/
 	
 	
 	

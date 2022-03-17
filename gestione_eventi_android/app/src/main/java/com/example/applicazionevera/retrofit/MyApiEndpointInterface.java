@@ -15,7 +15,6 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface MyApiEndpointInterface {
 
@@ -23,7 +22,10 @@ public interface MyApiEndpointInterface {
     Call<Utente> getUser(@Path("username") String username);
 
     @GET("/utenti")
-    Call<List<Utente>> groupList(@Query("sort") String sort);
+    Call<List<Utente>> geteAll();
+
+    @GET("/username")
+    Call<List<Utente>> geteAllusername();
 
     @POST("/utenti")
     Call<Utente> createUser(@Body Utente user);

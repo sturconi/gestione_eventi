@@ -3,7 +3,6 @@ package com.example.applicazionevera;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -11,16 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicazionevera.retrofit.Event;
-import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Categorie extends AppCompatActivity {
 
@@ -29,7 +21,10 @@ public class Categorie extends AppCompatActivity {
     String nome=null;
     String cognome=null;
     String email=null;
-    String categoria;
+    String sport="sport";
+    String cultura="cultura";
+    String intrattenimento="intrattenimento";
+    String servizi="servizi";
     int statusCode;
     List<Event> eve;
     @Override
@@ -77,44 +72,17 @@ public class Categorie extends AppCompatActivity {
         ImageButton button;
 
         bottoneSport=(Button)findViewById(R.id.toSport);
-        bottoneSport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                categoria="sport";
-                cercaEvento();
-            }
-        });
-        bottoneSport.setOnClickListener(view -> openEvento());
+        bottoneSport.setOnClickListener(view -> SportEvents());
+
 
         bottoneCultura=(Button)findViewById(R.id.Cultura);
-        bottoneCultura.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                categoria="cultura";
-                cercaEvento();
-            }
-        });
-        bottoneCultura.setOnClickListener(view -> openEvento());
+        bottoneCultura.setOnClickListener(view -> CulturaEvents());
 
         bottoneServizi=(Button)findViewById(R.id.Servizi);
-        bottoneServizi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                categoria="servizi";
-                cercaEvento();
-            }
-        });
-        bottoneServizi.setOnClickListener(view -> openEvento());
+        bottoneServizi.setOnClickListener(view -> ServiziEvents());
 
         bottoneIntrattenimento=(Button)findViewById(R.id.Intrattenimento);
-        bottoneIntrattenimento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                categoria="intrattenimento";
-                cercaEvento();
-            }
-        });
-        bottoneIntrattenimento.setOnClickListener(view -> openEvento());
+        bottoneIntrattenimento.setOnClickListener(view -> IntrattenimentoEvents());
     }
 
     public void openHome() {
@@ -154,38 +122,49 @@ public class Categorie extends AppCompatActivity {
         intent.putExtra("email", email);
         startActivity(intent);
     }
-    public void openEvento() {
+    public void SportEvents() {
         Intent intent = new Intent(this, Evento.class);
         intent.putExtra("username", username);
         intent.putExtra("password", password);
         intent.putExtra("nome", nome);
         intent.putExtra("cognome", cognome);
         intent.putExtra("email", email);
+        intent.putExtra("categoria", sport);
         startActivity(intent);
     }
 
-    public void cercaEvento() {
-        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
-        Call<List<Event>> call = apiService.getEventBycat(categoria);
-        call.enqueue(new Callback<List<Event>>() {
-            @Override
-            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
-                statusCode = response.code();
-                eve = response.body();
-            }
-
-            @Override
-            public void onFailure(Call<List<Event>> call, Throwable t) {
-            }
-        });
+    public void ServiziEvents() {
+        Intent intent = new Intent(this, Evento.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
+        intent.putExtra("categoria", servizi);
+        startActivity(intent);
     }
 
-    public static final String BASE_URL = "http://10.0.2.2:8080/";
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
+    public void CulturaEvents() {
+        Intent intent = new Intent(this, Evento.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
+        intent.putExtra("categoria", cultura);
+        startActivity(intent);
+    }
 
+    public void IntrattenimentoEvents() {
+        Intent intent = new Intent(this, Evento.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
+        intent.putExtra("categoria", intrattenimento);
+        startActivity(intent);
+    }
 
 }
 
