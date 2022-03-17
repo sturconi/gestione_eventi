@@ -3,21 +3,35 @@ package com.example.applicazionevera;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.applicazionevera.retrofit.Event;
+import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.Calendar;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class EventoDettagliato extends FragmentActivity {
 
     private GoogleMap mMap;
     ImageView exit;
+    int id;
+    int statusCode;
+    Event evento;
+    TextView titolo,luogo,ora,data,descrizione, user;
 
 
     @Override
@@ -25,10 +39,14 @@ public class EventoDettagliato extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_evento_dettagliato);
+        id = getIntent().getExtras().getInt("id");
 
-
-
-
+        titolo = findViewById(R.id.titolo);
+        luogo = findViewById(R.id.luogo);
+        ora = findViewById(R.id.ora);
+        data = findViewById(R.id.data);
+        descrizione= findViewById(R.id.descrizione);
+        user= findViewById(R.id.utente);
 
         MaterialButton butt;
         FloatingActionButton bottone;
@@ -62,6 +80,7 @@ public class EventoDettagliato extends FragmentActivity {
                 startActivity(intent);
             }
         });
+        CercaEvento();
 
     }
 
@@ -91,6 +110,32 @@ public class EventoDettagliato extends FragmentActivity {
         Intent intent = new Intent(this, Calendario.class);
         startActivity(intent);
     }
+    public void CercaEvento() {
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call <Event> call = apiService.getEventByid(id);
+        call.enqueue(new Callback<Event>() {
+            @Override
+            public void onResponse(Call<Event> call, Response<Event> response) {
+                statusCode = response.code();
+                evento=response.body();
+                titolo.setText(evento.getNome_evento());
+                luogo.setText(evento.getLuogo());
+                data.setText(evento.getData());
+                descrizione.setText(evento.getDescrizione());
+            }
+
+            @Override
+            public void onFailure(Call<Event> call, Throwable t) {
+            }
+        });
+    }
+
+    public static final String BASE_URL = "http://10.0.2.2:8080/";
+    Gson gson= new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build();
 
 
 }

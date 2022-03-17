@@ -38,6 +38,7 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     String nome=null;
     String cognome=null;
     String email=null;
+    int id;
     int statusCode;
 
     EventAdapter adapter = null;
@@ -188,11 +189,13 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         intent.putExtra("nome", nome);
         intent.putExtra("cognome", cognome);
         intent.putExtra("email", email);
+        intent.putExtra("id", id);
         startActivity(intent);
     }
 
     @Override
     public void onEventClick(int position) {
+        id=events.get(position).getnumero_evento();
         openEventoDettagliato();
 
     }

@@ -42,6 +42,7 @@
                     android:paddingBottom="20dp">
 
                     <TextView
+                        android:id="@+id/titolo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
@@ -52,6 +53,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
+                        android:id="@+id/luogo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -90,6 +92,7 @@
                                     android:src="@drawable/ic_baseline_calendar_today_24"></ImageView>
 
                                 <TextView
+                                    android:id="@+id/data"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
@@ -132,6 +135,7 @@
                                         android:src="@drawable/ic_baseline_access_time_24"></ImageView>
 
                                     <TextView
+                                        android:id="@+id/ora"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
@@ -156,6 +160,7 @@
                         android:textSize="15sp"></TextView>
 
                     <TextView
+                        android:id="@+id/descrizione"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -192,6 +197,7 @@
                                     android:src="@drawable/ic_baseline_person_24"></ImageView>
 
                                 <TextView
+                                    android:id="@+id/utente"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
@@ -243,7 +249,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
                             android:maxLines="1"
-                            android:text="are interested"
+                            android:text="sono interessati"
                             android:textColor="@android:color/darker_gray"></TextView>
 
                     </LinearLayout>

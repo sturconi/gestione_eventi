@@ -39,6 +39,9 @@ public interface MyApiEndpointInterface {
     @GET("/eventi/{categoria}")
     Call<List<Event>> getEventBycat(@Path("categoria") String categoria);
 
+    @GET("/evento/{numero_evento}")
+    Call <Event> getEventByid(@Path("numero_evento") int numero_evento);
+
     @GET("/eventi")
     Call<List<Event>> getAllEvent();
 
