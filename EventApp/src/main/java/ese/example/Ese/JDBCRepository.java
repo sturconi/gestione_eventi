@@ -75,6 +75,18 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 	}
 	
 	@Override
+	public Utente autoreevento(int numero_evento) {
+		return jdbcTemplate.queryForObject("SELECT \r\n"
+				+ "u.nome, u.cognome\r\n"
+				+ "FROM \r\n"
+				+ "utente u INNER JOIN evento_utente eu \r\n"
+				+ "ON u.id_utente = eu.id_utente\r\n"
+				+ "INNER JOIN evento e \r\n"
+				+ "ON e.numero_evento= eu.numero_evento\r\n"
+				+ "WHERE e.numero_evento = ?", BeanPropertyRowMapper.newInstance(Utente.class),numero_evento);
+	}
+	
+	@Override
 	public List<Evento> findAllE() {
 		return jdbcTemplate.query("SELECT * FROM evento", BeanPropertyRowMapper.newInstance(Evento.class));
 	}

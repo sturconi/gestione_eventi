@@ -57,9 +57,9 @@ public class UtenteRestController {
 	}
 	
 	
-	@RequestMapping(value="/utenti/{ID_utente}", method=RequestMethod.GET)
-	public ResponseEntity<Utente> getUtenteByid(@PathVariable int ID_utente) {
-		Utente u =this.utenteRepositery.findById(ID_utente);
+	@RequestMapping(value="/utenti/{id_utente}", method=RequestMethod.GET)
+	public ResponseEntity<Utente> getUtenteByid(@PathVariable int id_utente) {
+		Utente u =this.utenteRepositery.findById(id_utente);
 		if(u!=null) {
 		return new ResponseEntity(u,HttpStatus.OK);
 		}

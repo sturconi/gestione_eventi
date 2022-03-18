@@ -33,6 +33,9 @@ public interface MyApiEndpointInterface {
     @PUT("/utenti/{username}/{password}")
     Call<Utente> updatePass(@Path("username")String username ,@Path("password")String password);
 
+    @GET("/autore/{numero_evento}")
+    Call <Utente> getAutore(@Path("numero_evento") int numero_evento);
+
     @POST("/eventi")
     Call<Event> createEvent(@Body Event eve);
 

@@ -10,7 +10,7 @@ public class Evento {
 	String ora;
 	int Valutazione;
 	String luogo;
-	Date data;
+	String data;
 	Date oraFine;
 	String immagine;
 	int ID_Posto;
@@ -18,7 +18,7 @@ public class Evento {
 	public Evento() {
 	}
 	
-	public Evento(int numero_evento, String categoria, String nome_evento, String descrizione,String luogo, Date data, String ora) {
+	public Evento(int numero_evento, String categoria, String nome_evento, String descrizione,String luogo, String data, String ora) {
 		this.numero_evento= numero_evento;
 		this.categoria= categoria;
 		this.nome_evento= nome_evento;
@@ -45,7 +45,7 @@ public class Evento {
 	public String getLuogo() {
 		return this.luogo;
 	}
-	public Date getData() {
+	public String getData() {
 		return this.data;
 	}
 	public String getOra() {
@@ -79,7 +79,7 @@ public class Evento {
 	public void setLuogo(String luogo) {
 		this.luogo=luogo;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data=data;
 	}
 	public void setOra(String ora) {

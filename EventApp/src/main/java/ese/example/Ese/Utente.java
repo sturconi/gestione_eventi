@@ -3,7 +3,7 @@ package ese.example.Ese;
 import java.sql.Date;
 
 public class Utente {
-	int ID_utente;
+	int id_utente;
 	String username;
 	String password;
 	String nome;
@@ -15,8 +15,8 @@ public class Utente {
 	public Utente() {
 	}
 	
-	public Utente(int ID_utente, String username, String password, String nome, String email, Date datanascita, String cognome, String fotoprofilo) {
-		this.ID_utente= ID_utente;
+	public Utente(int id_utente, String username, String password, String nome, String email, Date datanascita, String cognome, String fotoprofilo) {
+		this.id_utente= id_utente;
 		this.username= username;
 		this.password= password;
 		this.cognome=cognome;
@@ -26,7 +26,7 @@ public class Utente {
 		this.nome=nome;
 	}
 	public int getId() {
-		return this.ID_utente;
+		return this.id_utente;
 	}
 	public String getUsername() {
 		return this.username;
@@ -53,8 +53,8 @@ public class Utente {
 	public void setUsername(String username) {
 		this.username=username;
 	}
-	public void setId(int ID_utente) {
-		this.ID_utente=ID_utente;
+	public void setId(int id_utente) {
+		this.id_utente=id_utente;
 	}
 	public void setPassword(String password) {
 		this.password=password;

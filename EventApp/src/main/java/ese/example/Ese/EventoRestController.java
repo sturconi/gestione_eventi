@@ -30,6 +30,11 @@ public class EventoRestController {
 	public Evento getEventbyid(@PathVariable int numero_evento){
 		return this.eventoRepositery.findByIdE(numero_evento);
 	}
+	
+	@RequestMapping(value="/autore/{numero_evento}",method=RequestMethod.GET)
+	public Utente getautore(@PathVariable int numero_evento){
+		return this.eventoRepositery.autoreevento(numero_evento);
+	}
 
 	@RequestMapping(value="/eventi/{categoria}", method=RequestMethod.GET)
 	public List<Evento> getEventbyCat(@PathVariable String categoria) {

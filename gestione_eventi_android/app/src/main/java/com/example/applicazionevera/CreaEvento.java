@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -159,12 +160,13 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
             public void onClick(View view) {
                 String ora = timer.getText().toString();
                 String Enome = nomeevento.getText().toString();
-
                 String EdescrizioneEvento = descrizioneEvento.getText().toString();
-                String Edata_evento = timer.getText().toString();
+                String Edata_evento =dateButton.getText().toString();
                 String categoria = item.toString();
                 eve = new Event(categoria, Enome, Edata_evento, ora, EdescrizioneEvento);
                 creaEvento();
+                Toast.makeText(CreaEvento.this, "Evento creato!", Toast.LENGTH_SHORT).show();
+                openHome();
                 if (statusCode == 500 || statusCode == 400) {
 
                 }

@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.example.applicazionevera.retrofit.Event;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
+import com.example.applicazionevera.retrofit.Utente;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,6 +33,7 @@ public class EventoDettagliato extends FragmentActivity {
     int statusCode;
     Event evento;
     TextView titolo,luogo,ora,data,descrizione, user;
+    Utente use;
 
 
     @Override
@@ -81,6 +83,7 @@ public class EventoDettagliato extends FragmentActivity {
             }
         });
         CercaEvento();
+        autore();
 
     }
 
@@ -122,10 +125,28 @@ public class EventoDettagliato extends FragmentActivity {
                 luogo.setText(evento.getLuogo());
                 data.setText(evento.getData());
                 descrizione.setText(evento.getDescrizione());
+                ora.setText(evento.getOraInizio());
             }
 
             @Override
             public void onFailure(Call<Event> call, Throwable t) {
+            }
+        });
+    }
+
+    public void autore() {
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call <Utente> call = apiService.getAutore(id);
+        call.enqueue(new Callback<Utente>() {
+            @Override
+            public void onResponse(Call<Utente> call, Response<Utente> response) {
+                statusCode = response.code();
+                use=response.body();
+                user.setText(use.getNome()+" "+use.getCognome());
+            }
+
+            @Override
+            public void onFailure(Call<Utente> call, Throwable t) {
             }
         });
     }

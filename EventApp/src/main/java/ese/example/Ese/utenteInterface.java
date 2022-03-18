@@ -6,11 +6,11 @@ public interface utenteInterface {
 
 	int save(Utente u);
 	
-	Utente findById(int ID_utente);
+	Utente findById(int id_utente);
 	
 	List<Utente> findAll();
 	
-	int deleteById(int ID_utente);
+	int deleteById(int id_utente);
 	
 	int deleteAll();
 	

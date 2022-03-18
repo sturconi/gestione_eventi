@@ -8,6 +8,8 @@ int saveE(Evento ev);
 	
 	Evento findByIdE(int numero_evento);
 	
+	Utente autoreevento(int numero_evento);
+	
 	List<Evento> findAllE();
 	
 	int deleteByIdE(int numero_evento);
