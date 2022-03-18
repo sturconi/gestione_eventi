@@ -14,22 +14,32 @@ header {
 .nav-area {
 	float: right;
 	list-style: none;
-	margin-top: 30px;
+	margin-top: 50px;
+	background-color: white;
+	box-shadow: 2px 2px 5px #333;
+	font-size: 25px;
+  border-radius: 5px;
+	
+	
 }
+
+
 .nav-area li {
 	display: inline-block;
 }
 .nav-area li a {
-	color: #000;
+	color: black;
 	text-decoration: none;
-	padding: 5px 20px;
+	padding: 5px 10px;
 	font-family: poppins;
-	font-size: 16px;
+	font-size: 20px;
 	text-transform: uppercase;
 }
 .nav-area li a:hover {
-	background: #fff;
-	color: #333;
+	background: #333;
+	color: white;
+  border-radius: 5px;
+	transition: .5s;
 }
 .logo {
 	float: left;

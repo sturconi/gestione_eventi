@@ -19,6 +19,7 @@ body {
 	background-color: white;
 	box-shadow: 5px 5px 2px lightblue;
 	font-size: 25px;
+  border-radius: 5px;
 	
 	
 }
@@ -179,34 +180,20 @@ main{
    box-shadow:none; }
 
 /* demo */
-.main{
-	position:absolute;
-	height: 500px;;
-    background-color: white;
-    width: 870px;
-    top: 200px;
-    left: 400px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #333;
-    
-    
-}
-
-.linea{
-  margin-top: -200px;
+main{
+	position:relative;
+	height:100vh;
 }
 	
 	.helper{
-		
-		position:relative;
-        
-		top:100px;
-		left:250px;
+		background:white;
+		position:absolute;
+		top:250px;
+		left:593px;
 		transform:translate3d(-50%,-50%,0);
 		padding:1.2em 2em;
     width: 370px;
-    
-    
+    border-top-left-radius: 10px;
     
 
   }
@@ -220,18 +207,13 @@ main{
       width:150px;
 			border-radius:50px;
 			overflow:hidden;
-			
+			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+      border:4px solid #ffea92;
       
 
     }
 
-    .mano{
-      position: relative;
-      height: 500px;
-      top: -253px;
-      left: 425px;
-      border-left: 1px solid rgb(190, 190, 190)
-    }
+  
   .btn-btn-confirm, .btn-btn-cancel{
       display:inline-block;
       margin-right:2px;
@@ -247,31 +229,37 @@ main{
       transition: all 100ms ease-out;
     }
     .helperimg{
-      position: relative;
+      background:white;
+      position:absolute;
       color: #333;
       text-shadow: 1px 1px lightblue;
-      top:370px;
-      left:670px;
+      top:468px;
+      left:989px;
       height: 204px;
-      width: 300px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
-      
+      border-top:1px solid #333;
+      border-bottom-right-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
       position: absolute;
-     
+      z-index: 1;
+      border-left:1px solid #333;
   
     }
 
     /*modifica password*/
     .helperpass{
-      position: relative;
-      top:377px;
-      left:220px;
+      background:white;
+      position:absolute;
+      top:468px;
+      left:585px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
       color: #333;
       text-shadow: 1px 1px lightblue;
-      
+      border-top: 1px solid #333;
+      border-bottom-left-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
       position: absolute;
     }
   
@@ -284,13 +272,14 @@ main{
     /*slogan*/
 
     .helperslogan{
-      position: relative;
-      top:-55px;
-      left:620px;
-      width: 35%;
+      background:white;
+      position:absolute;
+      top:251px;
+      left:976.2px;
       transform:translate3d(-50%,-50%,0);
       padding:1.2em 2em;
-      
+      border-top-right-radius: 10px;
+      box-shadow: 5px 5px 5px #333;
       
     }
     .helperslogan img{
@@ -298,6 +287,9 @@ main{
 			overflow:hidden;
 			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
       border:4px solid #ffea92;
-      height: 100%;
+      height: 145px;
 
     }
+    
+
+ 
