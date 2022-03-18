@@ -12,160 +12,224 @@
         android:padding="20dp">
 
 
-
-
-    <ImageView
-        android:id="@+id/eventappLogo"
-        android:layout_width="254dp"
-        android:layout_height="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/immagine" />
-
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="209dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="40dp"
-            android:hint="Seleziona la categoria"
+        <ImageView
+            android:id="@+id/EventappLogo"
+            android:layout_width="254dp"
+            android:layout_height="88dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descrizioneEvento" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/immagine" />
 
         <LinearLayout
-            android:id="@+id/dataeora"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="match_parent"
             app:layout_constraintHeight_percent=".14"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner1">
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/EventappLogo"
+            android:layout_marginTop="20dp"
+            android:weightSum="10"
+            android:id="@+id/textRow"
+            >
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:orientation="vertical">
-
 
                 <TextView
-                    android:id="@+id/timerPicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Titolo"
+                    android:textColor="@color/editTextSubHeading"
+                    android:textSize="16sp"></TextView>
+
+                <EditText
+                    android:id="@+id/nomeEvento"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
-                    android:background="@color/white"
-                    android:drawableLeft="@drawable/ic_baseline_access_time_sky"
-                    android:drawablePadding="5dp"
-                    android:gravity="center"
-                    android:hint="Orario Evento"
+                    android:background="@color/editTextBackground"
                     android:maxLines="1"
                     android:paddingLeft="15dp"
-                    android:textColor="@android:color/black" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:orientation="vertical">
-
-
-                <Button
-                    android:id="@+id/dataEvento"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@android:color/white"
-                    android:drawableLeft="@drawable/ic_baseline_calendar_today_sky"
-                    android:hint="Data Evento"
-                    android:inputType="date"
-                    android:maxLines="1"
-                    android:paddingLeft="15dp"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/greyDate"></EditText>
             </LinearLayout>
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/descrizioneEvento"
-            android:layout_width="0dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Descrizione Evento"
-            android:inputType="textMultiLine"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nomeEvento" />
-
-        <EditText
-            android:id="@+id/nomeEvento"
-            android:layout_width="0dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="30dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Titolo Evento"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/eventappLogo" />
-
-        <Button
-            android:id="@+id/buttonEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Crea evento"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fotoevento" />
-
-        <AutoCompleteTextView
-            android:id="@+id/autoComplete"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:layout_marginTop="40dp"
-            android:gravity="center"
-            android:hint="indirizzo"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dataeora" />
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/textRow"
+            android:id="@+id/emailBox"
+            >
 
-        <Button
-            android:id="@+id/addfotoevento"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descrizione"
+                android:textColor="@color/editTextSubHeading"
+                android:textSize="16sp"></TextView>
+
+            <EditText
+                android:id="@+id/descrizioneEvento"
+                android:gravity="left"
+                android:maxLines="5"
+                android:layout_width="match_parent"
+                android:layout_height="164dp"
+                android:background="@color/editTextBackground"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/greyDate"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="@android:color/white"
-            android:drawableLeft="@drawable/ic_baseline_insert_photo_24"
-            android:hint="Aggiungi  un'immagine dell'evento"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/autoComplete" />
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/emailBox"
+            android:id="@+id/passwordBox"
 
-        <ImageView
-            android:id="@+id/fotoevento"
-            android:layout_width="152dp"
-            android:layout_height="105dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addfotoevento"
-            app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indirizzo"
+                android:textColor="@color/editTextSubHeading"
+                android:textSize="16sp"></TextView>
+
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@color/editTextBackground"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/greyDate"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/passwordBox"
+            android:id="@+id/countryBox"
+
+            >
+
+            <Button
+                android:id="@+id/timerPicker"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@android:color/white"
+                android:drawableLeft="@drawable/ic_baseline_access_time_sky"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:hint="Orario Evento"
+                android:maxLines="1"
+                android:paddingLeft="15dp"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/dataEvento"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@android:color/white"
+                android:drawableLeft="@drawable/ic_baseline_calendar_today_sky"
+                android:hint="Data Evento"
+                android:inputType="date"
+                android:maxLines="1"
+                android:paddingLeft="15dp"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/countryBox"
+            android:id="@+id/phoneBox"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoria"
+                android:textColor="@color/editTextSubHeading"
+                android:textSize="16sp"></TextView>
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:paddingLeft="20dp"
+                android:spinnerMode="dropdown"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/greyDate" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/phoneBox"
+            android:id="@+id/sas"
+
+            >
+
+            <Button
+                android:id="@+id/addfotoevento"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@android:color/white"
+                android:drawableLeft="@drawable/ic_baseline_insert_photo_24"
+                android:hint="Aggiungi  un'immagine dell'evento"
+                android:maxLines="1"
+                android:paddingLeft="15dp" />
+
+            <!--<ImageView
+                android:id="@+id/fotoevento"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:layout_marginTop="20dp"
+                android:maxLines="1"
+                android:paddingLeft="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />-->
+        </LinearLayout>
 
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonEvent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/registerBtn"
+            android:text="Crea evento"
+            app:layout_constraintTop_toBottomOf="@id/sas"
+            tools:layout_editor_absoluteX="20dp"></com.google.android.material.button.MaterialButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
+

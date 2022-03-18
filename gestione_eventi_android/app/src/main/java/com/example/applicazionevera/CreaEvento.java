@@ -34,6 +34,7 @@ import com.example.applicazionevera.retrofit.Event;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.gms.maps.model.LatLng;
 
+import java.sql.Date;
 import java.util.Calendar;
 import java.util.List;
 
@@ -62,6 +63,7 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
     String amPm;
     DatePickerDialog datePickerDialog;
     private ImageView imageView;
+    Date data=null;
 
 
     @Override
@@ -100,9 +102,76 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
 
             }
         });
+        Spinner spinner = findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.CategorieArray, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter1);
+        spinner.setOnItemSelectedListener(this);
+
+        timer = findViewById(R.id.timerPicker);
+        timer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calendar = Calendar.getInstance();
+                currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+                currentMinute = calendar.get(Calendar.MINUTE);
+
+                timePickerDialog = new TimePickerDialog(CreaEvento.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
+                        if (hourOfDay >= 12) {
+                            amPm = "PM";
+                        } else {
+                            amPm = "AM";
+                        }
+                        timer.setText(String.format("%02d:%02d", hourOfDay, minutes) + amPm);
+                    }
+                }, currentHour, currentMinute, false);
+
+                timePickerDialog.show();
+            }
+        });
+
+        dateButton = (Button) findViewById(R.id.dataEvento);
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDatePicker(v);
+            }
+        });
+        nomeevento = (EditText) findViewById(R.id.nomeEvento);
+
+        descrizioneEvento = (EditText) findViewById(R.id.descrizioneEvento);
+        dateButton = (Button) findViewById(R.id.dataEvento);
 
 
-        imageView = (ImageView) findViewById(R.id.fotoevento);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                item = parent.getItemAtPosition(position);
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+        button = (Button) findViewById(R.id.buttonEvent);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String ora = timer.getText().toString();
+                String Enome = nomeevento.getText().toString();
+
+                String EdescrizioneEvento = descrizioneEvento.getText().toString();
+                String Edata_evento = timer.getText().toString();
+                String categoria = item.toString();
+                eve = new Event(categoria, Enome, Edata_evento, ora, EdescrizioneEvento);
+                creaEvento();
+                if (statusCode == 500 || statusCode == 400) {
+
+                }
+
+            }
+        });
+        //imageView = (ImageView) findViewById(R.id.fotoevento);
 
 
 
@@ -177,81 +246,6 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
                     break;
             }
         }
-
-
-
-        Spinner spinner = findViewById(R.id.spinner1);
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.CategorieArray, android.R.layout.simple_spinner_item);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter1);
-        spinner.setOnItemSelectedListener(this);
-
-
-
-        timer = findViewById(R.id.timerPicker);
-        timer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calendar = Calendar.getInstance();
-                currentHour = calendar.get(Calendar.HOUR_OF_DAY);
-                currentMinute = calendar.get(Calendar.MINUTE);
-
-                timePickerDialog = new TimePickerDialog(CreaEvento.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
-                        if (hourOfDay >= 12) {
-                            amPm = "PM";
-                        } else {
-                            amPm = "AM";
-                        }
-                        timer.setText(String.format("%02d:%02d", hourOfDay, minutes) + amPm);
-                    }
-                }, currentHour, currentMinute, false);
-
-                timePickerDialog.show();
-            }
-        });
-
-        dateButton = (Button) findViewById(R.id.dataEvento);
-        dateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDatePicker(v);
-            }
-        });
-        nomeevento = (EditText) findViewById(R.id.nomeEvento);
-
-        descrizioneEvento = (EditText) findViewById(R.id.descrizioneEvento);
-        dateButton = (Button) findViewById(R.id.dataEvento);
-
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                item = parent.getItemAtPosition(position);
-            }
-
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-        button = (Button) findViewById(R.id.buttonEvent);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String ora = timer.getText().toString();
-                String Enome = nomeevento.getText().toString();
-
-                String EdescrizioneEvento = descrizioneEvento.getText().toString();
-                String Edata_evento = dateButton.getText().toString();
-                String categoria = item.toString();
-                eve = new Event(categoria, Enome, Edata_evento, ora, EdescrizioneEvento);
-                creaEvento();
-                if (statusCode == 500 || statusCode == 400) {
-
-                }
-
-            }
-        });
-
     }
 
     private LatLng getLatLngFromAddress(String address){
