@@ -14,8 +14,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +26,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -34,7 +39,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buttarevia);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -55,21 +60,22 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         dialog.setMessage("Cercando gli eventi vicino a te ..");
         dialog.show();
 
-        MyApiEndpointInterface apiService = ApiClient.getClient().create(MyApiEndpointInterface.class);
-        Call<ListLocationModel> call = apiService.getAllLocation();
-        call.enqueue(new Callback<ListLocationModel>() {
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<LocationModel>> call = apiService.getAllLocation();
+        call.enqueue(new Callback<List<LocationModel>>() {
             @Override
-            public void onResponse(Call<ListLocationModel> call, Response<ListLocationModel> response) {
+            public void onResponse(Call<List<LocationModel>> call, Response<List<LocationModel>> response) {
                 dialog.dismiss();
-                mListMarker = response.body().getmData();
+                mListMarker.addAll(response.body());
                 initMarker(mListMarker);
             }
 
             @Override
-            public void onFailure(Call<ListLocationModel> call, Throwable t) {
+            public void onFailure(Call<List<LocationModel>> call, Throwable t) {
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
+
         });
 
     }
@@ -85,7 +91,20 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
             LatLng latLng = new LatLng(Double.parseDouble(mListMarker.get(0).getLatitude()), Double.parseDouble(mListMarker.get(0).getLongitude()));
 
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latLng.latitude,latLng.longitude), 15));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latLng.latitude,latLng.longitude), 12));
+
         }
     }
+
+    public static final String BASE_URL = "http://10.0.2.2:8080/";
+    Gson gson= new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build();
+
+
+
+
+
 }

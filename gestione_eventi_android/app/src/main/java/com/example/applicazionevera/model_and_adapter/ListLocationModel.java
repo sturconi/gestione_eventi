@@ -4,9 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-/**
- * Created by putuguna on 9/30/2017.
- */
 
 public class ListLocationModel {
     @SerializedName("data")

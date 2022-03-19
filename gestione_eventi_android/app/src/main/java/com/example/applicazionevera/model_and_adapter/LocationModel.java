@@ -3,20 +3,18 @@ package com.example.applicazionevera.model_and_adapter;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by putuguna on 30/09/17.
- */
 
 public class LocationModel {
-    @SerializedName("")
+
+    @SerializedName("nomeevento")
     private String imageLocationName;
-    @SerializedName("latitude")
+    @SerializedName("latitudine")
     private String latitude;
-    @SerializedName("longitude")
+    @SerializedName("longitudine")
     private String longitude;
 
 
-    public LocationModel(String imageLocationName, String latitude, String longitude) {
+    public LocationModel(String latitude, String longitude, String imageLocationName) {
         this.imageLocationName = imageLocationName;
         this.latitude = latitude;
         this.longitude = longitude;
