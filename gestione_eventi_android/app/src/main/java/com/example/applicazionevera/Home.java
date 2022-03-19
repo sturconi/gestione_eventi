@@ -1,5 +1,7 @@
 package com.example.applicazionevera;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ import com.example.applicazionevera.retrofit.Event;
 import com.example.applicazionevera.retrofit.EventAdapter;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -86,7 +89,7 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
                         overridePendingTransition(0,0);
                         break;
                     case R.id.toNotifications:
-                        openNotifications();
+                        openMappa();
                         overridePendingTransition(0,0);
                         break;
                     case R.id.toSettings:
@@ -105,20 +108,12 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         bottone =(Button) findViewById(R.id.creaEvento);
         bottone.setOnClickListener(v -> openCreaevento());
         allEvent();
-        //setFAKEInfo();
         setData();
     }
 
 
 
-    private void setFAKEInfo() {
-        for(int i=0;i<10;i++) {
-            Event e = new Event("Prova", "Prova" + (i + 1), "Prova", "Prova", "Prova");
-            events.add(e);
-        }
-    }
-
-   private void setData() {
+    private void setData() {
         RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
         LinearLayoutManager layoutManager = new LinearLayoutManager(Home.this);
         adapter = new EventAdapter(events, this::onEventClick);
@@ -190,6 +185,11 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         intent.putExtra("cognome", cognome);
         intent.putExtra("email", email);
         intent.putExtra("id", id);
+        startActivity(intent);
+    }
+
+    public void openMappa() {
+        Intent intent = new Intent(this, PermissionsActivity.class);
         startActivity(intent);
     }
 

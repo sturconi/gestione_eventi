@@ -246,6 +246,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(p.getLatLng()));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(13));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
     }
 }

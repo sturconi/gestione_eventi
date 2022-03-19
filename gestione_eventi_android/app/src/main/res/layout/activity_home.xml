@@ -8,6 +8,7 @@
     tools:context=".Home">
 
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
