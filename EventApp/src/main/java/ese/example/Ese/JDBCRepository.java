@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository(value="MYSQL")
-public class JDBCRepository implements utenteInterface, eventoInterface{
+public class JDBCRepository implements utenteInterface, eventoInterface, luogoInterface{
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
@@ -158,6 +158,14 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 		return jdbcTemplate.update("INSERT INTO commento(testo_commento, ID_utente, ID_evento) VALUE(?,?,?)", new Object[] {c.getTesto_commento(), c.getID_utente(), c.getID_evento()});
 	
 	}*/
+	//------------------------------------------------------------------
+	//----Luogo------//
+
+	@Override
+	public List<Luogo> findAllL() {
+		return jdbcTemplate.query("SELECT * FROM luogo", BeanPropertyRowMapper.newInstance(Luogo.class));}
+	
+	
 	
 	
 
