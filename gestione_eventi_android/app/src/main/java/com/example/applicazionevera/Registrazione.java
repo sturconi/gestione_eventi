@@ -79,7 +79,7 @@ public class Registrazione extends AppCompatActivity {
                                 }
                             }
                             if(flag==1){
-                                user = new Utente(Funame, Fcognome, Fnome, emailString, passwordString, ID_utente);
+                                user = new Utente(ID_utente,Funame, Fcognome, Fnome, emailString, passwordString);
                                 registerMe();
                                 openLogin();
                             }

@@ -30,6 +30,9 @@ public interface MyApiEndpointInterface {
     @POST("/utenti")
     Call<Utente> createUser(@Body Utente user);
 
+    @POST("/autore")
+    Call<EventoUtente> addautore(@Body EventoUtente eu);
+
     @PUT("/utenti/{username}/{password}")
     Call<Utente> updatePass(@Path("username")String username ,@Path("password")String password);
 
@@ -42,7 +45,10 @@ public interface MyApiEndpointInterface {
     @GET("/eventi/{categoria}")
     Call<List<Event>> getEventBycat(@Path("categoria") String categoria);
 
-    @GET("/evento/{numero_evento}")
+    @GET("/eventoby")
+    Call <List<Event>> getNumeroEvento();
+
+    @GET("/eventonumero/{numero_evento}")
     Call <Event> getEventByid(@Path("numero_evento") int numero_evento);
 
     @GET("/eventi")

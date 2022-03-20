@@ -5,7 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".Home">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/creaEvento"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:text="CREA EVENTO"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_action_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.09"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/toCategorie"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:text="Categorie"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_action_categorie"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.924"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc"
+                android:layout_width="360dp"
+                android:layout_height="480dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.641" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,62 +76,6 @@
         app:menu="@menu/navigation"
         app:itemIconTint="@android:color/black"
         app:itemTextColor="@android:color/black" />
-
-
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/creaEvento"
-                    android:layout_width="170dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="20dp"
-                    android:text="CREA EVENTO"
-                    android:textStyle="bold"
-                    app:icon="@drawable/ic_action_add"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.09"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/toCategorie"
-                    android:layout_width="170dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Categorie"
-                    android:textStyle="bold"
-                    app:icon="@drawable/ic_action_categorie"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.924"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rc"
-                    android:layout_width="376dp"
-                    android:layout_height="638dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="36dp"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/creaEvento" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </RelativeLayout>
 
 
 

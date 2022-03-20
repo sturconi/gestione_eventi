@@ -25,7 +25,7 @@ public class Utente {
 		this.fotoprofilo=fotoprofilo;
 		this.nome=nome;
 	}
-	public int getId() {
+	public int getId_utente() {
 		return this.id_utente;
 	}
 	public String getUsername() {
@@ -53,7 +53,7 @@ public class Utente {
 	public void setUsername(String username) {
 		this.username=username;
 	}
-	public void setId(int id_utente) {
+	public void setId_utente(int id_utente) {
 		this.id_utente=id_utente;
 	}
 	public void setPassword(String password) {

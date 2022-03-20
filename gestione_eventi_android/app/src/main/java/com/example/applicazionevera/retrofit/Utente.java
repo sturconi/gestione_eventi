@@ -1,16 +1,5 @@
 package com.example.applicazionevera.retrofit;
 
-import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
-
 public class Utente {
         public String username;
         public String cognome;
@@ -18,16 +7,16 @@ public class Utente {
         public String email;
         public String password;
         public int eta;
-        public int ID_utente;
+        public int id_utente;
 
 
-        public Utente(String username, String cognome, String nome, String email, String password, int ID_utente) {
+        public Utente(int id_utente,String username, String cognome, String nome, String email, String password) {
             this.username = username;
             this.cognome = cognome;
             this.nome= nome;
             this.email= email;
             this.password=password;
-            this.ID_utente=ID_utente;
+            this.id_utente=id_utente;
         }
 
     public String getUsername() {
@@ -55,7 +44,7 @@ public class Utente {
     }
 
     public int getID_utente() {
-        return ID_utente;
+        return id_utente;
     }
 
     public void setUsername(String username) {
@@ -82,7 +71,7 @@ public class Utente {
         this.eta = eta;
     }
 
-    public void setID_utente(int ID_utente) {
-        this.ID_utente = ID_utente;
+    public void setID_utente(int id_utente) {
+        this.id_utente = id_utente;
     }
 }

@@ -2,7 +2,6 @@ package com.example.applicazionevera.retrofit;
 
 
 import java.sql.Date;
-import java.sql.Time;
 
 public class Event {
         int numero_evento;
@@ -17,12 +16,14 @@ public class Event {
         int immagine;
 
 
-            public Event(String categoria,String Enome,String Edata_evento,String ora, String EdescrizioneEvento) {
+            public Event(int numero_evento, String categoria,String Enome,String Edata_evento,String ora, String EdescrizioneEvento,String luogo) {
             this.nome_evento= Enome;
             this.categoria= categoria;
             this.descrizione=EdescrizioneEvento;
             this.data=Edata_evento;
             this.ora=ora;
+            this.numero_evento=numero_evento;
+            this.luogo=luogo;
         }
 
 

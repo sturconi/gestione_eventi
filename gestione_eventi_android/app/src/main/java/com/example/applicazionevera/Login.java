@@ -36,6 +36,7 @@ public class Login extends AppCompatActivity {
     Utente u= null;
     String usernameControl=null;
     String passwordControl=null;
+    int idu;
 
     private  final  static  String  MY_PREFERENCES  =  "MyPref";
     private  final  static  String  TEXT_LOGIN_KEY  =  "textLogin";
@@ -81,6 +82,7 @@ public class Login extends AppCompatActivity {
         HomeIntent.putExtra("nome", Lnome);
         HomeIntent.putExtra("cognome", Lcognome);
         HomeIntent.putExtra("email", Lemail);
+        HomeIntent.putExtra("idutente", idu);
 
 
         startActivity(HomeIntent);
@@ -108,6 +110,7 @@ public class Login extends AppCompatActivity {
                     Lnome=u.getNome();
                     Lcognome=u.getCognome();
                     Lemail=u.getEmail();
+                    idu=u.getID_utente();
                     Controllo();
                 }
 

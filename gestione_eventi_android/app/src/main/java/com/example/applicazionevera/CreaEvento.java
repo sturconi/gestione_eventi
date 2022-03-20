@@ -6,9 +6,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
@@ -32,6 +30,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicazionevera.model_and_adapter.PlaceAutoSuggestAdapter;
 import com.example.applicazionevera.retrofit.Event;
+import com.example.applicazionevera.retrofit.EventoUtente;
 import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.gms.maps.model.LatLng;
 
@@ -65,7 +64,14 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
     DatePickerDialog datePickerDialog;
     private ImageView imageView;
     Date data=null;
-
+    int idu;
+    EventoUtente eu;
+    private int PICK_IMAGE_REQUEST = 1;
+    private Uri filepath;
+    private Bitmap bitmap;
+    String tv,nnev;
+    List<Event> eventonome;
+    int idevv=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +79,8 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
         setContentView(R.layout.activity_crea_evento);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initDatePicker();
-
+        nomeEvento();
+        idu=getIntent().getExtras().getInt("idutente");
         final AutoCompleteTextView autoCompleteTextView=findViewById(R.id.autoComplete);
         autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(CreaEvento.this,android.R.layout.simple_list_item_1));
 
@@ -154,6 +161,7 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
         button = (Button) findViewById(R.id.buttonEvent);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,8 +171,11 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
                 String EdescrizioneEvento = descrizioneEvento.getText().toString();
                 String Edata_evento =dateButton.getText().toString();
                 String categoria = item.toString();
-                eve = new Event(categoria, Enome, Edata_evento, ora, EdescrizioneEvento);
+                String luogo= autoCompleteTextView.getText().toString();
+                eve = new Event(numero_evento,categoria, Enome, Edata_evento, ora, EdescrizioneEvento,luogo);
                 creaEvento();
+                eu= new EventoUtente(idu,idevv);
+                addAutore();
                 Toast.makeText(CreaEvento.this, "Evento creato!", Toast.LENGTH_SHORT).show();
                 openHome();
                 if (statusCode == 500 || statusCode == 400) {
@@ -188,7 +199,7 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
     }
 
     private void selectImage(Context context) {
-        final CharSequence[] options = {"Scatta una foto", "Scegli dalla galleria", "Cancella"};
+        final CharSequence[] options = {"Scegli dalla galleria", "Cancella"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Scegli la tua foto profilo");
@@ -198,57 +209,34 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
             @Override
             public void onClick(DialogInterface dialog, int item) {
 
-                if (options[item].equals("Scatta una foto")) {
-                    Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(takePicture, 0);
-
-                } else if (options[item].equals("Scegli dalla galleria")) {
-                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    startActivityForResult(pickPhoto, 1);//one can be replaced with any action code
-
-                } else if (options[item].equals("Cancella")) {
-                    dialog.dismiss();
-                }
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
             }
         });
         builder.show();
     }
 
 
-    @Override
+
+     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode != RESULT_CANCELED) {
-            switch (requestCode) {
-                case 0:
-                    if (resultCode == RESULT_OK && data != null) {
-                        Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
-                        imageView.setImageBitmap(selectedImage);
-                    }
 
-                    break;
-                case 1:
-                    if (resultCode == RESULT_OK && data != null) {
-                        Uri selectedImage = data.getData();
-                        String[] filePathColumn = {MediaStore.Images.Media.DATA};
-                        if (selectedImage != null) {
-                            Cursor cursor = getContentResolver().query(selectedImage,
-                                    filePathColumn, null, null, null);
-                            if (cursor != null) {
-                                cursor.moveToFirst();
+        if (requestCode == PICK_IMAGE_REQUEST && data != null && data.getData() != null) {
 
-                                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                                String picturePath = cursor.getString(columnIndex);
-                                imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-                                cursor.close();
-                            }
-                        }
+            filepath = data.getData();
+            try {
 
-                    }
-                    break;
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+                // Toast.makeText(getApplicationContext(),getPath(filepath),Toast.LENGTH_LONG).show();
+            } catch (Exception ex) {
+
             }
         }
     }
+
 
     private LatLng getLatLngFromAddress(String address){
 
@@ -395,6 +383,43 @@ public class CreaEvento extends AppCompatActivity implements AdapterView.OnItemS
             }
         });
     }
+
+
+    public void addAutore() {
+
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<EventoUtente> call = apiService.addautore(eu);
+        call.enqueue(new Callback<EventoUtente>() {
+            @Override
+            public void onResponse(Call<EventoUtente> call, Response<EventoUtente> response) {
+                statusCode = response.code();
+                eu = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<EventoUtente> call, Throwable t) {
+            }
+        });
+    }
+
+    public void nomeEvento() {
+
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Event>> call = apiService.getNumeroEvento();
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                statusCode = response.code();
+                eventonome = response.body();
+                idevv=eventonome.get(0).getnumero_evento()+1;
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+            }
+        });
+    }
+
 
     public static final String BASE_URL = "http://10.0.2.2:8080/";
     Retrofit retrofit = new Retrofit.Builder()

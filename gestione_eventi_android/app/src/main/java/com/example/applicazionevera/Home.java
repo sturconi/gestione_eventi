@@ -39,6 +39,7 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
     String cognome=null;
     String email=null;
     int id;
+    int idu;
     int statusCode;
 
     EventAdapter adapter = null;
@@ -69,6 +70,7 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
             nome = getIntent().getExtras().getString("nome");
             cognome = getIntent().getExtras().getString("cognome");
             email = getIntent().getExtras().getString("email");
+            idu=getIntent().getExtras().getInt("idutente");
 
         }
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -105,18 +107,9 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         bottone =(Button) findViewById(R.id.creaEvento);
         bottone.setOnClickListener(v -> openCreaevento());
         allEvent();
-        //setFAKEInfo();
         setData();
     }
 
-
-
-    private void setFAKEInfo() {
-        for(int i=0;i<10;i++) {
-            Event e = new Event("Prova", "Prova" + (i + 1), "Prova", "Prova", "Prova");
-            events.add(e);
-        }
-    }
 
    private void setData() {
         RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
@@ -180,6 +173,7 @@ public class Home extends AppCompatActivity implements RecyclerViewAdapter.OnEve
         intent.putExtra("nome", nome);
         intent.putExtra("cognome", cognome);
         intent.putExtra("email", email);
+        intent.putExtra("idutente", idu);
         startActivity(intent);
     }
     public void openEventoDettagliato() {

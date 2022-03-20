@@ -38,6 +38,7 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
     String cognome=null;
     String email=null;
     String categoria=null;
+    int id;
 
     int statusCode;
     EventAdapter adapter = null;
@@ -159,12 +160,14 @@ public class Evento extends AppCompatActivity implements EvCatAdapter.OnEventLis
         intent.putExtra("nome", nome);
         intent.putExtra("cognome", cognome);
         intent.putExtra("email", email);
+        intent.putExtra("id", id);
         startActivity(intent);
     }
 
 
     @Override
     public void onEventClick(int position) {
+        id=events.get(position).getnumero_evento();
         openEventoDettagliato();
     }
 

@@ -2,7 +2,7 @@ package ese.example.Ese;
 
 import java.util.List;
 
-public interface eventoInterface {
+public interface eventoInterface{
 
 int saveE(Evento ev);
 	
@@ -19,4 +19,7 @@ int saveE(Evento ev);
 	int updateE(Evento ev);
 
 	List<Evento> findByIdCat(String categoria);
+	
+	List<Evento> findByNumeroEvento();
+
 }

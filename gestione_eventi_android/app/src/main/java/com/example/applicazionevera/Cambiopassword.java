@@ -98,19 +98,39 @@ public class Cambiopassword extends AppCompatActivity {
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
+        HomeIntent.putExtra("username", username);
+        HomeIntent.putExtra("password", password);
+        HomeIntent.putExtra("nome", nome);
+        HomeIntent.putExtra("cognome", cognome);
+        HomeIntent.putExtra("email", email);
         startActivity(HomeIntent);
     }
     public void openSettings() {
         Intent intent = new Intent(this, Settings.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openNotifications() {
         Intent intent = new Intent(this, Notifiche.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
     public void openSearch() {
         Intent intent = new Intent(this, Search.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", passwordControl);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
     public void openAccount() {

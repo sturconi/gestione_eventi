@@ -86,6 +86,18 @@ public class UtenteRestController {
 	
 	}
 	
+	@RequestMapping(value="/autore", method=RequestMethod.POST)
+	public ResponseEntity<String> addAutore(@RequestBody EventoUtente newEventoUtente) {
+		String res="";
+		if(this.utenteRepositery.autore(newEventoUtente)>0) {
+			return new ResponseEntity<String>("Ok", HttpStatus.CREATED);
+		}
+		else {
+			return new ResponseEntity<String>("KO", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	
+	}
+	
 
 	@RequestMapping(value="/utente/{id}", method=RequestMethod.DELETE)
 	public void deleteUtenteByid(@PathVariable int id) {

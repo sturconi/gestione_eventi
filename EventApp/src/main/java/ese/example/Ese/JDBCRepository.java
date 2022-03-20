@@ -20,9 +20,16 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 		return jdbcTemplate.update("INSERT INTO utente(nome, cognome, username, email, password) VALUE(?,?,?,?,?)", new Object[] {u.getNome(), u.getCognome(), u.getUsername(), u.getEmail(), u.getPassword()});
 	
 	}
+	
 	@Override
-	public Utente findById(int ID_utente) {
-		return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE ID_utente=?", BeanPropertyRowMapper.newInstance(Utente.class),ID_utente);
+	public int autore(EventoUtente eu) {
+		return jdbcTemplate.update("INSERT INTO evento_utente (id_utente, numero_evento) VALUES (?,?)", new Object[] {eu.getId_utente(), eu.getnumero_evento()});
+	
+	}
+	
+	@Override
+	public Utente findById(int id_utente) {
+		return jdbcTemplate.queryForObject("SELECT * FROM utente WHERE id_utente=?", BeanPropertyRowMapper.newInstance(Utente.class),id_utente);
 	}
 	
 	@Override
@@ -36,7 +43,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 	}
 	@Override
 	public int update(Utente u) {
-		return jdbcTemplate.update("UPDATE utente SET nome=? WHERE id=?",new Object[] {u.getNome(),u.getId()});
+		return jdbcTemplate.update("UPDATE utente SET nome=? WHERE id=?",new Object[] {u.getNome(),u.getId_utente()});
 	}
 	@Override
 	public int updatePassword(Utente u) {
@@ -67,8 +74,12 @@ public class JDBCRepository implements utenteInterface, eventoInterface{
 	public List<Evento> findByIdCat(String categoria) {
 		return jdbcTemplate.query("SELECT * FROM evento WHERE categoria=?", BeanPropertyRowMapper.newInstance(Evento.class),categoria);
 	}
-
-
+	
+	@Override
+	public List<Evento> findByNumeroEvento() {
+		return jdbcTemplate.query("SELECT e.numero_evento FROM evento e ORDER BY e.numero_evento DESC ", BeanPropertyRowMapper.newInstance(Evento.class));
+	}
+	
 	@Override
 	public Evento findByIdE(int numero_evento) {
 		return jdbcTemplate.queryForObject("SELECT * FROM evento WHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Evento.class),numero_evento);

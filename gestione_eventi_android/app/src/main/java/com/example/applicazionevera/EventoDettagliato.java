@@ -42,6 +42,8 @@ public class EventoDettagliato extends FragmentActivity {
 
         setContentView(R.layout.activity_evento_dettagliato);
         id = getIntent().getExtras().getInt("id");
+        CercaEvento();
+        autore();
 
         titolo = findViewById(R.id.titolo);
         luogo = findViewById(R.id.luogo);
@@ -82,8 +84,7 @@ public class EventoDettagliato extends FragmentActivity {
                 startActivity(intent);
             }
         });
-        CercaEvento();
-        autore();
+
 
     }
 

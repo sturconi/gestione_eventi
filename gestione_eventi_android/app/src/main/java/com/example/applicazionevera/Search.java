@@ -7,35 +7,47 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.SearchView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.applicazionevera.model_and_adapter.EvCatData;
+import com.example.applicazionevera.retrofit.Event;
+import com.example.applicazionevera.retrofit.EventAdapter;
+import com.example.applicazionevera.retrofit.MyApiEndpointInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class Search extends AppCompatActivity {
 
     private List<EvCatData> evcatData;
     GridView gridView;
-    CustomAdapter customAdapter;
     String username = null;
     String password = null;
     String nome=null;
     String cognome=null;
     String email=null;
+    int statusCode;
+    int id;
 
+    EventAdapter adapter = null;
+    private List<Event> events=new ArrayList<>();
 
 
     @Override
@@ -54,12 +66,8 @@ public class Search extends AppCompatActivity {
         LayoutInflater inflater= (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view= inflater.inflate(R.layout.custom_image, null);
         actionBar.setCustomView(view);
-
-     setArrayInfo();
-        gridView = findViewById(R.id.gridView);
-        customAdapter = new CustomAdapter(evcatData, this);
-        gridView.setAdapter(customAdapter);
-
+        allEvent();
+        setData();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
@@ -95,22 +103,6 @@ public class Search extends AppCompatActivity {
 
 
 
-
-    private void setArrayInfo() {
-        evcatData = new ArrayList<>();
-        evcatData.add(new EvCatData(R.drawable.duomo,"Calcetto pazzo sgravato","Via Fiorella Mannoia","28 FEB 2002"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_music_note_24, "Concerto di Antonio Giuseppe","Via delle esplosioni","14 NOV 2015"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
-        evcatData.add(new EvCatData(R.drawable.ic_baseline_fastfood_24,"In cucina con Ciccio","Piazzale Agricoltura","10 FEB 2022"));
-    }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -128,7 +120,6 @@ public class Search extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                customAdapter.getFilter().filter(s);
                 return true;
             }
         });
@@ -137,112 +128,20 @@ public class Search extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public class CustomAdapter extends BaseAdapter implements Filterable {
-    private List<EvCatData> evcatData;
-    private List<EvCatData> evcatDatafiltered;
-    private Context context;
+    private void setData() {
+        RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(Search.this);
+        adapter = new EventAdapter(events, this::onEventClick);
+        recyclerViewOKL.setHasFixedSize(true);
+        recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Search.this));
+        recyclerViewOKL.setNestedScrollingEnabled(false);
 
-        public CustomAdapter(List<EvCatData> evcatData,  Context context) {
-            this.evcatData = evcatData;
-            this.evcatDatafiltered = evcatData;
-            this.context = context;
-        }
-
-
-
-    @Override
-    public int getCount() {
-        return evcatData.size();
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewOKL.getContext(), layoutManager.getOrientation());
+        recyclerViewOKL.addItemDecoration(dividerItemDecoration);
+        recyclerViewOKL.setAdapter(adapter);
     }
 
-    @Override
-    public Object getItem(int i) {
-        return evcatData.get(i);
-    }
 
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        View view1 = view;
-        EvCatData evCatData = evcatData.get(i);
-
-        if(view1==null){
-            view1 = LayoutInflater.from(context).inflate(R.layout.row_items, viewGroup, false);
-        }
-
-        ImageView tvImage = view1.findViewById(R.id.immagineEvCat);
-        TextView tvindirizzo = view1.findViewById(R.id.indirizzoEv);
-        TextView tvtitolo = view1.findViewById(R.id.titoloEv);
-        TextView tvdata = view1.findViewById(R.id.dataEv);
-
-        String indirizzo = evCatData.getIndirizzo();
-        String titolo = evCatData.getTitolo();
-        String data = evCatData.getData();
-        int image= evCatData.getImage();
-
-      /*  tvImage.setImageResource(image);
-        tvindirizzo.setText(indirizzo);
-        tvtitolo.setText(titolo);
-        tvdata.setText(data);
-*/
-
-        view1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Search.this, EventoDettagliato.class));
-            }
-        });
-
-        return view1;
-    }
-
-        @Override
-        public Filter getFilter() {
-            Filter filter = new Filter() {
-                @Override
-                protected FilterResults performFiltering(CharSequence charSequence) {
-                    FilterResults filterResults = new FilterResults();
-
-                    if(charSequence == null || charSequence.length()==0){
-
-                        filterResults.count= evcatDatafiltered.size();
-                        filterResults.values = evcatDatafiltered;
-
-                    }else{
-                        String searchChr = charSequence.toString().toLowerCase();
-                        ArrayList<EvCatData> searchresult = new ArrayList<>();
-
-                        for(EvCatData evCatData:evcatDatafiltered){
-                            if(evCatData.getData().toLowerCase().contains(searchChr)|| evCatData.getIndirizzo().toLowerCase().contains(searchChr) ||  evCatData.getTitolo().toLowerCase().contains(searchChr)){
-                                searchresult.add(evCatData);
-                            }
-                        }
-
-                        filterResults.count = searchresult.size();
-                        filterResults.values = searchresult;
-                    }
-
-
-                    return filterResults;
-                }
-
-                @Override
-                protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
-                    evcatData = (List<EvCatData>) filterResults.values;
-                    notifyDataSetChanged();
-
-
-                }
-            };
-
-            return filter;
-        }
-    }
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
@@ -282,7 +181,46 @@ public class Search extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onEventClick(int position) {
+        id=events.get(position).getnumero_evento();
+        openEventoDettagliato();
 
+    }
+
+    public void openEventoDettagliato() {
+        Intent intent = new Intent(this, EventoDettagliato.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        intent.putExtra("nome", nome);
+        intent.putExtra("cognome", cognome);
+        intent.putExtra("email", email);
+        intent.putExtra("id", id);
+        startActivity(intent);
+    }
+
+    public void allEvent() {
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Event>> call = apiService.getAllEvent();
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                statusCode = response.code();
+                events.addAll(response.body());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+            }
+        });
+    }
+
+    public static final String BASE_URL = "http://10.0.2.2:8080/";
+    Gson gson= new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build();
 
 
 
