@@ -13,8 +13,8 @@
 
     <item
         android:id="@+id/toNotifications"
-        android:icon="@drawable/ic_action_notification"
-        android:title="Notifiche" />
+        android:icon="@drawable/ic_placeholder"
+        android:title="Mappa" />
     <item
         android:id="@+id/toSettings"
         android:icon="@drawable/ic_action_settings"

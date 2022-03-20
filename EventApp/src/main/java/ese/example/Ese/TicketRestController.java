@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class TicketRestController {
 	
-	/*@Autowired
+	@Autowired
 	@Qualifier("MYSQL")
 	ticketInterface ticketRepositery;
 	
@@ -28,7 +28,7 @@ public class TicketRestController {
 		return this.ticketRepositery.findAllT();
 	}
 	
-	@RequestMapping(value="/ticket/{oggetto_ticket}",method=RequestMethod.GET)
+	@RequestMapping(value="/ticket/oggetto/{oggetto_ticket}",method=RequestMethod.GET)
 	public ResponseEntity<Ticket> getTicketByOggetto(@PathVariable String oggetto_ticket){
 		Ticket t = ticketRepositery.findByOggetto(oggetto_ticket);
 		if(t!=null) {
@@ -40,7 +40,7 @@ public class TicketRestController {
 	}
 	
 	
-	@RequestMapping(value="/ticket/{codice}", method=RequestMethod.GET)
+	@RequestMapping(value="/ticket/codice/{codice}", method=RequestMethod.GET)
 	public ResponseEntity<Ticket> getTiketByid(@PathVariable int codice) {
 		Ticket t =this.ticketRepositery.findByIdT(codice);
 		if(t!=null) {
@@ -73,7 +73,7 @@ public class TicketRestController {
 	@RequestMapping(value="/ticket/{id}", method=RequestMethod.DELETE)
 	public void deleteTicketByid(@PathVariable int id) {
 		this.ticketRepositery.deleteByIdT(id);
-	}*/
+	}
 	
 	
 	

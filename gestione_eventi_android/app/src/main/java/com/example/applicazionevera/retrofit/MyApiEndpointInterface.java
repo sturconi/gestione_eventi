@@ -1,6 +1,7 @@
 package com.example.applicazionevera.retrofit;
 
 import com.example.applicazionevera.model_and_adapter.ListLocationModel;
+import com.example.applicazionevera.model_and_adapter.LocationModel;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.ResponseBody;
 
@@ -58,6 +59,6 @@ public interface MyApiEndpointInterface {
     @POST("/upload")
     Call<ResponseBody> uploadImage(@Part MultipartBody.Part file, @Part("name") RequestBody requestBody);
 
-    @GET("/JsonDisplayMarker")
-    Call<ListLocationModel> getAllLocation();
+    @GET("/luogo")
+    Call<List<LocationModel>> getAllLocation();
 }

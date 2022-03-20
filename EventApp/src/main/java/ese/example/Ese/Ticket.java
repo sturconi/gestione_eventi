@@ -13,12 +13,12 @@ public class Ticket {
 	}
 	
 
-	public Ticket(int codice, String oggetto_ticket, String testo_ticket, int iD_utente) {
+	public Ticket(int codice, String oggetto_ticket, String testo_ticket, int ID_utente) {
 		super();
 		this.codice = codice;
 		this.oggetto_ticket = oggetto_ticket;
 		this.testo_ticket = testo_ticket;
-		ID_utente = iD_utente;
+		this.ID_utente = ID_utente;
 	}
 
 
