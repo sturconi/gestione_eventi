@@ -62,6 +62,7 @@ body {
 
 
 
+
 section .events ul{
 	position: absolute;
 	top: 60%;
@@ -71,6 +72,7 @@ section .events ul{
 	margin-top: 250px;
 	margin-right: 200px;
 	box-sizing: border-box;
+	
 }
 
 section .events ul li{
@@ -78,6 +80,7 @@ section .events ul li{
 	background: #fff;
 	box-sizing: border-box;
 	height: 180px;
+	
 
 }
 
@@ -156,12 +159,13 @@ section .events ul li .details a:hover{
 }
 
 section .crea-evento{
-
+	
 	padding-left: 100px;
 }
 
 section .crea-evento .slogan{
 	text-align: center;
+	
 }
 
 section .crea-evento .slogan h1 {
@@ -169,11 +173,13 @@ section .crea-evento .slogan h1 {
 	color: #000;
 	text-transform: uppercase;
 	font-size: 40px;
+	
 }
 section .crea-evento .slogan h1 span {
 	color: #05473a;
 	font-size: 50px;
 	text-align: center;
+	
 }
 
 section .crea-evento .slogan a{
@@ -181,11 +187,13 @@ section .crea-evento .slogan a{
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 10px 15px;
+	background: linear-gradient(aquamarine, #0b8f74);
 	border: 2px solid #262626;
 	margin-top: 15px;
 	font-size: 60px;
-	color: blue;
+	color: #05473a;
 	transition: .5s;
+	border-radius: 20px;
 }
 
 section  .crea-evento .slogan a:hover{
