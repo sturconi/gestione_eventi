@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Eventapp</title>
-       <link rel="stylesheet" href="settings-preferenze.css"> 
+       <link rel="stylesheet" href="account.css"> 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <link href="https://fonts.googleapis.com/css?family=Alata|Josefin+Sans|Maven+Pro&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
         <div class="smartphone-menu-trigger"></div>
       <header class="avatar">
             <img class="blah" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0zLw957QByyJ31DlQSJEvEmvRYmT6yrzWA&usqp=CAU" />
-        <h2>Luca D'ambrosio</h2>
+        <h2>Matteo Romagnoni</h2>
       </header>
 
          <div class="leftbar">
@@ -56,50 +56,16 @@
 
      <div class="main">
          <div class="helper">
-            <div class="toggle">
-                <h3 class="ena">Applica il filtro alle categorie</h3>
-                <div class="linea"></div>
-                <div class="container">
+            <div class="helperprof">
+                <header class="avatar">
                     
-                    <label class="switch">
-                        <h1 class="gul"> Sport</h1>
-                        <input type="checkbox" id="sport">
-                        <span class="slider round"></span>
-                      </label>
-                      
-                </div>
-                <div class="container">
+                    <img class="blah" src="https://www.viagginews.com/wp-content/uploads/2020/10/bello-figo1.jpg" />
                     
-                    <label class="switch">
-                        <h1 class="gul"> Intrattenimento</h1>
-                        <input type="checkbox" id="intrattenimento">
-                        <span class="slider round"></span>
-                      </label>
-                      
-                </div>
-                <div class="container">
                     
-                    <label class="switch">
-                        <h1 class="gul"> Servizi</h1>
-                        <input type="checkbox" id="servizi">
-                        <span class="slider round"></span>
-                      </label>
-                      
-                </div>
-                <div class="container">
-                    
-                    <label class="switch">
-                        <h1 class="gul"> Cultura</h1>
-                        <input type="checkbox" id="cultura">
-                        <span class="slider round"></span>
-                      </label>
-                      
-                </div>
-                <div>
-
-                </div>
+                <h2>Davide Cappabianca</h2>
+                <h4>@scarpabianca</h4>
+              </header> 
             </div>
-            <div></div>
          </div>
          
 
@@ -107,15 +73,55 @@
          <div class="helperslogan">
             <div class="helperprof">
                     
-                    <img  src="Slogan.png" />
+                    <img  src="https://i1.wp.com/www.manuscritto.it/wp-content/uploads/2018/12/slogan-pubblicitari.jpg?resize=696%2C435&ssl=1" />
                  
             </div>
          </div>      
 
 
 
-        
+              
+  <div class="helperimg">
+         <div class="helperprofimg">
+            <br><br>
+              <h2>Cambia immagine del profilo</h2>
+              <br><br>
+              <input type="file" onchange="readURL(this);" />
+              <br><br><br>
+              <div class="btns">
+                <button class="btn-btn-confirm">Conferma</button>
+                <button class="btn-btn-cancel">Annulla</button>
+               <br> 
+             </div>
+          </div>
+        </div>  
+
+        <div class="helperpass">
+            <div class="helperprofpass">   
+             <h2>Reimposta qui la tua password</h2>
+              
+            <div class="form__group field">
+                <input type="password" class="form__field" placeholder="Nuova password" name="name" id='name' required />
+                <label for="name" class="form__label"></label>
+                 <br> <br>
+                <input type="password" class="form__field" placeholder="Conferma password" name="name" id='name' required />
+                <label for="name" class="form__label"></label>
+            </div>
+
+                 <br> <br>
+            <div class="btns">
+                <button class="btn-btn-confirm">Conferma</button>
+                <button class="btn-btn-cancel">Annulla</button>
+            </div>
+        </div>
     </div>
 
+    
+     
+
+
+
+
+  
 </body>
 </html>

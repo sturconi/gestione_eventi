@@ -34,11 +34,6 @@ public class Notifiche extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifiche);
 
-        username = getIntent().getExtras().getString("username");
-        password = getIntent().getExtras().getString("password");
-        nome = getIntent().getExtras().getString("nome");
-        cognome = getIntent().getExtras().getString("cognome");
-        email = getIntent().getExtras().getString("email");
 
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
@@ -57,7 +52,6 @@ public class Notifiche extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
-        navigation.setSelectedItemId(R.id.toNotifications);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -89,14 +83,11 @@ public class Notifiche extends AppCompatActivity {
     }
     private void setArrayInfo() {
         notdata = new ArrayList<>();
-        notdata.add(new NotData(R.drawable.duomo,"MISSCROFT98: Noooo amo non puoi capire, siamo tantisssimi"));
+        notdata.add(new NotData(R.drawable.ic_baseline_account_circle_24,"@Gianlu_mangia: Ha appena commentato un tuo evento"));
         notdata.add(new NotData(R.drawable.duomo,"Il tuo evento è in programma domani"));
-        notdata.add(new NotData(R.drawable.duomo,"Settimana prossima concerto di Rosa Chemical"));
-        notdata.add(new NotData(R.drawable.duomo,"Lorenzo Arecco a teatro, imperdibile"));
-        notdata.add(new NotData(R.drawable.duomo,"MISSCROFT98: COSAAAA!?!? CR7 a Milano??"));
-        notdata.add(new NotData(R.drawable.duomo,"MISSCROFT98: Sei un fake, devi stare muto"));
-        notdata.add(new NotData(R.drawable.duomo,"MISSCROFT98: Deve essere frustrante"));
-        notdata.add(new NotData(R.drawable.duomo,"MISSCROFT98: 5 €, 2 canne. Andata?"));
+        notdata.add(new NotData(R.drawable.ic_baseline_account_circle_24,"@Lorenzo_Biraghi: Ha appena commentato un tuo evento"));
+        notdata.add(new NotData(R.drawable.ic_baseline_account_circle_24,"@Popo_Gabriel: Ha appena commentato un tuo evento"));
+
 
     }
 
