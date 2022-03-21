@@ -8,6 +8,7 @@
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.231" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_account.xml" value="0.4" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_assistenza.xml" value="0.264" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_buttarevia.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_calendario.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_cambiopasswo.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_caricamento.xml" value="0.25416666666666665" />
@@ -21,14 +22,18 @@
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_login.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_mappa.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_modificaimmagine.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_notifiche.xml" value="0.2" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_permissions.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_preferenze.xml" value="0.4" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_privacy.xml" value="0.264" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_registrazione.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_search.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_settings.xml" value="0.2" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/activity_sezione_commenti.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/content_map.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/layout/itemlayout_comment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/menu/home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2205" />
         <entry key="..\:/Users/DavideCappabianca/Documents/GitHub/gestioneventapp/a/gestione_eventi_android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.176" />
