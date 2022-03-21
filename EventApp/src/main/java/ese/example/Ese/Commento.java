@@ -1,4 +1,4 @@
-package ese.example.Ese;
+/*package ese.example.Ese;
 
 public class Commento {
 	int codice;
@@ -52,4 +52,4 @@ public Commento() {
 
 	
 	
-}
+}*/

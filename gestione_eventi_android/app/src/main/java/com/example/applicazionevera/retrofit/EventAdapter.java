@@ -39,8 +39,8 @@ EventAdapter extends RecyclerView.Adapter < EventAdapter.ViewHolder > {
         holder.postimage.setImageResource(evento.getImmagine());
         holder.titolo.setText(evento.getNome_evento());
         holder.luogo.setText(evento.getLuogo());
-        holder.mese.setText(evento.getData());
-        holder.giorno.setText(evento.getData());
+        holder.mese.setText(evento.getData().substring(3,6));
+        holder.giorno.setText(evento.getData().substring(0,2));
     }
 
     @Override

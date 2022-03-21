@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SearchView;
 
@@ -45,9 +46,17 @@ public class Search extends AppCompatActivity {
     String email=null;
     int statusCode;
     int id;
+    List<Event> eventonome;
+    int idevv=0;
 
     EventAdapter adapter = null;
     private List<Event> events=new ArrayList<>();
+    private List<Event> Sportevents=new ArrayList<>();
+    private List<Event> Serevents=new ArrayList<>();
+    private List<Event> Intrevents=new ArrayList<>();
+    private List<Event> Cultevents=new ArrayList<>();
+
+
 
 
     @Override
@@ -68,6 +77,56 @@ public class Search extends AppCompatActivity {
         actionBar.setCustomView(view);
         allEvent();
         setData();
+
+        Button sport,cultura,intrattenimento,servizi,all;
+        all=(Button)findViewById(R.id.allFilter);
+        all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                allEvent();
+                setData();
+
+            }
+        });
+        sport=(Button)findViewById(R.id.SportFilter);
+        sport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sport();
+                setDataSport();
+
+            }
+        });
+        cultura=(Button)findViewById(R.id.CulturaFilter);
+        cultura.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cultura();
+                setDataCult();
+            }
+        });
+
+        intrattenimento=(Button)findViewById(R.id.IntrattenimentoFilter);
+        intrattenimento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intrattenimento();
+                setDataIntr();
+
+            }
+        });
+
+        servizi=(Button)findViewById(R.id.ServiziFilter);
+        servizi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                servizi();
+                setDataSer();
+
+            }
+        });
+
+
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
@@ -142,6 +201,60 @@ public class Search extends AppCompatActivity {
     }
 
 
+    private void setDataSport() {
+        RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(Search.this);
+        adapter = new EventAdapter(Sportevents, this::onEventClickSport);
+        recyclerViewOKL.setHasFixedSize(true);
+        recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Search.this));
+        recyclerViewOKL.setNestedScrollingEnabled(false);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewOKL.getContext(), layoutManager.getOrientation());
+        recyclerViewOKL.addItemDecoration(dividerItemDecoration);
+        recyclerViewOKL.setAdapter(adapter);
+    }
+
+    private void setDataSer() {
+        RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(Search.this);
+        adapter = new EventAdapter(Serevents, this::onEventClickServ);
+        recyclerViewOKL.setHasFixedSize(true);
+        recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Search.this));
+        recyclerViewOKL.setNestedScrollingEnabled(false);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewOKL.getContext(), layoutManager.getOrientation());
+        recyclerViewOKL.addItemDecoration(dividerItemDecoration);
+        recyclerViewOKL.setAdapter(adapter);
+    }
+
+    private void setDataIntr() {
+        RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(Search.this);
+        adapter = new EventAdapter(Intrevents, this::onEventClickIntr);
+        recyclerViewOKL.setHasFixedSize(true);
+        recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Search.this));
+        recyclerViewOKL.setNestedScrollingEnabled(false);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewOKL.getContext(), layoutManager.getOrientation());
+        recyclerViewOKL.addItemDecoration(dividerItemDecoration);
+        recyclerViewOKL.setAdapter(adapter);
+    }
+
+    private void setDataCult() {
+        RecyclerView recyclerViewOKL = (RecyclerView) findViewById(R.id.rc);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(Search.this);
+        adapter = new EventAdapter(Cultevents, this::onEventClickCult);
+        recyclerViewOKL.setHasFixedSize(true);
+        recyclerViewOKL.setLayoutManager(new LinearLayoutManager(Search.this));
+        recyclerViewOKL.setNestedScrollingEnabled(false);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewOKL.getContext(), layoutManager.getOrientation());
+        recyclerViewOKL.addItemDecoration(dividerItemDecoration);
+        recyclerViewOKL.setAdapter(adapter);
+    }
+
+
+
 
     public void openHome() {
         Intent HomeIntent = new Intent(this, Home.class);
@@ -187,6 +300,33 @@ public class Search extends AppCompatActivity {
 
     }
 
+    public void onEventClickSport(int position) {
+        id=Sportevents.get(position).getnumero_evento();
+        openEventoDettagliato();
+
+    }
+
+    public void onEventClickCult(int position) {
+        id=Cultevents.get(position).getnumero_evento();
+        openEventoDettagliato();
+
+    }
+
+    public void onEventClickIntr(int position) {
+        id=Intrevents.get(position).getnumero_evento();
+        openEventoDettagliato();
+
+    }
+
+    public void onEventClickServ(int position) {
+        id=Serevents.get(position).getnumero_evento();
+        openEventoDettagliato();
+
+    }
+
+
+
+
     public void openEventoDettagliato() {
         Intent intent = new Intent(this, EventoDettagliato.class);
         intent.putExtra("username", username);
@@ -214,6 +354,79 @@ public class Search extends AppCompatActivity {
             }
         });
     }
+
+    public void sport() {
+        String categoria="sport";
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Event>> call = apiService.getEventBycat(categoria);
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                statusCode = response.code();
+                Sportevents.addAll(response.body());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+            }
+        });
+    }
+
+    public void servizi() {
+        String categoria="servizi";
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Event>> call = apiService.getEventBycat(categoria);
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                statusCode = response.code();
+                Serevents.addAll(response.body());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+            }
+        });
+    }
+    public void intrattenimento() {
+        String categoria="intrattenimento";
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Event>> call = apiService.getEventBycat(categoria);
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                statusCode = response.code();
+                Intrevents.addAll(response.body());
+
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+            }
+        });
+    }
+
+    public void cultura() {
+        String categoria="cultura";
+        MyApiEndpointInterface apiService = retrofit.create(MyApiEndpointInterface.class);
+        Call<List<Event>> call = apiService.getEventBycat(categoria);
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                statusCode = response.code();
+                Cultevents.addAll(response.body());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+            }
+        });
+    }
+
 
     public static final String BASE_URL = "http://10.0.2.2:8080/";
     Gson gson= new GsonBuilder().setDateFormat("dd-MM-yyyy").create();

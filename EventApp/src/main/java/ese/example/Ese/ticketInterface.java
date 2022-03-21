@@ -1,4 +1,4 @@
-package ese.example.Ese;
+/*package ese.example.Ese;
 
 import java.util.List;
 
@@ -19,4 +19,4 @@ public interface ticketInterface {
 	Ticket findByOggetto(String oggetto_ticket);
 	
 }
-
+*/

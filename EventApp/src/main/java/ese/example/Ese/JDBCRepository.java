@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository(value="MYSQL")
-public class JDBCRepository implements utenteInterface, eventoInterface, luogoInterface{
+public class JDBCRepository implements utenteInterface, eventoInterface{
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
@@ -40,10 +40,6 @@ public class JDBCRepository implements utenteInterface, eventoInterface, luogoIn
 	@Override
 	public List<Utente> findAll() {
 		return jdbcTemplate.query("SELECT * FROM utente", BeanPropertyRowMapper.newInstance(Utente.class));
-	}
-	@Override
-	public int update(Utente u) {
-		return jdbcTemplate.update("UPDATE utente SET nome=? WHERE id=?",new Object[] {u.getNome(),u.getId_utente()});
 	}
 	@Override
 	public int updatePassword(Utente u) {
@@ -85,6 +81,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface, luogoIn
 		return jdbcTemplate.queryForObject("SELECT * FROM evento WHERE numero_evento=?", BeanPropertyRowMapper.newInstance(Evento.class),numero_evento);
 	}
 	
+	
 	@Override
 	public Utente autoreevento(int numero_evento) {
 		return jdbcTemplate.queryForObject("SELECT \r\n"
@@ -114,6 +111,7 @@ public class JDBCRepository implements utenteInterface, eventoInterface, luogoIn
 	public int updateE(Evento ev) {
 		return jdbcTemplate.update("UPDATE evento SET Categoria=? AND SET nome-evento=? AND SET luogo WHERE numero_evento=?",new Object[] {ev.getCategoria(),ev.getNome_evento(), ev.getLuogo()});
 	}
+
 	
 //------------------------------------------------------------------
 	//----Ticket------//
@@ -172,12 +170,12 @@ public class JDBCRepository implements utenteInterface, eventoInterface, luogoIn
 	//------------------------------------------------------------------
 	//----Luogo------//
 
-	@Override
+	/*@Override
 	public List<Luogo> findAllL() {
 		return jdbcTemplate.query("SELECT * FROM luogo", BeanPropertyRowMapper.newInstance(Luogo.class));}
 	
 	
-	
+	*/
 	
 
 }

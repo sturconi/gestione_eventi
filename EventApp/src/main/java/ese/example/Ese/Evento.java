@@ -11,7 +11,6 @@ public class Evento {
 	int Valutazione;
 	String luogo;
 	String data;
-	Date oraFine;
 	String immagine;
 	int ID_Posto;
 	
@@ -51,9 +50,7 @@ public class Evento {
 	public String getOra() {
 		return this.ora;
 	}
-	public Date getOraFine() {
-		return this.oraFine;
-	}
+
 	public String getImmagine() {
 		return this.immagine;
 	}
@@ -84,9 +81,6 @@ public class Evento {
 	}
 	public void setOra(String ora) {
 		this.ora=ora;
-	}
-	public void setOraFine(Date oraFine) {
-		this.oraFine=oraFine;
 	}
 	public void setImmagine(String immagine) {
 		this.immagine=immagine;
